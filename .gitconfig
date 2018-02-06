@@ -1,0 +1,100 @@
+[alias]
+    ci = commit
+    co = checkout
+    lg = log --graph
+    st = status
+    up = pull --rebase --prune
+
+    # graphical representation for all refs
+    lga = !git lg --graph --all
+    # graphical representation for branches only
+    lgb = !git lg --graph --branches
+
+    refs = for-each-ref --sort=-committerdate --format='%(color:red bold)%(refname:short)%(color:reset) %(color:yellow)%(committerdate:relative)%(color:reset) %(color:magenta bold)%(authorname)%(color:reset) %(color:green)%(objectname:short)%(color:reset) %(contents:subject)'
+
+    # list all local branches sorted by commit date (lbs = local branches sorted)
+    lbs = !git refs refs/heads
+    # list all remote tracking branches sorted by commit date (rbs = remote branches sorted)
+    rbs = !git refs refs/remotes
+
+    # list outdated branches that track a branch which no longer exists
+    lob = !git branch -vv | grep ': gone' | cut -d ' ' -f 3
+    # delete outdated branches
+    dob = !git lob | xargs git branch -D
+
+    # log incoming commits
+    li = !git lg HEAD..@{upstream}
+    # log outgoing commits
+    lo = !git lg @{upstream}..HEAD
+
+    # Display the staged changes
+    dc      = diff --cached
+    diff    = diff -w --color-words --word-diff
+    changes = diff --name-status
+
+    # Show verbose output about tags, branches or remotes
+    tags = tag -l
+    branches = branch -a
+    remotes = remote -v
+
+    # undo last commit
+    undo = reset --soft HEAD^
+    # amend last commit
+    amend = commit -p --amend --no-edit
+
+    stash-all = stash save --include-untracked
+    unstash = reset HEAD~1
+
+    # Remove branches that have already been merged with master
+    # a.k.a. â€˜delete mergedâ€™
+    dm = "!git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d; git remote -v update -p"
+
+    contributors = shortlog --summary --numbered --no-merges
+
+    currentbranch = "!git branch | grep \"^\\*\" | cut -d \" \" -f 2"
+    standup = log --since yesterday --author $(git config user.email) --pretty=short
+    whatscoming = "!git diff HEAD...origin/$(git currentbranch)"
+    whatsnew    = "!git diff origin/$(git currentbranch)...HEAD"
+[branch]
+    autosetuprebase = always
+    rebase = true
+[color]
+    ui = auto
+[core]
+    autocrlf = input
+    whitespace = fix,space-before-tab,-indent-with-non-tab,trailing-space
+[credential]
+    helper = store
+[diff]
+    compactionHeuristic = true
+    mnemonicPrefix = true
+    renames = copies
+[fetch]
+    prune = true
+[format]
+    pretty = %Cred%h%Creset -%C(yellow)%d%Creset %C(white)%s%Creset %C(yellow)(%cr) %C(bold blue)<%an>%Creset
+[help]
+    autocorrect = 1
+[log]
+    abbrevCommit = true
+    decorate = auto
+[merge]
+    # I pretty much never mean to do a real merge, since I use a rebase workflow.
+    # Note: this global option applies to all merges, including those done during a git pull
+    ff = only
+
+    # Standard diff is two sets of final changes. This introduces the original text before each side's changes.
+    conflictstyle = diff3
+[push]
+    # "push the current branch back to the branch whose changes are usually integrated into the current branch"
+    # "refuse to push if the upstream branchâ€™s name is different from the local one"
+    default = simple
+
+    followTags = true
+[rebase]
+    autostash = true
+[status]
+    submoduleSummary = true
+    showUntrackedFiles = all
+[tag]
+    sort = version:refname
