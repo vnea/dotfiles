@@ -55,6 +55,19 @@
     standup = log --since yesterday --author $(git config user.email) --pretty=short
     whatscoming = "!git diff HEAD...origin/$(git currentbranch)"
     whatsnew    = "!git diff origin/$(git currentbranch)...HEAD"
+
+    # Rebase
+    rb = rebase
+    rba = rebase --abort
+    rbc = rebase --continue
+    rbs = rebase --skip
+
+    # Merge
+    mg = merge
+    mgnoff = merge --no-ff
+
+    # Cherry-pick
+    cp = cherry-pick
 [branch]
     autosetuprebase = always
     rebase = true
@@ -73,8 +86,6 @@
     prune = true
 [format]
     pretty = %Cred%h%Creset -%C(yellow)%d%Creset %C(white)%s%Creset %C(yellow)(%cr) %C(bold blue)<%an>%Creset
-[help]
-    autocorrect = 1
 [log]
     abbrevCommit = true
     decorate = auto
