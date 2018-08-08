@@ -61,6 +61,7 @@
     rba = rebase --abort
     rbc = rebase --continue
     rbs = rebase --skip
+    rbm = rebase master
 
     # Merge
     mg = merge
