@@ -4,6 +4,7 @@
     lg = log --graph
     st = status
     up = pull --rebase --prune
+    cb = checkout -b
 
     # graphical representation for all refs
     lga = !git lg --graph --all
