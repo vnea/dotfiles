@@ -57,6 +57,8 @@
     whatscoming = "!git diff HEAD...origin/$(git currentbranch)"
     whatsnew    = "!git diff origin/$(git currentbranch)...HEAD"
 
+    squash = "!f(){ git reset --soft HEAD~${1} && git commit --edit -m\"$(git log --format=%B --reverse HEAD..HEAD@{1})\"; };f"
+
     # Rebase
     rb = rebase
     rba = rebase --abort
