@@ -1,6 +1,7 @@
 [alias]
     ci = commit
     co = checkout
+    com = checkout master
     lg = log --graph
     st = status
     up = pull --rebase --prune
