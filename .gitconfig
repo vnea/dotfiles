@@ -2,6 +2,7 @@
     ci = commit
     co = checkout
     com = checkout master
+    comup = "!f(){ git co master && git up; };f"
     lg = log --graph
     st = status
     up = pull --rebase --prune
