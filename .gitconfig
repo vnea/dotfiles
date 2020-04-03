@@ -3,6 +3,8 @@
     co = checkout
     com = checkout master
     comup = "!f(){ git co master && git up; };f"
+    cod = checkout develop
+    codup = "!f(){ git co develop && git up; };f"
     lg = log --graph
     st = status
     up = pull --rebase --prune
@@ -63,10 +65,12 @@
 
     # Rebase
     rb = rebase
+    rbi = rebase -i
     rba = rebase --abort
     rbc = rebase --continue
     rbs = rebase --skip
     rbm = rebase master
+    rbd = rebase develop
 
     # Merge
     mg = merge
