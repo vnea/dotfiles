@@ -6,7 +6,7 @@ syntax on
 set ruler
 set encoding=utf-8
 set ttyfast
-set list 
+set list
 
 if &term =~ '^screen'
     " tmux will send xterm-style keys when its xterm-keys option is on
@@ -15,3 +15,6 @@ if &term =~ '^screen'
     execute "set <xRight>=\e[1;*C"
     execute "set <xLeft>=\e[1;*D"
 endif
+
+" Mappings
+inoremap jk <Esc>
