@@ -36,3 +36,10 @@ cat <<EOT >> ~/.gitconfig
 
 EOT
 ```
+
+# i3
+
+```shell
+rm -rf ~/.config/i3
+ln -sf ~/bootsrap-poste/i3 ~/.config/i3
+```

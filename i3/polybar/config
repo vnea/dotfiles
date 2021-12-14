@@ -1,0 +1,140 @@
+; Doc: https://github.com/jaagr/polybar
+; Wiki: https://github.com/jaagr/polybar/wiki
+
+[bar/default]
+height = 32
+offset-y = 0
+top = true
+fixed-center = true
+locale = fr_FR.UTF-8
+tray-position = right
+tray-maxsize = 22
+line-size = 3
+
+padding-left = 0
+padding-right = 3
+module-margin = 2
+
+font-0 = System San Francisco Display:size=15;2
+font-1 = FontAwesome:size=15;3
+font-2 = MaterialIcons:size=15;4
+
+modules-left = i3
+modules-center = clickdate
+#modules-right = cpu memory battery backlight pulseaudio
+modules-right = battery backlight pulseaudio
+
+[module/clickdate]
+type = custom/script
+format-prefix-foreground = ${colors.accent}
+exec = date +'  %a. %d %b. %Y ~ %H:%M:%S'
+tail = false
+interval = 1
+click-left = gsimplecal
+
+
+[module/i3]
+type = internal/i3
+pin-workspaces = true
+index-sort = true
+enable-click = true
+enable-scroll = false
+wrapping-scroll = false
+reverse-scroll = false
+fuzzy-match = true
+format = <label-mode><label-state>
+label-mode-padding = 2
+label-focused = %index%  %icon%
+label-focused-padding = 2
+label-unfocused = %index%  %icon%
+label-unfocused-padding = 2
+label-visible = %index%  %icon%
+label-visible-padding = 2
+label-urgent = %index%  %icon%
+
+label-focused-foreground = #35ad04
+label-focused-underline = #35ad04
+
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;file
+ws-icon-5 = 6;
+ws-icon-6 = 7;
+ws-icon-7 = 8;
+ws-icon-8 = 9;
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:30:...%
+
+[module/date]
+type = internal/date
+date = %d %B %Y,  %{F#D8DEE9}%H:%M:%S
+
+[module/pulseaudio]
+type = internal/pulseaudio
+use-ui-max = true
+interval = 5
+format-volume = <ramp-volume> <label-volume>
+label-muted =  
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+click-right = pavucontrol
+
+[module/battery]
+type = internal/battery
+full-at = 95
+
+; Use the following command to list batteries and adapters:
+; $ ls -1 /sys/class/power_supply/
+battery = BAT0
+adapter = AC
+poll-interval = 20
+
+format-charging = <animation-charging> <label-charging>
+label-charging = %percentage%%
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-framerate = 2000
+
+format-discharging = <animation-discharging> <label-discharging>
+label-discharging = %percentage%%
+animation-discharging-0 = 
+animation-discharging-1 = 
+animation-discharging-2 = 
+animation-discharging-3 = 
+animation-discharging-4 = 
+animation-discharging-framerate = 2000
+
+label-full =  100%
+
+[module/backlight]
+type = internal/xbacklight
+output = eDP1
+
+format = <ramp> <label>
+label = %percentage%%
+
+ramp-0 = 🌕
+ramp-1 = 🌔
+ramp-2 = 🌓
+ramp-3 = 🌒
+ramp-4 = 🌑
+
+bar-width = 10
+bar-indicator = |
+bar-fill = ─
+bar-empty = ─
+
+[settings]
+screenchange-reload = true
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
