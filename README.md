@@ -51,6 +51,7 @@ ln -s ~/bootsrap-poste/tmux/.tmux.conf ~/.tmux.conf
 ### Installation
 
 ```shell
+rm -f ~/.gitconfig
 git config --global user.name "User name"
 git config --global user.email "email"
 
