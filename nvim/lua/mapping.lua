@@ -16,13 +16,22 @@ local function nnoremap(lhs, rhs)
     )
 end
 
+local function vnoremap(lhs, rhs)
+    vim.api.nvim_set_keymap(
+            "v",
+            lhs,
+            rhs,
+            { noremap = true }
+    )
+end
+
 -- Escape
-inoremap("jk", "<Esc>")
+inoremap("jj", "<Esc>")
+vnoremap("jj", "<Esc>")
 
 -- Save and exit
-inoremap("jj", "<Esc>:x<CR>")
-nnoremap("jj", ":x<CR>")
+nnoremap("ss", ":x<CR>")
 
 -- Exit without change
-inoremap("kk", "<Esc>:q!<CR>")
-nnoremap("kk", ":q!<CR>")
+inoremap("qq", "<Esc>:q!<CR>")
+nnoremap("qq", ":q!<CR>")
