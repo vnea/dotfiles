@@ -15,6 +15,7 @@ git clone https://github.com/vnea/bootsrap-poste.git ~
 ### Prerequisite
 
 * [Neovim](https://neovim.io/) >= v0.5
+* [packer.nvim](https://github.com/wbthomason/packer.nvim)
 
 ### Installation
 
