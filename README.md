@@ -22,3 +22,17 @@ ln -s ~/bootsrap-poste/nvim ~/.config/nvim
 ```shell
 ln -s ~/bootsrap-poste/tmux/.tmux.conf ~/.tmux.conf
 ```
+
+# Git
+
+```shell
+git config --global user.name "User name"
+git config --global user.email "email"
+
+cat <<EOT >> ~/.gitconfig
+
+[include]
+    path = bootsrap-poste/git/.gitconfig
+
+EOT
+```
