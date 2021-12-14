@@ -16,3 +16,9 @@ git clone https://github.com/vnea/bootsrap-poste.git ~
 rm -rf ~/.config/nvim
 ln -s ~/bootsrap-poste/nvim ~/.config/nvim
 ```
+
+# tmux
+
+```shell
+ln -s ~/bootsrap-poste/tmux/.tmux.conf ~/.tmux.conf
+```
