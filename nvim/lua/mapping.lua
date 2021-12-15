@@ -1,9 +1,14 @@
+local map_options = {
+    noremap = true,
+    silent = true,
+}
+
 local function inoremap(lhs, rhs)
     vim.api.nvim_set_keymap(
             "i",
             lhs,
             rhs,
-            { noremap = true }
+            map_options
     )
 end
 
@@ -12,7 +17,7 @@ local function nnoremap(lhs, rhs)
             "n",
             lhs,
             rhs,
-            { noremap = true }
+            map_options
     )
 end
 
@@ -21,7 +26,7 @@ local function vnoremap(lhs, rhs)
             "v",
             lhs,
             rhs,
-            { noremap = true }
+            map_options
     )
 end
 
@@ -35,3 +40,13 @@ nnoremap("ss", ":x<CR>")
 -- Exit without change
 inoremap("qq", "<Esc>:q!<CR>")
 nnoremap("qq", ":q!<CR>")
+
+-- Resize window
+nnoremap("<C-S-A-Left>", ":vertical resize -5<CR>")
+nnoremap("<C-S-A-Right>", ":vertical resize +5<CR>")
+nnoremap("<C-S-A-Up>", ":resize -5<CR>")
+nnoremap("<C-S-A-Down>", ":resize +5<CR>")
+
+-- Split window
+nnoremap("<A-v>", ":vertical split<CR>")
+nnoremap("<A-h>", ":split<CR>")
