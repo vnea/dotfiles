@@ -1,3 +1,3 @@
 require("plugin")
 require("editor")
-require("mapping")
+require("mapping.init")
