@@ -12,4 +12,7 @@ return require("packer").startup(function()
 
     use { "junegunn/fzf", dir = "~/.fzf", run = "./install --all" }
     use { "junegunn/fzf.vim" }
+
+    use { "lambdalisue/fern.vim" }
+    use { "antoinemadec/FixCursorHold.nvim" }
 end)
