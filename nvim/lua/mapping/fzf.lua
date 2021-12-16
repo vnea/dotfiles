@@ -1,4 +1,4 @@
 local mapping = require("mapping.module")
 
--- fzf
+-- Open file
 mapping.nnoremap("<C-n>", ":Files<CR>")
