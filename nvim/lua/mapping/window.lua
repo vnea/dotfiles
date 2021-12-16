@@ -15,3 +15,9 @@ mapping.nnoremap("<C-S-A-Left>", "<C-W><S-H>")
 mapping.nnoremap("<C-S-A-Right>", "<C-W><S-L>")
 mapping.nnoremap("<C-S-A-Up>", "<C-W><S-k>")
 mapping.nnoremap("<C-S-A-Down>", "<C-W><S-J>")
+
+-- Move
+mapping.nnoremap("<A-Left>", "<C-W><Left>")
+mapping.nnoremap("<A-Right>", "<C-W><Right>")
+mapping.nnoremap("<A-Up>", "<C-W><Up>")
+mapping.nnoremap("<A-Down>", "<C-W><Down>")
