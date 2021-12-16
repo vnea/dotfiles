@@ -53,5 +53,11 @@ nnoremap("<C-S-Down>", ":resize +5<CR>")
 nnoremap("<A-v>", ":vertical split<CR>")
 nnoremap("<A-h>", ":split<CR>")
 
+-- Swap window
+nnoremap("<C-S-A-Left>", "<C-W><S-H>")
+nnoremap("<C-S-A-Right>", "<C-W><S-L>")
+nnoremap("<C-S-A-Up>", "<C-W><S-k>")
+nnoremap("<C-S-A-Down>", "<C-W><S-J>")
+
 -- fzf
 nnoremap("<C-n>", ":Files<CR>")
