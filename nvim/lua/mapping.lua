@@ -44,10 +44,10 @@ inoremap("qq", "<Esc>:q!<CR>")
 nnoremap("qq", ":q!<CR>")
 
 -- Resize window
-nnoremap("<C-S-A-Left>", ":vertical resize -5<CR>")
-nnoremap("<C-S-A-Right>", ":vertical resize +5<CR>")
-nnoremap("<C-S-A-Up>", ":resize -5<CR>")
-nnoremap("<C-S-A-Down>", ":resize +5<CR>")
+nnoremap("<C-S-Left>", ":vertical resize -5<CR>")
+nnoremap("<C-S-Right>", ":vertical resize +5<CR>")
+nnoremap("<C-S-Up>", ":resize -5<CR>")
+nnoremap("<C-S-Down>", ":resize +5<CR>")
 
 -- Split window
 nnoremap("<A-v>", ":vertical split<CR>")
