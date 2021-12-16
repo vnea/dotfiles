@@ -35,7 +35,9 @@ inoremap("jj", "<Esc>")
 vnoremap("jj", "<Esc>")
 
 -- Save and exit
-nnoremap("ss", ":x<CR>")
+nnoremap("ZZ", ":x<CR>")
+inoremap("ZZ", "<Esc>:x<CR>")
+vnoremap("ZZ", "<Esc>:x<CR>")
 
 -- Exit without change
 inoremap("qq", "<Esc>:q!<CR>")
