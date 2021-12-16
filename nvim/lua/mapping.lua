@@ -50,3 +50,6 @@ nnoremap("<C-S-A-Down>", ":resize +5<CR>")
 -- Split window
 nnoremap("<A-v>", ":vertical split<CR>")
 nnoremap("<A-h>", ":split<CR>")
+
+-- fzf
+nnoremap("<C-n>", ":Files<CR>")
