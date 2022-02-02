@@ -54,7 +54,6 @@ set $ws1 "1:"
 set $ws2 "2:"
 set $ws3 "3:"
 set $ws4 "4:"
-#set $ws4 "4:🐺"
 set $ws5 "5:file"
 set $ws6 "6:"
 set $ws7 "7:"
@@ -62,10 +61,9 @@ set $ws8 "8:"
 set $ws9 "9:"
 
 set $open_chrome exec "if [ $(wmctrl -lx | cut -d' ' -f4 | grep -c google-chrome) -eq 0 ]; then google-chrome; else i3-msg workspace 1:; fi"
-set $open_idea exec "if [ $(wmctrl -lx | cut -d' ' -f4 | grep -c idea) -eq 0 ]; then ~/.local/share/JetBrains/Toolbox/apps/IDEA-U/ch-0/$(ls -altr ~/.local/share/JetBrains/Toolbox/apps/IDEA-U/ch-0/ | awk '{print $9}' | grep -E '^[[:digit:]]+\.[[:digit:]]+\.[[:digit:]]+$' | tail -n 1)/bin/idea.sh; else i3-msg workspace 2:; fi"
+set $open_idea exec "if [ $(wmctrl -lx | cut -d' ' -f4 | grep -c idea) -eq 0 ]; then /snap/bin/intellij-idea-ultimate; else i3-msg workspace 2:; fi"
 set $open_term exec "if [ $(wmctrl -lx | cut -d' ' -f4 | grep -c terminator) -eq 0 ]; then terminator; else i3-msg workspace 3:; fi"
 set $open_slack exec "if [ $(wmctrl -lx | cut -d' ' -f4 | grep -c slack) -eq 0 ]; then slack; else i3-msg workspace 4:; fi"
-#set $open_rambox exec "if [ $(wmctrl -lx | cut -d' ' -f4 | grep -c rambox) -eq 0 ]; then rambox; else i3-msg workspace 4:🐺; fi"
 set $open_file exec "nemo ~/Bureau"
 set $open_subl exec "if [ $(wmctrl -lx | cut -d' ' -f4 | grep -c sublime_text) -eq 0 ]; then subl; else i3-msg workspace 6:; fi"
 set $open_code exec "if [ $(wmctrl -lx | cut -d' ' -f4 | grep -c code) -eq 0 ]; then code; else i3-msg workspace 7:; fi"
@@ -87,7 +85,6 @@ bindsym $mod+Mod2+KP_1 $open_chrome
 bindsym $mod+Mod2+KP_2 $open_idea
 bindsym $mod+Mod2+KP_3 $open_term
 bindsym $mod+Mod2+KP_4 $open_slack
-#bindsym $mod+Mod2+KP_4 $open_rambox
 bindsym $mod+Mod2+KP_5 $open_file
 bindsym $mod+Mod2+KP_6 $open_subl
 bindsym $mod+Mod2+KP_7 $open_code
@@ -98,7 +95,6 @@ bindcode $mod+87 $open_chrome
 bindcode $mod+88 $open_idea
 bindcode $mod+89 $open_term
 bindcode $mod+83 $open_slack
-#bindcode $mod+83 $open_rambox
 bindcode $mod+84 $open_file
 bindcode $mod+85 $open_subl
 bindcode $mod+79 $open_code
@@ -184,8 +180,7 @@ exec --no-startup-id xss-lock -- ~/.config/i3/scripts/screen_lock.sh
 # Tabbed layout
 workspace_layout tabbed
 
-# Application to start at loggin
-exec --no-startup-id ~/.local/share/JetBrains/Toolbox/bin/jetbrains-toolbox --minimize
+# Applications to start at loggin
 exec --no-startup-id nm-applet
 exec_always --no-startup-id xset r rate 150 40
 exec_always --no-startup-id numlockx on
