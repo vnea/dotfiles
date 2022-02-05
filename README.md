@@ -86,5 +86,5 @@ ln -sf ~/bootsrap-poste/i3 ~/.config/i3
 
 ```shell
 rm -rf ~/.config/rofi
-ln -sf ~/bootsrap-poste/rofi ~/.config/rofi
+stow rofi
 ```
