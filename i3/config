@@ -190,6 +190,7 @@ exec --no-startup-id feh --bg-scale ~/.config/i3/images/blackscreen.jpg
 
 # Window customization
 for_window [class=".*"] border pixel 0
+for_window [title="Votre écran est partagé par le biais de l'application meet.google.com."] move to scratchpad
 
 # Assign window to workspace
 assign [class="Google-chrome"] $ws1
