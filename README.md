@@ -2,6 +2,13 @@
 
 ## 0. Getting started
 
+### Prerequisite
+
+* [git](https://git-scm.com/)
+* [GNU stow](https://www.gnu.org/software/stow/)
+
+### Installation
+
 ```shell
 # Via SSH
 git clone git@github.com:vnea/bootsrap-poste.git ~
@@ -35,8 +42,7 @@ ln -s ~/bootsrap-poste/nvim ~/.config/nvim
 Create symbolic link:
 
 ```shell
-rm -rf ~/.tmux.conf ~/config/tmux
-stow tmux
+rm -rf ~/.tmux.conf ~/config/tmux && stow tmux
 ```
 
 Install tmux plugins:
@@ -52,7 +58,7 @@ tmux
 ### Prerequisite
 
 * [git](https://git-scm.com/)
-* ansible-vault-merge:
+* (optional) ansible-vault-merge:
     * Download [here](https://raw.githubusercontent.com/building5/ansible-vault-tools/master/ansible-vault-merge.sh)
       with name `ansible-vault-merge`
     * ```chmod +x ansible-vault-merge```
@@ -84,9 +90,10 @@ EOT
 
 ### Installation
 
+Create symbolic link:
+
 ```shell
-rm -rf ~/.config/i3
-stow i3
+rm -rf ~/.config/i3 && stow i3
 ```
 
 ## 5. rofi
@@ -97,7 +104,8 @@ stow i3
 
 ### Installation
 
+Create symbolic link:
+
 ```shell
-rm -rf ~/.config/rofi
-stow rofi
+rm -rf ~/.config/rofi && stow rofi
 ```
