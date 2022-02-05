@@ -66,20 +66,23 @@ EOT
 ## 4. i3
 
 ### Prerequisite
+
 * [i3wm](https://i3wm.org/)
-* [i3lock-fancy-rapid](https://github.com/yvbbrjdr/i3lock-fancy-rapid): build it locally in `~/bootsrap-poste/i3/build/i3lock-fancy-rapid`
+* [i3lock-fancy-rapid](https://github.com/yvbbrjdr/i3lock-fancy-rapid): build it locally
+  in `~/bootsrap-poste/i3/build/i3lock-fancy-rapid`
 * [polybar](https://github.com/polybar/polybar): build it locally in `~/bootsrap-poste/i3/build/polybar`
 
 ### Installation
 
 ```shell
 rm -rf ~/.config/i3
-ln -sf ~/bootsrap-poste/i3 ~/.config/i3
+stow i3
 ```
 
 ## 5. rofi
 
 ### Prerequisite
+
 * [rofi](https://github.com/davatorium/rofi)
 
 ### Installation
