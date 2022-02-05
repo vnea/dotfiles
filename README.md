@@ -32,9 +32,19 @@ ln -s ~/bootsrap-poste/nvim ~/.config/nvim
 
 ### Installation
 
+Create symbolic link:
+
 ```shell
-rm -f ~/.tmux.conf
-ln -s ~/bootsrap-poste/tmux/.tmux.conf ~/.tmux.conf
+rm -rf ~/.tmux.conf ~/config/tmux
+stow tmux
+```
+
+Install tmux plugins:
+
+```shell
+git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
+tmux
+# Press "CTRL-Q then I", wait for installation and restart tmux
 ```
 
 ## 3. Git
