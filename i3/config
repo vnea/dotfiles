@@ -204,8 +204,8 @@ assign [class="Firefox"] $ws8
 assign [class="Gimp"] $ws9
 
 # Screenshot
-bindsym $mod+p exec /usr/bin/gnome-screenshot -i
-bindsym --release $mod+Shift+p exec /usr/bin/gnome-screenshot -a
+bindsym $mod+p exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
+bindsym $mod+Shift+p exec --no-startup-id maim | xclip -selection clipboard -t image/png
 
 # Greenclip
 bindsym $mod+Shift+v exec rofi -modi "clipboard:/usr/bin/greenclip print" -show clipboard -run-command '{cmd}'
