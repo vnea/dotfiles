@@ -76,3 +76,15 @@ EOT
 rm -rf ~/.config/i3
 ln -sf ~/bootsrap-poste/i3 ~/.config/i3
 ```
+
+## 5. rofi
+
+### Prerequisite
+* [rofi](https://github.com/davatorium/rofi)
+
+### Installation
+
+```shell
+rm -rf ~/.config/rofi
+ln -sf ~/bootsrap-poste/rofi ~/.config/rofi
+```
