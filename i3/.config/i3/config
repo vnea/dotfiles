@@ -60,7 +60,7 @@ set $ws7 "7:"
 set $ws8 "8:"
 set $ws9 "9:"
 
-set $open_chrome exec "if [ $(wmctrl -lx | cut -d' ' -f4 | grep -c google-chrome) -eq 0 ]; then google-chrome; else i3-msg workspace 1:; fi"
+set $open_chrome exec "if [ $(wmctrl -lx | cut -d' ' -f4 | grep -c google-chrome) -eq 0 ]; then google-chrome --password-store=gnome; else i3-msg workspace 1:; fi"
 set $open_idea exec "if [ $(wmctrl -lx | cut -d' ' -f4 | grep -c idea) -eq 0 ]; then /snap/bin/intellij-idea-ultimate; else i3-msg workspace 2:; fi"
 set $open_term exec "if [ $(wmctrl -lx | cut -d' ' -f4 | grep -c terminator) -eq 0 ]; then terminator; else i3-msg workspace 3:; fi"
 set $open_slack exec "if [ $(wmctrl -lx | cut -d' ' -f4 | grep -c slack) -eq 0 ]; then slack; else i3-msg workspace 4:; fi"
