@@ -58,6 +58,7 @@ tmux
 ### Prerequisite
 
 * [git](https://git-scm.com/)
+* [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy)
 * (optional) ansible-vault-merge:
     * Download [here](https://raw.githubusercontent.com/building5/ansible-vault-tools/master/ansible-vault-merge.sh)
       with name `ansible-vault-merge`
