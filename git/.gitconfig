@@ -9,6 +9,7 @@
     st = status
     up = pull --rebase --prune
     cb = checkout -b
+    rename = branch -m
 
     # graphical representation for all refs
     lga = !git lg --graph --all
