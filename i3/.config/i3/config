@@ -208,5 +208,5 @@ bindsym $mod+p exec --no-startup-id flameshot gui
 bindsym $mod+Shift+p exec --no-startup-id flameshot full --clipboard
 
 # Greenclip
-bindsym $mod+Shift+v exec rofi -modi "clipboard:/usr/bin/greenclip print" -show clipboard -run-command '{cmd}'
+bindsym $mod+v exec --no-startup-id rofi -modi "clipboard:/usr/bin/greenclip print" -show clipboard -run-command '{cmd}'
 bindsym $mod+CTRL+Shift+v exec pkill greenclip && greenclip clear && greenclip daemon &
