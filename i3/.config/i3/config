@@ -205,7 +205,6 @@ assign [class="Gimp"] $ws9
 
 # Screenshot
 bindsym $mod+p exec --no-startup-id flameshot gui
-bindsym $mod+Shift+p exec --no-startup-id flameshot full --clipboard
 
 # Greenclip
 bindsym $mod+v exec --no-startup-id rofi -modi "clipboard:/usr/bin/greenclip print" -show clipboard -run-command '{cmd}'
