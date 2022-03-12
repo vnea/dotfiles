@@ -210,5 +210,6 @@ bindsym $mod+Shift+p exec --no-startup-id flameshot gui
 bindsym $mod+v exec --no-startup-id rofi -modi "clipboard:/usr/bin/greenclip print" -show clipboard -run-command '{cmd}'
 bindsym $mod+CTRL+Shift+v exec pkill greenclip && greenclip clear && greenclip daemon &
 
-# Custom script
+# Custom scripts
 bindsym $mod+Shift+v exec --no-startup-id ~/workspace/erpc/ask.sh
+bindsym $mod+p exec --no-startup-id ~/workspace/erpc/pb.sh
