@@ -88,6 +88,7 @@ EOT
 * [i3lock-fancy-rapid](https://github.com/yvbbrjdr/i3lock-fancy-rapid): build it locally
   in `~/bootsrap-poste/i3/build/i3lock-fancy-rapid`
 * [polybar](https://github.com/polybar/polybar): build it locally in `~/bootsrap-poste/i3/build/polybar`
+* [feh](https://feh.finalrewind.org/)
 
 ### Installation
 
