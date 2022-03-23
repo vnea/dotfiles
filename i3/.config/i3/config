@@ -214,3 +214,7 @@ bindsym $mod+CTRL+Shift+v exec pkill greenclip && greenclip clear && greenclip d
 # Custom scripts
 bindsym $mod+Shift+v exec --no-startup-id ~/workspace/erpc/ask.sh
 bindsym $mod+p exec --no-startup-id ~/workspace/erpc/pb.sh
+
+# gaps
+smart_gaps on
+gaps inner 15
