@@ -38,7 +38,8 @@ bindsym $mod+Shift+Right move right
 # Fullscreen
 bindsym $mod+f fullscreen toggle
 
-# Change container layout (stacked, tabbed, toggle split)
+# Layout
+workspace_layout default
 bindsym $mod+s layout stacking
 bindsym $mod+z layout tabbed
 bindsym $mod+e layout toggle split
@@ -177,9 +178,6 @@ focus_on_window_activation focus
 bindsym $mod+l exec ~/.config/i3/scripts/screen_lock.sh
 exec --no-startup-id xss-lock -- ~/.config/i3/scripts/screen_lock.sh
 
-# Tabbed layout
-workspace_layout tabbed
-
 # Applications to start at loggin
 exec --no-startup-id nm-applet
 exec_always --no-startup-id xset r rate 150 40
@@ -197,7 +195,6 @@ assign [class="Google-chrome"] $ws1
 assign [class="jetbrains-idea"] $ws2
 assign [class="Terminator"] $ws3
 assign [class="Slack"] $ws4
-#assign [class="Rambox"] $ws4
 assign [class="Sublime_text"] $ws6
 assign [class="Code"] $ws7
 assign [class="Firefox"] $ws8
