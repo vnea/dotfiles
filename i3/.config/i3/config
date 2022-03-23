@@ -190,7 +190,6 @@ exec_always --no-startup-id greenclip daemon
 exec_always --no-startup-id feh --bg-scale ~/.config/i3/images/blackscreen.jpg
 
 # Window customization
-for_window [class=".*"] border pixel 0
 for_window [title="Votre écran est partagé par le biais de l'application meet.google.com."] move to scratchpad
 
 # Assign window to workspace
@@ -216,5 +215,11 @@ bindsym $mod+Shift+v exec --no-startup-id ~/workspace/erpc/ask.sh
 bindsym $mod+p exec --no-startup-id ~/workspace/erpc/pb.sh
 
 # gaps
-smart_gaps on
+smart_gaps on # Only enable gaps when more than one window
 gaps inner 15
+
+# borders
+smart_borders on # Only enable borders when more than one window
+for_window [class=".*"] border pixel 5
+# class        border  backgr. text    indicator child_border
+client.focused #555555 #555555 #ffffff #2e9ef4   #e36a24
