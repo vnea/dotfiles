@@ -217,6 +217,6 @@ gaps inner 15
 
 # borders
 smart_borders on # Only enable borders when more than one window
-for_window [class=".*"] border pixel 5
+for_window [class=".*"] border pixel 3
 # class        border  backgr. text    indicator child_border
 client.focused #555555 #555555 #ffffff #2e9ef4   #e36a24
