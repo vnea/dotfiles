@@ -85,8 +85,7 @@ EOT
 ### Prerequisite
 
 * [i3wm](https://i3wm.org/)
-* [i3lock-fancy-rapid](https://github.com/yvbbrjdr/i3lock-fancy-rapid): build it locally
-  in `~/bootsrap-poste/i3/build/i3lock-fancy-rapid`
+* [i3lock-color](https://github.com/Raymo111/i3lock-color): build it locally in `~/bootsrap-poste/i3/build/i3lock-color`
 * [polybar](https://github.com/polybar/polybar): build it locally in `~/bootsrap-poste/i3/build/polybar`
 * [feh](https://feh.finalrewind.org/)
 
