@@ -68,7 +68,7 @@ set $open_slack exec "if [ $(wmctrl -lx | cut -d' ' -f4 | grep -c slack) -eq 0 ]
 set $open_file exec "nemo ~/Bureau"
 set $open_subl exec "if [ $(wmctrl -lx | cut -d' ' -f4 | grep -c sublime_text) -eq 0 ]; then subl; else i3-msg workspace 6:; fi"
 set $open_code exec "if [ $(wmctrl -lx | cut -d' ' -f4 | grep -c code) -eq 0 ]; then code; else i3-msg workspace 7:; fi"
-set $open_firefox exec "if [ $(wmctrl -lx | cut -d' ' -f4 | grep -c Firefox) -eq 0 ]; then firefox; else i3-msg workspace 8:; fi"
+set $open_firefox exec "if [ $(wmctrl -lx | cut -d' ' -f4 | grep -c firefox) -eq 0 ]; then firefox; else i3-msg workspace 8:; fi"
 set $open_gimp exec "if [ $(wmctrl -lx | cut -d' ' -f4 | grep -c gimp) -eq 0 ]; then gimp; else i3-msg workspace 9:; fi"
 
 # Switch to workspace
@@ -197,7 +197,7 @@ assign [class="Terminator"] $ws3
 assign [class="Slack"] $ws4
 assign [class="Sublime_text"] $ws6
 assign [class="Code"] $ws7
-assign [class="Firefox"] $ws8
+assign [class="firefox"] $ws8
 assign [class="Gimp"] $ws9
 
 # Screenshot
