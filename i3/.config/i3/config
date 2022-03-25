@@ -39,7 +39,7 @@ bindsym $mod+Shift+Right move right
 bindsym $mod+f fullscreen toggle
 
 # Layout
-workspace_layout default
+workspace_layout tabbed
 bindsym $mod+s layout stacking
 bindsym $mod+z layout tabbed
 bindsym $mod+e layout toggle split
