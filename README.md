@@ -4,8 +4,8 @@
 
 ### Prerequisite
 
-* [git](https://git-scm.com/)
-* [GNU stow](https://www.gnu.org/software/stow/)
+* [git](https://git-scm.com)
+* [GNU stow](https://www.gnu.org/software/stow)
 
 ### Installation
 
@@ -21,7 +21,7 @@ git clone https://github.com/vnea/bootsrap-poste.git ~
 
 ### Prerequisite
 
-* [Neovim](https://neovim.io/) >= v0.5
+* [Neovim](https://neovim.io) >= v0.5
 * [packer.nvim](https://github.com/wbthomason/packer.nvim)
 
 ### Installation
@@ -57,7 +57,7 @@ tmux
 
 ### Prerequisite
 
-* [git](https://git-scm.com/)
+* [git](https://git-scm.com)
 * [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy)
 * (optional) ansible-vault-merge:
     * Download [here](https://raw.githubusercontent.com/building5/ansible-vault-tools/master/ansible-vault-merge.sh)
@@ -84,10 +84,10 @@ EOT
 
 ### Prerequisite
 
-* [i3wm](https://i3wm.org/)
+* [i3wm](https://i3wm.org)
 * [i3lock-color](https://github.com/Raymo111/i3lock-color): build it locally in `~/bootsrap-poste/i3/build/i3lock-color`
 * [polybar](https://github.com/polybar/polybar): build it locally in `~/bootsrap-poste/i3/build/polybar`
-* [feh](https://feh.finalrewind.org/)
+* [feh](https://feh.finalrewind.org)
 
 ### Installation
 
