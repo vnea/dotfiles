@@ -11,10 +11,10 @@
 
 ```shell
 # Via SSH
-git clone git@github.com:vnea/bootsrap-poste.git ~
+git clone git@github.com:vnea/bootsrap-poste.git ~/bootsrap-poste
 
 # Or via HTTP
-git clone https://github.com/vnea/bootsrap-poste.git ~
+git clone https://github.com/vnea/bootsrap-poste.git ~/bootsrap-poste
 ```
 
 ## 1. Neovim
