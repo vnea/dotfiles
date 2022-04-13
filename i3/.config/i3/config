@@ -210,6 +210,7 @@ bindsym $mod+CTRL+Shift+v exec pkill greenclip && greenclip clear && greenclip d
 # Custom scripts
 bindsym $mod+Shift+v exec --no-startup-id ~/workspace/erpc/ask.sh
 bindsym $mod+p exec --no-startup-id ~/workspace/erpc/pb.sh
+bindsym $mod+Shift+b exec --no-startup-id ~/.config/i3/scripts/editor_everywhere.sh
 
 # gaps
 smart_gaps on # Only enable gaps when more than one window
