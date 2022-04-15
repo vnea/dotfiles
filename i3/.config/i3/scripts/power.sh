@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 choice=$(echo "Logout\nReboot\nShutdown\nCancel" | rofi -dmenu -p "What do you want to do")
 

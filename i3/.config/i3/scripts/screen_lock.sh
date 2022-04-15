@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 # Source: https://github.com/Raymo111/i3lock-color/blob/master/examples/lock.sh
 

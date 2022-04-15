@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 if [ $(wmctrl -l | grep "/tmp" --count) -gt 0 ]
 then
