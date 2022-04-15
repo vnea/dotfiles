@@ -65,7 +65,7 @@ set $open_chrome exec "if [ $(wmctrl -lx | cut -d' ' -f4 | grep -c google-chrome
 set $open_idea exec "if [ $(wmctrl -lx | cut -d' ' -f4 | grep -c idea) -eq 0 ]; then /snap/bin/intellij-idea-ultimate; else i3-msg workspace 2:; fi"
 set $open_term exec "if [ $(wmctrl -lx | cut -d' ' -f4 | grep -c terminator) -eq 0 ]; then terminator; else i3-msg workspace 3:; fi"
 set $open_slack exec "if [ $(wmctrl -lx | cut -d' ' -f4 | grep -c slack) -eq 0 ]; then slack; else i3-msg workspace 4:; fi"
-set $open_file exec "nemo ~/Bureau"
+set $open_file exec ~/.config/i3/scripts/open_file_explorer.sh
 set $open_subl exec "if [ $(wmctrl -lx | cut -d' ' -f4 | grep -c sublime_text) -eq 0 ]; then subl; else i3-msg workspace 6:; fi"
 set $open_code exec "if [ $(wmctrl -lx | cut -d' ' -f4 | grep -c code) -eq 0 ]; then code; else i3-msg workspace 7:; fi"
 set $open_firefox exec "if [ $(wmctrl -lx | cut -d' ' -f4 | grep -c firefox) -eq 0 ]; then firefox; else i3-msg workspace 8:; fi"
