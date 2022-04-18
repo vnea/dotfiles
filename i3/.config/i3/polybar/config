@@ -114,23 +114,17 @@ animation-discharging-framerate = 2000
 
 label-full =  100%
 
+# Source: https://www.reddit.com/r/archlinux/comments/6wxzxl/using_light_for_polybar_backlight_module/
 [module/backlight]
-type = internal/xbacklight
-output = eDP1
+type = custom/script
+interval = 0.2
+exec = ~/.config/i3/polybar/blacklight.sh
 
-format = <ramp> <label>
-label = %percentage%%
+scroll-up = exec light -A 5
+scroll-down = exec light -U 5
 
-ramp-0 = 🌕
-ramp-1 = 🌔
-ramp-2 = 🌓
-ramp-3 = 🌒
-ramp-4 = 🌑
-
-bar-width = 10
-bar-indicator = |
-bar-fill = ─
-bar-empty = ─
+format-prefix = " "
+format-suffix = "%"
 
 [settings]
 screenchange-reload = true
