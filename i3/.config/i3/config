@@ -180,6 +180,7 @@ exec --no-startup-id xss-lock -- ~/.config/i3/scripts/screen_lock.sh
 
 # Applications to start at loggin
 exec --no-startup-id nm-applet
+exec_always --no-startup-id compton
 exec_always --no-startup-id xset r rate 150 40
 exec_always --no-startup-id numlockx on
 exec_always --no-startup-id setxkbmap fr
