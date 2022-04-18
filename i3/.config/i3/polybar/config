@@ -118,7 +118,7 @@ label-full =  100%
 [module/backlight]
 type = custom/script
 interval = 0.2
-exec = ~/.config/i3/polybar/blacklight.sh
+exec = ~/.config/i3/polybar/scripts/blacklight.sh
 
 scroll-up = exec light -A 5
 scroll-down = exec light -U 5
