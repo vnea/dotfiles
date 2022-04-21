@@ -28,7 +28,4 @@ i3lock \
 --keyhl-color=$WRONG         \
 --bshl-color=$WRONG          \
 \
---blur 10                    \
---clock                      \
---time-str="%H:%M:%S"        \
---date-str="%A %d %B"
+--blur 10
