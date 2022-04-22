@@ -21,7 +21,7 @@ bindsym $mod+CTRL+Shift+a [class=".*"] kill
 bindsym $mod+Return exec --no-startup-id rofi -show drun
 
 # Open window
-bindsym $mod+Shift+Return exec rofi -show window
+bindsym $mod+Shift+Return exec --no-startup-id rofi -show window
 
 # Change focus
 bindsym $mod+Left focus left

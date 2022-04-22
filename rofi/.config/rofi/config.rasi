@@ -10,7 +10,7 @@ configuration {
 /* yoffset: 0;*/
 /* xoffset: 0;*/
 /* fixed-num-lines: true;*/
-/* show-icons: false;*/
+   show-icons: true;
 /* terminal: "rofi-sensible-terminal";*/
 /* ssh-client: "ssh";*/
 /* ssh-command: "{terminal} -e {ssh-client} {host} [-p {port}]";*/
@@ -19,10 +19,10 @@ configuration {
 /* run-shell-command: "{terminal} -e {cmd}";*/
 /* window-command: "wmctrl -i -R {window}";*/
 /* window-match-fields: "all";*/
-/* icon-theme: ;*/
+   icon-theme: "Papirus";
 /* drun-match-fields: "name,generic,exec,categories";*/
 /* drun-show-actions: false;*/
-/* drun-display-format: "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";*/
+   drun-display-format: "{icon} {name}";
 /* disable-history: false;*/
 /* ignored-prefixes: "";*/
 /* sort: false;*/
@@ -58,16 +58,16 @@ configuration {
 /* color-urgent: ;*/
 /* color-active: ;*/
 /* color-window: ;*/
-  max-history-size: 30;
+   max-history-size: 30;
 /* combi-hide-mode-prefix: false;*/
 /* matching-negate-char: '-' /* unsupported */;*/
 /* cache-dir: ;*/
 /* pid: "/run/user/1000/rofi.pid";*/
-/* display-window: ;*/
+   display-window: "Windows";
 /* display-windowcd: ;*/
 /* display-run: ;*/
 /* display-ssh: ;*/
-/* display-drun: ;*/
+   display-drun: "Applications";
 /* display-combi: ;*/
 /* display-keys: ;*/
 /* kb-primary-paste: "Control+V,Shift+Insert";*/
