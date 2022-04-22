@@ -17,8 +17,8 @@ bindsym --release Mod2+button2 kill
 # Kill all windows on all workspaces
 bindsym $mod+CTRL+Shift+a [class=".*"] kill
 
-# Start dmenu
-bindsym $mod+Return exec --no-startup-id i3-dmenu-desktop -dmenu="dmenu -i -fn 'Ubuntu:pixelsize=30'"
+# Open application launcher
+bindsym $mod+Return exec --no-startup-id rofi -show drun
 
 # Open window
 bindsym $mod+Shift+Return exec rofi -show window
