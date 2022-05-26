@@ -10,6 +10,7 @@ locale = fr_FR.UTF-8
 tray-position = right
 tray-maxsize = 22
 line-size = 3
+enable-ipc = true
 
 padding-left = 0
 padding-right = 3

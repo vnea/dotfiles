@@ -70,6 +70,7 @@ set $open_subl exec "if [ $(wmctrl -lx | cut -d' ' -f4 | grep -c sublime_text) -
 set $open_code exec "if [ $(wmctrl -lx | cut -d' ' -f4 | grep -c code) -eq 0 ]; then code; else i3-msg workspace 7:; fi"
 set $open_firefox exec "if [ $(wmctrl -lx | cut -d' ' -f4 | grep -c firefox) -eq 0 ]; then firefox; else i3-msg workspace 8:; fi"
 set $open_gimp exec "if [ $(wmctrl -lx | cut -d' ' -f4 | grep -c gimp) -eq 0 ]; then gimp; else i3-msg workspace 9:; fi"
+set $toggle_polybar exec "polybar-msg cmd toggle"
 
 # Switch to workspace
 bindsym $mod+ampersand workspace $ws1
@@ -91,6 +92,7 @@ bindsym $mod+Mod2+KP_6 $open_subl
 bindsym $mod+Mod2+KP_7 $open_code
 bindsym $mod+Mod2+KP_8 $open_firefox
 bindsym $mod+Mod2+KP_9 $open_gimp
+bindsym $mod+Mod2+KP_0 $toggle_polybar
 
 bindcode $mod+87 $open_chrome
 bindcode $mod+88 $open_idea
@@ -101,6 +103,7 @@ bindcode $mod+85 $open_subl
 bindcode $mod+79 $open_code
 bindcode $mod+80 $open_firefox
 bindcode $mod+81 $open_gimp
+bindcode $mod+90 $toggle_polybar
 
 # Move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
