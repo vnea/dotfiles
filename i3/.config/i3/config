@@ -18,7 +18,7 @@ bindsym --release Mod2+button2 kill
 bindsym $mod+CTRL+Shift+a [class=".*"] kill
 
 # Open application launcher
-bindsym $mod+Return exec --no-startup-id rofi -show drun
+bindsym $mod+Return exec --no-startup-id ~/.config/rofi/bin/launcher_slate
 
 # Open window
 bindsym $mod+Shift+Return exec --no-startup-id rofi -show window

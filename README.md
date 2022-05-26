@@ -102,6 +102,7 @@ rm -rf ~/.config/i3 && stow i3
 ### Prerequisite
 
 * [rofi](https://github.com/davatorium/rofi)
+* [rofi-themes](https://github.com/adi1090x/rofi)
 
 ### Installation
 
