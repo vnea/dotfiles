@@ -61,15 +61,15 @@ set $ws7 "7:"
 set $ws8 "8:"
 set $ws9 "9:"
 
-set $open_chrome exec "if [ $(wmctrl -lx | cut -d' ' -f4 | grep -c google-chrome) -eq 0 ]; then google-chrome --password-store=gnome; else i3-msg workspace 1:; fi"
-set $open_idea exec "if [ $(wmctrl -lx | cut -d' ' -f4 | grep -c idea) -eq 0 ]; then /snap/bin/intellij-idea-ultimate; else i3-msg workspace 2:; fi"
-set $open_term exec "if [ $(wmctrl -lx | cut -d' ' -f4 | grep -c terminator) -eq 0 ]; then terminator; else i3-msg workspace 3:; fi"
-set $open_slack exec "if [ $(wmctrl -lx | cut -d' ' -f4 | grep -c slack) -eq 0 ]; then slack; else i3-msg workspace 4:; fi"
+set $open_chrome exec "pgrep --exact chrome && i3-msg workspace 1: || google-chrome --password-store=gnome"
+set $open_idea exec "pgrep --exact idea.sh && i3-msg workspace 2: || /snap/bin/intellij-idea-ultimate"
+set $open_term exec "pgrep --exact terminator && i3-msg workspace 3: || terminator"
+set $open_slack exec "if [ $(wmctrl -lx | cut -d' ' -f4 | grep --count slack) -eq 0 ]; then slack; else i3-msg workspace 4:; fi"
 set $open_file exec ~/.config/i3/scripts/open_file_explorer.sh
-set $open_subl exec "if [ $(wmctrl -lx | cut -d' ' -f4 | grep -c sublime_text) -eq 0 ]; then subl; else i3-msg workspace 6:; fi"
-set $open_code exec "if [ $(wmctrl -lx | cut -d' ' -f4 | grep -c code) -eq 0 ]; then code; else i3-msg workspace 7:; fi"
-set $open_firefox exec "if [ $(wmctrl -lx | cut -d' ' -f4 | grep -c firefox) -eq 0 ]; then firefox; else i3-msg workspace 8:; fi"
-set $open_gimp exec "if [ $(wmctrl -lx | cut -d' ' -f4 | grep -c gimp) -eq 0 ]; then gimp; else i3-msg workspace 9:; fi"
+set $open_subl exec "pgrep --exact sublime_text && i3-msg workspace 6: || subl"
+set $open_code exec "pgrep --exact code && i3-msg workspace 7: || code"
+set $open_firefox exec "pgrep --exact firefox && i3-msg workspace 8: || firefox"
+set $open_gimp exec "pgrep --exact i3-msg workspace 9: && || gimp"
 set $toggle_polybar exec "polybar-msg cmd toggle"
 
 # Switch to workspace
