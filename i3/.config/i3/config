@@ -213,8 +213,6 @@ bindsym $mod+v exec --no-startup-id rofi -modi "clipboard:/usr/bin/greenclip pri
 bindsym $mod+CTRL+Shift+v exec pkill greenclip && greenclip clear && greenclip daemon &
 
 # Custom scripts
-bindsym $mod+Shift+v exec --no-startup-id ~/workspace/erpc/ask.sh
-bindsym $mod+p exec --no-startup-id ~/workspace/erpc/pb.sh
 bindsym $mod+Shift+b exec --no-startup-id ~/.config/i3/scripts/editor_everywhere.sh
 
 # gaps
