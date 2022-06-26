@@ -7,6 +7,7 @@ then
 fi
 
 tmpfile=$(mktemp)
+source ~/.config/i3/scripts/_intellij.sh
 /snap/bin/intellij-idea-ultimate -e "${tmpfile}"
 
 i=0
