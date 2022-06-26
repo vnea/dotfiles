@@ -67,7 +67,7 @@ set $open_term exec "pgrep --exact terminator && i3-msg workspace 3: || termi
 set $open_slack exec "if [ $(wmctrl -lx | cut -d' ' -f4 | grep --count slack) -eq 0 ]; then slack; else i3-msg workspace 4:; fi"
 set $open_file exec ~/.config/i3/scripts/open_file_explorer.sh
 set $open_subl exec "pgrep --exact sublime_text && i3-msg workspace 6: || subl"
-set $open_firefox exec "pgrep --exact firefox && i3-msg workspace 7: || firefox"
+set $open_firefox exec "pgrep --exact firefox && i3-msg workspace 7: || $HOME/.config/i3/scripts/open_firefox.sh"
 set $open_code exec "pgrep --exact code && i3-msg workspace 8: || code"
 set $open_gimp exec "pgrep --exact i3-msg workspace 9: && || gimp"
 set $toggle_polybar exec "polybar-msg cmd toggle"
