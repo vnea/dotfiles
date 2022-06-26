@@ -8,7 +8,7 @@ fi
 
 tmpfile=$(mktemp)
 source ~/.config/i3/scripts/_intellij.sh
-/snap/bin/intellij-idea-ultimate -e "${tmpfile}"
+open_idea -e "${tmpfile}"
 
 i=0
 while [ $(wmctrl -l | grep "/tmp" --count) -ne 1 ]

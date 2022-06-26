@@ -62,13 +62,13 @@ set $ws8 "8:"
 set $ws9 "9:"
 
 set $open_chrome exec "pgrep --exact chrome && i3-msg workspace 1: || google-chrome --password-store=gnome"
-set $open_idea exec "pgrep --exact idea.sh && i3-msg workspace 2: || ~/.config/i3/scripts/open_intellij_utimate.sh"
+set $open_idea exec "pgrep --exact idea.sh && i3-msg workspace 2: || ~/.config/i3/scripts/open_idea.sh"
 set $open_term exec "pgrep --exact terminator && i3-msg workspace 3: || terminator"
 set $open_slack exec "if [ $(wmctrl -lx | cut -d' ' -f4 | grep --count slack) -eq 0 ]; then slack; else i3-msg workspace 4:; fi"
 set $open_file exec ~/.config/i3/scripts/open_file_explorer.sh
 set $open_subl exec "pgrep --exact sublime_text && i3-msg workspace 6: || subl"
 set $open_firefox exec "pgrep --exact firefox && i3-msg workspace 7: || ~/.config/i3/scripts/open_firefox.sh"
-set $open_code exec "pgrep --exact code && i3-msg workspace 8: || code"
+set $open_rider exec "pgrep --exact rider.sh && i3-msg workspace 8: || ~/.config/i3/scripts/open_rider.sh"
 set $open_gimp exec "pgrep --exact i3-msg workspace 9: && || gimp"
 set $toggle_polybar exec "polybar-msg cmd toggle"
 
@@ -90,7 +90,7 @@ bindsym $mod+Mod2+KP_4 $open_slack
 bindsym $mod+Mod2+KP_5 $open_file
 bindsym $mod+Mod2+KP_6 $open_subl
 bindsym $mod+Mod2+KP_7 $open_firefox
-bindsym $mod+Mod2+KP_8 $open_code
+bindsym $mod+Mod2+KP_8 $open_rider
 bindsym $mod+Mod2+KP_9 $open_gimp
 bindsym $mod+Mod2+KP_0 $toggle_polybar
 
@@ -101,7 +101,7 @@ bindcode $mod+83 $open_slack
 bindcode $mod+84 $open_file
 bindcode $mod+85 $open_subl
 bindcode $mod+79 $open_firefox
-bindcode $mod+80 $open_code
+bindcode $mod+80 $open_rider
 bindcode $mod+81 $open_gimp
 bindcode $mod+90 $toggle_polybar
 
@@ -202,7 +202,7 @@ assign [class="Terminator"] $ws3
 assign [class="Slack"] $ws4
 assign [class="Sublime_text"] $ws6
 assign [class="firefox"] $ws7
-assign [class="Code"] $ws8
+assign [class="jetbrains-rider"] $ws8
 assign [class="Gimp"] $ws9
 
 # Screenshot
