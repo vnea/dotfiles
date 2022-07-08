@@ -214,6 +214,7 @@ bindsym $mod+CTRL+Shift+v exec pkill greenclip && greenclip clear && greenclip d
 
 # Custom scripts
 bindsym $mod+Shift+b exec --no-startup-id ~/.config/i3/scripts/editor_everywhere.sh
+bindsym $mod+t exec --no-startup-id ~/workspace/wakam/t.sh
 
 # gaps
 smart_gaps on # Only enable gaps when more than one window
