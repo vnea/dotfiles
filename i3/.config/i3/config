@@ -42,7 +42,6 @@ bindsym $mod+f fullscreen toggle
 workspace_layout tabbed
 bindsym $mod+s layout stacking
 bindsym $mod+z layout tabbed
-bindsym $mod+e layout toggle split
 
 # Toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -211,6 +210,9 @@ bindsym $mod+Shift+p exec --no-startup-id flameshot gui
 # Greenclip
 bindsym $mod+v exec --no-startup-id rofi -modi "clipboard:/usr/bin/greenclip print" -show clipboard -run-command '{cmd}'
 bindsym $mod+CTRL+Shift+v exec pkill greenclip && greenclip clear && greenclip daemon &
+
+# Emoji
+bindsym $mod+e exec --no-startup-id rofi -modi emoji -show emoji
 
 # Custom scripts
 bindsym $mod+Shift+b exec --no-startup-id ~/.config/i3/scripts/editor_everywhere.sh
