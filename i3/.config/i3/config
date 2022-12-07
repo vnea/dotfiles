@@ -7,8 +7,6 @@ font pango:DejaVu Sans 14
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# Start a terminal
-bindsym Control+Mod1+t exec ~/.config/i3/scripts/open_terminal.sh
 
 # Kill window
 bindsym $mod+Shift+A kill
