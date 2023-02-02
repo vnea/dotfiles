@@ -58,7 +58,7 @@ set $ws7 "7:"
 set $ws8 "8:"
 set $ws9 "9:"
 
-set $open_chrome exec "pgrep --exact chrome && i3-msg workspace 1: || google-chrome --password-store=gnome"
+set $open_brave exec "pgrep --exact brave && i3-msg workspace 1: || brave-browser-stable"
 set $open_idea exec "pgrep --exact idea.sh && i3-msg workspace 2: || ~/.config/i3/scripts/open_idea.sh"
 set $open_term exec "pgrep --exact terminator && i3-msg workspace 3: || terminator"
 set $open_slack exec "if [ $(wmctrl -lx | cut -d' ' -f4 | grep --count slack) -eq 0 ]; then slack; else i3-msg workspace 4:; fi"
@@ -80,7 +80,7 @@ bindsym $mod+egrave workspace $ws7
 bindsym $mod+underscore workspace $ws8
 bindsym $mod+ccedilla workspace $ws9
 
-bindsym $mod+Mod2+KP_1 $open_chrome
+bindsym $mod+Mod2+KP_1 $open_brave
 bindsym $mod+Mod2+KP_2 $open_idea
 bindsym $mod+Mod2+KP_3 $open_term
 bindsym $mod+Mod2+KP_4 $open_slack
@@ -91,7 +91,7 @@ bindsym $mod+Mod2+KP_8 $open_rider
 bindsym $mod+Mod2+KP_9 $open_gimp
 bindsym $mod+Mod2+KP_0 $toggle_polybar
 
-bindcode $mod+87 $open_chrome
+bindcode $mod+87 $open_brave
 bindcode $mod+88 $open_idea
 bindcode $mod+89 $open_term
 bindcode $mod+83 $open_slack
@@ -194,7 +194,7 @@ exec_always --no-startup-id setxkbmap fr
 for_window [title="Votre écran est partagé par le biais de l'application meet.google.com."] move to scratchpad
 
 # Assign window to workspace
-assign [class="Google-chrome"] $ws1
+assign [class="brave-browser"] $ws1
 assign [class="jetbrains-idea"] $ws2
 assign [class="Terminator"] $ws3
 assign [class="Slack"] $ws4
