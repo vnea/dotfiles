@@ -187,7 +187,6 @@ exec --no-startup-id greenclip daemon
 exec --no-startup-id feh --bg-scale ~/.config/i3/images/blackscreen.jpg
 exec_always --no-startup-id xset r rate 150 40
 exec_always --no-startup-id numlockx on
-exec_always --no-startup-id xmodmap -e 'keycode 77 = NoSymbol Num_Lock'
 exec_always --no-startup-id setxkbmap fr
 
 # Window customization
