@@ -17,8 +17,10 @@ padding-right = 3
 module-margin = 2
 
 font-0 = System San Francisco Display:size=15;2
-font-1 = FontAwesome:size=15;3
-font-2 = MaterialIcons:size=15;4
+font-1 = Font Awesome 6 Brands,Font Awesome 6 Brands Regular:style=Regular
+font-2 = Font Awesome 6 Free,Font Awesome 6 Free Solid:style=Solid
+font-3 = Font Awesome v4 Compatibility,Font Awesome v4 Compatibility Regular:style=Regular
+font-4 = Font Awesome 6 Free,Font Awesome 6 Free Regular:style=Regular
 
 modules-left = i3
 modules-center = clickdate
@@ -28,11 +30,10 @@ modules-right = battery backlight pulseaudio
 [module/clickdate]
 type = custom/script
 format-prefix-foreground = ${colors.accent}
-exec = date +'  %a. %d %b. %Y ~ %H:%M:%S'
+exec = date +'%A %d %B %Y ~ %H:%M:%S'
 tail = false
 interval = 1
 click-left = gsimplecal
-
 
 [module/i3]
 type = internal/i3
@@ -60,7 +61,7 @@ ws-icon-0 = 1;
 ws-icon-1 = 2;
 ws-icon-2 = 3;
 ws-icon-3 = 4;
-ws-icon-4 = 5;file
+ws-icon-4 = 5;
 ws-icon-5 = 6;
 ws-icon-6 = 7;
 ws-icon-7 = 8;

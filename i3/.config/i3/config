@@ -7,7 +7,6 @@ font pango:DejaVu Sans 14
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-
 # Kill window
 bindsym $mod+Shift+A kill
 bindsym --release Mod2+button2 kill
@@ -16,7 +15,7 @@ bindsym --release Mod2+button2 kill
 bindsym $mod+CTRL+Shift+a [class=".*"] kill
 
 # Open application launcher
-bindsym $mod+Return exec --no-startup-id ~/.config/rofi/bin/launcher_slate
+bindsym $mod+Return exec --no-startup-id ~/.config/rofi/scripts/launcher_t3
 
 # Open window
 bindsym $mod+Shift+Return exec --no-startup-id rofi -show window
@@ -52,13 +51,13 @@ set $ws1 "1:"
 set $ws2 "2:"
 set $ws3 "3:"
 set $ws4 "4:"
-set $ws5 "5:file"
+set $ws5 "5:"
 set $ws6 "6:"
 set $ws7 "7:"
 set $ws8 "8:"
 set $ws9 "9:"
 
-set $open_brave exec "pgrep --exact brave && i3-msg workspace 1: || brave-browser-stable"
+set $open_brave exec "pgrep --exact brave && i3-msg workspace 1: || brave"
 set $open_idea exec "pgrep --exact idea.sh && i3-msg workspace 2: || ~/.config/i3/scripts/open_idea.sh"
 set $open_term exec "pgrep --exact terminator && i3-msg workspace 3: || terminator"
 set $open_slack exec "if [ $(wmctrl -lx | cut -d' ' -f4 | grep --count slack) -eq 0 ]; then slack; else i3-msg workspace 4:; fi"
@@ -66,7 +65,7 @@ set $open_file exec ~/.config/i3/scripts/open_file_explorer.sh
 set $open_subl exec "pgrep --exact sublime_text && i3-msg workspace 6: || subl"
 set $open_firefox exec "pgrep --exact firefox && i3-msg workspace 7: || ~/.config/i3/scripts/open_firefox.sh"
 set $open_rider exec "pgrep --exact rider.sh && i3-msg workspace 8: || ~/.config/i3/scripts/open_rider.sh"
-set $open_gimp exec "pgrep --exact i3-msg workspace 9: && || gimp"
+set $open_gimp exec "pgrep --exact gimp && i3-msg workspace 9: || gimp"
 set $toggle_polybar exec "polybar-msg cmd toggle"
 
 # Switch to workspace
@@ -182,9 +181,9 @@ exec --no-startup-id xss-lock -- ~/.config/i3/scripts/screen_lock.sh
 exec_always --no-startup-id ~/.config/i3/polybar/scripts/launch.sh
 exec_always --no-startup-id ~/.local/share/JetBrains/Toolbox/bin/jetbrains-toolbox --minimize
 exec --no-startup-id nm-applet
-exec --no-startup-id compton
-exec --no-startup-id greenclip daemon
+exec --no-startup-id greenclip daemon>/dev/null
 exec --no-startup-id feh --bg-scale ~/.config/i3/images/blackscreen.jpg
+exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
 exec_always --no-startup-id xset r rate 150 40
 exec_always --no-startup-id numlockx on
 exec_always --no-startup-id setxkbmap fr
@@ -206,8 +205,8 @@ assign [class="Gimp"] $ws9
 bindsym $mod+Shift+p exec --no-startup-id flameshot gui
 
 # Greenclip
-bindsym $mod+v exec --no-startup-id rofi -modi "clipboard:/usr/bin/greenclip print" -show clipboard -run-command '{cmd}'
-bindsym $mod+CTRL+Shift+v exec pkill greenclip && greenclip clear && greenclip daemon &
+bindsym $mod+v exec --no-startup-id rofi -modi "clipboard:greenclip print" -show clipboard
+bindsym $mod+CTRL+Shift+v exec --no-startup-id greenclip clear
 
 # Emoji
 bindsym $mod+e exec --no-startup-id rofi -modi emoji -show emoji

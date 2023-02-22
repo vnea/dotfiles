@@ -39,15 +39,11 @@ ln -s ~/bootsrap-poste/nvim ~/.config/nvim
 
 ### Installation
 
-Create symbolic link:
-
 ```shell
+# tmux
 rm -rf ~/.tmux.conf ~/config/tmux && stow tmux
-```
 
-Install tmux plugins:
-
-```shell
+# Install tmux plugins
 git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
 tmux
 # Press "CTRL-Q then I", wait for installation and restart tmux
@@ -84,17 +80,24 @@ EOT
 
 ### Prerequisite
 
-* [i3-gaps](https://github.com/Airblader/i3)
-* [i3lock-color](https://github.com/Raymo111/i3lock-color): build it locally in `~/bootsrap-poste/i3/build/i3lock-color`
-* [polybar](https://github.com/polybar/polybar): build it locally in `~/bootsrap-poste/i3/build/polybar`
+* [i3lock-color](https://github.com/Raymo111/i3lock-color)
+* [polybar](https://github.com/polybar/polybar)
 * [feh](https://feh.finalrewind.org)
+* [picom](https://github.com/yshui/picom)
+* [light](https://github.com/haikarainen/light)
 
 ### Installation
 
-Create symbolic link:
-
 ```shell
+# i3
 rm -rf ~/.config/i3 && stow i3
+
+# picom
+rm -rf ~/.config/picom && stow picom
+
+# light
+sudo gpasswd -a $USER video
+# Reboot computer
 ```
 
 ## 5. rofi
@@ -105,8 +108,6 @@ rm -rf ~/.config/i3 && stow i3
 * [rofi-themes](https://github.com/adi1090x/rofi)
 
 ### Installation
-
-Create symbolic link:
 
 ```shell
 rm -rf ~/.config/rofi && stow rofi
