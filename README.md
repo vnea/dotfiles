@@ -80,6 +80,7 @@ EOT
 
 ### Prerequisite
 
+* [i3](https://i3wm.org)
 * [i3lock-color](https://github.com/Raymo111/i3lock-color)
 * [polybar](https://github.com/polybar/polybar)
 * [feh](https://feh.finalrewind.org)
@@ -111,4 +112,12 @@ sudo gpasswd -a $USER video
 
 ```shell
 rm -rf ~/.config/rofi && stow rofi
+```
+
+## 6. thefuck
+
+### Installation
+
+```shell
+rm -rf ~/.config/thefuck && stow thefuck
 ```

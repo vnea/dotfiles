@@ -6,3 +6,6 @@ i3/.config/i3/build
 
 # tmux
 tmux/.config/tmux/plugins
+
+# thefuck
+thefuck/.config/thefuck/__pycache__
