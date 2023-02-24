@@ -1,6 +1,3 @@
-; Doc: https://github.com/jaagr/polybar
-; Wiki: https://github.com/jaagr/polybar/wiki
-
 [bar/default]
 height = 32
 offset-y = 0
@@ -16,7 +13,7 @@ padding-left = 0
 padding-right = 3
 module-margin = 2
 
-font-0 = System San Francisco Display:size=15;2
+font-0 = System San Francisco Display:size=18;2
 font-1 = Font Awesome 6 Brands,Font Awesome 6 Brands Regular:style=Regular
 font-2 = Font Awesome 6 Free,Font Awesome 6 Free Solid:style=Solid
 font-3 = Font Awesome v4 Compatibility,Font Awesome v4 Compatibility Regular:style=Regular
