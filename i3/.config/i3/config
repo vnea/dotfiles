@@ -139,20 +139,19 @@ bindsym Mod1+Tab workspace back_and_forth
 bindsym $mod+Shift+r restart
 
 # Exit i3
-#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 bindsym $mod+Shift+e exec ~/.config/i3/scripts/power.sh
 
 # Resize window
 bindsym $mod+r mode "resize"
 mode "resize" {
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+    bindsym Left resize shrink width 10 px or 10 ppt
+    bindsym Down resize grow height 10 px or 10 ppt
+    bindsym Up resize shrink height 10 px or 10 ppt
+    bindsym Right resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 }
 
 # Pulse Audio controls
@@ -182,8 +181,8 @@ exec_always --no-startup-id ~/.config/i3/polybar/scripts/launch.sh
 exec_always --no-startup-id ~/.local/share/JetBrains/Toolbox/bin/jetbrains-toolbox --minimize
 exec --no-startup-id nm-applet
 exec --no-startup-id greenclip daemon>/dev/null
-exec --no-startup-id feh --bg-scale ~/.config/i3/images/blackscreen.jpg
-exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
+exec --no-startup-id feh --bg-scale ~/.config/i3/images/background.jpg
+exec_always --no-startup-id picom
 exec_always --no-startup-id xset r rate 150 40
 exec_always --no-startup-id numlockx on
 exec_always --no-startup-id setxkbmap fr
@@ -196,7 +195,7 @@ assign [class="Brave-browser"] $ws1
 assign [class="jetbrains-idea"] $ws2
 assign [class="Terminator"] $ws3
 assign [class="Slack"] $ws4
-assign [class="Sublime_text"] $ws6
+assign [class="Subl"] $ws6
 assign [class="firefox"] $ws7
 assign [class="jetbrains-rider"] $ws8
 assign [class="Gimp"] $ws9
@@ -213,10 +212,8 @@ bindsym $mod+e exec --no-startup-id rofi -modi emoji -show emoji
 
 # Custom scripts
 bindsym $mod+Shift+b exec --no-startup-id ~/.config/i3/scripts/editor_everywhere.sh
-bindsym $mod+t exec --no-startup-id ~/workspace/wakam/t.sh
 
-# gaps
-smart_gaps on # Only enable gaps when more than one window
+# Gaps
 gaps inner 15
 
 # borders
