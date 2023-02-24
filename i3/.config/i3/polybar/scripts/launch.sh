@@ -1,12 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-# Terminate already running bar instances
-killall -q polybar
+polybar-msg cmd quit
+while pgrep --uid $UID --exact polybar >/dev/null; do sleep 1; done
 
-# Wait until the processes have been shut down
-while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
-
-# Launch Polybar, using default config location ~/.config/polybar/config
-polybar --config="$HOME/.config/i3/polybar/config" default &
-
-echo "Polybar launched..."
+polybar --config="~/.config/i3/polybar/config"
