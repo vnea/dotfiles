@@ -111,7 +111,7 @@ sudo gpasswd -a $USER video
 ### Installation
 
 ```shell
-rm -rf ~/.config/rofi && stow rofi
+rm -rf ~/.config/rofi/config.rasi && stow rofi
 ```
 
 ## 6. thefuck

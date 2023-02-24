@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-choice=$(printf "Logout\nReboot\nShutdown\nCancel" | rofi -dmenu -p "What do you want to do")
+choice=$(printf "Logout\nReboot\nShutdown\nCancel" | rofi -i -dmenu -p "What do you want to do")
 
 if [ "$choice" = "Logout" ]; then
   i3-msg exit
