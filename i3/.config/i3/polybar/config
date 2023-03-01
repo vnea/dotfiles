@@ -9,9 +9,11 @@ tray-maxsize = 22
 line-size = 3
 enable-ipc = true
 
-padding-left = 0
-padding-right = 3
-module-margin = 2
+padding-top = 2
+padding-left = 2
+padding-right = 2
+
+module-margin = 1
 
 font-0 = System San Francisco Display:size=18;2
 font-1 = Font Awesome 6 Brands,Font Awesome 6 Brands Regular:style=Regular
@@ -19,9 +21,9 @@ font-2 = Font Awesome 6 Free,Font Awesome 6 Free Solid:style=Solid
 font-3 = Font Awesome v4 Compatibility,Font Awesome v4 Compatibility Regular:style=Regular
 font-4 = Font Awesome 6 Free,Font Awesome 6 Free Regular:style=Regular
 
-modules-left = i3
-modules-center = clickdate pomodoro
-modules-right = temperature battery backlight pulseaudio
+modules-left = temperature battery backlight pulseaudio
+modules-center = clickdate
+modules-right = pomodoro
 
 [module/clickdate]
 type = custom/script
@@ -30,38 +32,6 @@ exec = date +'%A %d %B %Y ~ %H:%M:%S'
 tail = false
 interval = 1
 click-left = gsimplecal
-
-[module/i3]
-type = internal/i3
-pin-workspaces = true
-index-sort = true
-enable-click = true
-enable-scroll = false
-wrapping-scroll = false
-reverse-scroll = false
-fuzzy-match = true
-format = <label-mode><label-state>
-label-mode-padding = 2
-label-focused = %index%  %icon%
-label-focused-padding = 2
-label-unfocused = %index%  %icon%
-label-unfocused-padding = 2
-label-visible = %index%  %icon%
-label-visible-padding = 2
-label-urgent = %index%  %icon%
-
-label-focused-foreground = #35ad04
-label-focused-underline = #35ad04
-
-ws-icon-0 = 1;
-ws-icon-1 = 2;
-ws-icon-2 = 3;
-ws-icon-3 = 4;
-ws-icon-4 = 5;
-ws-icon-5 = 6;
-ws-icon-6 = 7;
-ws-icon-7 = 8;
-ws-icon-8 = 9;
 
 [module/date]
 type = internal/date
