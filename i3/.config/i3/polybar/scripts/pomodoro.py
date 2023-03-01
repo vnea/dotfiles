@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import socket
+import subprocess
 import time
 from math import floor
 from pathlib import Path
@@ -22,6 +23,7 @@ class PomodoroSocket:
         self.reset = True
         self.paused = True
         self.ended = False
+        self.end_notification_sent = False
         self.time_left_sec = self.work_period_sec
 
     def _toggle_pause_handler(self):
@@ -36,6 +38,10 @@ class PomodoroSocket:
     def _decrease_work_period(self):
         if not self.ended and self.time_left_sec > 30:
             self.time_left_sec -= 30
+
+    def _send_end_notification(self):
+        subprocess.run(["dunstify", "--appname", "Pomodoro", "Time's up!"])
+        self.end_notification_sent = True
 
     def _handle_pomodoro_socket_command(self, pomodoro_socket_command):
         match pomodoro_socket_command:
@@ -78,6 +84,8 @@ class PomodoroSocket:
                 else:
                     self.ended = True
                     icon = ""
+                    if not self.end_notification_sent:
+                        self._send_end_notification()
 
                 print(f"{icon} {minutes:02d}:{seconds:02d}", flush=True)
 
