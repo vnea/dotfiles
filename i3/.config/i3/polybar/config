@@ -20,7 +20,7 @@ font-3 = Font Awesome v4 Compatibility,Font Awesome v4 Compatibility Regular:sty
 font-4 = Font Awesome 6 Free,Font Awesome 6 Free Regular:style=Regular
 
 modules-left = i3
-modules-center = clickdate
+modules-center = clickdate pomodoro
 modules-right = temperature battery backlight pulseaudio
 
 [module/clickdate]
@@ -140,3 +140,13 @@ hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon7/temp1_input
 base-temperature = 20
 warn-temperature = 65
 label = 🌡️ %temperature-c%
+
+[module/pomodoro]
+type = custom/script
+exec = ~/.config/i3/polybar/scripts/pomodoro.py
+tail = true
+click-left = echo -n "toggle_pause" | socat - UNIX-CLIENT:/tmp/pomodoro.sock
+click-right = echo -n "reset" | socat - UNIX-CLIENT:/tmp/pomodoro.sock
+scroll-up = echo -n "increase_work_period" | socat - UNIX-CLIENT:/tmp/pomodoro.sock
+scroll-down = echo -n "decrease_work_period" | socat - UNIX-CLIENT:/tmp/pomodoro.sock
+; click-middle = ~/.config/i3/polybar/scripts/pomodoro.py
