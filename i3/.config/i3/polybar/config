@@ -63,10 +63,6 @@ ws-icon-6 = 7;
 ws-icon-7 = 8;
 ws-icon-8 = 9;
 
-[module/xwindow]
-type = internal/xwindow
-label = %title:0:30:...%
-
 [module/date]
 type = internal/date
 date = %d %B %Y,  %{F#D8DEE9}%H:%M:%S
@@ -112,7 +108,7 @@ animation-discharging-framerate = 2000
 
 label-full =  100%
 
-# Source: https://www.reddit.com/r/archlinux/comments/6wxzxl/using_light_for_polybar_backlight_module/
+; Source: https://www.reddit.com/r/archlinux/comments/6wxzxl/using_light_for_polybar_backlight_module/
 [module/backlight]
 type = custom/script
 interval = 0.2
@@ -143,3 +139,4 @@ hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon7/temp1_input
 
 base-temperature = 20
 warn-temperature = 65
+label = 🌡️ %temperature-c%
