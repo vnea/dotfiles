@@ -124,3 +124,11 @@ rm -rf ~/.config/rofi/config.rasi && stow rofi
 ```shell
 rm -rf ~/.config/thefuck && stow thefuck
 ```
+
+## 7. GTK
+
+### Installation
+
+```shell
+stow gtk
+```
