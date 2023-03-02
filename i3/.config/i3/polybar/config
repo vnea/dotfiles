@@ -1,24 +1,22 @@
 [bar/default]
-height = 32
-offset-y = 0
-top = true
 fixed-center = true
 locale = fr_FR.UTF-8
+
 tray-position = right
-tray-maxsize = 22
-line-size = 3
+tray-maxsize = 24
+tray-padding = 3
+
 enable-ipc = true
 
-padding-top = 2
-padding-left = 2
-padding-right = 2
-
+padding = 2
+separator = |
 module-margin = 1
 
+height = 34
 ; Find fonts with command "fc-list"
-font-0 = System San Francisco Display:size=18;2
-font-1 = Noto Color Emoji:style=Regular:scale=8
-font-2 = NotoSerif Nerd Font:style=Regular:size=18;3
+font-0 = System San Francisco Display:size=18;4
+font-1 = Noto Color Emoji:style=Regular:scale=8;3
+font-2 = NotoSerif Nerd Font:style=Regular:size=18;5
 
 modules-left = temperature battery backlight pulseaudio
 modules-center = clickdate
@@ -42,9 +40,9 @@ use-ui-max = true
 interval = 5
 format-volume = <ramp-volume> <label-volume>
 label-muted = 🔇 Muted
-ramp-volume-0 = 🔈
-ramp-volume-1 = 🔉
-ramp-volume-2 = 🔊
+ramp-volume-0 = 󰕿
+ramp-volume-1 = 󰕾
+ramp-volume-2 = 
 click-right = pavucontrol
 
 [module/battery]
@@ -102,10 +100,6 @@ ramp-4 = 🌕
 
 [settings]
 screenchange-reload = true
-
-[global/wm]
-margin-top = 5
-margin-bottom = 5
 
 [module/temperature]
 type = internal/temperature
