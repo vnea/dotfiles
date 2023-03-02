@@ -15,6 +15,12 @@ class PomodoroSocket:
     ONE_MINUTE_IN_SECONDS = 60
     SIXTY_MINUTES_IN_SECONDS = 3600
 
+    RESET_ICON = '🍅'
+    PAUSE_ICON = '⏸️'
+    RUNNING_1_ICON = '⌛'
+    RUNNING_2_ICON = '⏳'
+    END_ICON = '⏰'
+
     def __init__(self):
         self.work_period_sec = PomodoroSocket.DEFAULT_WORK_PERIOD_MIN * PomodoroSocket.ONE_MINUTE_IN_SECONDS
         self._reset_handler()
@@ -81,14 +87,14 @@ class PomodoroSocket:
                 minutes, seconds = divmod(time_left_sec_without_decimal, PomodoroSocket.ONE_MINUTE_IN_SECONDS)
 
                 if self.reset:
-                    icon = ""
+                    icon = PomodoroSocket.RESET_ICON
                 elif self.paused:
-                    icon = ""
+                    icon = PomodoroSocket.PAUSE_ICON
                 elif time_left_sec_without_decimal > 0:
-                    icon = "" if seconds % 2 == 0 else ""
+                    icon = PomodoroSocket.RUNNING_1_ICON if seconds % 2 == 0 else PomodoroSocket.RUNNING_2_ICON
                 else:
                     self.ended = True
-                    icon = ""
+                    icon = PomodoroSocket.END_ICON
                     if not self.end_notification_sent:
                         self._send_end_notification()
 

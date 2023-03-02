@@ -83,6 +83,7 @@ EOT
 * [i3](https://i3wm.org)
 * [i3lock-color](https://github.com/Raymo111/i3lock-color)
 * [polybar](https://github.com/polybar/polybar)
+* [ttf-noto-nerd](https://archlinux.org/packages/community/any/ttf-noto-nerd)
 * [dunst](https://github.com/dunst-project/dunst) (for Pomodoro Polybar text notification)
 * [sox](https://sox.sourceforge.net/) (for Pomodoro Polybar sound notification)
 * [feh](https://feh.finalrewind.org)
