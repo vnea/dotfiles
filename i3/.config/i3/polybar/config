@@ -13,10 +13,13 @@ separator = |
 module-margin = 1
 
 height = 34
+
 ; Find fonts with command "fc-list"
 font-0 = System San Francisco Display:size=18;4
 font-1 = Noto Color Emoji:style=Regular:scale=8;3
 font-2 = NotoSerif Nerd Font:style=Regular:size=18;5
+
+background = #80000000
 
 modules-left = temperature battery backlight pulseaudio
 modules-center = clickdate
