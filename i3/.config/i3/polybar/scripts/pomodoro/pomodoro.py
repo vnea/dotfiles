@@ -40,7 +40,12 @@ class PomodoroSocket:
             self.time_left_sec -= 30
 
     def _send_end_notification(self):
-        subprocess.run(["dunstify", "--appname", "Pomodoro", "Time's up!"])
+        subprocess.Popen(["dunstify", "--appname", "Pomodoro", "Time's up!"])
+        subprocess.Popen(
+            ["play", "~/bootsrap-poste/i3/.config/i3/polybar/scripts/pomodoro/time-s-up.mp3"],
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL
+        )
         self.end_notification_sent = True
 
     def _handle_pomodoro_socket_command(self, pomodoro_socket_command):

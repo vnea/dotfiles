@@ -113,10 +113,9 @@ label = 🌡️ %temperature-c%
 
 [module/pomodoro]
 type = custom/script
-exec = ~/.config/i3/polybar/scripts/pomodoro.py
+exec = ~/.config/i3/polybar/scripts/pomodoro/pomodoro.py
 tail = true
 click-left = echo -n "toggle_pause" | socat - UNIX-CLIENT:/tmp/pomodoro.sock
 click-right = echo -n "reset" | socat - UNIX-CLIENT:/tmp/pomodoro.sock
 scroll-up = echo -n "increase_work_period" | socat - UNIX-CLIENT:/tmp/pomodoro.sock
 scroll-down = echo -n "decrease_work_period" | socat - UNIX-CLIENT:/tmp/pomodoro.sock
-; click-middle = ~/.config/i3/polybar/scripts/pomodoro.py
