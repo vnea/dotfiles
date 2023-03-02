@@ -28,7 +28,7 @@ modules-right = pomodoro
 [module/clickdate]
 type = custom/script
 format-prefix-foreground = ${colors.accent}
-exec = date +'%A %d %B %Y ~ %H:%M:%S'
+exec = echo " $(date +'%A %d %B %Y') -  $(date +'%H:%M:%S')"
 tail = false
 interval = 1
 click-left = gsimplecal
