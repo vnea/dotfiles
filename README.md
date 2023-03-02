@@ -84,7 +84,7 @@ EOT
 * [i3lock-color](https://github.com/Raymo111/i3lock-color)
 * [polybar](https://github.com/polybar/polybar)
 * [ttf-noto-nerd](https://archlinux.org/packages/community/any/ttf-noto-nerd)
-* [dunst](https://github.com/dunst-project/dunst) (for Pomodoro Polybar text notification)
+* [dunst](https://github.com/dunst-project/dunst) (for Pomodoro Polybar text notification, see section `8. Dunst`)
 * [sox](https://sox.sourceforge.net/) (for Pomodoro Polybar sound notification)
 * [feh](https://feh.finalrewind.org)
 * [picom](https://github.com/yshui/picom)
@@ -131,4 +131,12 @@ rm -rf ~/.config/thefuck && stow thefuck
 
 ```shell
 stow gtk
+```
+
+## 8. Dunst
+
+### Installation
+
+```shell
+stow dunst
 ```
