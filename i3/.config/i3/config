@@ -178,6 +178,7 @@ bindsym $mod+l exec --no-startup-id betterlockscreen --lock blur
 # Applications to start at loggin
 exec_always --no-startup-id ~/.config/i3/polybar/scripts/launch.sh
 exec_always --no-startup-id ~/.local/share/JetBrains/Toolbox/bin/jetbrains-toolbox --minimize
+exec_always --no-startup-id killall dunst
 exec --no-startup-id nm-applet
 exec --no-startup-id greenclip daemon>/dev/null
 exec --no-startup-id feh --bg-scale ~/.config/i3/images/background.jpg
