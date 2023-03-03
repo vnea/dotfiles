@@ -140,3 +140,13 @@ stow gtk
 ```shell
 stow dunst
 ```
+
+## 9. Powerlevel10k
+
+### Installation
+
+```shell
+rm -f ~/.p10k.zsh && stow p10k
+
+# Reboot the Terminal
+```
