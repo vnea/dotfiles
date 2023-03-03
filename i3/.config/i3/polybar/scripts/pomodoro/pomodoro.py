@@ -42,8 +42,11 @@ class PomodoroSocket:
             self.time_left_sec = min(PomodoroSocket.SIXTY_MINUTES_IN_SECONDS, self.time_left_sec + 30)
 
     def _decrease_timer(self):
-        if not self.ended and self.time_left_sec > 30:
-            self.time_left_sec -= 30
+        if not self.ended:
+            if self.time_left_sec > 30:
+                self.time_left_sec -= 30
+            elif 5 < self.time_left_sec <= 30:
+                self.time_left_sec -= 5
 
     def _send_end_notification(self):
         subprocess.Popen([
