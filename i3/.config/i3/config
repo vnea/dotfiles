@@ -173,8 +173,7 @@ exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets
 focus_on_window_activation focus
 
 # Screen lock
-bindsym $mod+l exec ~/.config/i3/scripts/screen_lock.sh
-exec --no-startup-id xss-lock -- ~/.config/i3/scripts/screen_lock.sh
+bindsym $mod+l exec --no-startup-id betterlockscreen --lock blur
 
 # Applications to start at loggin
 exec_always --no-startup-id ~/.config/i3/polybar/scripts/launch.sh

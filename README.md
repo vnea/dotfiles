@@ -81,7 +81,7 @@ EOT
 ### Prerequisite
 
 * [i3](https://i3wm.org)
-* [i3lock-color](https://github.com/Raymo111/i3lock-color)
+* [betterlockscreen](check section `10. Betterlockscreen`)
 * [polybar](https://github.com/polybar/polybar)
 * [ttf-noto-nerd](https://archlinux.org/packages/community/any/ttf-noto-nerd)
 * [dunst](https://github.com/dunst-project/dunst) (for Pomodoro Polybar text notification, see section `8. Dunst`)
@@ -149,4 +149,24 @@ stow dunst
 rm -f ~/.p10k.zsh && stow p10k
 
 # Reboot the Terminal
+```
+
+## 10. Betterlockscreen
+
+Link: https://github.com/betterlockscreen/betterlockscreen
+
+### Prerequisite
+
+* [i3lock-color](https://github.com/Raymo111/i3lock-color)
+
+### Generate cache
+
+```shell
+betterlockscreen --update ~/bootsrap-poste/i3/.config/i3/images/lockscreen.jpg --fx blur
+```
+
+### Lockscreen after sleep/suspend
+
+```shell
+systemctl enable betterlockscreen@$USER
 ```
