@@ -217,8 +217,8 @@ bindsym $mod+Shift+b exec --no-startup-id ~/.config/i3/scripts/editor_everywhere
 # Polybar Pomodoro
 bindsym $mod+End exec --no-startup-id ~/.config/i3/polybar/scripts/pomodoro/commands/toggle_pause.sh
 bindsym $mod+Home exec --no-startup-id ~/.config/i3/polybar/scripts/pomodoro/commands/reset.sh
-bindsym $mod+Prior exec --no-startup-id ~/.config/i3/polybar/scripts/pomodoro/commands/increase_timer.sh
-bindsym $mod+Next exec --no-startup-id ~/.config/i3/polybar/scripts/pomodoro/commands/decrease_timer.sh
+bindsym $mod+Next exec --no-startup-id ~/.config/i3/polybar/scripts/pomodoro/commands/increase_timer.sh
+bindsym $mod+Prior exec --no-startup-id ~/.config/i3/polybar/scripts/pomodoro/commands/decrease_timer.sh
 
 # Gaps
 gaps inner 15
