@@ -125,5 +125,5 @@ tail = true
 
 click-left = ~/.config/i3/polybar/scripts/pomodoro/commands/toggle_pause.sh
 click-right = ~/.config/i3/polybar/scripts/pomodoro/commands/reset.sh
-scroll-up = ~/.config/i3/polybar/scripts/pomodoro/commands/increase_work_period.sh
-scroll-down = ~/.config/i3/polybar/scripts/pomodoro/commands/decrease_work_period.sh
+scroll-up = ~/.config/i3/polybar/scripts/pomodoro/commands/increase_timer.sh
+scroll-down = ~/.config/i3/polybar/scripts/pomodoro/commands/decrease_timer.sh

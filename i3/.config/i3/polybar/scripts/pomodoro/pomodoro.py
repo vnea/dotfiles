@@ -37,11 +37,11 @@ class PomodoroSocket:
             self.reset = False
             self.paused = not self.paused
 
-    def _increase_work_period(self):
+    def _increase_timer(self):
         if not self.ended:
             self.time_left_sec = min(PomodoroSocket.SIXTY_MINUTES_IN_SECONDS, self.time_left_sec + 30)
 
-    def _decrease_work_period(self):
+    def _decrease_timer(self):
         if not self.ended and self.time_left_sec > 30:
             self.time_left_sec -= 30
 
@@ -67,10 +67,10 @@ class PomodoroSocket:
                 self._toggle_pause_handler()
             case b"reset":
                 self._reset_handler()
-            case b"increase_work_period":
-                self._increase_work_period()
-            case b"decrease_work_period":
-                self._decrease_work_period()
+            case b"increase_timer":
+                self._increase_timer()
+            case b"decrease_timer":
+                self._decrease_timer()
 
     def start(self):
         with socket.socket(socket.AF_UNIX, socket.SOCK_DGRAM) as pomodoro_socket:
