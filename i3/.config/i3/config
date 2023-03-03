@@ -214,6 +214,12 @@ bindsym $mod+e exec --no-startup-id rofi -modi emoji -show emoji
 # Custom scripts
 bindsym $mod+Shift+b exec --no-startup-id ~/.config/i3/scripts/editor_everywhere.sh
 
+# Polybar Pomodoro
+bindsym $mod+End exec --no-startup-id ~/.config/i3/polybar/scripts/pomodoro/commands/toggle_pause.sh
+bindsym $mod+Home exec --no-startup-id ~/.config/i3/polybar/scripts/pomodoro/commands/reset.sh
+bindsym $mod+Prior exec --no-startup-id ~/.config/i3/polybar/scripts/pomodoro/commands/increase_work_period.sh
+bindsym $mod+Next exec --no-startup-id ~/.config/i3/polybar/scripts/pomodoro/commands/decrease_work_period.sh
+
 # Gaps
 gaps inner 15
 
