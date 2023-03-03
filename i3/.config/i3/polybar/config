@@ -22,30 +22,36 @@ font-2 = NotoSerif Nerd Font:style=Regular:size=18;5
 background = #80000000
 
 modules-left = temperature battery backlight pulseaudio
-modules-center = clickdate
+modules-center = clickdate time
 modules-right = pomodoro
 
 [module/clickdate]
 type = custom/script
-format-prefix-foreground = ${colors.accent}
-exec = echo "🗓 $(date +'%A %d %B %Y') - 🕒 $(date +'%H:%M:%S')"
-tail = false
-interval = 1
+format-foreground = #99c7c9
+exec = echo " $(date +'%a %d %B %Y')"
+interval = 60
 click-left = gsimplecal
 
-[module/date]
-type = internal/date
-date = %d %B %Y,  %{F#D8DEE9}%H:%M:%S
+[module/time]
+type = custom/script
+format-foreground = #6fc77b
+exec = echo "󰅐 $(date +'%X')"
+tail = true
 
 [module/pulseaudio]
 type = internal/pulseaudio
 use-ui-max = true
-interval = 5
+
+format-volume-foreground = #0a8009
 format-volume = <ramp-volume> <label-volume>
-label-muted = 🔇 Muted
+
 ramp-volume-0 = 󰕿
 ramp-volume-1 = 󰕾
 ramp-volume-2 = 
+
+format-muted-foreground = #0a8009
+label-muted = 🔇 Muted
+
 click-right = pavucontrol
 
 [module/battery]
@@ -59,7 +65,7 @@ adapter = AC
 poll-interval = 20
 
 format-charging = <animation-charging> <label-charging>
-label-charging = %percentage%%
+format-charging-foreground = #874707
 animation-charging-0 = 󰢟
 animation-charging-1 = 󱊤
 animation-charging-2 = 󱊥
@@ -67,14 +73,15 @@ animation-charging-3 = 󱊦
 animation-charging-framerate = 2000
 
 format-discharging = <animation-discharging> <label-discharging>
-label-discharging = %percentage%%
+format-discharging-foreground = #874707
 animation-discharging-0 = 󱊣
 animation-discharging-1 = 󱊢
 animation-discharging-2 = 󱊡
 animation-discharging-3 = 󰂎
 animation-discharging-framerate = 2000
 
-label-full = 🔋 100%
+format-full-foreground = #874707
+label-full = 󱈏 100%
 
 [module/backlight]
 type = internal/backlight
@@ -95,11 +102,15 @@ card = intel_backlight
 enable-scroll = true
 
 format = <ramp> <label>
-ramp-0 = 🌑
-ramp-1 = 🌒
-ramp-2 = 🌓
-ramp-3 = 🌔
-ramp-4 = 🌕
+format-foreground = #917107
+
+ramp-0 = 󰃚
+ramp-1 = 󰃛
+ramp-2 = 󰃜
+ramp-3 = 󰃝
+ramp-4 = 󰃞
+ramp-5 = 󰃟
+ramp-6 = 󰃠
 
 [settings]
 screenchange-reload = true
@@ -116,7 +127,8 @@ hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon7/temp1_input
 
 base-temperature = 20
 warn-temperature = 65
-label = 🌡️ %temperature-c%
+label =  %temperature-c%
+format-foreground = #9e0927
 
 [module/pomodoro]
 type = custom/script
