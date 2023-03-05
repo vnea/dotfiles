@@ -39,7 +39,7 @@ pseudo-transparency = true
 [module/clickdate]
 type = custom/script
 format-foreground = #99c7c9
-exec = echo " $(date +'%a %d %B %Y')"
+exec = echo " $(date +'%a %d %b %Y')"
 interval = 60
 click-left = gsimplecal
 
