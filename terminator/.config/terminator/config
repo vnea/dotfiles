@@ -1,0 +1,81 @@
+[global_config]
+[keybindings]
+  zoom_in = <Primary>KP_6
+  zoom_out = <Primary>KP_9
+  zoom_normal = <Primary>KP_0
+  new_tab = ""
+  cycle_next = ""
+  cycle_prev = ""
+  go_next = ""
+  go_prev = ""
+  go_up = ""
+  go_down = ""
+  go_left = ""
+  go_right = ""
+  rotate_cw = ""
+  rotate_ccw = ""
+  split_horiz = ""
+  split_vert = ""
+  close_term = ""
+  copy = <Primary><Shift>c
+  paste = <Primary><Shift>v
+  toggle_scrollbar = ""
+  search = ""
+  close_window = ""
+  resize_up = ""
+  resize_down = ""
+  resize_left = ""
+  resize_right = ""
+  move_tab_right = ""
+  move_tab_left = ""
+  toggle_zoom = ""
+  scaled_zoom = ""
+  next_tab = ""
+  prev_tab = ""
+  full_screen = ""
+  reset = ""
+  reset_clear = ""
+  hide_window = ""
+  group_all = ""
+  ungroup_all = ""
+  ungroup_win = ""
+  group_tab = ""
+  ungroup_tab = ""
+  new_window = ""
+  new_terminator = ""
+  insert_number = ""
+  insert_padded = ""
+  edit_window_title = ""
+  edit_tab_title = ""
+  edit_terminal_title = ""
+  layout_launcher = ""
+  previous_profile = <Primary>p
+  help = ""
+[profiles]
+  [[default]]
+    icon_bell = False
+    cursor_fg_color = "#241f31"
+    cursor_bg_color = "#ffffff"
+    font = Source Code Pro 18
+    show_titlebar = False
+    scrollbar_position = hidden
+    use_system_font = False
+  [[light]]
+    icon_bell = False
+    background_color = "#ffffff"
+    cursor_fg_color = "#c01c28"
+    cursor_bg_color = "#aaaaaa"
+    font = Source Code Pro 18
+    foreground_color = "#000000"
+    show_titlebar = False
+    scrollbar_position = hidden
+    use_system_font = False
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+[plugins]

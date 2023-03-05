@@ -170,3 +170,13 @@ betterlockscreen --update ~/bootsrap-poste/i3/.config/i3/images/lockscreen.jpg -
 ```shell
 systemctl enable betterlockscreen@$USER
 ```
+
+## 11. Terminator
+
+Link: https://wiki.archlinux.org/title/Terminator
+
+### Installation
+
+```shell
+rm -rf ~/.config/terminator && stow terminator
+```
