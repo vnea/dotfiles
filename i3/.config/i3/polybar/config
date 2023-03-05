@@ -1,18 +1,25 @@
 [bar/default]
 fixed-center = true
 locale = fr_FR.UTF-8
+enable-ipc = true
 
 tray-position = right
 tray-maxsize = 24
 tray-padding = 3
-
-enable-ipc = true
+tray-detached = true
+tray-offset-x = -10
+padding-right = 11
 
 padding = 2
 separator = |
 module-margin = 1
 
-height = 34
+height = 40
+border-top-size = 10
+border-left-size = 14
+border-right-size = 14
+border-color = #00000000
+radius = 10
 
 ; Find fonts with command "fc-list"
 font-0 = JetBrainsMono Nerd Font:style=Regular:size=15;4
@@ -27,6 +34,7 @@ modules-right = pomodoro
 
 [settings]
 screenchange-reload = true
+pseudo-transparency = true
 
 [module/clickdate]
 type = custom/script
