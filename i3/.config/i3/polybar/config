@@ -8,10 +8,8 @@ tray-maxsize = 24
 tray-padding = 3
 tray-detached = true
 tray-offset-x = -10
-padding-right = 11
-
-padding = 2
-separator = |
+padding-right = 10
+padding-left = 1
 module-margin = 1
 
 height = 40
@@ -21,12 +19,14 @@ border-right-size = 14
 border-color = #00000000
 radius = 10
 
+separator = |
+
 ; Find fonts with command "fc-list"
-font-0 = JetBrainsMono Nerd Font:style=Regular:size=15;4
+font-0 = JetBrainsMono Nerd Font:style=Regular:size=16;4
 font-1 = Noto Color Emoji:style=Regular:scale=8;3
 font-2 = NotoSerif Nerd Font:style=Regular:size=18;6
 
-background = #80000000
+background = #8F000000
 
 modules-left = battery backlight pulseaudio
 modules-center = clickdate time
