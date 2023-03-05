@@ -52,7 +52,7 @@ class PomodoroSocket:
         subprocess.Popen([
             "dunstify",
             "--appname",
-            "Pomodoro",
+            "🍅 Pomodoro 🍅",
             "--timeout",
             "5000",
             "Time's up, who's next?!"
