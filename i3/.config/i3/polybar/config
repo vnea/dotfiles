@@ -21,9 +21,12 @@ font-2 = NotoSerif Nerd Font:style=Regular:size=18;6
 
 background = #80000000
 
-modules-left = temperature battery backlight pulseaudio
+modules-left = battery backlight pulseaudio
 modules-center = clickdate time
 modules-right = pomodoro
+
+[settings]
+screenchange-reload = true
 
 [module/clickdate]
 type = custom/script
@@ -111,24 +114,6 @@ ramp-3 = 󰃝
 ramp-4 = 󰃞
 ramp-5 = 󰃟
 ramp-6 = 󰃠
-
-[settings]
-screenchange-reload = true
-
-[module/temperature]
-type = internal/temperature
-interval = 5
-
-; Use `sensors` to find preferred temperature source, then run
-; $ for i in /sys/class/hwmon/hwmon*/temp*_input; do echo "$(<$(dirname $i)/name): $(cat ${i%_*}_label 2>/dev/null || echo $(basename ${i%_*})) $(readlink -f $i)"; done
-; to find path to desired file
-; Default reverts to thermal zone setting
-hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon7/temp1_input
-
-base-temperature = 20
-warn-temperature = 65
-label =  %temperature-c%
-format-foreground = #9e0927
 
 [module/pomodoro]
 type = custom/script
