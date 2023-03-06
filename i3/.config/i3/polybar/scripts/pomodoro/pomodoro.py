@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
 
-import socket
 import subprocess
 import time
 from math import floor
-from pathlib import Path
+from socket import socket, AF_INET, SOCK_DGRAM
 
 
 # noinspection PyAttributeOutsideInit
@@ -76,41 +75,40 @@ class PomodoroSocket:
                 self._decrease_timer()
 
     def start(self):
-        with socket.socket(socket.AF_UNIX, socket.SOCK_DGRAM) as pomodoro_socket:
-            Path(PomodoroSocket.SOCKET_FILE_PATH).unlink(missing_ok=True)
-            pomodoro_socket.bind(PomodoroSocket.SOCKET_FILE_PATH)
-            pomodoro_socket.setblocking(False)
+        pomodoro_socket = socket(AF_INET, SOCK_DGRAM)
+        pomodoro_socket.bind(("127.0.0.1", 60002))
+        pomodoro_socket.setblocking(False)
 
-            sleep_time_sec = 0.100
+        sleep_time_sec = 0.100
 
-            while True:
-                try:
-                    pomodoro_socket_command, _ = pomodoro_socket.recvfrom(1024)
-                    self._handle_pomodoro_socket_command(pomodoro_socket_command)
-                except BlockingIOError:
-                    pass
+        while True:
+            try:
+                pomodoro_socket_command, _ = pomodoro_socket.recvfrom(1024)
+                self._handle_pomodoro_socket_command(pomodoro_socket_command)
+            except BlockingIOError:
+                pass
 
-                if not self.paused and not self.ended:
-                    self.time_left_sec -= sleep_time_sec
+            if not self.paused and not self.ended:
+                self.time_left_sec -= sleep_time_sec
 
-                time_left_sec_without_decimal = floor(self.time_left_sec)
-                minutes, seconds = divmod(time_left_sec_without_decimal, PomodoroSocket.ONE_MINUTE_IN_SECONDS)
+            time_left_sec_without_decimal = floor(self.time_left_sec)
+            minutes, seconds = divmod(time_left_sec_without_decimal, PomodoroSocket.ONE_MINUTE_IN_SECONDS)
 
-                if self.reset:
-                    icon = PomodoroSocket.RESET_ICON
-                elif self.paused:
-                    icon = PomodoroSocket.PAUSE_ICON
-                elif time_left_sec_without_decimal > 0:
-                    icon = PomodoroSocket.RUNNING_1_ICON if seconds % 2 == 0 else PomodoroSocket.RUNNING_2_ICON
-                else:
-                    self.ended = True
-                    icon = PomodoroSocket.END_ICON
-                    if not self.end_notification_sent:
-                        self._send_end_notification()
+            if self.reset:
+                icon = PomodoroSocket.RESET_ICON
+            elif self.paused:
+                icon = PomodoroSocket.PAUSE_ICON
+            elif time_left_sec_without_decimal > 0:
+                icon = PomodoroSocket.RUNNING_1_ICON if seconds % 2 == 0 else PomodoroSocket.RUNNING_2_ICON
+            else:
+                self.ended = True
+                icon = PomodoroSocket.END_ICON
+                if not self.end_notification_sent:
+                    self._send_end_notification()
 
-                print(f"{icon} {minutes:02d}:{seconds:02d}", flush=True)
+            print(f"{icon} {minutes:02d}:{seconds:02d}", flush=True)
 
-                time.sleep(sleep_time_sec)
+            time.sleep(sleep_time_sec)
 
 
 if __name__ == "__main__":

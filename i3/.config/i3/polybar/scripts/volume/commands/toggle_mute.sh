@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-echo -n "toggle_mute" | nc --udp --close localhost 60001
+echo -n "toggle_mute" | nc --udp --close 127.0.0.1 60001

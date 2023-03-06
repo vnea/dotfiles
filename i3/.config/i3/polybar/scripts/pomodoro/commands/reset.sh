@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-echo -n "reset" | socat - UNIX-CLIENT:/tmp/pomodoro.sock
+echo -n "reset" | nc --udp --close 127.0.0.1 60002
