@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-echo -n "volume_up" | socat - UNIX-CLIENT:/tmp/volume.sock
+echo -n "volume_up" | nc --udp --close localhost 60001

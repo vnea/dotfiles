@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 
-import socket
 import subprocess
-from pathlib import Path
+from socket import socket, AF_INET, SOCK_DGRAM
 
 NO_VOLUME = None
 
@@ -148,18 +147,15 @@ def start():
     volume = get_volume()
     print_formatted_volume(volume)
 
-    with socket.socket(socket.AF_UNIX, socket.SOCK_DGRAM) as volume_socket:
-        Path("/tmp/volume.sock").unlink(missing_ok=True)
-        volume_socket.bind("/tmp/volume.sock")
-        volume_socket.setblocking(True)
+    server_socket = socket(AF_INET, SOCK_DGRAM)
+    server_socket.bind(("127.0.0.1", 60001))
+    while True:
+        socket_command, _ = server_socket.recvfrom(1024)
+        handle_socket_command(socket_command)
 
-        while True:
-            socket_command, _ = volume_socket.recvfrom(1024)
-            handle_socket_command(socket_command)
-
-            volume = get_volume()
-            print_formatted_volume(volume)
-            send_notification(volume)
+        volume = get_volume()
+        print_formatted_volume(volume)
+        send_notification(volume)
 
 
 if __name__ == "__main__":
