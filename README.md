@@ -80,15 +80,16 @@ EOT
 
 ### Prerequisite
 
-* [i3](https://i3wm.org)
-* [betterlockscreen](check section `10. Betterlockscreen`)
-* [polybar](https://github.com/polybar/polybar)
+* [i3wm](https://i3wm.org)
+* [Betterlockscreen](check section `10. Betterlockscreen`)
+* [Polybar](https://github.com/polybar/polybar)
 * [ttf-noto-nerd](https://archlinux.org/packages/community/any/ttf-noto-nerd)
-* [dunst](https://github.com/dunst-project/dunst) (for Pomodoro Polybar text notification, see section `8. Dunst`)
-* [sox](https://sox.sourceforge.net/) (for Pomodoro Polybar sound notification)
+* [Dunst](https://github.com/dunst-project/dunst) (for Pomodoro Polybar text notification, see section `8. Dunst`)
+* [Papirus icon them](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
+* [Sox](https://sox.sourceforge.net/) (for Pomodoro Polybar sound notification)
 * [feh](https://feh.finalrewind.org)
-* [picom](https://github.com/yshui/picom)
-* [light](https://github.com/haikarainen/light)
+* [Picom](https://github.com/yshui/picom)
+* [Light](https://github.com/haikarainen/light)
 
 ### Installation
 

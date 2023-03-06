@@ -10,8 +10,7 @@
     # Follow monitor with mouse
     follow = mouse
 
-    width = 300
-    # height = 260
+    width = (300, 1000)
     origin = top-center
     offset = 24x24
 
@@ -76,7 +75,7 @@
     format = "<b>%a</b>\n%s"
 
     # Left align the text
-    alignment = left
+    alignment = center
 
     # Vertical alignment of message text and icon.
     vertical_alignment = center
@@ -115,7 +114,8 @@
     max_icon_size = 60
 
     # Paths to default icons.
-    icon_path = /usr/share/icons/kora/apps/scalable:/usr/share/icons/kora/status/scalable:/usr/share/icons/kora/actions/scalable:/usr/share/icons/kora/emblems/scalable:/usr/share/icons/kora/devices/scalable
+    icon_theme = Papirus
+    enable_recursive_icon_lookup = true
 
 
     # --- History --- #
@@ -149,6 +149,7 @@
     mouse_middle_click = do_action, close_current
     mouse_right_click = close_all
 
+
 [urgency_low]
     background = "#141929fe"
     highlight = "#6fa6e7"
@@ -172,16 +173,8 @@
     timeout = 0
     icon = battery-ac-adapter
 
-[backlight]
-    appname = "Backlight"
-    highlight = "#fc7b80"
-
-[music]
-    appname = "Music"
-
 [volume]
-    summary = "Volume*"
-    highlight = "#cb8cf4"
-
-[battery]
-    appname = "Power Warning"
+    appname = "Volume"
+    alignment = left
+    highlight = "#0a8009"
+    format = "%s"

@@ -28,7 +28,7 @@ font-2 = NotoSerif Nerd Font:style=Regular:size=18;6
 
 background = #8F000000
 
-modules-left = battery backlight pulseaudio
+modules-left = battery backlight audio
 modules-center = clickdate time
 modules-right = pomodoro
 
@@ -49,21 +49,17 @@ format-foreground = #6fc77b
 exec = echo "󰅐 $(date +'%X')"
 tail = true
 
-[module/pulseaudio]
-type = internal/pulseaudio
-use-ui-max = true
+[module/audio]
+type = custom/script
+interval = 1
 
-format-volume-foreground = #0a8009
-format-volume = <ramp-volume> <label-volume>
-
-ramp-volume-0 = 󰕿
-ramp-volume-1 = 󰕾
-ramp-volume-2 = 
-
-format-muted-foreground = #0a8009
-label-muted = 🔇 Muted
-
+exec = ~/bootsrap-poste/i3/.config/i3/polybar/scripts/volume.sh get
+click-left = ~/bootsrap-poste/i3/.config/i3/polybar/scripts/volume.sh mute
 click-right = pavucontrol
+scroll-up = ~/bootsrap-poste/i3/.config/i3/polybar/scripts/volume.sh up
+scroll-down = ~/bootsrap-poste/i3/.config/i3/polybar/scripts/volume.sh down
+
+format-foreground = #0a8009
 
 [module/battery]
 type = internal/battery
