@@ -108,13 +108,13 @@ def print_formatted_volume(volume):
 def send_notification(volume):
     icon_folder_base_path = "/usr/share/icons/Papirus/48x48/status"
     timeout = 500
-    notification_volume_id = 555
+    notification_id = 555
 
     if is_mute():
         icon_path = f"{icon_folder_base_path}/notification-audio-volume-muted.svg"
         subprocess.Popen([
             "dunstify",
-            "--replace", str(notification_volume_id),
+            "--replace", str(notification_id),
             "--appname", "Volume",
             "--icon", icon_path,
             "--timeout", str(timeout),
@@ -134,7 +134,7 @@ def send_notification(volume):
 
     subprocess.Popen([
         "dunstify",
-        "--replace", str(notification_volume_id),
+        "--replace", str(notification_id),
         "--appname", "Volume",
         "--icon", icon_path,
         "--timeout", str(timeout),

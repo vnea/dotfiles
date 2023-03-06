@@ -162,10 +162,10 @@ bindsym $mod+KP_Subtract exec --no-startup-id ~/.config/i3/polybar/scripts/volum
 bindsym XF86AudioMute exec --no-startup-id ~/.config/i3/polybar/scripts/volume/commands/toggle_mute.sh
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec light -A 5
-bindsym $mod+Shift+KP_Add exec light -A 5
-bindsym XF86MonBrightnessDown exec light -U 5
-bindsym $mod+Shift+KP_Subtract exec light -U 5
+bindsym XF86MonBrightnessUp exec --no-startup-id ~/.config/i3/polybar/scripts/light/commands/light_up.sh
+bindsym $mod+Shift+KP_Add exec --no-startup-id ~/.config/i3/polybar/scripts/light/commands/light_up.sh
+bindsym XF86MonBrightnessDown exec --no-startup-id ~/.config/i3/polybar/scripts/light/commands/light_down.sh
+bindsym $mod+Shift+KP_Subtract exec --no-startup-id ~/.config/i3/polybar/scripts/light/commands/light_down.sh
 
 # Gnome secret
 exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets

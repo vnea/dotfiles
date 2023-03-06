@@ -178,3 +178,9 @@
     alignment = left
     highlight = "#0a8009"
     format = "%s"
+
+[light]
+    appname = "Light"
+    alignment = left
+    highlight = "#bf950a"
+    format = "%s"

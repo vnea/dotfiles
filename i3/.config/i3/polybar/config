@@ -28,7 +28,7 @@ font-2 = NotoSerif Nerd Font:style=Regular:size=18;6
 
 background = #8F000000
 
-modules-left = battery backlight audio
+modules-left = battery light audio
 modules-center = clickdate time
 modules-right = pomodoro
 
@@ -90,34 +90,15 @@ animation-discharging-framerate = 2000
 format-full-foreground = #ad5d0c
 label-full = 󱈏 100%
 
-[module/backlight]
-type = internal/backlight
+[module/light]
+type = custom/script
+tail = true
 
-; Use the following command to list available cards:
-; $ ls -1 /sys/class/backlight/
-card = intel_backlight
+exec = ~/.config/i3/polybar/scripts/light/light.py
+scroll-up = ~/.config/i3/polybar/scripts/light/commands/light_up.sh
+scroll-down = ~/.config/i3/polybar/scripts/light/commands/light_down.sh
 
-; Enable changing the backlight with the scroll wheel
-; NOTE: This may require additional configuration on some systems. Polybar will
-; write to `/sys/class/backlight/${self.card}/brightness` which requires polybar
-; to have write access to that file.
-; DO NOT RUN POLYBAR AS ROOT.
-; The recommended way is to add the user to the
-; `video` group and give that group write-privileges for the `brightness` file.
-; See the ArchWiki for more information:
-; https://wiki.archlinux.org/index.php/Backlight#ACPI
-enable-scroll = true
-
-format = <ramp> <label>
 format-foreground = #bf950a
-
-ramp-0 = 󰃚
-ramp-1 = 󰃛
-ramp-2 = 󰃜
-ramp-3 = 󰃝
-ramp-4 = 󰃞
-ramp-5 = 󰃟
-ramp-6 = 󰃠
 
 [module/pomodoro]
 type = custom/script
