@@ -2,8 +2,11 @@
 
 import subprocess
 from socket import socket, AF_INET, SOCK_DGRAM
+import re
 
 NO_VOLUME = None
+
+regex_pattern_volume = re.compile(r'\b(\d+)%')
 
 
 def get_volume():
@@ -11,73 +14,48 @@ def get_volume():
         return NO_VOLUME
 
     p1 = subprocess.Popen(
-        ["amixer", "--device", "pulse", "get", "Master"],
+        ["pactl", "--", "get-sink-volume", "@DEFAULT_SINK@"],
         stdout=subprocess.PIPE
-    )
-    p2 = subprocess.Popen(
-        ["grep", "%"],
-        stdin=p1.stdout,
-        stdout=subprocess.PIPE
-    )
-    p3 = subprocess.Popen(
-        ["head", "-n", "1"],
-        stdin=p2.stdout,
-        stdout=subprocess.PIPE
-    )
-    p4 = subprocess.Popen(
-        ["cut", "-d", '[', "-f", "2"],
-        stdin=p3.stdout,
-        stdout=subprocess.PIPE
-    )
-    p5 = subprocess.Popen(
-        ["cut", "-d", '%', "-f", "1"],
-        stdin=p4.stdout,
-        stdout=subprocess.PIPE,
-        text=True
     )
 
-    return int(p5.communicate()[0])
+    pactl_volume_output = str(p1.communicate()[0])
+    match = regex_pattern_volume.search(pactl_volume_output)
+
+    return int(match.group(1))
 
 
 def is_mute():
-    p1 = subprocess.Popen(
+    amixer_output = str(subprocess.Popen(
         ["amixer", "--device", "pulse", "get", "Master"],
         stdout=subprocess.PIPE
-    )
-    p2 = subprocess.Popen(
-        ["grep", "%"],
-        stdin=p1.stdout,
-        stdout=subprocess.PIPE
-    )
-    p3 = subprocess.Popen(
-        ["grep", "-oE", "[^ ]+$"],
-        stdin=p2.stdout,
-        stdout=subprocess.PIPE
-    )
-    p4 = subprocess.Popen(
-        ["grep", "off"],
-        stdin=p3.stdout,
-        stdout=subprocess.DEVNULL
-    )
+    ).communicate()[0])
 
-    p4.communicate()
-    return p4.returncode == 0
+    return amixer_output.count("off") > 0
 
 
 def volume_up():
-    subprocess.Popen(["amixer", "--device", "pulse", "set", "Master", "on"], stdout=subprocess.DEVNULL).communicate()
-    subprocess.Popen(["amixer", "--device", "pulse", "set", "Master", "5%+"], stdout=subprocess.DEVNULL).communicate()
+    volume = get_volume()
+    if volume >= 100:
+        return
+
+    subprocess.Popen([
+        "pactl", "--", "set-sink-volume", "@DEFAULT_SINK@", "+5%"],
+        stdout=subprocess.DEVNULL
+    ).communicate()
 
 
 def volume_down():
-    subprocess.Popen(["amixer", "--device", "pulse", "set", "Master", "on"], stdout=subprocess.DEVNULL).communicate()
-    subprocess.Popen(["amixer", "--device", "pulse", "set", "Master", "5%-"], stdout=subprocess.DEVNULL).communicate()
+    subprocess.Popen([
+        "pactl", "--", "set-sink-volume", "@DEFAULT_SINK@", "-5%"],
+        stdout=subprocess.DEVNULL
+    ).communicate()
 
 
 def toggle_mute():
-    subprocess \
-        .Popen(["amixer", "--device", "pulse", "set", "Master", "1+", "toggle"], stdout=subprocess.DEVNULL) \
-        .communicate()
+    subprocess.Popen([
+        "pactl", "--", "set-sink-mute", "@DEFAULT_SINK@", "toggle"],
+        stdout=subprocess.DEVNULL
+    ).communicate()
 
 
 def handle_socket_command(socket_command):
