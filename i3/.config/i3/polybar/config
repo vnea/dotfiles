@@ -59,7 +59,7 @@ click-right = pavucontrol
 scroll-up = ~/.config/i3/polybar/scripts/volume/commands/volume_up.sh
 scroll-down = ~/.config/i3/polybar/scripts/volume/commands/volume_down.sh
 
-format-foreground = #0a8009
+format-foreground = #0a9909
 
 [module/battery]
 type = internal/battery
@@ -72,7 +72,7 @@ adapter = AC
 poll-interval = 20
 
 format-charging = <animation-charging> <label-charging>
-format-charging-foreground = #874707
+format-charging-foreground = #ad5d0c
 animation-charging-0 = 󰢟
 animation-charging-1 = 󱊤
 animation-charging-2 = 󱊥
@@ -80,14 +80,14 @@ animation-charging-3 = 󱊦
 animation-charging-framerate = 2000
 
 format-discharging = <animation-discharging> <label-discharging>
-format-discharging-foreground = #874707
+format-discharging-foreground = #ad5d0c
 animation-discharging-0 = 󱊣
 animation-discharging-1 = 󱊢
 animation-discharging-2 = 󱊡
 animation-discharging-3 = 󰂎
 animation-discharging-framerate = 2000
 
-format-full-foreground = #874707
+format-full-foreground = #ad5d0c
 label-full = 󱈏 100%
 
 [module/backlight]
@@ -109,7 +109,7 @@ card = intel_backlight
 enable-scroll = true
 
 format = <ramp> <label>
-format-foreground = #917107
+format-foreground = #bf950a
 
 ramp-0 = 󰃚
 ramp-1 = 󰃛
