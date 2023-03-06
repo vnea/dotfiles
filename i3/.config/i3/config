@@ -155,11 +155,11 @@ mode "resize" {
 }
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id ~/bootsrap-poste/i3/.config/i3/polybar/scripts/volume.sh up
-bindsym $mod+KP_Add exec --no-startup-id ~/bootsrap-poste/i3/.config/i3/polybar/scripts/volume.sh up
-bindsym XF86AudioLowerVolume exec --no-startup-id ~/bootsrap-poste/i3/.config/i3/polybar/scripts/volume.sh down
-bindsym $mod+KP_Subtract exec --no-startup-id ~/bootsrap-poste/i3/.config/i3/polybar/scripts/volume.sh down
-bindsym XF86AudioMute exec --no-startup-id ~/bootsrap-poste/i3/.config/i3/polybar/scripts/volume.sh mute
+bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.config/i3/polybar/scripts/volume/commands/volume_up.sh
+bindsym $mod+KP_Add exec --no-startup-id ~/.config/i3/polybar/scripts/volume/commands/volume_up.sh
+bindsym XF86AudioLowerVolume exec --no-startup-id ~/.config/i3/polybar/scripts/volume/commands/volume_down.sh
+bindsym $mod+KP_Subtract exec --no-startup-id ~/.config/i3/polybar/scripts/volume/commands/volume_down.sh
+bindsym XF86AudioMute exec --no-startup-id ~/.config/i3/polybar/scripts/volume/commands/toggle_mute.sh
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec light -A 5

@@ -47,17 +47,17 @@ click-left = gsimplecal
 type = custom/script
 format-foreground = #6fc77b
 exec = echo "󰅐 $(date +'%X')"
-tail = true
+interval = 1
 
 [module/audio]
 type = custom/script
-interval = 1
+tail = true
 
-exec = ~/bootsrap-poste/i3/.config/i3/polybar/scripts/volume.sh get
-click-left = ~/bootsrap-poste/i3/.config/i3/polybar/scripts/volume.sh mute
+exec = ~/.config/i3/polybar/scripts/volume/volume.py
+click-left = ~/.config/i3/polybar/scripts/volume/commands/toggle_mute.sh
 click-right = pavucontrol
-scroll-up = ~/bootsrap-poste/i3/.config/i3/polybar/scripts/volume.sh up
-scroll-down = ~/bootsrap-poste/i3/.config/i3/polybar/scripts/volume.sh down
+scroll-up = ~/.config/i3/polybar/scripts/volume/commands/volume_up.sh
+scroll-down = ~/.config/i3/polybar/scripts/volume/commands/volume_down.sh
 
 format-foreground = #0a8009
 
