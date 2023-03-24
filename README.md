@@ -181,3 +181,13 @@ Link: https://wiki.archlinux.org/title/Terminator
 ```shell
 rm -rf ~/.config/terminator && stow terminator
 ```
+
+## 12. Flameshot
+
+Link: https://flameshot.org/
+
+### Installation
+
+```shell
+rm -rf ~/.config/flameshot/ && stow flameshot
+```
