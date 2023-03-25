@@ -54,7 +54,7 @@ class PomodoroSocket:
             "🍅 Pomodoro 🍅",
             "--timeout",
             "5000",
-            "Time's up, who's next?!"
+            "Time's up!"
         ])
         subprocess.Popen(
             ["play", "~/bootsrap-poste/i3/.config/i3/polybar/scripts/pomodoro/time-s-up.mp3"],
