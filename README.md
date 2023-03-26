@@ -11,10 +11,10 @@
 
 ```shell
 # Via SSH
-git clone git@github.com:vnea/bootsrap-poste.git ~/bootsrap-poste
+git clone git@github.com:vnea/dotfiles.git ~/dotfiles
 
 # Or via HTTP
-git clone https://github.com/vnea/bootsrap-poste.git ~/bootsrap-poste
+git clone https://github.com/vnea/dotfiles.git ~/dotfiles
 ```
 
 ## 1. Neovim
@@ -28,7 +28,7 @@ git clone https://github.com/vnea/bootsrap-poste.git ~/bootsrap-poste
 
 ```shell
 rm -rf ~/.config/nvim
-ln -s ~/bootsrap-poste/nvim ~/.config/nvim
+ln -s ~/dotfiles/nvim ~/.config/nvim
 ```
 
 ## 2. tmux
@@ -71,7 +71,7 @@ git config --global user.email "email"
 cat <<EOT >> ~/.gitconfig
 
 [include]
-    path = bootsrap-poste/git/.gitconfig
+    path = dotfiles/git/.gitconfig
 
 EOT
 ```
@@ -163,7 +163,7 @@ Link: https://github.com/betterlockscreen/betterlockscreen
 ### Generate cache
 
 ```shell
-betterlockscreen --update ~/bootsrap-poste/i3/.config/i3/images/lockscreen.jpg --fx blur
+betterlockscreen --update ~/.config/i3/images/lockscreen.jpg --fx blur
 ```
 
 ### Lockscreen after sleep/suspend
