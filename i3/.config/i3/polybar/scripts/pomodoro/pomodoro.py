@@ -57,7 +57,7 @@ class PomodoroSocket:
             "Time's up!"
         ])
         subprocess.Popen(
-            ["play", "~/bootsrap-poste/i3/.config/i3/polybar/scripts/pomodoro/time-s-up.mp3"],
+            ["play", "~/.config/i3/polybar/scripts/pomodoro/time-s-up.mp3"],
             stdout=subprocess.DEVNULL,
             stderr=subprocess.DEVNULL
         )
