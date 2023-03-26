@@ -1,5 +1,7 @@
 # Dotfiles
 
+Just my dotfiles.
+
 ## 0. Getting started
 
 ### Prerequisite
