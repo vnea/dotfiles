@@ -43,7 +43,7 @@ ln -s ~/dotfiles/nvim ~/.config/nvim
 
 ```shell
 # tmux
-rm -rf ~/.tmux.conf ~/config/tmux && stow tmux
+rm -rf ~/.tmux.conf ~/.config/tmux && stow tmux
 
 # Install tmux plugins
 git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
@@ -133,7 +133,7 @@ rm -rf ~/.config/thefuck && stow thefuck
 ### Installation
 
 ```shell
-stow gtk
+rm -rf ~/.config/gtk-3.0 && stow gtk
 ```
 
 ## 8. Dunst
@@ -141,7 +141,7 @@ stow gtk
 ### Installation
 
 ```shell
-stow dunst
+rm -rf ~/.config/dunst && stow dunst
 ```
 
 ## 9. Powerlevel10k
@@ -191,5 +191,5 @@ Link: https://flameshot.org/
 ### Installation
 
 ```shell
-rm -rf ~/.config/flameshot/ && stow flameshot
+rm -rf ~/.config/flameshot && stow flameshot
 ```
