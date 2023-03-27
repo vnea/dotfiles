@@ -4,7 +4,7 @@ Just my dotfiles.
 
 ## 0. Getting started
 
-### Prerequisite
+### Prerequisite(s)
 
 * [git](https://git-scm.com)
 * [GNU stow](https://www.gnu.org/software/stow)
@@ -21,7 +21,7 @@ git clone https://github.com/vnea/dotfiles.git ~/dotfiles
 
 ## 1. Neovim
 
-### Prerequisite
+### Prerequisite(s)
 
 * [Neovim](https://neovim.io) >= v0.5
 * [packer.nvim](https://github.com/wbthomason/packer.nvim)
@@ -35,7 +35,7 @@ ln -s ~/dotfiles/nvim ~/.config/nvim
 
 ## 2. tmux
 
-### Prerequisite
+### Prerequisite(s)
 
 * [tmux](https://github.com/tmux/tmux) >= v3.2
 
@@ -53,7 +53,7 @@ tmux
 
 ## 3. Git
 
-### Prerequisite
+### Prerequisite(s)
 
 * [git](https://git-scm.com)
 * [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy)
@@ -80,7 +80,7 @@ EOT
 
 ## 4. i3
 
-### Prerequisite
+### Prerequisite(s)
 
 * [i3wm](https://i3wm.org)
 * [Betterlockscreen](check section `10. Betterlockscreen`)
@@ -109,7 +109,7 @@ sudo gpasswd -a $USER video
 
 ## 5. rofi
 
-### Prerequisite
+### Prerequisite(s)
 
 * [rofi](https://github.com/davatorium/rofi)
 * [rofi-themes](https://github.com/adi1090x/rofi)
@@ -158,7 +158,7 @@ rm -f ~/.p10k.zsh && stow p10k
 
 Link: https://github.com/betterlockscreen/betterlockscreen
 
-### Prerequisite
+### Prerequisite(s)
 
 * [i3lock-color](https://github.com/Raymo111/i3lock-color)
 
