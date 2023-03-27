@@ -56,10 +56,12 @@ tmux
 ### Prerequisite(s)
 
 * [git](https://git-scm.com)
+* [delta](https://github.com/dandavison/delta)
 * [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy)
 * (optional) ansible-vault-merge:
     * Download [here](https://raw.githubusercontent.com/building5/ansible-vault-tools/master/ansible-vault-merge.sh)
       with name `ansible-vault-merge`
+    * (Check that script is not malicious before continuing) 
     * ```chmod +x ansible-vault-merge```
     * ```sudo mv ansible-vault-merge /usr/local/bin```
 

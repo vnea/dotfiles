@@ -90,7 +90,11 @@
     autocrlf = input
     whitespace = fix,space-before-tab,-indent-with-non-tab,trailing-space
     editor = nvim
-    pager = diff-so-fancy | less --tabs=4 -RFX
+    pager = delta --diff-so-fancy
+
+[delta]
+    line-numbers = true
+    side-by-side = true
 
 [help]
     autocorrect = prompt
@@ -102,6 +106,7 @@
     compactionHeuristic = true
     mnemonicPrefix = true
     renames = copies
+    colorMoved = default
 
 [diff "ansible-vault"]
     textconv = ansible-vault view
@@ -121,7 +126,7 @@
     pretty = %Cred%h%Creset -%C(yellow)%d%Creset %C(white)%s%Creset %C(yellow)(%cr) %C(bold blue)<%an>%Creset
 
 [interactive]
-    diffFiltr = diff-so-fancy --patch
+    diffFiltr = delta --color-only
 
 [log]
     abbrevCommit = true
