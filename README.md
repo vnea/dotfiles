@@ -61,7 +61,7 @@ tmux
 * (optional) ansible-vault-merge:
     * Download [here](https://raw.githubusercontent.com/building5/ansible-vault-tools/master/ansible-vault-merge.sh)
       with name `ansible-vault-merge`
-    * (Check that script is not malicious before continuing) 
+    * (Check that script is not malicious before continuing)
     * ```chmod +x ansible-vault-merge```
     * ```sudo mv ansible-vault-merge /usr/local/bin```
 
@@ -194,4 +194,20 @@ Link: https://flameshot.org/
 
 ```shell
 rm -rf ~/.config/flameshot && stow flameshot
+```
+
+## 13. Systemd services & timers
+
+### Notify low battery
+
+Inspired from: https://life-prog.com/tech/alert-on-low-battery-in-i3
+
+```shell
+sudo ln -s ~/dotfiles/systemd/user/notify-low-battery /usr/local/bin/notify-low-battery
+ln -s ~/dotfiles/systemd/user/notify-low-battery.service ~/.config/systemd/user/notify-low-battery.service
+ln -s ~/dotfiles/systemd/user/notify-low-battery.timer ~/.config/systemd/user/notify-low-battery.timer
+systemctl --user daemon-reload
+systemctl --user start notify-low-battery.service
+systemctl --user enable notify-low-battery.timer
+systemctl --user start notify-low-battery.timer
 ```

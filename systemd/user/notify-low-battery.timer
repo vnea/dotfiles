@@ -1,0 +1,9 @@
+[Unit]
+Description=Check battery capacity every 5 minutes to warn the user in case of low battery
+
+[Timer]
+OnActiveSec=1s
+OnUnitActiveSec=5m
+
+[Install]
+WantedBy=timers.target

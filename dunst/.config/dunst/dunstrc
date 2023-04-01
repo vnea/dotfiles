@@ -149,7 +149,6 @@
     mouse_middle_click = do_action, close_current
     mouse_right_click = close_all
 
-
 [urgency_low]
     background = "#141929fe"
     highlight = "#6fa6e7"
@@ -184,3 +183,8 @@
     alignment = left
     highlight = "#bf950a"
     format = "%s"
+
+[battery_low]
+    appname = "Battery low"
+    alignment = left
+    format = "%a\n%s"

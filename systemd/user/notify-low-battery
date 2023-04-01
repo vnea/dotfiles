@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+capacity=$(cat /sys/class/power_supply/BAT0/capacity)
+status=$(cat /sys/class/power_supply/BAT0/status)
+threshold=15
+
+if [ "$status" = "Discharging" ] && [ "$capacity" -le $threshold ]; then
+  dunstify \
+    --replace 1234 \
+    --appname "Battery low" \
+    --icon /usr/share/icons/Papirus/48x48/status/battery-caution.svg \
+    "Level: $capacity%"
+fi
