@@ -211,3 +211,16 @@ systemctl --user start notify-low-battery.service
 systemctl --user enable notify-low-battery.timer
 systemctl --user start notify-low-battery.timer
 ```
+
+## 14. asdf
+
+Link: https://asdf-vm.com/
+
+### Installation
+
+```shell
+asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+asdf plugin-add terraform https://github.com/asdf-community/asdf-hashicorp.git
+
+rm -f ~/.asdfrc && stow asdf
+```
