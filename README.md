@@ -59,11 +59,11 @@ tmux
 * [delta](https://github.com/dandavison/delta)
 * [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy)
 * (optional) ansible-vault-merge:
-    * Download [here](https://raw.githubusercontent.com/building5/ansible-vault-tools/master/ansible-vault-merge.sh)
-      with name `ansible-vault-merge`
-    * (Check that script is not malicious before continuing)
-    * ```chmod +x ansible-vault-merge```
-    * ```sudo mv ansible-vault-merge /usr/local/bin```
+    1. Download it [here](https://raw.githubusercontent.com/building5/ansible-vault-tools/master/ansible-vault-merge.sh)
+      and name it `ansible-vault-merge`.
+    2. Check that script is not malicious before continuing.
+    3. Run: `chmod +x ansible-vault-merge`.
+    4. Run: `sudo mv ansible-vault-merge /usr/local/bin`.
 
 ### Installation
 
