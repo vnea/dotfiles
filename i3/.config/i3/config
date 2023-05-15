@@ -60,7 +60,7 @@ set $ws9 "9:"
 set $open_brave exec "pgrep --exact brave && i3-msg workspace 1: || brave"
 set $open_idea exec "if [ $(wmctrl -lx | cut -d' ' -f4 | grep --count idea) -eq 0 ]; then idea; else i3-msg workspace 2:; fi"
 set $open_term exec "pgrep --exact terminator && i3-msg workspace 3: || terminator"
-set $open_slack exec "if [ $(wmctrl -lx | cut -d' ' -f4 | grep --count slack) -eq 0 ]; then slack; else i3-msg workspace 4:; fi"
+set $open_rambox exec "pgrep --exact rambox && i3-msg workspace 4: || rambox"
 set $open_file exec ~/.config/i3/scripts/open_file_explorer.sh
 set $open_subl exec "pgrep --exact sublime_text && i3-msg workspace 6: || subl"
 set $open_firefox exec "pgrep --exact firefox && i3-msg workspace 7: || ~/.config/i3/scripts/open_firefox.sh"
@@ -82,7 +82,7 @@ bindsym $mod+ccedilla workspace $ws9
 bindsym $mod+Mod2+KP_1 $open_brave
 bindsym $mod+Mod2+KP_2 $open_idea
 bindsym $mod+Mod2+KP_3 $open_term
-bindsym $mod+Mod2+KP_4 $open_slack
+bindsym $mod+Mod2+KP_4 $open_rambox
 bindsym $mod+Mod2+KP_5 $open_file
 bindsym $mod+Mod2+KP_6 $open_subl
 bindsym $mod+Mod2+KP_7 $open_firefox
@@ -93,7 +93,7 @@ bindsym $mod+Mod2+KP_0 $toggle_polybar
 bindcode $mod+87 $open_brave
 bindcode $mod+88 $open_idea
 bindcode $mod+89 $open_term
-bindcode $mod+83 $open_slack
+bindcode $mod+83 $open_rambox
 bindcode $mod+84 $open_file
 bindcode $mod+85 $open_subl
 bindcode $mod+79 $open_firefox
@@ -195,7 +195,7 @@ for_window [title="Votre écran est partagé par le biais de l'application meet.
 assign [class="Brave-browser"] $ws1
 assign [class="jetbrains-idea"] $ws2
 assign [class="Terminator"] $ws3
-assign [class="Slack"] $ws4
+assign [class="Rambox"] $ws4
 assign [class="Subl"] $ws6
 assign [class="firefox"] $ws7
 assign [class="jetbrains-rider"] $ws8
