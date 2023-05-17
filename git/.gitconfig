@@ -125,6 +125,9 @@
 [format]
     pretty = %Cred%h%Creset -%C(yellow)%d%Creset %C(white)%s%Creset %C(yellow)(%cr) %C(bold blue)<%an>%Creset
 
+[gpg]
+    format = ssh
+
 [interactive]
     diffFiltr = delta --color-only
 
