@@ -1,6 +1,6 @@
 # Dotfiles
 
-Just my dotfiles.
+Just my dotfiles and a bit more.
 
 ## 0. Getting started
 
@@ -19,7 +19,30 @@ git clone git@github.com:vnea/dotfiles.git ~/dotfiles
 git clone https://github.com/vnea/dotfiles.git ~/dotfiles
 ```
 
-## 1. Neovim
+## 1. Bash aliases
+
+### Installation
+
+In your `.bashrc` or `.zshrc`, add:
+
+```bash
+##############################
+# Load aliases
+##############################
+for f in $(find ~/dotfiles/aliases -maxdepth 1 -name "*.sh"); do source $f; done
+```
+
+Then, reload the configuration:
+
+```shell
+# For Bash
+source .bashrc
+
+# For Zsh
+source .zshrc
+```
+
+## 2. Neovim
 
 ### Prerequisite(s)
 
@@ -33,7 +56,7 @@ rm -rf ~/.config/nvim
 ln -s ~/dotfiles/nvim ~/.config/nvim
 ```
 
-## 2. tmux
+## 3. tmux
 
 ### Prerequisite(s)
 
@@ -51,7 +74,7 @@ tmux
 # Press "CTRL-Q then I", wait for installation and restart tmux
 ```
 
-## 3. Git
+## 4. Git
 
 ### Prerequisite(s)
 
@@ -60,7 +83,7 @@ tmux
 * [diff-so-fancy](https://github.com/so-fancy/diff-so-fancy)
 * (optional) ansible-vault-merge:
     1. Download it [here](https://raw.githubusercontent.com/building5/ansible-vault-tools/master/ansible-vault-merge.sh)
-      and name it `ansible-vault-merge`.
+       and name it `ansible-vault-merge`.
     2. Check that script is not malicious before continuing.
     3. Run: `chmod +x ansible-vault-merge`.
     4. Run: `sudo mv ansible-vault-merge /usr/local/bin`.
@@ -80,15 +103,15 @@ cat <<EOT >> ~/.gitconfig
 EOT
 ```
 
-## 4. i3
+## 5. i3
 
 ### Prerequisite(s)
 
 * [i3wm](https://i3wm.org)
-* [Betterlockscreen](check section `10. Betterlockscreen`)
+* Betterlockscreen (see section `11. Betterlockscreen`)
 * [Polybar](https://github.com/polybar/polybar)
 * [ttf-noto-nerd](https://archlinux.org/packages/community/any/ttf-noto-nerd)
-* [Dunst](https://github.com/dunst-project/dunst) (for Pomodoro Polybar text notification, see section `8. Dunst`)
+* [Dunst](https://github.com/dunst-project/dunst) (for Pomodoro Polybar text notification, see section `9. Dunst`)
 * [Papirus icon them](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
 * [Sox](https://sox.sourceforge.net/) (for Pomodoro Polybar sound notification)
 * [feh](https://feh.finalrewind.org)
@@ -109,7 +132,7 @@ sudo gpasswd -a $USER video
 # Reboot computer
 ```
 
-## 5. rofi
+## 6. rofi
 
 ### Prerequisite(s)
 
@@ -122,7 +145,7 @@ sudo gpasswd -a $USER video
 rm -rf ~/.config/rofi/config.rasi && stow rofi
 ```
 
-## 6. thefuck
+## 7. thefuck
 
 ### Installation
 
@@ -130,7 +153,7 @@ rm -rf ~/.config/rofi/config.rasi && stow rofi
 rm -rf ~/.config/thefuck && stow thefuck
 ```
 
-## 7. GTK
+## 8. GTK
 
 ### Installation
 
@@ -138,7 +161,7 @@ rm -rf ~/.config/thefuck && stow thefuck
 rm -rf ~/.config/gtk-3.0 && stow gtk
 ```
 
-## 8. Dunst
+## 9. Dunst
 
 ### Installation
 
@@ -146,7 +169,7 @@ rm -rf ~/.config/gtk-3.0 && stow gtk
 rm -rf ~/.config/dunst && stow dunst
 ```
 
-## 9. Powerlevel10k
+## 10. Powerlevel10k
 
 ### Installation
 
@@ -156,7 +179,7 @@ rm -f ~/.p10k.zsh && stow p10k
 # Reboot the Terminal
 ```
 
-## 10. Betterlockscreen
+## 11. Betterlockscreen
 
 Link: https://github.com/betterlockscreen/betterlockscreen
 
@@ -176,7 +199,7 @@ betterlockscreen --update ~/.config/i3/images/lockscreen.jpg --fx blur
 systemctl enable betterlockscreen@$USER
 ```
 
-## 11. Terminator
+## 12. Terminator
 
 Link: https://wiki.archlinux.org/title/Terminator
 
@@ -186,7 +209,7 @@ Link: https://wiki.archlinux.org/title/Terminator
 rm -rf ~/.config/terminator && stow terminator
 ```
 
-## 12. Flameshot
+## 13. Flameshot
 
 Link: https://flameshot.org/
 
@@ -196,7 +219,7 @@ Link: https://flameshot.org/
 rm -rf ~/.config/flameshot && stow flameshot
 ```
 
-## 13. Systemd services & timers
+## 14. Systemd services & timers
 
 ### Notify low battery
 
@@ -212,7 +235,7 @@ systemctl --user enable notify-low-battery.timer
 systemctl --user start notify-low-battery.timer
 ```
 
-## 14. asdf
+## 15. asdf
 
 Link: https://asdf-vm.com/
 
