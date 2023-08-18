@@ -21,7 +21,10 @@ git clone https://github.com/vnea/dotfiles.git ~/dotfiles
 
 ----
 
-== 1. Bash aliases
+:sectnums:
+
+== Bash aliases
+:sectnums!:
 
 === Installation
 
@@ -47,7 +50,10 @@ source .bashrc
 source .zshrc
 ----
 
-== 2. Neovim
+:sectnums:
+
+== Neovim
+:sectnums!:
 
 === Prerequisite(s)
 
@@ -62,7 +68,10 @@ rm -rf ~/.config/nvim
 ln -s ~/dotfiles/nvim ~/.config/nvim
 ----
 
-== 3. tmux
+:sectnums:
+
+== tmux
+:sectnums!:
 
 === Prerequisite(s)
 
@@ -81,7 +90,10 @@ tmux
 # Press "CTRL-Q then I", wait for installation and restart tmux
 ----
 
-== 4. Git
+:sectnums:
+
+== Git
+:sectnums!:
 
 === Prerequisite(s)
 
@@ -111,15 +123,18 @@ cat <<EOT >> ~/.gitconfig
 EOT
 ----
 
-== 5. i3
+:sectnums:
+
+== i3
+:sectnums!:
 
 === Prerequisite(s)
 
 * https://i3wm.org[i3wm]
-* Betterlockscreen (see section `11. Betterlockscreen`)
+* Betterlockscreen (see section <<betterlockscreen>>)
 * https://github.com/polybar/polybar[Polybar]
 * https://archlinux.org/packages/community/any/ttf-noto-nerd[ttf-noto-nerd]
-* https://github.com/dunst-project/dunst[Dunst] (for Pomodoro Polybar text notification, see section `9. Dunst`)
+* https://github.com/dunst-project/dunst[Dunst] (for Pomodoro Polybar text notification, see section <<dunst>>)
 * https://github.com/PapirusDevelopmentTeam/papirus-icon-theme[Papirus icon them]
 * https://sox.sourceforge.net/[Sox] (for Pomodoro Polybar sound notification)
 * https://feh.finalrewind.org[feh]
@@ -141,7 +156,10 @@ sudo gpasswd -a $USER video
 # Reboot computer
 ----
 
-== 6. rofi
+:sectnums:
+
+== rofi
+:sectnums!:
 
 === Prerequisite(s)
 
@@ -155,7 +173,10 @@ sudo gpasswd -a $USER video
 rm -rf ~/.config/rofi/config.rasi && stow rofi
 ----
 
-== 7. thefuck
+:sectnums:
+
+== thefuck
+:sectnums!:
 
 === Installation
 
@@ -164,7 +185,10 @@ rm -rf ~/.config/rofi/config.rasi && stow rofi
 rm -rf ~/.config/thefuck && stow thefuck
 ----
 
-== 8. GTK
+:sectnums:
+
+== GTK
+:sectnums!:
 
 === Installation
 
@@ -173,7 +197,10 @@ rm -rf ~/.config/thefuck && stow thefuck
 rm -rf ~/.config/gtk-3.0 && stow gtk
 ----
 
-== 9. Dunst
+:sectnums:
+
+== Dunst [[dunst]]
+:sectnums!:
 
 === Installation
 
@@ -182,7 +209,10 @@ rm -rf ~/.config/gtk-3.0 && stow gtk
 rm -rf ~/.config/dunst && stow dunst
 ----
 
-== 10. Powerlevel10k
+:sectnums:
+
+== Powerlevel10k
+:sectnums!:
 
 === Installation
 
@@ -193,7 +223,10 @@ rm -f ~/.p10k.zsh && stow p10k
 # Reboot the Terminal
 ----
 
-== 11. Betterlockscreen
+:sectnums:
+
+== Betterlockscreen [[betterlockscreen]]
+:sectnums!:
 
 Link: https://github.com/betterlockscreen/betterlockscreen
 
@@ -215,7 +248,10 @@ betterlockscreen --update ~/.config/i3/images/lockscreen.jpg --fx blur
 systemctl enable betterlockscreen@$USER
 ----
 
-== 12. Terminator
+:sectnums:
+
+== Terminator
+:sectnums!:
 
 Link: https://wiki.archlinux.org/title/Terminator
 
@@ -226,7 +262,10 @@ Link: https://wiki.archlinux.org/title/Terminator
 rm -rf ~/.config/terminator && stow terminator
 ----
 
-== 13. Flameshot
+:sectnums:
+
+== Flameshot
+:sectnums!:
 
 Link: https://flameshot.org/
 
@@ -237,7 +276,10 @@ Link: https://flameshot.org/
 rm -rf ~/.config/flameshot && stow flameshot
 ----
 
-== 14. Systemd services &amp; timers
+:sectnums:
+
+== Systemd services & timers
+:sectnums!:
 
 === Notify low battery
 
@@ -254,7 +296,10 @@ systemctl --user enable notify-low-battery.timer
 systemctl --user start notify-low-battery.timer
 ----
 
-== 15. asdf
+:sectnums:
+
+== asdf
+:sectnums!:
 
 Link: https://asdf-vm.com/
 
