@@ -1,6 +1,6 @@
 = Dotfiles
 
-Just my dotfiles and a bit more.
+Just my dotfiles and tools.
 
 == 0. Getting started
 
