@@ -26,6 +26,10 @@ function gist() {
     (&>/dev/null xdg-open "https://gist.github.com/vnea" &)
 }
 
+function vnea() {
+    (&>/dev/null xdg-open "https://github.com/vnea" &)
+}
+
 # Fzf diff
 function zd() {
   preview="git diff $* --color=always -- {-1} | diff-so-fancy"
