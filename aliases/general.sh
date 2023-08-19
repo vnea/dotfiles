@@ -1,13 +1,16 @@
 #!/usr/bin/env bash
 
-alias rf="source ~/.zshrc"
+alias rf="source ~/.zshenv && source ~/.zshrc"
 alias ez="nvim ~/.zshrc"
+alias ezv="nvim ~/.zshenv"
 alias et="nvim ~/.config/tmux/tmux.conf"
 alias explorer="nemo . &"
 alias lx="exa --long --group --header --git --icons"
 alias lxa="lx --all"
 alias grep="grep --color=auto"
 alias df="duf"
+
+# For copying commands from the web, source: https://www.30secondsofcode.org/articles/s/bash-alias-dollar-sign
 alias '$'=''
 
 function gmail() {
