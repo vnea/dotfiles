@@ -211,14 +211,21 @@ rm -rf ~/.config/dunst && stow dunst
 
 :sectnums:
 
-== Powerlevel10k
+== Zsh + Oh My Zsh + Powerlevel10k
 :sectnums!:
+
+=== Prerequisite(s)
+
+* https://wiki.archlinux.org/title/zsh[Zsh]
+* https://ohmyz.sh/[Oh My Zsh]
+* https://github.com/romkatv/powerlevel10k[Powerlevel10k]
 
 === Installation
 
 [source,shell]
 ----
 rm -f ~/.p10k.zsh && stow p10k
+rm -f ~/.zshrc && stow zsh
 
 # Reboot the Terminal
 ----
