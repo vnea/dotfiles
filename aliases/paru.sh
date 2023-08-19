@@ -3,7 +3,7 @@
 # Update all packages
 alias pru="paru -Sua"
 
-# Remove temprorary installed dependencies needed for compilation
+# Remove temporary installed dependencies needed for compilation
 alias prc="paru --clean"
 
 # Search a package with fzf and install it, adapted from: https://github.com/joehillen/paruz/blob/master/paruz

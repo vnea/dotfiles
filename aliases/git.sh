@@ -28,8 +28,8 @@ function gist() {
 
 # Fzf diff
 function zd() {
-  preview="git diff $@ --color=always -- {-1} | diff-so-fancy"
-  git diff $@ --name-only | fzf -m --ansi --preview-window=right:70% --preview $preview
+  preview="git diff $* --color=always -- {-1} | diff-so-fancy"
+  git diff "$@" --name-only | fzf -m --ansi --preview-window=right:70% --preview "$preview"
 }
 
 # Fzf diff with main
@@ -51,5 +51,5 @@ function gsquash {
     return
   fi
 
-  git reset --soft HEAD~${number_of_commits_to_squash} && git commit --edit -m"$(git log --format=%B --reverse HEAD..HEAD@{1})"
+  git reset --soft HEAD~"${number_of_commits_to_squash}" && git commit --edit --message "$(git log --format=%B --reverse HEAD..HEAD@\{1\})"
 }
