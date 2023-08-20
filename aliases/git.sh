@@ -22,6 +22,9 @@ alias gcy="git branch --show-current | tr -d '\n' | xclip -sel clip"
 # Select branch with fzf
 alias gcob="git branch -a | sed \"s/remotes\/origin\///g\" | sed \"s/\s//g\" | sed \"s/*//\" | sort | uniq | fzf | xargs --no-run-if-empty git checkout"
 
+# Reset current work to current origin branch
+alias grho="git reset --hard origin/\$(git rev-parse --abbrev-ref HEAD)"
+
 function gist() {
     (&>/dev/null xdg-open "https://gist.github.com/vnea" &)
 }
@@ -51,7 +54,7 @@ function gsquash {
   number_of_commits_to_squash=${1}
   if [ -z "$1" ]
   then
-    echo "Usage: gsquash <number_of_commits_to_squash>"
+    echo "Usage: $0 <number_of_commits_to_squash>"
     return
   fi
 
