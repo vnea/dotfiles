@@ -11,12 +11,12 @@ fi
 export ZSH="/home/$USER/.oh-my-zsh"
 plugins=(
   colored-man-pages
+  dirhistory
   git
   history
   kubectl
   wd
   yarn
-  dirhistory
   zsh-syntax-highlighting # Must be the last
 )
 source $ZSH/oh-my-zsh.sh
