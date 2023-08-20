@@ -1,4 +1,5 @@
 [global_config]
+  disable_mouse_paste = True
 [keybindings]
   zoom_in = <Primary>KP_6
   zoom_out = <Primary>KP_9
@@ -14,6 +15,7 @@
   go_right = ""
   rotate_cw = ""
   rotate_ccw = ""
+  split_auto = ""
   split_horiz = ""
   split_vert = ""
   close_term = ""
@@ -50,22 +52,28 @@
   edit_terminal_title = ""
   layout_launcher = ""
   previous_profile = <Primary>p
+  preferences = <Primary><Alt>s
+  preferences_keybindings = ""
   help = ""
 [profiles]
   [[default]]
+    allow_bold = False
     icon_bell = False
+    cursor_shape = ibeam
     cursor_fg_color = "#241f31"
     cursor_bg_color = "#ffffff"
-    font = Source Code Pro 18
+    font = NotoMono Nerd Font 18
     show_titlebar = False
     scrollbar_position = hidden
     use_system_font = False
   [[light]]
+    allow_bold = False
     icon_bell = False
     background_color = "#ffffff"
+    cursor_shape = ibeam
     cursor_fg_color = "#c01c28"
     cursor_bg_color = "#aaaaaa"
-    font = Source Code Pro 18
+    font = NotoMono Nerd Font 18
     foreground_color = "#000000"
     show_titlebar = False
     scrollbar_position = hidden
