@@ -9,6 +9,7 @@ alias lx="exa --long --group --header --git --icons"
 alias lxa="lx --all"
 alias grep="grep --color=auto"
 alias df="duf"
+alias du="dust"
 
 # For copying commands from the web, source: https://www.30secondsofcode.org/articles/s/bash-alias-dollar-sign
 alias '$'=''
