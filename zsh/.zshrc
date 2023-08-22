@@ -1,9 +1,17 @@
+##############################
+# p10k
+##############################
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
+
+# Theme
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 ##############################
 # Oh My Zsh
@@ -26,6 +34,10 @@ source $ZSH/oh-my-zsh.sh
 ##############################
 export PROMPT="${PROMPT}"$'\n'""
 export EDITOR=nvim
+export PATH="$PATH:$HOME/bin:$HOME/.local/bin:/home/$USER/.asdf/installs/golang/1.20.4/packages/bin"
+
+# To ignore a command from being added to the history, prefix it with a space, source: https://unix.stackexchange.com/questions/6094/is-there-any-way-to-keep-a-command-from-being-added-to-your-history
+setopt HIST_IGNORE_SPACE
 
 ##############################
 # Load aliases
@@ -54,11 +66,6 @@ source /usr/share/fzf/completion.zsh
 eval $(thefuck --alias)
 
 ##############################
-# Path
-##############################
-export PATH="$PATH:$HOME/bin:$HOME/.local/bin:/home/$USER/.asdf/installs/golang/1.20.4/packages/bin"
-
-##############################
 # direnv
 ##############################
 # To disable direnv logs
@@ -76,15 +83,3 @@ export WORKON_HOME=$HOME/python/virtualenvs
 # Chrome
 ##############################
 export CHROMIUM_USER_FLAGS=""
-
-##############################
-# History
-##############################
-# To ignore a command from being added to the history, prefix it with a space, source: https://unix.stackexchange.com/questions/6094/is-there-any-way-to-keep-a-command-from-being-added-to-your-history
-setopt HIST_IGNORE_SPACE
-
-##############################
-# p10k
-##############################
-source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
