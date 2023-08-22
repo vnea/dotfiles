@@ -55,11 +55,7 @@
     decorate = auto
 
 [merge]
-    # I pretty much never mean to do a real merge, since I use a rebase workflow.
-    # Note: this global option applies to all merges, including those done during a git pull
     ff = only
-
-    # Standard diff is two sets of final changes. This introduces the original text before each side's changes.
     conflictstyle = diff3
 
 [merge "ansible-vault"]
@@ -67,8 +63,6 @@
     driver = /usr/local/bin/ansible-vault-merge -- %O %A %B %P
 
 [push]
-    # "push the current branch back to the branch whose changes are usually integrated into the current branch"
-    # "refuse to push if the upstream branch name is different from the local one"
     default = simple
 
 [rebase]
