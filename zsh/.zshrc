@@ -35,6 +35,14 @@ export PROMPT="${PROMPT}"$'\n'""
 export EDITOR=nvim
 export PATH="$PATH:$HOME/bin:$HOME/.local/bin:/home/$USER/.asdf/installs/golang/1.20.4/packages/bin"
 
+##############################
+# History
+##############################
+HISTDUP=erase
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_SAVE_NO_DUPS
+setopt HIST_IGNORE_DUPS
+setopt HIST_FIND_NO_DUPS
 # To ignore a command from being added to the history, prefix it with a space, source: https://unix.stackexchange.com/questions/6094/is-there-any-way-to-keep-a-command-from-being-added-to-your-history
 setopt HIST_IGNORE_SPACE
 
