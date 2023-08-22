@@ -38,6 +38,7 @@ export PATH="$PATH:$HOME/bin:$HOME/.local/bin:/home/$USER/.asdf/installs/golang/
 ##############################
 # History
 ##############################
+HISTFILE=$HOME/.zsh_history
 HISTDUP=erase
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_SAVE_NO_DUPS
