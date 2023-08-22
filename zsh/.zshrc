@@ -5,17 +5,17 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "~/p10k-instant-prompt-$USER.zsh" ]]; then
-  source "~/p10k-instant-prompt-$USER.zsh"
+if [[ -r "$HOME/.cache/p10k-instant-prompt-$USER.zsh" ]]; then
+  source "$HOME/.cache/p10k-instant-prompt-$USER.zsh"
 fi
 
-source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 source ~/.p10k.zsh
+source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 ##############################
 # Oh My Zsh
 ##############################
-export ZSH="/home/$USER/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 plugins=(
   colored-man-pages
   dirhistory
