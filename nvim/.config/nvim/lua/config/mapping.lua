@@ -15,6 +15,10 @@ vim.keymap.set("n", "qq", "<cmd>q!<CR>", { noremap = true, silent = true })
 vim.keymap.set({"n", "v"}, "x", '"_x', { noremap = true, silent = true })
 vim.keymap.set({"n", "v"}, "<C-y>", '"_dd', { noremap = true, silent = true })
 
+-- Page up/down but center cursor in middle of screen
+vim.keymap.set("n", "<C-d>", "<C-d>M")
+vim.keymap.set("n", "<C-u>", "<C-u>M")
+
 -- ======================
 -- === Window
 -- ======================
