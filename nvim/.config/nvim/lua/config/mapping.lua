@@ -20,9 +20,17 @@ vim.keymap.set("n", "qq", ":q!<CR>", default_keymap_options)
 vim.keymap.set({"n", "v"}, "x", '"_x', default_keymap_options)
 vim.keymap.set({"n", "v"}, "<C-y>", '"_dd', default_keymap_options)
 
+-- ======================
+-- === Nvim-tree
+-- ======================
+
+vim.keymap.set("n", "<A-&>", ":NvimTreeToggle<CR>", default_keymap_options)
+vim.keymap.set("n", "<A-é>", ":NvimTreeFindFile<CR>", default_keymap_options)
+
 -- ====================
 -- === Telescope
 -- ====================
+
 vim.keymap.set("n", "<Leader>ff", ":Telescope git_files<CR>", default_keymap_options)
 vim.keymap.set("n", "<Leader>fg", ":Telescope live_grep<CR>", default_keymap_options)
 vim.keymap.set("n", "<Leader>fb", ":Telescope buffers<CR>", default_keymap_options)
