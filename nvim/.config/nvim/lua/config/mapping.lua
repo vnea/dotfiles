@@ -13,8 +13,8 @@ vim.g.mapleader = " "
 vim.keymap.set({"i", "v"}, "jk", "<Esc>", default_keymap_options)
 
 -- Exit without change
-vim.keymap.set("i", "qq", "<esc>:q!<CR>", default_keymap_options)
-vim.keymap.set("n", "qq", ":q!<CR>", default_keymap_options)
+vim.keymap.set("i", "qq", "<esc><cmd>q!<CR>", default_keymap_options)
+vim.keymap.set("n", "qq", "<cmd>q!<CR>", default_keymap_options)
 
 -- Delete without yanking
 vim.keymap.set({"n", "v"}, "x", '"_x', default_keymap_options)
@@ -24,16 +24,16 @@ vim.keymap.set({"n", "v"}, "<C-y>", '"_dd', default_keymap_options)
 -- === Nvim-tree
 -- ======================
 
-vim.keymap.set("n", "<A-&>", ":NvimTreeToggle<CR>", default_keymap_options)
-vim.keymap.set("n", "<A-é>", ":NvimTreeFindFile<CR>", default_keymap_options)
+vim.keymap.set("n", "<A-&>", "<cmd>NvimTreeToggle<CR>", default_keymap_options)
+vim.keymap.set("n", "<A-é>", "<cmd>NvimTreeFindFile<CR>", default_keymap_options)
 
 -- ====================
 -- === Telescope
 -- ====================
 
-vim.keymap.set("n", "<Leader>ff", ":Telescope git_files<CR>", default_keymap_options)
-vim.keymap.set("n", "<Leader>fg", ":Telescope live_grep<CR>", default_keymap_options)
-vim.keymap.set("n", "<Leader>fb", ":Telescope buffers<CR>", default_keymap_options)
+vim.keymap.set("n", "<Leader>ff", "<cmd>Telescope git_files<CR>", default_keymap_options)
+vim.keymap.set("n", "<Leader>fg", "<cmd>Telescope live_grep<CR>", default_keymap_options)
+vim.keymap.set("n", "<Leader>fb", "<cmd>Telescope buffers<CR>", default_keymap_options)
 
 -- ======================
 -- === Window
@@ -46,14 +46,14 @@ vim.keymap.set("n", "<A-Up>", "<C-W><Up>", default_keymap_options)
 vim.keymap.set("n", "<A-Down>", "<C-W><Down>", default_keymap_options)
 
 -- Resize
-vim.keymap.set("n", "<C-S-Left>", ":vertical resize -5<CR>", default_keymap_options)
-vim.keymap.set("n", "<C-S-Right>", ":vertical resize +5<CR>", default_keymap_options)
-vim.keymap.set("n", "<C-S-Up>", ":resize -5<CR>", default_keymap_options)
-vim.keymap.set("n", "<C-S-Down>", ":resize +5<CR>", default_keymap_options)
+vim.keymap.set("n", "<C-S-Left>", "<cmd>vertical resize -5<CR>", default_keymap_options)
+vim.keymap.set("n", "<C-S-Right>", "<cmd>vertical resize +5<CR>", default_keymap_options)
+vim.keymap.set("n", "<C-S-Up>", "<cmd>resize -5<CR>", default_keymap_options)
+vim.keymap.set("n", "<C-S-Down>", "<cmd>resize +5<CR>", default_keymap_options)
 
 -- Split
-vim.keymap.set("n", "<A-v>", ":vertical split<CR>", default_keymap_options)
-vim.keymap.set("n", "<A-h>", ":split<CR>", default_keymap_options)
+vim.keymap.set("n", "<A-v>", "<cmd>vertical split<CR>", default_keymap_options)
+vim.keymap.set("n", "<A-h>", "<cmd>split<CR>", default_keymap_options)
 
 -- Swap
 vim.keymap.set("n", "<C-S-A-Left>", "<C-W><S-H>", default_keymap_options)
