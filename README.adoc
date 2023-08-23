@@ -57,15 +57,13 @@ source .zshrc
 
 === Prerequisite(s)
 
-* https://neovim.io[Neovim] &gt;= v0.5
-* https://github.com/wbthomason/packer.nvim[packer.nvim]
+* https://neovim.io[Neovim] &gt;= v0.9
 
 === Installation
 
 [source,shell]
 ----
-rm -rf ~/.config/nvim
-ln -s ~/dotfiles/nvim ~/.config/nvim
+rm -rf ~/.config/nvim && stow nvim
 ----
 
 :sectnums:
