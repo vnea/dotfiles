@@ -2,7 +2,7 @@ return {
     "nvim-treesitter/nvim-treesitter",
     tag = "v0.9.1",
     build = ":TSUpdate",
-    config = function () 
+    config = function ()
         local configs = require("nvim-treesitter.configs")
 
         configs.setup({
@@ -27,5 +27,5 @@ return {
                 additional_vim_regex_highlighting = false,
             },
         })
-    end
+    end,
 }

@@ -3,7 +3,6 @@ vim.opt.relativenumber = true
 vim.opt.expandtab = true
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
-vim.opt.autowrite = true
 vim.opt.backup = false
 vim.opt.swapfile = false
 vim.opt.smartindent = true
