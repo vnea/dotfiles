@@ -14,3 +14,4 @@ function vz {
 
   nvim "${selected_file}"
 }
+

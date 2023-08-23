@@ -26,3 +26,4 @@ function def() {
   function_name="$1"
   declare -f "$function_name" | pygmentize
 }
+

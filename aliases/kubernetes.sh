@@ -2,3 +2,4 @@
 
 alias kc="kubectx"
 alias kubectl="kubecolor"
+

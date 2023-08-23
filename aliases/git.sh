@@ -44,3 +44,4 @@ function gsquash {
 
   git reset --soft HEAD~"${number_of_commits_to_squash}" && git commit --edit --message "$(git log --format=%B --reverse HEAD..HEAD@\{1\})"
 }
+
