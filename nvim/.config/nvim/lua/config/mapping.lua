@@ -16,8 +16,11 @@ vim.keymap.set({"n", "v"}, "x", '"_x', { noremap = true, silent = true })
 vim.keymap.set({"n", "v"}, "<C-y>", '"_dd', { noremap = true, silent = true })
 
 -- Page up/down but center cursor in middle of screen
-vim.keymap.set("n", "<C-d>", "<C-d>M")
-vim.keymap.set("n", "<C-u>", "<C-u>M")
+vim.keymap.set("n", "<C-d>", "<C-d>M", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-u>", "<C-u>M", { noremap = true, silent = true })
+
+-- Join lines but let cursor at its original place
+vim.keymap.set("n", "J", "mzJ`z", { noremap = true, silent = true })
 
 -- ======================
 -- === Window
