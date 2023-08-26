@@ -19,9 +19,8 @@ env:
 
 font:
   normal:
-    family: "monospace"
-    style: Regular
-  size: 11.0
+    family: NotoMono Nerd Font
+  size: 10.0
 
 colors:
   name: 3024 (dark)
