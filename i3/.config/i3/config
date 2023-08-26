@@ -58,7 +58,6 @@ set $ws8 "8:"
 set $ws9 "9:"
 
 set $open_brave exec "pgrep --exact brave && i3-msg workspace 1: || brave"
-set $open_idea exec "if [ $(wmctrl -lx | cut -d' ' -f4 | grep --count idea) -eq 0 ]; then idea; else i3-msg workspace 2:; fi"
 set $open_term exec "pgrep --exact alacritty && i3-msg workspace 3: || alacritty"
 set $open_rambox exec "pgrep --exact rambox && i3-msg workspace 4: || rambox"
 set $open_file exec ~/.config/i3/scripts/open_file_explorer.sh
@@ -72,15 +71,13 @@ set $toggle_polybar exec "polybar-msg cmd toggle"
 bindsym $mod+ampersand workspace $ws1
 bindsym $mod+eacute workspace $ws2
 bindsym $mod+quotedbl workspace $ws3
-bindsym $mod+apostrophe workspace $ws4
-#bindsym $mod+parenleft workspace $ws5
+bindsym $mod+apostrophe workspace $ws4open_
 bindsym $mod+minus workspace $ws6
 bindsym $mod+egrave workspace $ws7
 bindsym $mod+underscore workspace $ws8
 bindsym $mod+ccedilla workspace $ws9
 
 bindsym $mod+Mod2+KP_1 $open_brave
-bindsym $mod+Mod2+KP_2 $open_idea
 bindsym $mod+Mod2+KP_3 $open_term
 bindsym $mod+Mod2+KP_4 $open_rambox
 bindsym $mod+Mod2+KP_5 $open_file
@@ -91,7 +88,6 @@ bindsym $mod+Mod2+KP_9 $open_gimp
 bindsym $mod+Mod2+KP_0 $toggle_polybar
 
 bindcode $mod+87 $open_brave
-bindcode $mod+88 $open_idea
 bindcode $mod+89 $open_term
 bindcode $mod+83 $open_rambox
 bindcode $mod+84 $open_file
