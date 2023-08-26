@@ -6,6 +6,7 @@
 # - https://www.reddit.com/r/neovim/comments/vfqseq/enable_special_keyboard_combinations_in_alacritty
 key_bindings:
   - { key: N, mods: Control|Shift, chars: "\e[78;6u" }
+  - { key: L, mods: Control|Shift, chars: "\e[76;6u" }
   - { key: Numpad6, mods: Control, action: IncreaseFontSize }
   - { key: Numpad9, mods: Control, action: DecreaseFontSize }
   - { key: Numpad0, mods: Control, action: ResetFontSize }
