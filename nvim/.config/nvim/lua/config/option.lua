@@ -11,6 +11,5 @@ vim.opt.hlsearch = false
 vim.opt.wrap = false
 vim.opt.scrolloff = 8
 vim.opt.termguicolors = true
-vim.api.nvim_command("colorscheme desert")
 vim.api.nvim_command("set clipboard+=unnamedplus")
 

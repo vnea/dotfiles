@@ -2,7 +2,7 @@
 
 function v {
   file_to_open="${1}"
-  nvim "${file_to_open}"
+  TERM=screen-256color nvim "${file_to_open}"
 }
 
 function vz {
@@ -12,6 +12,6 @@ function vz {
     return
   fi
 
-  nvim "${selected_file}"
+  v "${selected_file}"
 }
 

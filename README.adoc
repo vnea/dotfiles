@@ -255,16 +255,16 @@ systemctl enable betterlockscreen@$USER
 
 :sectnums:
 
-== Terminator
+== Alacritty
 :sectnums!:
 
-Link: https://wiki.archlinux.org/title/Terminator
+Link: https://github.com/alacritty/alacritty
 
 === Installation
 
 [source,shell]
 ----
-rm -rf ~/.config/terminator && stow terminator
+rm -rf ~/.config/alacritty && stow alacritty
 ----
 
 :sectnums:

@@ -1,0 +1,49 @@
+# Fix conflict bewteen "Control + Key" and "Control + Shift + Key" in Neovim
+# Sources:
+# - https://www.reddit.com/r/neovim/comments/mbj8m5/how_to_setup_ctrlshiftkey_mappings_in_neovim_and
+# - https://stackoverflow.com/questions/73793802/how-to-map-ctrlshiftkey-in-neovim-tmux-in-alacritty
+# - https://css-tricks.com/snippets/javascript/javascript-keycodes
+# - https://www.reddit.com/r/neovim/comments/vfqseq/enable_special_keyboard_combinations_in_alacritty
+key_bindings:
+  - { key: N, mods: Control|Shift, chars: "\x1b[78;6u" }
+
+env:
+  TERM: xterm-256color
+  LANG: "en_US.UTF-8"
+  LC_CTYPE: en_US.UTF-8
+
+font:
+  normal:
+    family: "monospace"
+    style: Regular
+  size: 11.0
+
+colors:
+  name: 3024 (dark)
+  author: Chris Kempson
+  primary:
+    background: "#090300"
+    foreground: "#a5a2a2"
+  cursor:
+    text: "#090300"
+    cursor: "#a5a2a2"
+  normal:
+    black: "#090300"
+    red: "#db2d20"
+    green: "#01a252"
+    yellow: "#fded02"
+    blue: "#01a0e4"
+    magenta: "#a16a94"
+    cyan: "#b5e4f4"
+    white: "#a5a2a2"
+  bright:
+    black: "#5c5855"
+    red: "#db2d20"
+    green: "#01a252"
+    yellow: "#fded02"
+    blue: "#01a0e4"
+    magenta: "#a16a94"
+    cyan: "#b5e4f4"
+    white: "#f7f7f7"
+theme: 3024.dark
+
