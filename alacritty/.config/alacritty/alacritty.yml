@@ -6,6 +6,11 @@
 # - https://www.reddit.com/r/neovim/comments/vfqseq/enable_special_keyboard_combinations_in_alacritty
 key_bindings:
   - { key: N, mods: Control|Shift, chars: "\x1b[78;6u" }
+  - { key: Numpad6, mods: Control, action: IncreaseFontSize }
+  - { key: Numpad9, mods: Control, action: DecreaseFontSize }
+  - { key: Numpad0, mods: Control, action: ResetFontSize }
+  - { key: NumpadAdd, mods: Control, action: None }
+  - { key: NumpadSubtract, mods: Control, action: None }
 
 env:
   TERM: xterm-256color
