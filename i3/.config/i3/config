@@ -63,7 +63,7 @@ set $open_term exec "pgrep --exact alacritty && i3-msg workspace 3: || alacri
 set $open_rambox exec "pgrep --exact rambox && i3-msg workspace 4: || rambox"
 set $open_file exec ~/.config/i3/scripts/open_file_explorer.sh
 set $open_subl exec "pgrep --exact sublime_text && i3-msg workspace 6: || subl"
-set $open_firefox exec "pgrep --exact firefox && i3-msg workspace 7: || ~/.config/i3/scripts/open_firefox.sh"
+set $open_firefox exec "pgrep --exact firefox && i3-msg workspace 7: || firefox"
 set $open_rider exec "if [ $(wmctrl -lx | cut -d' ' -f4 | grep --count rider) -eq 0 ]; then rider; else i3-msg workspace 8:; fi"
 set $open_gimp exec "pgrep --exact gimp && i3-msg workspace 9: || gimp"
 set $toggle_polybar exec "polybar-msg cmd toggle"
@@ -198,7 +198,7 @@ assign [class="jetbrains-idea"] $ws2
 for_window [class="Alacritty"] move to workspace $ws3, focus
 assign [class="Rambox"] $ws4
 assign [class="Subl"] $ws6
-assign [class="firefox"] $ws7
+for_window [class="firefox"] move to workspace $ws7, focus
 assign [class="jetbrains-rider"] $ws8
 assign [class="Gimp"] $ws9
 
