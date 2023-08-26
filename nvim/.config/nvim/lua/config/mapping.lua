@@ -30,6 +30,9 @@ vim.keymap.set("n", "<C-u>", "<C-u>M", { noremap = true, silent = true })
 -- Join lines but let cursor at its original place
 vim.keymap.set("n", "J", "mzJ`z", { noremap = true, silent = true })
 
+-- Go to last opened buffer
+vim.keymap.set("n", "<C-l>", "<Cmd>edit #<CR>", { noremap = true, silent = true })
+
 -- ======================
 -- === Window
 -- ======================
