@@ -11,9 +11,17 @@ vim.keymap.set({"i", "v"}, "jk", "<Esc>", { noremap = true, silent = true })
 vim.keymap.set("i", "qq", "<esc><cmd>q!<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "qq", "<cmd>q!<CR>", { noremap = true, silent = true })
 
--- Delete without yanking
+-- Delete/change without copying in clipboard
 vim.keymap.set({"n", "v"}, "x", '"_x', { noremap = true, silent = true })
-vim.keymap.set({"n", "v"}, "<C-y>", '"_dd', { noremap = true, silent = true })
+vim.keymap.set({"n", "v"}, "d", '"_d', { noremap = true, silent = true })
+vim.keymap.set({"n", "v"}, "D", '"_D', { noremap = true, silent = true })
+vim.keymap.set({"n", "v"}, "c", '"_c', { noremap = true, silent = true })
+
+-- Delete/change copying in clipboard
+vim.keymap.set({"n", "v"}, "<Leader>x", "x", { noremap = true, silent = true })
+vim.keymap.set({"n", "v"}, "<Leader>d", "d", { noremap = true, silent = true })
+vim.keymap.set({"n", "v"}, "<Leader>D", "D", { noremap = true, silent = true })
+vim.keymap.set({"n", "v"}, "<Leader>c", "c", { noremap = true, silent = true })
 
 -- Page up/down but center cursor in middle of screen
 vim.keymap.set("n", "<C-d>", "<C-d>M", { noremap = true, silent = true })
