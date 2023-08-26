@@ -59,7 +59,7 @@ set $ws9 "9:"
 
 set $open_brave exec "pgrep --exact brave && i3-msg workspace 1: || brave"
 set $open_idea exec "if [ $(wmctrl -lx | cut -d' ' -f4 | grep --count idea) -eq 0 ]; then idea; else i3-msg workspace 2:; fi"
-set $open_term exec "pgrep --exact terminator && i3-msg workspace 3: || terminator"
+set $open_term exec "pgrep --exact alacritty && i3-msg workspace 3: || alacritty"
 set $open_rambox exec "pgrep --exact rambox && i3-msg workspace 4: || rambox"
 set $open_file exec ~/.config/i3/scripts/open_file_explorer.sh
 set $open_subl exec "pgrep --exact sublime_text && i3-msg workspace 6: || subl"
@@ -195,7 +195,7 @@ for_window [title="Votre écran est partagé par le biais de l'application meet.
 # Assign window to workspace
 assign [class="Brave-browser"] $ws1
 assign [class="jetbrains-idea"] $ws2
-assign [class="Terminator"] $ws3
+for_window [class="Alacritty"] move to workspace $ws3, focus
 assign [class="Rambox"] $ws4
 assign [class="Subl"] $ws6
 assign [class="firefox"] $ws7
