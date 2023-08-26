@@ -1,7 +1,4 @@
 return {
     "briones-gabriel/darcula-solid.nvim",
-    dependencies = {
-        "rktjmp/lush.nvim"
-    }
+    dependencies = { "rktjmp/lush.nvim" }
 }
-

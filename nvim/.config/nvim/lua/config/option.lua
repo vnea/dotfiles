@@ -12,4 +12,3 @@ vim.opt.wrap = false
 vim.opt.scrolloff = 8
 vim.opt.termguicolors = true
 vim.api.nvim_command("set clipboard+=unnamedplus")
-

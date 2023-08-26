@@ -5,23 +5,23 @@
 vim.g.mapleader = " "
 
 -- Escape
-vim.keymap.set({"i", "v"}, "jk", "<Esc>", { noremap = true, silent = true })
+vim.keymap.set({ "i", "v" }, "jk", "<Esc>", { noremap = true, silent = true })
 
 -- Exit without change
 vim.keymap.set("i", "qq", "<esc><cmd>q!<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "qq", "<cmd>q!<CR>", { noremap = true, silent = true })
 
 -- Delete/change without copying in clipboard
-vim.keymap.set({"n", "v"}, "x", '"_x', { noremap = true, silent = true })
-vim.keymap.set({"n", "v"}, "d", '"_d', { noremap = true, silent = true })
-vim.keymap.set({"n", "v"}, "D", '"_D', { noremap = true, silent = true })
-vim.keymap.set({"n", "v"}, "c", '"_c', { noremap = true, silent = true })
+vim.keymap.set({ "n", "v" }, "x", '"_x', { noremap = true, silent = true })
+vim.keymap.set({ "n", "v" }, "d", '"_d', { noremap = true, silent = true })
+vim.keymap.set({ "n", "v" }, "D", '"_D', { noremap = true, silent = true })
+vim.keymap.set({ "n", "v" }, "c", '"_c', { noremap = true, silent = true })
 
 -- Delete/change copying in clipboard
-vim.keymap.set({"n", "v"}, "<Leader>x", "x", { noremap = true, silent = true })
-vim.keymap.set({"n", "v"}, "<Leader>d", "d", { noremap = true, silent = true })
-vim.keymap.set({"n", "v"}, "<Leader>D", "D", { noremap = true, silent = true })
-vim.keymap.set({"n", "v"}, "<Leader>c", "c", { noremap = true, silent = true })
+vim.keymap.set({ "n", "v" }, "<Leader>x", "x", { noremap = true, silent = true })
+vim.keymap.set({ "n", "v" }, "<Leader>d", "d", { noremap = true, silent = true })
+vim.keymap.set({ "n", "v" }, "<Leader>D", "D", { noremap = true, silent = true })
+vim.keymap.set({ "n", "v" }, "<Leader>c", "c", { noremap = true, silent = true })
 
 -- Page up/down but center cursor in middle of screen
 vim.keymap.set("n", "<C-d>", "<C-d>M", { noremap = true, silent = true })
@@ -55,4 +55,3 @@ vim.keymap.set("n", "<C-S-A-Left>", "<C-W><S-H>", { noremap = true, silent = tru
 vim.keymap.set("n", "<C-S-A-Right>", "<C-W><S-L>", { noremap = true, silent = true })
 vim.keymap.set("n", "<C-S-A-Up>", "<C-W><S-k>", { noremap = true, silent = true })
 vim.keymap.set("n", "<C-S-A-Down>", "<C-W><S-J>", { noremap = true, silent = true })
-
