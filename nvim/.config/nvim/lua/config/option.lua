@@ -12,3 +12,8 @@ vim.opt.wrap = false
 vim.opt.scrolloff = 8
 vim.opt.termguicolors = true
 vim.api.nvim_command("set clipboard+=unnamedplus")
+
+-- Folding
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.api.nvim_command("set nofoldenable")
