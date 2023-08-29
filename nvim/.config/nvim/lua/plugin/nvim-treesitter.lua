@@ -1,5 +1,6 @@
 return {
     "nvim-treesitter/nvim-treesitter",
+    dependencies = { "nvim-treesitter/nvim-treesitter-textobjects" },
     tag = "v0.9.1",
     build = ":TSUpdate",
     config = function()
@@ -30,6 +31,27 @@ return {
                     init_selection = "<C-w>",
                     node_incremental = "<C-w>",
                     node_decremental = "<C-S-w>",
+                },
+            },
+            textobjects = {
+                move = {
+                    enable = true,
+                    set_jumps = true,
+                    goto_next_start = {
+                        ["<C-Down>"] = "@function.outer",
+                    },
+                    goto_previous_start = {
+                        ["<C-Up>"] = "@function.outer",
+                    },
+                },
+                swap = {
+                    enable = true,
+                    swap_next = {
+                        ["<leader>s"] = "@parameter.inner",
+                    },
+                    swap_previous = {
+                        ["<leader>S"] = "@parameter.inner",
+                    },
                 },
             },
         })
