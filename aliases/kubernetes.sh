@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
 alias kc="kubectx"
-alias kubectl="kubecolor"
 
+alias kubectl="kubecolor"
+compdef kubecolor=kubectl
