@@ -58,3 +58,17 @@ vim.keymap.set("n", "<C-S-A-Left>", "<C-W><S-H>", { noremap = true, silent = tru
 vim.keymap.set("n", "<C-S-A-Right>", "<C-W><S-L>", { noremap = true, silent = true })
 vim.keymap.set("n", "<C-S-A-Up>", "<C-W><S-k>", { noremap = true, silent = true })
 vim.keymap.set("n", "<C-S-A-Down>", "<C-W><S-J>", { noremap = true, silent = true })
+
+-- ======================
+-- === Telescope
+-- ======================
+vim.keymap.set("n", "<C-S-n>", function() require("telescope.builtin").find_files() end, { noremap = true, silent = true })
+vim.keymap.set("n", "<C-n>",  function() require("telescope.builtin").git_files({ show_untracked = true }) end, { noremap = true, silent = true })
+vim.keymap.set("n", "<C-S-l>", function() require("telescope.builtin").buffers({ cwd_only = true, sort_mru = true }) end, { noremap = true, silent = true })
+vim.keymap.set("n", "<Leader>f", function() require("telescope.builtin").live_grep() end, { noremap = true, silent = true })
+vim.keymap.set("n", "<C-h>", function() require("telescope.builtin").help_tags() end, { noremap = true, silent = true })
+vim.keymap.set("n", "<Leader><F2>", function() require("telescope.builtin").diagnostics() end, { noremap = true, silent = true })
+vim.keymap.set("n", "gr", function() require("telescope.builtin").lsp_references() end, { noremap = true, silent = true })
+vim.keymap.set("n", "gd", function() require("telescope.builtin").lsp_definitions() end, { noremap = true, silent = true })
+vim.keymap.set("n", "gi", function() require("telescope.builtin").lsp_implementations() end, { noremap = true, silent = true })
+
