@@ -62,7 +62,7 @@ vim.keymap.set("n", "<C-S-A-Down>", "<C-W><S-J>", { noremap = true, silent = tru
 -- ======================
 -- === Telescope
 -- ======================
-vim.keymap.set("n", "<C-S-n>", function() require("telescope.builtin").find_files() end, { noremap = true, silent = true })
+vim.keymap.set("n", "<C-S-n>", function() require("telescope.builtin").find_files({ hidden = true, no_ignore = true }) end, { noremap = true, silent = true })
 vim.keymap.set("n", "<C-n>",  function() require("telescope.builtin").git_files({ show_untracked = true }) end, { noremap = true, silent = true })
 vim.keymap.set("n", "<C-S-l>", function() require("telescope.builtin").buffers({ cwd_only = true, sort_mru = true }) end, { noremap = true, silent = true })
 vim.keymap.set("n", "<Leader>f", function() require("telescope.builtin").live_grep() end, { noremap = true, silent = true })
