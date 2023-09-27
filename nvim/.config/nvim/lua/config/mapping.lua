@@ -72,3 +72,10 @@ vim.keymap.set("n", "gr", function() require("telescope.builtin").lsp_references
 vim.keymap.set("n", "gd", function() require("telescope.builtin").lsp_definitions() end, { noremap = true, silent = true })
 vim.keymap.set("n", "gi", function() require("telescope.builtin").lsp_implementations() end, { noremap = true, silent = true })
 
+-- ======================
+-- === Refactoring
+-- ======================
+vim.keymap.set({"n", "x"}, "<Leader>ev", "<cmd>Refactor extract_var<CR>", { noremap = true, silent = true })
+vim.keymap.set("x", "<Leader>ef", "<cmd>Refactor extract<CR>", { noremap = true, silent = true })
+vim.keymap.set({ "n", "x" }, "<Leader>iv", "<cmd>Refactor inline_var<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<Leader>if", "<cmd>Refactor inline_func<CR>", { noremap = true, silent = true })
