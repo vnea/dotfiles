@@ -33,6 +33,9 @@ vim.keymap.set("n", "J", "mzJ`z", { noremap = true, silent = true })
 -- Go to last opened buffer
 vim.keymap.set("n", "<C-l>", "<Cmd>edit #<CR>", { noremap = true, silent = true })
 
+-- Save
+vim.keymap.set("n", "<C-s>", "<Cmd>wa<CR>", { noremap = true })
+
 -- ======================
 -- === Window
 -- ======================
