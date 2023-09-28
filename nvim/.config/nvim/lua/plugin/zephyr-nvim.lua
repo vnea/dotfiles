@@ -1,3 +1,0 @@
-return {
-    "glepnir/zephyr-nvim"
-}
