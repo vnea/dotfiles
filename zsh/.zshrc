@@ -33,7 +33,7 @@ source $ZSH/oh-my-zsh.sh
 ##############################
 export PROMPT="${PROMPT}"$'\n'""
 export EDITOR=nvim
-export PATH="$PATH:$HOME/bin:$HOME/.local/bin:/home/$USER/.asdf/installs/golang/1.20.4/packages/bin"
+export PATH="$PATH:$HOME/bin:$HOME/.local/bin"
 
 ##############################
 # History
