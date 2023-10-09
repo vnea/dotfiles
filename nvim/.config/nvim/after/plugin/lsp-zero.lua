@@ -12,6 +12,12 @@ lsp_zero.on_attach(function(_, bufnr)
     vim.keymap.set("n", "<F2>", function() vim.diagnostic.goto_next() end, { silent = true, remap = false, buffer = bufnr })
     vim.keymap.set("n", "<S-F2>", function() vim.diagnostic.goto_prev() end, { silent = true, remap = false, buffer = bufnr })
 end)
+lsp_zero.set_sign_icons({
+  error = "✘",
+  warn = "▲",
+  hint = "⚑",
+  info = "»"
+})
 
 require("mason").setup({})
 require("mason-lspconfig").setup({
