@@ -66,7 +66,7 @@ vim.keymap.set("n", "<C-S-A-Down>", "<C-W><S-J>", { noremap = true, silent = tru
 -- === Telescope
 -- ======================
 vim.keymap.set("n", "<C-S-n>", function() require("telescope.builtin").find_files({ hidden = true, no_ignore = true }) end, { noremap = true, silent = true })
-vim.keymap.set("n", "<C-n>",  function() require("telescope.builtin").git_files({ show_untracked = true }) end, { noremap = true, silent = true })
+vim.keymap.set("n", "<C-n>", function() require("telescope.builtin").git_files({ show_untracked = true }) end, { noremap = true, silent = true })
 vim.keymap.set("n", "<C-S-l>", function() require("telescope.builtin").buffers({ cwd_only = true, sort_mru = true }) end, { noremap = true, silent = true })
 vim.keymap.set("n", "<Leader>f", function() require("telescope.builtin").live_grep() end, { noremap = true, silent = true })
 vim.keymap.set("n", "<C-h>", function() require("telescope.builtin").help_tags() end, { noremap = true, silent = true })
@@ -78,7 +78,14 @@ vim.keymap.set("n", "gi", function() require("telescope.builtin").lsp_implementa
 -- ======================
 -- === Refactoring
 -- ======================
-vim.keymap.set({"n", "x"}, "<Leader>ev", "<cmd>Refactor extract_var<CR>", { noremap = true, silent = true })
+vim.keymap.set({ "n", "x" }, "<Leader>ev", "<cmd>Refactor extract_var<CR>", { noremap = true, silent = true })
 vim.keymap.set("x", "<Leader>ef", "<cmd>Refactor extract<CR>", { noremap = true, silent = true })
 vim.keymap.set({ "n", "x" }, "<Leader>iv", "<cmd>Refactor inline_var<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<Leader>if", "<cmd>Refactor inline_func<CR>", { noremap = true, silent = true })
+
+-- ======================
+-- === Scretch
+-- ======================
+vim.keymap.set("n", "<leader>sn", function() require("scretch").new_named() end, { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>sf", function() require("scretch").search() end, { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>sd", "<cmd>!rm -f ~/.config/nvim/scretch/*<CR>", { noremap = true, silent = true })
