@@ -1,4 +1,6 @@
+-- Lsp
 local lsp_zero = require("lsp-zero")
+
 lsp_zero.on_attach(function(_, bufnr)
     lsp_zero.default_keymaps({buffer = bufnr})
 
@@ -12,6 +14,7 @@ lsp_zero.on_attach(function(_, bufnr)
     vim.keymap.set("n", "<F2>", function() vim.diagnostic.goto_next() end, { silent = true, remap = false, buffer = bufnr })
     vim.keymap.set("n", "<S-F2>", function() vim.diagnostic.goto_prev() end, { silent = true, remap = false, buffer = bufnr })
 end)
+
 lsp_zero.set_sign_icons({
   error = "✘",
   warn = "▲",
@@ -19,7 +22,19 @@ lsp_zero.set_sign_icons({
   info = "»"
 })
 
+lsp_zero.format_on_save({
+  format_opts = {
+    async = false,
+    timeout_ms = 10000,
+  },
+  servers = {
+    ["gopls"] = {"go"}
+  }
+})
+
+-- Mason
 require("mason").setup({})
+
 require("mason-lspconfig").setup({
     handlers = {
         lsp_zero.default_setup,
@@ -35,7 +50,9 @@ require("mason-lspconfig").setup({
     }
 })
 
+-- Cmp
 local cmp = require("cmp")
+
 cmp.setup({
     mapping = cmp.mapping.preset.insert({
         ["<CR>"] = cmp.mapping.confirm({select = false}),
