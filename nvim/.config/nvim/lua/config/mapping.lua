@@ -65,31 +65,36 @@ vim.keymap.set("n", "<C-S-A-Down>", "<C-W><S-J>")
 -- ======================
 -- === fzf-lua
 -- ======================
-vim.keymap.set("n", "<C-n>", function () require("fzf-lua").files({
-    cwd_prompt = false,
-    prompt = "Files❯ ",
-    fd_opts = "--type f --hidden --no-ignore --exclude .git --exclude .idea --exclude node_modules",
-    winopts = { preview = { hidden = "hidden" } }
-}) end)
-vim.keymap.set("n", "<C-S-l>", function () require("fzf-lua").buffers() end)
-vim.keymap.set("n", "<Leader>f", function () require("fzf-lua").live_grep_glob({
-    rg_opts = "--no-ignore --hidden --glob '!.git' --column --line-number  --color=always --max-columns=4096 --regexp",
-    continue_last_search = true,
-    winopts = {
-        fullscreen = true,
-        preview    = {
-            layout   = "vertical",
-            border   = "noborder",
+vim.keymap.set("n", "<C-n>", function()
+    require("fzf-lua").files({
+        cwd_prompt = false,
+        prompt = "Files❯ ",
+        fd_opts = "--type f --hidden --no-ignore --exclude .git --exclude .idea --exclude node_modules",
+        winopts = { preview = { hidden = "hidden" } }
+    })
+end)
+vim.keymap.set("n", "<C-S-l>", function() require("fzf-lua").buffers() end)
+vim.keymap.set("n", "<Leader>f", function()
+    require("fzf-lua").live_grep_glob({
+        rg_opts =
+        "--no-ignore --hidden --glob '!.git' --column --line-number  --color=always --max-columns=4096 --regexp",
+        continue_last_search = true,
+        winopts = {
+            fullscreen = true,
+            preview    = {
+                layout = "vertical",
+                border = "noborder",
+            }
         }
-    }
-}) end)
-vim.keymap.set("n", "<C-h>", function () require("fzf-lua").help_tags({ winopts = { fullscreen = true } }) end)
-vim.keymap.set("n", "<Leader><F2>", function () require("fzf-lua").diagnostics_document() end)
-vim.keymap.set("n", "<Leader><S-F2>", function () require("fzf-lua").diagnostics_workspace() end)
-vim.keymap.set("n", "gr", function () require("fzf-lua").lsp_references() end)
-vim.keymap.set("n", "gd", function () require("fzf-lua").lsp_definitions({ jump_to_single_result = true }) end)
-vim.keymap.set("n", "gi", function () require("fzf-lua").lsp_implementations({ jump_to_single_result = true }) end)
-vim.keymap.set("n", "gs", function () require("fzf-lua").lsp_document_symbols() end)
+    })
+end)
+vim.keymap.set("n", "<C-h>", function() require("fzf-lua").help_tags({ winopts = { fullscreen = true } }) end)
+vim.keymap.set("n", "<Leader><F2>", function() require("fzf-lua").diagnostics_document() end)
+vim.keymap.set("n", "<Leader><S-F2>", function() require("fzf-lua").diagnostics_workspace() end)
+vim.keymap.set("n", "gr", function() require("fzf-lua").lsp_references() end)
+vim.keymap.set("n", "gd", function() require("fzf-lua").lsp_definitions({ jump_to_single_result = true }) end)
+vim.keymap.set("n", "gi", function() require("fzf-lua").lsp_implementations({ jump_to_single_result = true }) end)
+vim.keymap.set("n", "gs", function() require("fzf-lua").lsp_document_symbols() end)
 
 -- ======================
 -- === Refactoring
@@ -109,7 +114,7 @@ vim.keymap.set("n", "<leader>sd", "<cmd>!rm -f ~/.config/nvim/scretch/*<CR>")
 -- ======================
 -- === Dap
 -- ======================
-vim.keymap.set({ "n", "i" }, "<S-F9>", function () require("fzf-lua").dap_configurations() end)
+vim.keymap.set({ "n", "i" }, "<S-F9>", function() require("fzf-lua").dap_configurations() end)
 vim.keymap.set({ "n", "i" }, "<F9>", function() require("dap").continue() end)
 vim.keymap.set({ "n", "i" }, "<C-F2>", function() require("dap").terminate() end)
 vim.keymap.set({ "n", "i" }, "<C-F8>", function() require("dap").toggle_breakpoint() end)
