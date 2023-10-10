@@ -6,7 +6,6 @@ lsp_zero.on_attach(function(_, bufnr)
 
     -- See :help lsp-zero-keybindings to learn the available actions
     vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, { silent = true, remap = false, buffer = bufnr })
-    vim.keymap.set("n", "gs", function() vim.lsp.buf.signature_help() end, { silent = true, remap = false, buffer = bufnr })
     vim.keymap.set("n", "<S-F6>", function() vim.lsp.buf.rename() end, { silent = true, remap = false, buffer = bufnr })
     vim.keymap.set("n", "<C-A-l>", function() vim.lsp.buf.format() end, { silent = true, remap = false, buffer = bufnr })
     vim.keymap.set("n", "<A-Enter>", function() vim.lsp.buf.code_action() end, { silent = true, remap = false, buffer = bufnr })
