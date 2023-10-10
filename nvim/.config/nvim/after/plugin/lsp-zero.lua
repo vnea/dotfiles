@@ -5,13 +5,13 @@ lsp_zero.on_attach(function(_, bufnr)
     lsp_zero.default_keymaps({buffer = bufnr})
 
     -- See :help lsp-zero-keybindings to learn the available actions
-    vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, { silent = true, remap = false, buffer = bufnr })
-    vim.keymap.set("n", "<S-F6>", function() vim.lsp.buf.rename() end, { silent = true, remap = false, buffer = bufnr })
-    vim.keymap.set("n", "<C-A-l>", function() vim.lsp.buf.format() end, { silent = true, remap = false, buffer = bufnr })
-    vim.keymap.set("n", "<A-Enter>", function() vim.lsp.buf.code_action() end, { silent = true, remap = false, buffer = bufnr })
-    vim.keymap.set("n", "gl", function() vim.diagnostic.open_float() end, { silent = true, remap = false, buffer = bufnr })
-    vim.keymap.set("n", "<F2>", function() vim.diagnostic.goto_next() end, { silent = true, remap = false, buffer = bufnr })
-    vim.keymap.set("n", "<S-F2>", function() vim.diagnostic.goto_prev() end, { silent = true, remap = false, buffer = bufnr })
+    vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, { buffer = bufnr })
+    vim.keymap.set("n", "<S-F6>", function() vim.lsp.buf.rename() end, { buffer = bufnr })
+    vim.keymap.set("n", "<C-A-l>", function() vim.lsp.buf.format() end, { buffer = bufnr })
+    vim.keymap.set("n", "<A-Enter>", function() vim.lsp.buf.code_action() end, { buffer = bufnr })
+    vim.keymap.set("n", "gl", function() vim.diagnostic.open_float() end, { buffer = bufnr })
+    vim.keymap.set("n", "<F2>", function() vim.diagnostic.goto_next() end, { buffer = bufnr })
+    vim.keymap.set("n", "<S-F2>", function() vim.diagnostic.goto_prev() end, { buffer = bufnr })
 end)
 
 lsp_zero.set_sign_icons({
