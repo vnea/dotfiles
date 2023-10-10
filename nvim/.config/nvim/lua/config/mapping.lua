@@ -65,8 +65,13 @@ vim.keymap.set("n", "<C-S-A-Down>", "<C-W><S-J>", { noremap = true, silent = tru
 -- ======================
 -- === fzf-lua
 -- ======================
-vim.keymap.set("n", "<C-S-n>", function () require("fzf-lua").files() end, { noremap = true, silent = true })
-vim.keymap.set("n", "<C-n>", function () require("fzf-lua").git_files() end, { noremap = true, silent = true })
+vim.keymap.set("n", "<C-n>", function ()
+    require("fzf-lua").files({
+        cwd_prompt = false,
+        prompt = "Files❯ ",
+        fd_opts = "--type f --hidden --no-ignore --exclude .git --exclude .idea --exclude node_modules"
+    })
+end, { noremap = true, silent = true })
 vim.keymap.set("n", "<C-S-l>", function () require("fzf-lua").buffers() end, { noremap = true, silent = true })
 vim.keymap.set("n", "<Leader>f", function () require("fzf-lua").live_grep_glob() end, { noremap = true, silent = true })
 vim.keymap.set("n", "<C-h>", function () require("fzf-lua").help_tags() end, { noremap = true, silent = true })
