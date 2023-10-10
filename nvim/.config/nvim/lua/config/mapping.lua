@@ -63,17 +63,18 @@ vim.keymap.set("n", "<C-S-A-Up>", "<C-W><S-k>", { noremap = true, silent = true 
 vim.keymap.set("n", "<C-S-A-Down>", "<C-W><S-J>", { noremap = true, silent = true })
 
 -- ======================
--- === Telescope
+-- === fzf-lua
 -- ======================
-vim.keymap.set("n", "<C-S-n>", function() require("telescope.builtin").find_files({ hidden = true, no_ignore = true }) end, { noremap = true, silent = true })
-vim.keymap.set("n", "<C-n>", function() require("telescope.builtin").git_files({ show_untracked = true }) end, { noremap = true, silent = true })
-vim.keymap.set("n", "<C-S-l>", function() require("telescope.builtin").buffers({ cwd_only = true, sort_mru = true }) end, { noremap = true, silent = true })
-vim.keymap.set("n", "<Leader>f", function() require("telescope.builtin").live_grep() end, { noremap = true, silent = true })
-vim.keymap.set("n", "<C-h>", function() require("telescope.builtin").help_tags() end, { noremap = true, silent = true })
-vim.keymap.set("n", "<Leader><F2>", function() require("telescope.builtin").diagnostics() end, { noremap = true, silent = true })
-vim.keymap.set("n", "gr", function() require("telescope.builtin").lsp_references() end, { noremap = true, silent = true })
-vim.keymap.set("n", "gd", function() require("telescope.builtin").lsp_definitions() end, { noremap = true, silent = true })
-vim.keymap.set("n", "gi", function() require("telescope.builtin").lsp_implementations() end, { noremap = true, silent = true })
+vim.keymap.set("n", "<C-S-n>", "<cmd>FzfLua files<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-n>", "<cmd>FzfLua git_files<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-S-l>", "<cmd>FzfLua buffers<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<Leader>f", "<cmd>FzfLua live_grep_glob<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-h>", "<cmd>FzfLua help_tags<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<Leader><F2>", "<cmd>FzfLua diagnostics_document<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<Leader><S-F2>", "<cmd>FzfLua diagnostics_workspace<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "gr", "<cmd>FzfLua lsp_references<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "gd", "<cmd>FzfLua lsp_definitions<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "gi", "<cmd>FzfLua lsp_implementations<CR>", { noremap = true, silent = true })
 
 -- ======================
 -- === Refactoring
