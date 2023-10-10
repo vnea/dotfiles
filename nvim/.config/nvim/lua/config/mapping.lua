@@ -91,3 +91,15 @@ vim.keymap.set("n", "<Leader>if", "<cmd>Refactor inline_func<CR>", { noremap = t
 vim.keymap.set("n", "<leader>sn", function() require("scretch").new_named() end, { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>sf", function() require("scretch").search() end, { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>sd", "<cmd>!rm -f ~/.config/nvim/scretch/*<CR>", { noremap = true, silent = true })
+
+-- ======================
+-- === Dap
+-- ======================
+vim.keymap.set({ "n", "i" }, "<S-F9>", function () require("fzf-lua").dap_configurations() end, { noremap = true, silent = true })
+vim.keymap.set({ "n", "i" }, "<F9>", function() require("dap").continue() end, { noremap = true, silent = true })
+vim.keymap.set({ "n", "i" }, "<C-F2>", function() require("dap").terminate() end, { noremap = true })
+vim.keymap.set({ "n", "i" }, "<C-F8>", function() require("dap").toggle_breakpoint() end, { noremap = true, silent = true })
+vim.keymap.set({ "n", "i" }, "<F8>", function() require("dap").step_over() end, { noremap = true, silent = true })
+vim.keymap.set({ "n", "i" }, "<F7>", function() require("dap").step_into() end, { noremap = true, silent = true })
+vim.keymap.set({ "n", "i" }, "<F6>", function() require("dap").step_out() end, { noremap = true, silent = true })
+vim.keymap.set({ "n", "i" }, "<A-(>", function() require("dapui").toggle() end, { noremap = true, silent = true })
