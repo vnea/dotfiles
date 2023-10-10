@@ -65,22 +65,29 @@ vim.keymap.set("n", "<C-S-A-Down>", "<C-W><S-J>", { noremap = true, silent = tru
 -- ======================
 -- === fzf-lua
 -- ======================
-vim.keymap.set("n", "<C-n>", function ()
-    require("fzf-lua").files({
-        cwd_prompt = false,
-        prompt = "Files❯ ",
-        fd_opts = "--type f --hidden --no-ignore --exclude .git --exclude .idea --exclude node_modules"
-    })
-end, { noremap = true, silent = true })
+vim.keymap.set("n", "<C-n>", function () require("fzf-lua").files({
+    cwd_prompt = false,
+    prompt = "Files❯ ",
+    fd_opts = "--type f --hidden --no-ignore --exclude .git --exclude .idea --exclude node_modules",
+    winopts = { preview = { hidden = "hidden" } }
+}) end)
 vim.keymap.set("n", "<C-S-l>", function () require("fzf-lua").buffers() end, { noremap = true, silent = true })
-vim.keymap.set("n", "<Leader>f", function () require("fzf-lua").live_grep_glob() end, { noremap = true, silent = true })
-vim.keymap.set("n", "<C-h>", function () require("fzf-lua").help_tags() end, { noremap = true, silent = true })
-vim.keymap.set("n", "<Leader><F2>", function () require("fzf-lua").diagnostics_document() end, { noremap = true, silent = true })
-vim.keymap.set("n", "<Leader><S-F2>", function () require("fzf-lua").diagnostics_workspace() end, { noremap = true, silent = true })
-vim.keymap.set("n", "gr", function () require("fzf-lua").lsp_references() end, { noremap = true, silent = true })
-vim.keymap.set("n", "gd", function () require("fzf-lua").lsp_definitions({ jump_to_single_result = true }) end, { noremap = true, silent = true })
-vim.keymap.set("n", "gi", function () require("fzf-lua").lsp_implementations({ jump_to_single_result = true }) end, { noremap = true, silent = true })
-vim.keymap.set("n", "gs", function () require("fzf-lua").lsp_document_symbols() end, { noremap = true, silent = true })
+vim.keymap.set("n", "<Leader>f", function () require("fzf-lua").live_grep_glob({
+    winopts = {
+        fullscreen = true,
+        preview    = {
+            layout   = "vertical",
+            border   = "noborder",
+        }
+    }
+}) end)
+vim.keymap.set("n", "<C-h>", function () require("fzf-lua").help_tags({ winopts = { fullscreen = true } }) end)
+vim.keymap.set("n", "<Leader><F2>", function () require("fzf-lua").diagnostics_document() end)
+vim.keymap.set("n", "<Leader><S-F2>", function () require("fzf-lua").diagnostics_workspace() end)
+vim.keymap.set("n", "gr", function () require("fzf-lua").lsp_references() end)
+vim.keymap.set("n", "gd", function () require("fzf-lua").lsp_definitions({ jump_to_single_result = true }) end)
+vim.keymap.set("n", "gi", function () require("fzf-lua").lsp_implementations({ jump_to_single_result = true }) end)
+vim.keymap.set("n", "gs", function () require("fzf-lua").lsp_document_symbols() end)
 
 -- ======================
 -- === Refactoring

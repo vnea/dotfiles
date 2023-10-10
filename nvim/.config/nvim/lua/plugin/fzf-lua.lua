@@ -3,11 +3,7 @@ return {
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
         require("fzf-lua").setup({
-            winopts = {
-                preview = {
-                    default = "bat"
-                }
-            }
+            -- Option: https://github.com/ibhagwan/fzf-lua#default-options
         })
     end
 }
