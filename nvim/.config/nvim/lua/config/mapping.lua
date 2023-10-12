@@ -55,7 +55,9 @@ vim.keymap.set("n", "<C-S-Down>", "<cmd>resize +5<CR>")
 
 -- Split
 vim.keymap.set("n", "<A-v>", "<cmd>vertical split<CR>")
+vim.keymap.set("i", "<A-v>", "<Esc><cmd>vertical split<CR>")
 vim.keymap.set("n", "<A-h>", "<cmd>split<CR>")
+vim.keymap.set("i", "<A-h>", "<Esc><cmd>split<CR>")
 
 -- Swap
 vim.keymap.set("n", "<C-S-A-Left>", "<C-W><S-H>")
