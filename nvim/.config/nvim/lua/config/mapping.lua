@@ -35,6 +35,7 @@ vim.keymap.set("n", "<C-l>", "<Cmd>edit #<CR>")
 
 -- Save
 vim.keymap.set("n", "<C-s>", "<Cmd>wa<CR>")
+vim.keymap.set("i", "<C-s>", "<Esc><Cmd>wa<CR>")
 
 -- ======================
 -- === Window
