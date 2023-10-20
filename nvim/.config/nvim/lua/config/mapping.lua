@@ -37,6 +37,9 @@ vim.keymap.set("n", "<C-l>", "<Cmd>edit #<CR>")
 vim.keymap.set("n", "<C-s>", "<Cmd>wa<CR>")
 vim.keymap.set("i", "<C-s>", "<Esc><Cmd>wa<CR>")
 
+-- Show help tags
+vim.keymap.set("n", "<C-h>", function() require("fzf-lua").help_tags({ winopts = { fullscreen = true } }) end)
+
 -- ======================
 -- === Window
 -- ======================
@@ -66,21 +69,20 @@ vim.keymap.set("n", "<C-S-A-Up>", "<C-W><S-k>")
 vim.keymap.set("n", "<C-S-A-Down>", "<C-W><S-J>")
 
 -- ======================
--- === fzf-lua
+-- === Navigation
 -- ======================
 vim.keymap.set("n", "<C-n>", function()
     require("fzf-lua").files({
+        fd_opts = "--type f --hidden --no-ignore --exclude .git --exclude .idea --exclude node_modules",
         cwd_prompt = false,
         prompt = "Files❯ ",
-        fd_opts = "--type f --hidden --no-ignore --exclude .git --exclude .idea --exclude node_modules",
         winopts = { preview = { hidden = "hidden" } }
     })
 end)
 vim.keymap.set("n", "<C-S-l>", function() require("fzf-lua").buffers() end)
 vim.keymap.set("n", "<Leader>f", function()
     require("fzf-lua").live_grep_glob({
-        rg_opts =
-        "--no-ignore --hidden --glob '!.git' --column --line-number  --color=always --max-columns=4096 --regexp",
+        rg_opts = "--no-ignore --hidden --glob '!.git' --column --line-number --color=always --max-columns=4096 --regexp",
         continue_last_search = true,
         winopts = {
             fullscreen = true,
@@ -91,7 +93,10 @@ vim.keymap.set("n", "<Leader>f", function()
         }
     })
 end)
-vim.keymap.set("n", "<C-h>", function() require("fzf-lua").help_tags({ winopts = { fullscreen = true } }) end)
+
+-- ======================
+-- === LSP
+-- ======================
 vim.keymap.set("n", "<Leader><F2>", function() require("fzf-lua").diagnostics_document() end)
 vim.keymap.set("n", "<Leader><S-F2>", function() require("fzf-lua").diagnostics_workspace() end)
 vim.keymap.set("n", "gr", function() require("fzf-lua").lsp_references() end)
@@ -99,7 +104,7 @@ vim.keymap.set("n", "gd", function() require("fzf-lua").lsp_definitions({ jump_t
 vim.keymap.set("n", "gi", function() require("fzf-lua").lsp_implementations({ jump_to_single_result = true }) end)
 vim.keymap.set("n", "gs", function() require("fzf-lua").lsp_document_symbols() end)
 
--- ======================
+-- =====================
 -- === Refactoring
 -- ======================
 vim.keymap.set({ "n", "x" }, "<Leader>ev", "<cmd>Refactor extract_var<CR>")
