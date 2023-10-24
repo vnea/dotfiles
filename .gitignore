@@ -15,3 +15,4 @@ alacritty/.config/alacritty/*.bak
 
 # Nvim
 nvim/.config/nvim/scretch
+nvim/.config/nvim/spell/

@@ -103,6 +103,7 @@ vim.keymap.set("n", "gr", function() require("fzf-lua").lsp_references() end)
 vim.keymap.set("n", "gd", function() require("fzf-lua").lsp_definitions({ jump_to_single_result = true }) end)
 vim.keymap.set("n", "gi", function() require("fzf-lua").lsp_implementations({ jump_to_single_result = true }) end)
 vim.keymap.set("n", "gs", function() require("fzf-lua").lsp_document_symbols() end)
+vim.keymap.set("n", "<Leader><A-Enter>", function() require("fzf-lua").spell_suggest() end)
 
 -- =====================
 -- === Refactoring
