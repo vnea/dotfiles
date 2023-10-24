@@ -131,3 +131,9 @@ vim.keymap.set({ "n", "i" }, "<F8>", function() require("dap").step_over() end)
 vim.keymap.set({ "n", "i" }, "<F7>", function() require("dap").step_into() end)
 vim.keymap.set({ "n", "i" }, "<F6>", function() require("dap").step_out() end)
 vim.keymap.set({ "n", "i" }, "<A-(>", function() require("dapui").toggle() end)
+
+
+-- ======================
+-- === Hop
+-- ======================
+vim.keymap.set("n", "<Leader>f", "<cmd>HopWord<CR>")
