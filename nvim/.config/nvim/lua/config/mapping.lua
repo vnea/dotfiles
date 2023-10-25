@@ -80,7 +80,7 @@ vim.keymap.set("n", "<C-n>", function()
     })
 end)
 vim.keymap.set("n", "<C-S-l>", function() require("fzf-lua").buffers() end)
-vim.keymap.set("n", "<Leader>f", function()
+vim.keymap.set("n", "<Leader>F", function()
     require("fzf-lua").live_grep_glob({
         rg_opts = "--no-ignore --hidden --glob '!.git' --column --line-number --color=always --max-columns=4096 --regexp",
         continue_last_search = true,

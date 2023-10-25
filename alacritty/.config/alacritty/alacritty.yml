@@ -14,6 +14,7 @@ key_bindings:
   - { key: NumpadAdd, mods: Control, action: None }
   - { key: NumpadSubtract, mods: Control, action: None }
   - { key: NumpadSubtract, mods: Control, action: None }
+  - { key: F, mods: Control|Shift, action: None }
   - { key: P, mods: Control, command: { program: "bash", args: ["-c", "~/dotfiles/alacritty/.config/alacritty/scripts/toggle_theme.sh"] } }
 
 env:
