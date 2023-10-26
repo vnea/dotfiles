@@ -7,6 +7,9 @@ vim.g.mapleader = " "
 -- Escape
 vim.keymap.set({ "i", "v" }, "jk", "<Esc>")
 
+-- Save
+vim.keymap.set("i", "ZZ", "<cmd>xa<CR>")
+
 -- Exit without change
 vim.keymap.set("i", "qq", "<esc><cmd>q!<CR>")
 vim.keymap.set("n", "qq", "<cmd>q!<CR>")
