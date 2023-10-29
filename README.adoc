@@ -320,3 +320,18 @@ asdf plugin-add deno https://github.com/asdf-community/asdf-deno.git
 
 rm -f ~/.asdfrc && stow asdf
 ----
+
+== Lazygit
+:sectnums!:
+
+Link: https://github.com/jesseduffield/lazygit
+
+=== Installation
+
+[source,shell]
+----
+rm -rf ~/.config/lazygit && stow lazygit
+----
+
+:sectnums:
+
