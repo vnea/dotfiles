@@ -43,10 +43,10 @@ vim.keymap.set("n", "<C-s>", "<Cmd>wa<CR>")
 vim.keymap.set("i", "<C-s>", "<Esc><Cmd>wa<CR>")
 
 -- Show help tags
-vim.keymap.set("n", "<C-h>", function() require("fzf-lua").help_tags({ winopts = { fullscreen = true } }) end)
+vim.keymap.set("n", "<C-h>", function() require("telescope.builtin").help_tags() end)
 
 -- Fzf command line history
-vim.keymap.set({ "n", "v" }, "<C-r>", function() require("fzf-lua").command_history() end)
+vim.keymap.set({ "n", "v" }, "<C-r>", function() require("telescope.builtin").command_history() end)
 
 -- Open current window in another tab (to simulate Fullscreen mode)
 vim.keymap.set("n", "<Leader>z", "<Cmd>tabedit %<CR>")
@@ -83,25 +83,19 @@ vim.keymap.set("n", "<C-S-A-Down>", "<C-W><S-J>")
 -- ======================
 -- === Navigation
 -- ======================
-vim.keymap.set("n", "<C-n>", function()
-    require("fzf-lua").files({
-        fd_opts = "--type f --hidden --no-ignore --exclude .git --exclude .idea --exclude node_modules",
-        cwd_prompt = false,
-        prompt = "Files❯ ",
-        winopts = { preview = { hidden = "hidden" } }
-    })
-end)
-vim.keymap.set("n", "<C-S-l>", function() require("fzf-lua").buffers() end)
+vim.keymap.set("n", "<C-n>", function() require("telescope.builtin").find_files({ hidden = true, no_ignore = true }) end)
+vim.keymap.set("n", "<C-S-l>", function() require("telescope.builtin").buffers() end)
 vim.keymap.set("n", "<Leader>F", function()
-    require("fzf-lua").live_grep_glob({
-        rg_opts = "--no-ignore --hidden --glob '!.git' --column --line-number --color=always --max-columns=4096 --regexp",
-        continue_last_search = true,
-        winopts = {
-            fullscreen = true,
-            preview    = {
-                layout = "vertical",
-                border = "noborder",
-            }
+    require("telescope").extensions.live_grep_args.live_grep_args({
+        vimgrep_arguments = {
+            "rg",
+            "--hidden",
+            "--color=never",
+            "--no-heading",
+            "--with-filename",
+            "--line-number",
+            "--column",
+            "--smart-case",
         }
     })
 end)
@@ -109,13 +103,13 @@ end)
 -- ======================
 -- === LSP
 -- ======================
-vim.keymap.set("n", "<Leader><F2>", function() require("fzf-lua").diagnostics_document() end)
-vim.keymap.set("n", "<Leader><S-F2>", function() require("fzf-lua").diagnostics_workspace() end)
-vim.keymap.set("n", "gr", function() require("fzf-lua").lsp_references() end)
-vim.keymap.set("n", "gd", function() require("fzf-lua").lsp_definitions({ jump_to_single_result = true }) end)
-vim.keymap.set("n", "gi", function() require("fzf-lua").lsp_implementations({ jump_to_single_result = true }) end)
-vim.keymap.set("n", "gs", function() require("fzf-lua").lsp_document_symbols() end)
-vim.keymap.set("n", "<Leader><A-Enter>", function() require("fzf-lua").spell_suggest() end)
+vim.keymap.set("n", "<Leader><F2>", function() require("telescope.builtin").diagnostics({ bufnr = 0 }) end)
+vim.keymap.set("n", "<Leader><S-F2>", function() require("telescope.builtin").diagnostics() end)
+vim.keymap.set("n", "gr", function() require("telescope.builtin").lsp_references() end)
+vim.keymap.set("n", "gd", function() require("telescope.builtin").lsp_definitions() end)
+vim.keymap.set("n", "gi", function() require("telescope.builtin").lsp_implementations() end)
+vim.keymap.set("n", "gs", function() require("telescope.builtin").lsp_document_symbols() end)
+vim.keymap.set("n", "<Leader><A-Enter>", function() require("telescope.builtin").spell_suggest() end)
 
 -- =====================
 -- === Refactoring
@@ -135,7 +129,7 @@ vim.keymap.set("n", "<leader>sd", "<cmd>!rm -f ~/.config/nvim/scretch/*<CR>")
 -- ======================
 -- === Dap
 -- ======================
-vim.keymap.set({ "n", "i" }, "<S-F9>", function() require("fzf-lua").dap_configurations() end)
+vim.keymap.set({ "n", "i" }, "<S-F9>", "<cmd>Telescope dap configurations<CR>")
 vim.keymap.set({ "n", "i" }, "<F9>", function() require("dap").continue() end)
 vim.keymap.set({ "n", "i" }, "<C-F2>", function() require("dap").terminate() end)
 vim.keymap.set({ "n", "i" }, "<C-F8>", function() require("dap").toggle_breakpoint() end)
@@ -143,7 +137,6 @@ vim.keymap.set({ "n", "i" }, "<F8>", function() require("dap").step_over() end)
 vim.keymap.set({ "n", "i" }, "<F7>", function() require("dap").step_into() end)
 vim.keymap.set({ "n", "i" }, "<F6>", function() require("dap").step_out() end)
 vim.keymap.set({ "n", "i" }, "<A-(>", function() require("dapui").toggle() end)
-
 
 -- ======================
 -- === Hop
@@ -176,5 +169,5 @@ vim.keymap.set("n", "<Leader>al", "<cmd>diffget //2<CR>")
 vim.keymap.set("n", "<Leader>ar", "<cmd>diffget //3<CR>")
 vim.keymap.set("n", "<F7>", "]c")
 vim.keymap.set("n", "<S-F7>", "[c")
-vim.keymap.set("n", "<Leader>7",function() require("fzf-lua").git_bcommits() end)
-vim.keymap.set("n", "<C-b>",function() require("fzf-lua").git_branches() end)
+vim.keymap.set("n", "<Leader>7", function() require("telescope.builtin").git_bcommits() end)
+vim.keymap.set("n", "<C-b>", function() require("telescope.builtin").git_branches() end)

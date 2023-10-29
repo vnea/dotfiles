@@ -4,7 +4,7 @@ return {
         require("scretch").setup {
             scretch_dir = vim.fn.stdpath("config") .. "/scretch/",
             split_cmd = "edit",
-            backend = "fzf-lua"
+            backend = "telescope.builtin",
         }
     end
 }
