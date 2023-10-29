@@ -13,6 +13,8 @@ vim.keymap.set("i", "ZZ", "<cmd>xa<CR>")
 -- Exit without change
 vim.keymap.set("i", "qq", "<esc><cmd>q!<CR>")
 vim.keymap.set("n", "qq", "<cmd>q!<CR>")
+vim.keymap.set("i", "QQ", "<esc><cmd>qa!<CR>")
+vim.keymap.set("n", "QQ", "<cmd>qa!<CR>")
 
 -- Delete/change without copying in clipboard
 vim.keymap.set({ "n", "v" }, "x", '"_x')
