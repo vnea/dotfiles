@@ -25,8 +25,8 @@ env:
 
 font:
   normal:
-    family: NotoMono Nerd Font
-  size: 9.0
+    family: JetBrains Mono
+  size: 8
 
 import:
  - ~/dotfiles/alacritty/.config/alacritty/themes/github_dark_default.yml
