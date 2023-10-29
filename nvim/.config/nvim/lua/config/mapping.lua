@@ -151,3 +151,20 @@ vim.keymap.set("n", "<Leader>f", "<cmd>HopWord<CR>")
 -- === Twilight
 -- ======================
 vim.keymap.set("n", "<Leader><Leader>", "<cmd>Twilight<CR>")
+
+-- ======================
+-- === Toggleterm
+-- ======================
+vim.keymap.set("n", "<C-k>", function()
+    local lazygit = require("toggleterm.terminal").Terminal:new({
+        cmd = "lazygit",
+        hidden = true,
+        direction = "float",
+        -- Enable full screen
+        float_opts = {
+            width = 9999,
+            height = 9999,
+        },
+    })
+    lazygit:toggle()
+end)
