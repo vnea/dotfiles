@@ -151,7 +151,7 @@ vim.keymap.set("n", "<Leader><Leader>", "<cmd>Twilight<CR>")
 -- ======================
 -- === Git
 -- ======================
-vim.keymap.set("n", "<C-k>", function()
+vim.keymap.set("n", "<Leader>k", function()
     local lazygit = require("toggleterm.terminal").Terminal:new({
         cmd = "lazygit",
         hidden = true,
@@ -164,7 +164,7 @@ vim.keymap.set("n", "<C-k>", function()
     })
     lazygit:toggle()
 end)
-vim.keymap.set("n", "<C-S-k>", "<cmd>Git<CR>")
+vim.keymap.set("n", "<Leader>K", "<cmd>Git<CR>")
 vim.keymap.set("n", "<Leader>al", "<cmd>diffget //2<CR>")
 vim.keymap.set("n", "<Leader>ar", "<cmd>diffget //3<CR>")
 vim.keymap.set("n", "<F7>", "]c")
