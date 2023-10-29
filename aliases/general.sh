@@ -27,3 +27,22 @@ function def() {
   declare -f "$function_name" | pygmentize
 }
 
+function goto() {
+  workspace_folder=~/workspace
+  dotfiles_folder=~/dotfiles
+
+  projects=$(fd . $workspace_folder --type directory --max-depth 2 | sed -E 's/(.+workspace\/)(.+)\//\2/g' | cat - <(echo $dotfiles_folder) | sort)
+  selected_project=$(echo $projects | fzf)
+  if [ -z "$selected_project" ]; then
+      return
+  fi
+
+  if [ "$selected_project" = "$dotfiles_folder" ]; then
+      cd $dotfiles_folder
+  else
+      cd "$workspace_folder/$selected_project"
+  fi
+
+  tmux rename-window "`basename $(pwd)`"
+}
+
