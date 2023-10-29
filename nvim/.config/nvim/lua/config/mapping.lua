@@ -45,6 +45,9 @@ vim.keymap.set("i", "<C-s>", "<Esc><Cmd>wa<CR>")
 -- Show help tags
 vim.keymap.set("n", "<C-h>", function() require("fzf-lua").help_tags({ winopts = { fullscreen = true } }) end)
 
+-- Fzf command line history
+vim.keymap.set({ "n", "v" }, "<C-r>", function() require("fzf-lua").command_history() end)
+
 -- Open current window in another tab (to simulate Fullscreen mode)
 vim.keymap.set("n", "<Leader>z", "<Cmd>tabedit %<CR>")
 vim.keymap.set("n", "<Leader>=", "<Cmd>wincmd =<CR>")
