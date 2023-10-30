@@ -10,8 +10,9 @@ alias gcontributors="git shortlog --summary --numbered --no-merges"
 alias gcy="git branch --show-current | tr -d '\n' | xclip -sel clip"
 alias gcob="git branch -a | sed \"s/remotes\/origin\///g\" | sed \"s/\s//g\" | sed \"s/*//\" | sort | uniq | fzf | xargs --no-run-if-empty git checkout"
 alias grho="git reset --hard origin/\$(git rev-parse --abbrev-ref HEAD)"
-alias glg='git log --graph'
-alias gst='git status --short'
+alias glg="git log --graph"
+alias gst="git status --short"
+alias gup="git pull --rebase --prune"
 
 function gist() {
     (&>/dev/null xdg-open "https://gist.github.com/vnea" &)
