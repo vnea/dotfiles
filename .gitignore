@@ -15,8 +15,7 @@ alacritty/.config/alacritty/*.bak
 
 # Nvim
 nvim/.config/nvim/scretch
-nvim/.config/nvim/spell/
-!nvim/.config/nvim/spell/*.spl
+nvim/.config/nvim/spell/*.add
 
 # Lazygit
 lazygit/.config/lazygit/state.yml
