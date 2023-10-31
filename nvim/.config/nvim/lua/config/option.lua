@@ -11,6 +11,8 @@ vim.opt.hlsearch = false
 vim.opt.wrap = false
 vim.opt.scrolloff = 8
 vim.opt.termguicolors = true
+vim.opt.spelllang = "fr,en"
+vim.opt.spell = true
 vim.api.nvim_command("set clipboard+=unnamedplus")
 
 -- Folding
