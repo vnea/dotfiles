@@ -156,10 +156,10 @@ vim.keymap.set("n", "<Leader>k", function()
         cmd = "lazygit",
         hidden = true,
         direction = "float",
-        -- Enable full screen
+        -- Enable full screen: https://github.com/akinsho/toggleterm.nvim/issues/505
         float_opts = {
-            width = 9999,
-            height = 9999,
+            width = vim.o.columns,
+            height = vim.o.lines,
         },
     })
     lazygit:toggle()
