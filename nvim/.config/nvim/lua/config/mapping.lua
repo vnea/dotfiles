@@ -83,7 +83,13 @@ vim.keymap.set("n", "<C-S-A-Down>", "<C-W><S-J>")
 -- ======================
 -- === Navigation
 -- ======================
-vim.keymap.set("n", "<C-n>", function() require("telescope.builtin").find_files({ hidden = true, no_ignore = true }) end)
+vim.keymap.set("n", "<C-n>", function()
+    require("telescope.builtin").find_files({
+        hidden = true,
+        no_ignore = true,
+        previewer = false,
+    })
+end)
 vim.keymap.set("n", "<C-S-l>", function() require("telescope.builtin").buffers({ only_cwd = true, sort_mru = true }) end)
 vim.keymap.set("n", "<Leader>F", function()
     require("telescope").extensions.live_grep_args.live_grep_args({
@@ -96,7 +102,13 @@ vim.keymap.set("n", "<Leader>F", function()
             "--line-number",
             "--column",
             "--smart-case",
-        }
+        },
+        layout_strategy = "vertical",
+        layout_config = {
+            width = vim.o.columns,
+            prompt_position = "top",
+            mirror = true,
+        },
     })
 end)
 
