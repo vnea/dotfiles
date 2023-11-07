@@ -81,6 +81,12 @@ vim.keymap.set("n", "<C-S-A-Up>", "<C-W><S-k>")
 vim.keymap.set("n", "<C-S-A-Down>", "<C-W><S-J>")
 
 -- ======================
+-- === File explorer (nvim-tree)
+-- ======================
+vim.keymap.set("n", "<A-&>", "<cmd>NvimTreeToggle<CR>")
+vim.keymap.set("n", "go", "<cmd>NvimTreeFindFile<CR>")
+
+-- ======================
 -- === Navigation
 -- ======================
 vim.keymap.set("n", "<C-n>", function()
