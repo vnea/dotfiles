@@ -9,6 +9,7 @@ vim.opt.smartindent = true
 vim.opt.list = true
 vim.opt.hlsearch = false
 vim.opt.wrap = false
+vim.opt.cursorline = true
 vim.opt.scrolloff = 8
 vim.opt.termguicolors = true
 vim.opt.spelllang = "fr,en"
