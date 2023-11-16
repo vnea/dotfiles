@@ -121,7 +121,7 @@ end)
 -- ======================
 -- === LSP
 -- ======================
-vim.keymap.set("n", "<Leader><F2>", function() require("telescope.builtin").diagnostics({ bufnr = 0 }) end)
+vim.keymap.set("n", "<Leader><F2>", function() require("trouble").open() end)
 vim.keymap.set("n", "<Leader><S-F2>", function() require("telescope.builtin").diagnostics() end)
 vim.keymap.set("n", "gr", function() require("telescope.builtin").lsp_references() end)
 vim.keymap.set("n", "gd", function() require("telescope.builtin").lsp_definitions() end)

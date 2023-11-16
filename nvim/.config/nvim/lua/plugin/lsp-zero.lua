@@ -62,7 +62,29 @@ return {
                             GOFLAGS = "-tags=integration",
                         }
                     })
-                end
+                end,
+                golangci_lint_ls = function()
+                    -- In order to fix error "Column value outside range", source: https://github.com/folke/trouble.nvim/issues/224#issuecomment-1495410321
+                    local lspconfig = require("lspconfig")
+                    local on_publish_diagnostics = vim.lsp.handlers["textDocument/publishDiagnostics"]
+                    lspconfig.golangci_lint_ls.setup({
+                        -- <...>
+                        handlers = {
+                            -- stops an out-of-range column error when viewing diagnostics with Trouble.nvim
+                            ["textDocument/publishDiagnostics"] = function(_, result, ctx, config)
+                                for idx, diag in ipairs(result.diagnostics) do
+                                    for position, value in pairs(diag.range) do
+                                        if value.character == -1 then
+                                            result.diagnostics[idx].range[position].character = 0
+                                        end
+                                    end
+                                end
+
+                                return on_publish_diagnostics(_, result, ctx, config)
+                            end,
+                        },
+                    })
+                end,
             }
         })
 
