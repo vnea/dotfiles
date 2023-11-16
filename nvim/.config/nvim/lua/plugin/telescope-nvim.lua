@@ -15,7 +15,8 @@ return {
         telescope.load_extension("ui-select")
         telescope.load_extension("dap")
         telescope.load_extension("live_grep_args")
-        require("telescope").load_extension("advanced_git_search")
+        telescope.load_extension("advanced_git_search")
+        telescope.load_extension("find_template")
         telescope.setup({
             defaults = {
                 file_ignore_patterns = {
