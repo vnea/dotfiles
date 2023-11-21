@@ -10,6 +10,7 @@ return {
         -- Autocompletion
         { "hrsh7th/nvim-cmp" },     -- Required
         { "hrsh7th/cmp-nvim-lsp" }, -- Required
+        { "hrsh7th/cmp-path" },     -- Required
         { "L3MON4D3/LuaSnip" },     -- Required
     },
     config = function()
@@ -92,6 +93,10 @@ return {
         local cmp = require("cmp")
 
         cmp.setup({
+            sources = {
+                { name = "nvim_lsp" },
+                { name = "path" },
+            },
             mapping = cmp.mapping.preset.insert({
                 ["<CR>"] = cmp.mapping.confirm({ select = false }),
                 ["<C-Space>"] = cmp.mapping.complete(),

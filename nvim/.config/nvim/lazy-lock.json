@@ -3,6 +3,7 @@
   "LuaSnip": { "branch": "master", "commit": "1f4ad8bb72bdeb60975e98652636b991a9b7475d" },
   "advanced-git-search.nvim": { "branch": "main", "commit": "79c9aab7aa1cf08c2a25d931719bcb408b381ed2" },
   "cmp-nvim-lsp": { "branch": "main", "commit": "44b16d11215dce86f253ce0c30949813c0a90765" },
+  "cmp-path": { "branch": "main", "commit": "91ff86cd9c29299a64f968ebb45846c485725f23" },
   "firenvim": { "branch": "master", "commit": "138424db463e6c0e862a05166a4ccc781cd7c19d" },
   "go.nvim": { "branch": "master", "commit": "f9672fd446d6527ddc3f0c180bb7e3320e450546" },
   "guihua.lua": { "branch": "master", "commit": "cd68996069abedffcd677ca7eee3a660b79e5b32" },
