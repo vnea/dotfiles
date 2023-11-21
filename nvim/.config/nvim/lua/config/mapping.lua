@@ -52,6 +52,14 @@ vim.keymap.set({ "n", "v" }, "<Leader>r", function() require("telescope.builtin"
 vim.keymap.set("n", "<Leader>z", "<Cmd>tabedit %<CR>")
 vim.keymap.set("n", "<Leader>=", "<Cmd>wincmd =<CR>")
 
+-- Move lines, source: https://vim.fandom.com/wiki/Moving_lines_up_or_down#Mappings_to_move_lines
+vim.keymap.set("v", "<C-A-Down>", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "<C-A-Up>", ":m '<-2<CR>gv=gv")
+vim.keymap.set("n", "<C-A-Down>", ":m .+1<CR>==")
+vim.keymap.set("n", "<C-A-Up>", ":m .-2<CR>==")
+vim.keymap.set("i", "<C-A-Down>", "<Esc>:m .+1<CR>==gi")
+vim.keymap.set("i", "<C-A-Up>", "<Esc>:m .-2<CR>==gi")
+
 -- ======================
 -- === Window
 -- ======================
