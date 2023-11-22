@@ -8,6 +8,7 @@ return {
         { "nvim-telescope/telescope-dap.nvim" },
         { "nvim-telescope/telescope-live-grep-args.nvim", version = "^1.0.0" },
         { "aaronhallaert/advanced-git-search.nvim" },
+        { "johmsalas/text-case.nvim" },
     },
     config = function()
         local telescope = require("telescope")
@@ -17,6 +18,8 @@ return {
         telescope.load_extension("live_grep_args")
         telescope.load_extension("advanced_git_search")
         telescope.load_extension("find_template")
+        require("textcase").setup()
+        telescope.load_extension("textcase")
         telescope.setup({
             defaults = {
                 file_ignore_patterns = {

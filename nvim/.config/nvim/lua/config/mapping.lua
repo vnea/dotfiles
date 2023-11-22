@@ -89,6 +89,11 @@ vim.keymap.set("n", "<C-S-A-Up>", "<C-W><S-k>")
 vim.keymap.set("n", "<C-S-A-Down>", "<C-W><S-J>")
 
 -- ======================
+-- === Text case
+-- ======================
+vim.keymap.set({ "n", "v" }, "<Leader>sc", "<cmd>TextCaseOpenTelescope<CR>", { desc = "Telescope" })
+
+-- ======================
 -- === File explorer (nvim-tree)
 -- ======================
 vim.keymap.set("n", "<A-&>", "<cmd>NvimTreeToggle<CR>")
