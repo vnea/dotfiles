@@ -18,8 +18,16 @@ return {
         telescope.load_extension("advanced_git_search")
         telescope.load_extension("find_template")
         telescope.load_extension("textcase")
+
+
+        local actions = require("telescope.actions")
         telescope.setup({
             defaults = {
+                mappings = {
+                    i = {
+                        ["<esc>"] = actions.close
+                    },
+                },
                 file_ignore_patterns = {
                     ".git",
                     ".idea",
