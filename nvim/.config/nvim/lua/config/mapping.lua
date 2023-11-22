@@ -155,7 +155,7 @@ vim.keymap.set("n", "<leader>sd", "<cmd>!rm -f ~/.config/nvim/scretch/*<CR>")
 -- ======================
 -- === Template
 -- ======================
-vim.keymap.set("n", "<leader>ft", "<cmd>Telescope find_template type=insert<CR>")
+vim.keymap.set("n", "<leader>it", "<cmd>Telescope find_template type=insert<CR>")
 
 -- ======================
 -- === Dap
