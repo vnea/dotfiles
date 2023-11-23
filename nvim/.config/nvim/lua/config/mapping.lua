@@ -46,7 +46,7 @@ vim.keymap.set("i", "<C-s>", "<Esc><Cmd>wa<CR>")
 vim.keymap.set("n", "<C-h>", function() require("telescope.builtin").help_tags() end)
 
 -- Fzf command line history
-vim.keymap.set({ "n", "v" }, "<Leader>r", function() require("telescope.builtin").command_history() end)
+vim.keymap.set({ "n", "v" }, "<Leader>rc", function() require("telescope.builtin").command_history() end)
 
 -- Open current window in another tab (to simulate Fullscreen mode)
 vim.keymap.set("n", "<Leader>z", "<Cmd>tabedit %<CR>")
