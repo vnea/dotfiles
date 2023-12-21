@@ -88,6 +88,7 @@ eval "$(direnv hook zsh)"
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
 export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv
 export WORKON_HOME=$HOME/python/virtualenvs
+source /usr/bin/virtualenvwrapper.sh
 
 ##############################
 # Chrome
