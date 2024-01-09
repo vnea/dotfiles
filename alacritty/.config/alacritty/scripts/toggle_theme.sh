@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-readonly ALACRITTY_CONFIG_FILE=~/dotfiles/alacritty/.config/alacritty/alacritty.yml
+readonly ALACRITTY_CONFIG_FILE=~/dotfiles/alacritty/.config/alacritty/alacritty.toml
 
-readonly theme_dark=github_dark_default.yml
-readonly theme_light=github_light_default.yml
+readonly theme_dark=github_dark_default.toml
+readonly theme_light=github_light_default.toml
 
 toggleTheme() {
     readonly from_theme="${1}"

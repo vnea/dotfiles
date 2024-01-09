@@ -1,0 +1,81 @@
+import = ["/home/vne/dotfiles/alacritty/.config/alacritty/themes/github_dark_default.toml"]
+
+[env]
+LANG = "en_US.UTF-8"
+LC_CTYPE = "en_US.UTF-8"
+TERM = "xterm-256color"
+
+[font]
+size = 8
+
+[font.normal]
+family = "JetBrains Mono"
+
+# Fix conflict bewteen "Control + Key" and "Control + Shift + Key" in Neovim
+# Sources:
+# - https://www.reddit.com/r/neovim/comments/mbj8m5/how_to_setup_ctrlshiftkey_mappings_in_neovim_and
+# - https://stackoverflow.com/questions/73793802/how-to-map-ctrlshiftkey-in-neovim-tmux-in-alacritty
+# - https://css-tricks.com/snippets/javascript/javascript-keycodes
+# - https://www.reddit.com/r/neovim/comments/vfqseq/enable_special_keyboard_combinations_in_alacritty
+[[keyboard.bindings]]
+chars = "\u001B[75;6u"
+key = "K"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+chars = "\u001B[76;6u"
+key = "L"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+chars = "\u001B[78;6u"
+key = "N"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+chars = "\u001B[87;6u"
+key = "W"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "Numpad6"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "DecreaseFontSize"
+key = "Numpad9"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "ResetFontSize"
+key = "Numpad0"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "None"
+key = "NumpadAdd"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "None"
+key = "NumpadSubtract"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "None"
+key = "NumpadSubtract"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "None"
+key = "F"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+key = "P"
+mods = "Control"
+
+[keyboard.bindings.command]
+args = ["-c", "~/dotfiles/alacritty/.config/alacritty/scripts/toggle_theme.sh"]
+program = "bash"
