@@ -37,7 +37,6 @@ bindsym $mod+f fullscreen toggle
 
 # Layout
 workspace_layout tabbed
-bindsym $mod+s layout stacking
 bindsym $mod+z layout tabbed
 
 # Toggle tiling / floating
@@ -233,4 +232,4 @@ for_window [floating] border pixel 0
 
 # Custom
 bindsym $mod+u exec --no-startup-id ~/dotfiles/aliases/ignore/u.sh
-
+bindsym $mod+Shift+u exec --no-startup-id ~/dotfiles/aliases/ignore/v.sh
