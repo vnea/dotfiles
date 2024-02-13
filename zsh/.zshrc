@@ -35,7 +35,7 @@ source $ZSH/oh-my-zsh.sh
 ##############################
 export PROMPT="${PROMPT}"$'\n'""
 export EDITOR=nvim
-export PATH="$PATH:$HOME/bin:$HOME/.local/bin"
+export PATH="$PATH:$HOME/bin:$HOME/.local/bin:${KREW_ROOT:-$HOME/.krew}/bin"
 
 ##############################
 # History
