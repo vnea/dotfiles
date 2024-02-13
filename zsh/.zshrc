@@ -101,6 +101,6 @@ source /usr/bin/virtualenvwrapper.sh
 export CHROMIUM_USER_FLAGS=""
 
 # Toggle bg/fg with CTRL+Z, source: https://unix.stackexchange.com/a/179373
-_zsh_cli_fg() { fg; }
-zle -N _zsh_cli_fg
-bindkey '^Z' _zsh_cli_fg
+# _zsh_cli_fg() { fg; }
+# zle -N _zsh_cli_fg
+# bindkey '^Z' _zsh_cli_fg
