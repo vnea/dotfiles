@@ -6,6 +6,8 @@ vim.g.mapleader = " "
 
 -- Escape
 vim.keymap.set({ "i", "v" }, "jk", "<Esc>")
+-- https://vi.stackexchange.com/questions/4919/exit-from-terminal-mode-in-neovim-vim-8#comment57834_4922
+vim.keymap.set("t", "<ESC>", "<C-\\><C-n>", { noremap = true })
 
 -- Save
 vim.keymap.set("i", "ZZ", "<cmd>xa<CR>")
