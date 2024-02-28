@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Source : https://www.reddit.com/r/tmux/comments/kvf2n4/tmux_and_fzf_fuzzy_tmux_sessionwindowpane_switcher/
 
