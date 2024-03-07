@@ -6,15 +6,18 @@
 terminal_scrollback=/tmp/terminal-scrollback
 tmux capture-pane -e -pS - > $terminal_scrollback
 
-# Open EDITOR in terminal mode
-tmux new-window -n:terminal-scrollback "$EDITOR -c 'set nonumber' -c 'set norelativenumber' -c 'set spell!' -c 'terminal'"
+# Remove empty lines at the end of the file, generated with ChatGPT
+sed -i -e :a -e '/^\n*$/{$d;N;ba' -e '}' $terminal_scrollback
 
-# Hack to send to command to $EDITOR
-tmux send-keys "i"
+# Open EDITOR in terminal mode
+tmux new-window -n:terminal-scrollback "$EDITOR -c 'set nonumber' \
+                                                -c 'set norelativenumber' \
+                                                -c 'set spell!' \
+                                                -c 'terminal' \
+                                                -c 'startinsert'"
+
 tmux send-keys "cat /tmp/terminal-scrollback"
 tmux send-keys "Enter"
 tmux send-keys "Escape"
-
-# sleep because the G (to go to the bottom of the file) is triggered too soon
 sleep 0.050
 tmux send-keys "G"
