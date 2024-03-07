@@ -1,8 +1,8 @@
 return {
     "rcarriga/nvim-dap-ui",
-    tag = "v3.9.1",
+    tag = "v3.9.3",
     dependencies = {
-        { "mfussenegger/nvim-dap", tag = "0.6.0" },
+        { "mfussenegger/nvim-dap", tag = "0.7.0" },
         { "leoluz/nvim-dap-go" },
     },
     config = function()
