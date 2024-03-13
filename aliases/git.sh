@@ -13,6 +13,7 @@ alias grho="git reset --hard origin/\$(git rev-parse --abbrev-ref HEAD)"
 alias glg="git log --graph"
 alias gst="git status --short"
 alias gup="git pull --rebase --prune"
+alias greset_repo="git clean -fxd"
 
 function gist() {
     (&>/dev/null xdg-open "https://gist.github.com/vnea" &)
