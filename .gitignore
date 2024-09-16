@@ -20,3 +20,7 @@ nvim/.config/nvim/spell/*.add.spl
 
 # Lazygit
 lazygit/.config/lazygit/state.yml
+
+# Brave
+BraveSoftware
+
