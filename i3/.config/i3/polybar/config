@@ -46,7 +46,7 @@ click-left = gsimplecal
 [module/time]
 type = custom/script
 format-foreground = #6fc77b
-exec = echo "󰅐 $(date +'%X')"
+exec = echo "󰅐 $(date +'%H:%M:%S')"
 interval = 1
 
 [module/audio]
