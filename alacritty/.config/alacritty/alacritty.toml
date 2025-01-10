@@ -44,13 +44,28 @@ key = "Numpad6"
 mods = "Control"
 
 [[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "="
+mods = "Control"
+
+[[keyboard.bindings]]
 action = "DecreaseFontSize"
 key = "Numpad9"
 mods = "Control"
 
 [[keyboard.bindings]]
+action = "DecreaseFontSize"
+key = ")"
+mods = "Control"
+
+[[keyboard.bindings]]
 action = "ResetFontSize"
 key = "Numpad0"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "ResetFontSize"
+key = "à"
 mods = "Control"
 
 [[keyboard.bindings]]
@@ -72,6 +87,17 @@ mods = "Control"
 action = "None"
 key = "F"
 mods = "Control|Shift"
+
+# On MacOS, simulate ALT-d
+[[keyboard.bindings]]
+chars = "\u001Bd"
+key = "D"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u0017"
+key = "Backspace"
+mods = "Command"
 
 [[keyboard.bindings]]
 key = "P"
