@@ -53,11 +53,6 @@ setopt HIST_IGNORE_SPACE
 for f in $(find ~/dotfiles/aliases -maxdepth 1 -name "*.sh"); do source $f; done
 
 ##############################
-# Flux
-##############################
-command -v flux >/dev/null && . <(flux completion zsh)
-
-##############################
 # tmux plugin conf
 ##############################
 export DISABLE_AUTO_TITLE="true"
