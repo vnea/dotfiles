@@ -10,7 +10,12 @@ if [[ -r "$HOME/.cache/p10k-instant-prompt-$USER.zsh" ]]; then
 fi
 
 source ~/.p10k.zsh
-source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+
+if [[ "$(uname)" == "Darwin" ]]; then
+  source "$(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme"
+else
+  source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
+fi
 
 ##############################
 # Oh My Zsh
@@ -60,13 +65,16 @@ export DISABLE_AUTO_TITLE="true"
 ##############################
 # asdf
 ##############################
-source /opt/asdf-vm/asdf.sh
+if [[ "$(uname -s)" == "Darwin" ]]; then
+  source "$(brew --prefix asdf)/libexec/asdf.sh"
+else
+  source /opt/asdf-vm/asdf.sh
+fi
 
 ##############################
 # FZF
 ##############################
-source /usr/share/fzf/key-bindings.zsh
-source /usr/share/fzf/completion.zsh
+source <(fzf --zsh)
 
 ##############################
 # The Fuck
