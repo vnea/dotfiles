@@ -8,7 +8,7 @@ readonly theme_light=github_light_default.toml
 toggleTheme() {
     readonly from_theme="${1}"
     readonly to_theme="${2}"
-    sed -i "s/${from_theme}/${to_theme}/" "${alacritty_config_file}"
+    sd "${from_theme}" "${to_theme}" "${alacritty_config_file}"
 }
 
 if rg --fixed-strings --quiet "${theme_dark}" "${alacritty_config_file}"; then
