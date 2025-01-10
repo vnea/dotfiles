@@ -1,4 +1,10 @@
 #!/usr/bin/env bash
 
-alias cy="xclip -sel clip"
+function cy() {
+  if [[ "$(uname)" == "Darwin" ]]; then
+    pbcopy
+  else
+    xclip -sel clip
+  fi
+}
 
