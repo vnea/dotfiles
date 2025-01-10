@@ -3,9 +3,9 @@ return {
     branch = "master",
     init = function()
         vim.g.VM_maps = {
-            ["Find Under"]         = "<A-j>",
-            ["Find Subword Under"] = "<A-j>",
-            ["Select All"]         = "<A-S-j>",
+            ["Find Under"]         = "<Leader>j",
+            ["Find Subword Under"] = "<Leader>j",
+            ["Select All"]         = "<Leader>J",
             ["Add Cursor Down"]    = "<Leader><Down>",
             ["Add Cursor Up"]      = "<Leader><Up>",
         }
