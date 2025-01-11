@@ -12,32 +12,9 @@ size = 18
 [font.normal]
 family = "MesloLGS NF"
 
-# Fix conflict bewteen "Control + Key" and "Control + Shift + Key" in Neovim
-# Sources:
-# - https://www.reddit.com/r/neovim/comments/mbj8m5/how_to_setup_ctrlshiftkey_mappings_in_neovim_and
-# - https://stackoverflow.com/questions/73793802/how-to-map-ctrlshiftkey-in-neovim-tmux-in-alacritty
-# - https://css-tricks.com/snippets/javascript/javascript-keycodes
-# - https://www.reddit.com/r/neovim/comments/vfqseq/enable_special_keyboard_combinations_in_alacritty
-[[keyboard.bindings]]
-chars = "\u001B[75;6u"
-key = "K"
-mods = "Control|Shift"
-
-[[keyboard.bindings]]
-chars = "\u001B[76;6u"
-key = "L"
-mods = "Control|Shift"
-
-[[keyboard.bindings]]
-chars = "\u001B[78;6u"
-key = "N"
-mods = "Control|Shift"
-
-[[keyboard.bindings]]
-chars = "\u001B[87;6u"
-key = "W"
-mods = "Control|Shift"
-
+#############################
+# Normal bindings
+#############################
 [[keyboard.bindings]]
 action = "IncreaseFontSize"
 key = "Numpad6"
@@ -88,17 +65,38 @@ action = "None"
 key = "F"
 mods = "Control|Shift"
 
-# On MacOS, simulate ALT-d
+#############################
+# Bindings for Neovim
+# Special trick to use these special characters in Neovim as mapping because Ctrl-Shift-Letter does not work...
+#############################
+[[keyboard.bindings]]
+key = "L"
+chars = "\u2600" # ☀
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+chars = "\u2660" # ♠
+key = "W"
+mods = "Control|Shift"
+
+#############################
+# Bindings for Mac
+#############################
+# Simulate ALT-d (remove word from cursor to the end of the word)
 [[keyboard.bindings]]
 chars = "\u001Bd"
 key = "D"
 mods = "Command"
 
+# Simulate ALT-backspace (remove word from cursor to the beginning of the word)
 [[keyboard.bindings]]
 chars = "\u0017"
 key = "Backspace"
 mods = "Command"
 
+#############################
+# Bindings to run scripts
+#############################
 [[keyboard.bindings]]
 key = "P"
 mods = "Control"
