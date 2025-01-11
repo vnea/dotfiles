@@ -68,6 +68,7 @@ mods = "Control|Shift"
 #############################
 # Bindings for Neovim
 # Special trick to use these special characters in Neovim as mapping because Ctrl-Shift-Letter does not work...
+# Use this table: https://en.wikipedia.org/wiki/Miscellaneous_Symbols
 #############################
 [[keyboard.bindings]]
 key = "L"
@@ -78,6 +79,16 @@ mods = "Control|Shift"
 chars = "\u2660" # ♠
 key = "W"
 mods = "Control|Shift"
+
+[[keyboard.bindings]]
+chars = "\u2601" # ☁
+key = "J"
+mods = "Command"
+
+[[keyboard.bindings]]
+chars = "\u2602" # ☂
+key = "J"
+mods = "Command|Shift"
 
 #############################
 # Bindings for Mac
