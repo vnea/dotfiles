@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+alias a="alias"
 alias rf="source ~/.zshenv && source ~/.zshrc"
 alias ez="nvim ~/.zshrc"
 alias ezv="nvim ~/.zshenv"
