@@ -3,15 +3,15 @@ return {
     branch = "v3.x",
     dependencies = {
         -- LSP Support
-        { "neovim/nvim-lspconfig" },             -- Required
-        { "williamboman/mason.nvim" },           -- Optional
-        { "williamboman/mason-lspconfig.nvim" }, -- Optional
+        { "neovim/nvim-lspconfig" },
+        { "williamboman/mason.nvim" },
+        { "williamboman/mason-lspconfig.nvim" },
 
         -- Autocompletion
-        { "hrsh7th/nvim-cmp" },     -- Required
-        { "hrsh7th/cmp-nvim-lsp" }, -- Required
-        { "hrsh7th/cmp-path" },     -- Required
-        { "L3MON4D3/LuaSnip" },     -- Required
+        { "hrsh7th/nvim-cmp" },
+        { "hrsh7th/cmp-nvim-lsp" },
+        { "hrsh7th/cmp-path" },
+        { "L3MON4D3/LuaSnip" },
     },
     config = function()
         -- Lsp
@@ -50,7 +50,13 @@ return {
         -- Mason
         require("mason").setup({})
 
+        local lspconfig = require("lspconfig")
+        lspconfig.terraformls.setup({})
+
         require("mason-lspconfig").setup({
+            ensure_installed = {
+                "terraformls",
+            },
             handlers = {
                 lsp_zero.default_setup,
                 lua_ls = function()
