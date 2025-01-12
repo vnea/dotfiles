@@ -51,10 +51,12 @@ return {
         require("mason").setup({})
 
         local lspconfig = require("lspconfig")
+        lspconfig.pyright.setup({})
         lspconfig.terraformls.setup({})
 
         require("mason-lspconfig").setup({
             ensure_installed = {
+                "pyright",
                 "terraformls",
             },
             handlers = {
