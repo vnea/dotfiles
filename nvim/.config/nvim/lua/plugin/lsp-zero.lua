@@ -52,12 +52,14 @@ return {
 
         local lspconfig = require("lspconfig")
         lspconfig.bashls.setup({})
+        lspconfig.lua_ls.setup({})
         lspconfig.pyright.setup({})
         lspconfig.terraformls.setup({})
 
         require("mason-lspconfig").setup({
             ensure_installed = {
                 "bashls",
+                "lua_ls",
                 "pyright",
                 "terraformls",
             },
