@@ -85,10 +85,10 @@ vim.keymap.set("n", "<A-h>", "<cmd>split<CR>")
 vim.keymap.set("i", "<A-h>", "<Esc><cmd>split<CR>")
 
 -- Swap
-vim.keymap.set("n", "<C-S-A-Left>", "<C-W><S-H>")
-vim.keymap.set("n", "<C-S-A-Right>", "<C-W><S-L>")
-vim.keymap.set("n", "<C-S-A-Up>", "<C-W><S-k>")
-vim.keymap.set("n", "<C-S-A-Down>", "<C-W><S-J>")
+vim.keymap.set("n", "☃" --[[ <C-S-A-Left> --]], "<C-W><S-H>")
+vim.keymap.set("n", "☄" --[[ <C-S-A-Right> --]], "<C-W><S-L>")
+vim.keymap.set("n", "★" --[[ <C-S-A-Up> --]], "<C-W><S-k>")
+vim.keymap.set("n", "☆" --[[ <C-S-A-Down> --]], "<C-W><S-J>")
 
 -- ======================
 -- === Text case
@@ -98,7 +98,7 @@ vim.keymap.set({ "n", "v" }, "<Leader>sc", "<cmd>TextCaseOpenTelescope<CR>", { d
 -- ======================
 -- === File explorer (nvim-tree)
 -- ======================
-vim.keymap.set("n", "<A-&>", "<cmd>NvimTreeToggle<CR>")
+vim.keymap.set("n", "☇" --[[ <A-&> --]], "<cmd>NvimTreeToggle<CR>")
 vim.keymap.set("n", "go", "<cmd>NvimTreeFindFile<CR>")
 
 -- ======================
@@ -208,4 +208,6 @@ vim.keymap.set("n", "<Leader>ar", "<cmd>diffget //3<CR>")
 vim.keymap.set("n", "<F7>", "]c")
 vim.keymap.set("n", "<S-F7>", "[c")
 vim.keymap.set("n", "<Leader>7", "<cmd>AdvancedGitSearch diff_commit_file<CR>")
+vim.keymap.set("n", "<Leader>hf", "<cmd>AdvancedGitSearch diff_commit_file<CR>")
 vim.keymap.set("n", "<Leader>8", "<cmd>AdvancedGitSearch diff_branch_file<CR>")
+vim.keymap.set("n", "<Leader>hb", "<cmd>AdvancedGitSearch diff_branch_file<CR>")

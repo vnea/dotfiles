@@ -29,7 +29,7 @@ return {
                 keymaps = {
                     init_selection = "<C-w>",
                     node_incremental = "<C-w>",
-                    node_decremental = "♠", -- <C-S-w>, check Alacritty conf
+                    node_decremental = "♠", -- <C-S-w>
                 },
             },
             textobjects = {

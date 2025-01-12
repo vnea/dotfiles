@@ -90,6 +90,26 @@ chars = "\u2602" # ☂
 key = "J"
 mods = "Command|Shift"
 
+[[keyboard.bindings]]
+chars = "\u2603" # ☃
+key = "Left"
+mods = "Command|Control|Shift"
+
+[[keyboard.bindings]]
+chars = "\u2604" # ☄
+key = "Right"
+mods = "Command|Control|Shift"
+
+[[keyboard.bindings]]
+chars = "\u2605" # ★
+key = "Up"
+mods = "Command|Control|Shift"
+
+[[keyboard.bindings]]
+chars = "\u2607" # ☇
+key = "&"
+mods = "Command"
+
 #############################
 # Bindings for Mac
 #############################
