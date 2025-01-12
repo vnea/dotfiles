@@ -22,9 +22,9 @@ return {
 
             -- See :help lsp-zero-keybindings to learn the available actions
             vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, { buffer = bufnr })
-            vim.keymap.set("n", "<S-F6>", function() vim.lsp.buf.rename() end, { buffer = bufnr })
-            vim.keymap.set("n", "<C-A-l>", function() vim.lsp.buf.format() end, { buffer = bufnr })
-            vim.keymap.set("n", "<A-Enter>", function() vim.lsp.buf.code_action() end, { buffer = bufnr })
+            vim.keymap.set("n", "<Leader>rv", function() vim.lsp.buf.rename() end, { buffer = bufnr })
+            vim.keymap.set("n", "<Leader>l", function() vim.lsp.buf.format() end, { buffer = bufnr })
+            vim.keymap.set("n", "<Leader>ca", function() vim.lsp.buf.code_action() end, { buffer = bufnr })
             vim.keymap.set("n", "gl", function() vim.diagnostic.open_float() end, { buffer = bufnr })
             vim.keymap.set("n", "<F2>", function() vim.diagnostic.goto_next() end, { buffer = bufnr })
             vim.keymap.set("n", "<S-F2>", function() vim.diagnostic.goto_prev() end, { buffer = bufnr })
