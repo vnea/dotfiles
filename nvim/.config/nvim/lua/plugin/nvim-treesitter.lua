@@ -14,6 +14,7 @@ return {
                 "markdown",
                 "python",
                 "query",
+                "terraform",
                 "typescript",
                 "vim",
                 "vimdoc",
