@@ -1,0 +1,150 @@
+# You can use it to add commands that run after login to macOS user session.
+# 'start-at-login' needs to be 'true' for 'after-login-command' to work
+# Available commands: https://nikitabobko.github.io/AeroSpace/commands
+after-login-command = []
+
+# You can use it to add commands that run after AeroSpace startup.
+# 'after-startup-command' is run after 'after-login-command'
+# Available commands : https://nikitabobko.github.io/AeroSpace/commands
+after-startup-command = [
+    'exec-and-forget borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=8.0'
+]
+
+start-at-login = true
+
+# Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
+enable-normalization-flatten-containers = true
+enable-normalization-opposite-orientation-for-nested-containers = true
+
+# See: https://nikitabobko.github.io/AeroSpace/guide#layouts
+accordion-padding = 30
+
+# Possible values: tiles|accordion
+default-root-container-layout = 'tiles'
+
+# Possible values: horizontal|vertical|auto
+default-root-container-orientation = 'horizontal'
+
+# You can effectively turn off macOS "Hide application" (cmd-h) feature by toggling this flag
+# Useful if you don't use this macOS feature, but accidentally hit cmd-h or cmd-alt-h key
+# Also see: https://nikitabobko.github.io/AeroSpace/goodies#disable-hide-app
+automatically-unhide-macos-hidden-apps = true
+
+# See https://nikitabobko.github.io/AeroSpace/guide#key-mapping
+[key-mapping]
+preset = 'qwerty'
+
+[gaps]
+inner.horizontal = 8
+inner.vertical =   8
+outer.left =       0
+outer.bottom =     0
+outer.top =        0
+outer.right =      0
+
+#######################
+# Mode "main"
+#######################
+[mode.main.binding]
+
+# All possible keys:
+# - Letters.        a, b, c, ..., z
+# - Numbers.        0, 1, 2, ..., 9
+# - Keypad numbers. keypad0, keypad1, keypad2, ..., keypad9
+# - F-keys.         f1, f2, ..., f20
+# - Special keys.   minus, equal, period, comma, slash, backslash, quote, semicolon, backtick,
+#                   leftSquareBracket, rightSquareBracket, space, enter, esc, backspace, tab
+# - Keypad special. keypadClear, keypadDecimalMark, keypadDivide, keypadEnter, keypadEqual,
+#                   keypadMinus, keypadMultiply, keypadPlus
+# - Arrows.         left, down, up, right
+# All possible modifiers: cmd, alt, ctrl, shift
+# All possible commands: https://nikitabobko.github.io/AeroSpace/commands
+
+# Workspaces
+alt-comma = 'exec-and-forget pgrep -l Brave\ Browser && aerospace workspace 1 || open -a /Applications/Brave\ Browser.app'
+alt-period = 'exec-and-forget pgrep -l alacritty && aerospace workspace 2 || open -a /Applications/Alacritty.app'
+alt-slash = 'exec-and-forget pgrep -l Code\ Helper && aerospace workspace 3 || open -a /Applications/Visual\ Studio\ Code.app'
+alt-k = 'exec-and-forget pgrep -l Slack && aerospace workspace 4 || open -a /Applications/Slack.app'
+alt-l = 'exec-and-forget open -R ~/Desktop'
+alt-semicolon = "exec-and-forget pgrep -l Notes && aerospace workspace 6 || open -a /System/Applications/Notes.app"
+alt-i = 'exec-and-forget pgrep -l com.microsoft.teams2 && aerospace workspace 7 || open -a /Applications/Microsoft\ Teams.app'
+alt-o = "exec-and-forget pgrep -l gimp && aerospace workspace 8 || open -a /Applications/GIMP.app"
+
+alt-shift-comma = 'move-node-to-workspace 1'
+alt-shift-period = 'move-node-to-workspace 2'
+alt-shift-slash = 'move-node-to-workspace 3'
+alt-shift-k = 'move-node-to-workspace 4'
+alt-shift-l = 'move-node-to-workspace 5'
+alt-shift-semicolon = 'move-node-to-workspace 6'
+alt-shift-i = 'move-node-to-workspace 7'
+alt-shift-o = 'move-node-to-workspace 8'
+
+# Almost "ALT-tab" like
+alt-tab = 'workspace-back-and-forth'
+
+# Fullscreen
+alt-f = 'fullscreen --no-outer-gaps'
+
+# Modes
+alt-a = 'mode service'
+alt-r = 'mode resize'
+
+#######################
+# Mode "service"
+#######################
+[mode.service.binding]
+esc = 'mode main'
+r = ['reload-config', 'mode main']
+t = ['layout tiles horizontal', 'mode main']
+q = ['layout accordion horizontal', 'mode main']
+
+# Focus
+left = ['focus left', 'mode main']
+down = ['focus down', 'mode main']
+up = ['focus up', 'mode main']
+right = ['focus right', 'mode main']
+
+# Move
+alt-left = ['move left', 'mode main']
+alt-down = ['move down', 'mode main']
+alt-up = ['move up', 'mode main']
+alt-right = ['move right', 'mode main']
+
+#######################
+# Mode "resize"
+#######################
+[mode.resize.binding]
+esc = 'mode main'
+left = 'resize smart -50'
+right = 'resize smart +50'
+
+#######################
+# On window detected
+#######################
+[[on-window-detected]]
+if.app-id = 'com.brave.Browser'
+run = 'move-node-to-workspace 1'
+
+[[on-window-detected]]
+if.app-id = 'org.alacritty'
+run = 'move-node-to-workspace 2'
+
+[[on-window-detected]]
+if.app-id = 'com.microsoft.VSCode'
+run = 'move-node-to-workspace 3'
+
+[[on-window-detected]]
+if.app-id = 'com.tinyspeck.slackmacgap'
+run = 'move-node-to-workspace 4'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.Notes'
+run = 'move-node-to-workspace 6'
+
+[[on-window-detected]]
+if.app-id = 'com.microsoft.teams2'
+run = 'move-node-to-workspace 7'
+
+[[on-window-detected]]
+if.app-id = 'org.gimp.gimp-2.10'
+run = 'move-node-to-workspace 8'
