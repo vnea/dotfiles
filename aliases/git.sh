@@ -15,12 +15,22 @@ alias gst="git status --short"
 alias gup="git pull --rebase --prune"
 alias greset_repo="git clean -fxd"
 
+function _open_link() {
+    link=$1
+
+    if [[ "$OSTYPE" == "darwin"* ]]; then
+        open "$link" &>/dev/null
+    elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
+        xdg-open "$link" &>/dev/null
+    fi
+}
+
 function gist() {
-    (&>/dev/null xdg-open "https://gist.github.com/vnea" &)
+    _open_link "https://gist.github.com/vnea"
 }
 
 function vnea() {
-    (&>/dev/null xdg-open "https://github.com/vnea" &)
+    _open_link "https://github.com/vnea"
 }
 
 function zd() {

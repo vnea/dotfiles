@@ -15,12 +15,22 @@ alias du="dust"
 # For copying commands from the web, source: https://www.30secondsofcode.org/articles/s/bash-alias-dollar-sign
 alias '$'=''
 
+function _open_link() {
+    link=$1
+
+    if [[ "$OSTYPE" == "darwin"* ]]; then
+        open "$link" &>/dev/null
+    elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
+        xdg-open "$link" &>/dev/null
+    fi
+}
+
 function gmail() {
-  (&>/dev/null xdg-open "https://mail.google.com" &)
+  _open_link "https://mail.google.com"
 }
 
 function gcal() {
-  (&>/dev/null xdg-open "https://calendar.google.com/calendar/u/1/r" &)
+  _open_link "https://calendar.google.com/calendar/u/1/r"
 }
 
 function def() {
