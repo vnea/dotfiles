@@ -51,6 +51,9 @@ return {
         require("mason").setup({})
 
         local lspconfig = require("lspconfig")
+        lspconfig.ansiblels.setup({
+            filetypes = { "yaml.ansible" },
+        })
         lspconfig.bashls.setup({})
         lspconfig.lua_ls.setup({})
         lspconfig.pyright.setup({})
@@ -58,6 +61,7 @@ return {
 
         require("mason-lspconfig").setup({
             ensure_installed = {
+                "ansiblels",
                 "bashls",
                 "lua_ls",
                 "pyright",
@@ -78,9 +82,8 @@ return {
                 end,
                 golangci_lint_ls = function()
                     -- In order to fix error "Column value outside range", source: https://github.com/folke/trouble.nvim/issues/224#issuecomment-1495410321
-                    local lspconfig = require("lspconfig")
                     local on_publish_diagnostics = vim.lsp.handlers["textDocument/publishDiagnostics"]
-                    lspconfig.golangci_lint_ls.setup({
+                    require("lspconfig").golangci_lint_ls.setup({
                         -- <...>
                         handlers = {
                             -- stops an out-of-range column error when viewing diagnostics with Trouble.nvim
