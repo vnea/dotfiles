@@ -63,7 +63,7 @@ outer.right =      0
 # Workspaces
 alt-comma = 'exec-and-forget pgrep -l Brave\ Browser && aerospace workspace 1 || open -a /Applications/Brave\ Browser.app'
 alt-period = 'exec-and-forget pgrep -l alacritty && aerospace workspace 2 || open -a /Applications/Alacritty.app'
-alt-slash = 'exec-and-forget pgrep -l Code\ Helper && aerospace workspace 3 || open -a /Applications/Visual\ Studio\ Code.app'
+alt-slash = 'exec-and-forget pgrep -l idea && aerospace workspace 3 || open -a "/Users/victornea/Applications/IntelliJ IDEA Community Edition.app/Contents/MacOS/idea"'
 alt-k = 'exec-and-forget pgrep -l Slack && aerospace workspace 4 || open -a /Applications/Slack.app'
 alt-l = 'exec-and-forget open -R ~/Desktop'
 alt-semicolon = "exec-and-forget pgrep -l Notes && aerospace workspace 6 || open -a /System/Applications/Notes.app"
@@ -132,7 +132,7 @@ if.app-id = 'org.alacritty'
 run = 'move-node-to-workspace 2'
 
 [[on-window-detected]]
-if.app-id = 'com.microsoft.VSCode'
+if.app-id = 'com.jetbrains.intellij.ce'
 run = 'move-node-to-workspace 3'
 
 [[on-window-detected]]
