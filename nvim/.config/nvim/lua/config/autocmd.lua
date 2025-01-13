@@ -4,7 +4,6 @@ vim.api.nvim_create_autocmd("VimEnter", {
     end
 })
 
--- Set filetype to yaml.ansible for .yml files in the /playbooks/ directory
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
     pattern = {
         "*/roles/*.yml",
