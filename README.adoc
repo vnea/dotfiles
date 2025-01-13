@@ -349,3 +349,17 @@ rm -rf ~/.config/aerospace && stow aerospace
 
 :sectnums:
 
+== Karabiner
+:sectnums!:
+
+Link: https://karabiner-elements.pqrs.org/
+
+=== Installation
+
+[source,shell]
+----
+rm -rf ~/.config/karabiner && stow karabiner
+----
+
+:sectnums:
+

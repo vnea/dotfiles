@@ -24,3 +24,9 @@ lazygit/.config/lazygit/state.yml
 # Brave
 BraveSoftware
 
+# Mac
+.DS_Store
+
+# Karabiner
+karabiner/.config/karabiner/automatic_backups
+
