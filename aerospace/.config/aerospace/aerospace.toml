@@ -69,6 +69,7 @@ alt-l = 'exec-and-forget open -R ~/Desktop'
 alt-semicolon = "exec-and-forget pgrep -l Notes && aerospace workspace 6 || open -a /System/Applications/Notes.app"
 alt-i = 'exec-and-forget pgrep -l com.microsoft.teams2 && aerospace workspace 7 || open -a /Applications/Microsoft\ Teams.app'
 alt-o = "exec-and-forget pgrep -l gimp && aerospace workspace 8 || open -a /Applications/GIMP.app"
+alt-p = 'exec-and-forget pgrep -l Microsoft\ Outlook && aerospace workspace 9 || open -a /Applications/Microsoft\ Outlook.app'
 
 alt-shift-comma = 'move-node-to-workspace 1'
 alt-shift-period = 'move-node-to-workspace 2'
@@ -78,6 +79,7 @@ alt-shift-l = 'move-node-to-workspace 5'
 alt-shift-semicolon = 'move-node-to-workspace 6'
 alt-shift-i = 'move-node-to-workspace 7'
 alt-shift-o = 'move-node-to-workspace 8'
+alt-shift-p = 'move-node-to-workspace 9'
 
 # Almost "ALT-tab" like
 alt-tab = 'workspace-back-and-forth'
@@ -148,3 +150,7 @@ run = 'move-node-to-workspace 7'
 [[on-window-detected]]
 if.app-id = 'org.gimp.gimp-2.10'
 run = 'move-node-to-workspace 8'
+
+[[on-window-detected]]
+if.app-id = 'com.microsoft.Outlook'
+run = 'move-node-to-workspace 9'
