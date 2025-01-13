@@ -43,7 +43,13 @@ function goto() {
   workspace_folder=~/workspace
   dotfiles_folder=~/dotfiles
 
-  projects=$(fd . $workspace_folder --type directory --max-depth 2 | sed -E 's/(.+workspace\/)(.+)\//\2/g' | cat - <(echo $dotfiles_folder) | sort)
+  projects=$(
+    fd . $workspace_folder --type directory --max-depth 2 |
+    sed -E 's/(.+workspace\/)(.+)\//\2/g' |
+    cat - <(echo $workspace_folder) |
+    cat - <(echo $dotfiles_folder) |
+    sort
+  )
   selected_project=$(echo $projects | fzf)
   if [ -z "$selected_project" ]; then
       return
@@ -51,10 +57,12 @@ function goto() {
 
   if [ "$selected_project" = "$dotfiles_folder" ]; then
       cd $dotfiles_folder
+  elif [ "$selected_project" = "$workspace_folder" ]; then
+     cd $workspace_folder
   else
       cd "$workspace_folder/$selected_project"
   fi
 
-  tmux rename-window "`basename $(pwd)`"
+  tmux rename-window "$(basename $(pwd))"
 }
 
