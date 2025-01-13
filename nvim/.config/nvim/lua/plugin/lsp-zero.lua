@@ -22,7 +22,7 @@ return {
 
             -- See :help lsp-zero-keybindings to learn the available actions
             vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, { buffer = bufnr })
-            vim.keymap.set("n", "<Leader>rv", function() vim.lsp.buf.rename() end, { buffer = bufnr })
+            vim.keymap.set({ "n", "v" }, "<Leader>rv", function() vim.lsp.buf.rename() end, { buffer = bufnr })
             vim.keymap.set({ "n", "v" }, "<Leader>l", function() require("conform").format() end, { buffer = bufnr })
             vim.keymap.set("n", "<Leader>ca", function() vim.lsp.buf.code_action() end, { buffer = bufnr })
             vim.keymap.set("n", "gl", function() vim.diagnostic.open_float() end, { buffer = bufnr })
