@@ -61,15 +61,15 @@ outer.right =      0
 # All possible commands: https://nikitabobko.github.io/AeroSpace/commands
 
 # Workspaces
-alt-comma = 'exec-and-forget pgrep -l Brave\ Browser && aerospace workspace 1 || open -a /Applications/Brave\ Browser.app'
+alt-comma = 'exec-and-forget pgrep -l "Brave Browser" && aerospace workspace 1 || open -a "/Applications/Brave Browser.app"'
 alt-period = 'exec-and-forget pgrep -l alacritty && aerospace workspace 2 || open -a /Applications/Alacritty.app'
 alt-slash = 'exec-and-forget pgrep -l idea && aerospace workspace 3 || open -a "/Users/victornea/Applications/IntelliJ IDEA Community Edition.app/Contents/MacOS/idea"'
 alt-k = 'exec-and-forget pgrep -l Slack && aerospace workspace 4 || open -a /Applications/Slack.app'
 alt-l = 'exec-and-forget open -R ~/Desktop'
 alt-semicolon = "exec-and-forget pgrep -l Notes && aerospace workspace 6 || open -a /System/Applications/Notes.app"
-alt-i = 'exec-and-forget pgrep -l com.microsoft.teams2 && aerospace workspace 7 || open -a /Applications/Microsoft\ Teams.app'
+alt-i = 'exec-and-forget pgrep -l com.microsoft.teams2 && aerospace workspace 7 || open -a "/Applications/Microsoft Teams.app"'
 alt-o = "exec-and-forget pgrep -l gimp && aerospace workspace 8 || open -a /Applications/GIMP.app"
-alt-p = 'exec-and-forget pgrep -l Microsoft\ Outlook && aerospace workspace 9 || open -a /Applications/Microsoft\ Outlook.app'
+alt-p = 'exec-and-forget pgrep -l "Microsoft Outlook" && aerospace workspace 9 || open -a "/Applications/Microsoft Outlook.app"'
 
 alt-shift-comma = 'move-node-to-workspace 1'
 alt-shift-period = 'move-node-to-workspace 2'
