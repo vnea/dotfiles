@@ -6,6 +6,7 @@ return {
                 python = {
                     "isort",
                     "black",
+                    "flake8",
                 },
             },
             default_format_opts = {
