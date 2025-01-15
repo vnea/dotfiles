@@ -111,7 +111,9 @@ vim.keymap.set("n", "<C-n>", function()
         previewer = false,
     })
 end)
-vim.keymap.set("n", "☀" --[[ <C-S-l>, check Alacritty conf --]], function() require("telescope.builtin").buffers({ only_cwd = true, sort_mru = true }) end)
+vim.keymap.set("n", "☀" --[[ <C-S-l>, check Alacritty conf --]], function()
+    require("telescope.builtin").buffers({ only_cwd = true, sort_mru = true })
+end)
 vim.keymap.set("n", "<Leader>F", function()
     require("telescope").extensions.live_grep_args.live_grep_args({
         vimgrep_arguments = {
@@ -211,3 +213,12 @@ vim.keymap.set("n", "<Leader>7", "<cmd>AdvancedGitSearch diff_commit_file<CR>")
 vim.keymap.set("n", "<Leader>hf", "<cmd>AdvancedGitSearch diff_commit_file<CR>")
 vim.keymap.set("n", "<Leader>8", "<cmd>AdvancedGitSearch diff_branch_file<CR>")
 vim.keymap.set("n", "<Leader>hb", "<cmd>AdvancedGitSearch diff_branch_file<CR>")
+
+-- ======================
+-- === CopilotChat
+-- ======================
+vim.keymap.set("n", "<Leader>cp", "<Cmd>CopilotChatToggle<CR>")
+vim.keymap.set("n", "<Leader>cP", function()
+    local actions = require("CopilotChat.actions")
+    require("CopilotChat.integrations.telescope").pick(actions.prompt_actions())
+end)
