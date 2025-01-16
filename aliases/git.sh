@@ -14,6 +14,7 @@ alias glg="git log --graph"
 alias gst="git status --short"
 alias gup="git pull --rebase --prune"
 alias greset_repo="git clean -fxd"
+alias gcom="git checkout master 2>/dev/null || git checkout main"
 
 function _open_link() {
     link=$1
