@@ -111,10 +111,15 @@ vim.keymap.set("n", "<C-n>", function()
         previewer = false,
     })
 end)
+
 vim.keymap.set("n", "☀" --[[ <C-S-l>, check Alacritty conf --]], function()
     require("telescope.builtin").buffers({ only_cwd = true, sort_mru = true })
 end)
+
 vim.keymap.set("n", "<Leader>F", function()
+    local node = require("nvim-tree.api").tree.get_node_under_cursor()
+    local search_dirs = node and { node.absolute_path } or {}
+
     require("telescope").extensions.live_grep_args.live_grep_args({
         vimgrep_arguments = {
             "rg",
@@ -132,6 +137,7 @@ vim.keymap.set("n", "<Leader>F", function()
             prompt_position = "top",
             mirror = true,
         },
+        search_dirs = search_dirs,
     })
 end)
 
