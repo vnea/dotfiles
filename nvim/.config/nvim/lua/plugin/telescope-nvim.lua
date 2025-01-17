@@ -19,7 +19,6 @@ return {
         telescope.load_extension("find_template")
         telescope.load_extension("textcase")
 
-
         local actions = require("telescope.actions")
         telescope.setup({
             defaults = {
@@ -32,12 +31,13 @@ return {
                     ".git",
                     ".idea",
                     "node_modules",
+                    ".venv",
                 },
             },
             extensions = {
                 advanced_git_search = {
                     -- See Config
-                }
+                },
             },
         })
     end,
