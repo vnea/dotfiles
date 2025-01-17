@@ -15,5 +15,6 @@ return {
             },
         })
         vim.keymap.set("n", "<Leader>gb", gitsigns.toggle_current_line_blame)
+        vim.keymap.set('n', '<leader>grh', gitsigns.reset_hunk)
     end,
 }
