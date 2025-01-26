@@ -127,27 +127,32 @@ vim.keymap.set("n", "☀" --[[ <C-S-l>, check Alacritty conf --]], function()
 end)
 
 vim.keymap.set("n", "<Leader>F", function()
-    local node = require("nvim-tree.api").tree.get_node_under_cursor()
-    local search_dirs = node and { node.absolute_path } or {}
-
-    require("telescope").extensions.live_grep_args.live_grep_args({
-        vimgrep_arguments = {
-            "rg",
+    require("fzf-lua").live_grep_glob({
+        winopts     = {
+            fullscreen = true,
+            preview = {
+                layout = "vertical",
+            }
+        },
+        git_icons   = false,
+        file_icons  = false,
+        color_icons = false,
+        resume      = true,
+        rg_opts     = table.concat({
             "--hidden",
-            "--color=never",
-            "--no-heading",
-            "--with-filename",
-            "--line-number",
             "--column",
+            "--line-number",
+            "--no-heading",
+            "--color=always",
             "--smart-case",
-        },
-        layout_strategy = "vertical",
-        layout_config = {
-            width = vim.o.columns,
-            prompt_position = "top",
-            mirror = true,
-        },
-        search_dirs = search_dirs,
+            "--max-columns=4096",
+            "--glob=!**/.git/*",
+            "--glob=!**/.idea/*",
+            "--glob=!**/node_modules/*",
+            "--glob=!**/.venv/*",
+            "--glob=!**/.vscode/*",
+            "-e"
+        }, " ")
     })
 end)
 

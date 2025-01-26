@@ -6,7 +6,6 @@ return {
         { "nvim-telescope/telescope-fzf-native.nvim",     build = "make" },
         { "nvim-telescope/telescope-ui-select.nvim" },
         { "nvim-telescope/telescope-dap.nvim" },
-        { "nvim-telescope/telescope-live-grep-args.nvim", version = "^1.0.0" },
         { "aaronhallaert/advanced-git-search.nvim" },
     },
     config = function()
@@ -36,7 +35,6 @@ return {
         telescope.load_extension("fzf")
         telescope.load_extension("ui-select")
         telescope.load_extension("dap")
-        telescope.load_extension("live_grep_args")
         telescope.load_extension("advanced_git_search")
         telescope.load_extension("find_template")
         telescope.load_extension("textcase")
