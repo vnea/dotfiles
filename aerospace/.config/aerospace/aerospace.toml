@@ -66,7 +66,7 @@ alt-period = 'exec-and-forget pgrep -l alacritty && aerospace workspace 2 || ope
 alt-slash = 'exec-and-forget pgrep -l idea && aerospace workspace 3 || open -a "/Users/victornea/Applications/IntelliJ IDEA Community Edition.app/Contents/MacOS/idea"'
 alt-k = 'exec-and-forget pgrep -l Slack && aerospace workspace 4 || open -a /Applications/Slack.app'
 alt-l = 'exec-and-forget open -R ~/Desktop'
-alt-semicolon = "exec-and-forget pgrep -l Notes && aerospace workspace 6 || open -a /System/Applications/Notes.app"
+alt-semicolon = "exec-and-forget pgrep -l Obsidian && aerospace workspace 6 || open -a /Applications/Obsidian.app"
 alt-i = 'exec-and-forget pgrep -l com.microsoft.teams2 && aerospace workspace 7 || open -a "/Applications/Microsoft Teams.app"'
 alt-o = "exec-and-forget pgrep -l gimp && aerospace workspace 8 || open -a /Applications/GIMP.app"
 alt-p = 'exec-and-forget pgrep -l "Microsoft Outlook" && aerospace workspace 9 || open -a "/Applications/Microsoft Outlook.app"'
@@ -140,7 +140,7 @@ if.app-id = 'com.tinyspeck.slackmacgap'
 run = 'move-node-to-workspace 4'
 
 [[on-window-detected]]
-if.app-id = 'com.apple.Notes'
+if.app-id = 'md.obsidian'
 run = 'move-node-to-workspace 6'
 
 [[on-window-detected]]
