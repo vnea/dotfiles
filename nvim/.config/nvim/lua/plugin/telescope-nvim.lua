@@ -11,27 +11,19 @@ return {
     },
     config = function()
         local telescope = require("telescope")
-        telescope.load_extension("fzf")
-        telescope.load_extension("ui-select")
-        telescope.load_extension("dap")
-        telescope.load_extension("live_grep_args")
-        telescope.load_extension("advanced_git_search")
-        telescope.load_extension("find_template")
-        telescope.load_extension("textcase")
 
-        local actions = require("telescope.actions")
         telescope.setup({
             defaults = {
                 mappings = {
                     i = {
-                        ["<esc>"] = actions.close
+                        ["<esc>"] = require("telescope.actions").close
                     },
                 },
                 file_ignore_patterns = {
-                    ".git",
-                    ".idea",
-                    "node_modules",
-                    ".venv",
+                    "^.git/",
+                    "^.idea/",
+                    "$node_modules/",
+                    "$.venv/",
                 },
             },
             extensions = {
@@ -40,5 +32,13 @@ return {
                 },
             },
         })
+
+        telescope.load_extension("fzf")
+        telescope.load_extension("ui-select")
+        telescope.load_extension("dap")
+        telescope.load_extension("live_grep_args")
+        telescope.load_extension("advanced_git_search")
+        telescope.load_extension("find_template")
+        telescope.load_extension("textcase")
     end,
 }
