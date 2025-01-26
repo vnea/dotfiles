@@ -15,6 +15,8 @@ alias gst="git status --short"
 alias gup="git pull --rebase --prune"
 alias greset_repo="git clean -fxd"
 alias gcom="git checkout master 2>/dev/null || git checkout main"
+alias grbm="git rebase master 2>/dev/null || git rebase main"
+alias gcomup="(git checkout master 2>/dev/null || git checkout main) && git pull"
 
 function _open_link() {
     link=$1
