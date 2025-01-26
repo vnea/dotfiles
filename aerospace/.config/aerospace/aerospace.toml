@@ -10,6 +10,12 @@ after-startup-command = [
     'exec-and-forget borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=8.0'
 ]
 
+on-focus-changed = [
+    # Disable "borders" when only one window is active
+    # Source: https://github.com/FelixKratz/JankyBorders/issues/53#issuecomment-2299849820
+    'exec-and-forget [ $(aerospace list-windows --workspace focused | wc -l) -eq 1 ] && borders width=0.0 || borders width=6.0',
+]
+
 start-at-login = true
 
 # Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
