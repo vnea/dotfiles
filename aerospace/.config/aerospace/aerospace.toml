@@ -91,7 +91,7 @@ alt-shift-p = 'move-node-to-workspace 9'
 alt-tab = 'workspace-back-and-forth'
 
 # Fullscreen
-alt-f = 'fullscreen --no-outer-gaps'
+alt-f = 'macos-native-fullscreen'
 
 # Modes
 alt-a = 'mode service'
