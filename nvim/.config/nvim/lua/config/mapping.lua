@@ -105,10 +105,20 @@ vim.keymap.set("n", "go", "<cmd>NvimTreeFindFile<CR>")
 -- === Navigation
 -- ======================
 vim.keymap.set("n", "<C-n>", function()
-    require("telescope.builtin").find_files({
-        hidden = true,
-        no_ignore = true,
+    require("fzf-lua").files({
+        winopts = {
+            height = 0.95,
+            width  = 0.95,
+        },
+        fzf_opts = {
+            ["--layout"] = "reverse-list",
+            ["--color"] = "hl:#ff7f00,hl+:#ff7f00",
+        },
         previewer = false,
+        git_icons = false,
+        resume = true,
+        fd_opts =
+        [[--color=never --type f --type l --exclude .git/ --exclude .idea/ --exclude .vscode/ --exclude node_modules/ --exclude .venv/ --hidden]],
     })
 end)
 
