@@ -1,0 +1,69 @@
+#######################
+# Variables
+#######################
+
+PLUGIN_DIR="$CONFIG_DIR/plugins"
+
+#######################
+# Appearance
+#######################
+
+sketchybar --bar position=top \
+                 height=40 \
+                 color=0xFF000000
+
+#######################
+# Defaults
+#######################
+
+default=(
+  padding_left=0
+  padding_right=0
+  icon.font="Hack Nerd Font:Bold:17.0"
+  label.font="Hack Nerd Font:Bold:17.0"
+  icon.color=0xffffffff
+  label.color=0xffffffff
+  icon.padding_left=0
+  icon.padding_right=0
+  label.padding_left=0
+  label.padding_right=0
+  # click_script='osascript -e "tell application \\"System Events\\" to tell process \\"${NAME%,*}\\" to tell first menu bar item of menu bar 2 to click"'
+)
+sketchybar --default "${default[@]}"
+
+#######################
+# Left
+#######################
+
+sketchybar --add item battery left \
+           --set battery update_freq=120 script="$PLUGIN_DIR/battery.sh" \
+           --subscribe battery system_woke power_source_change \
+           --add item volume left \
+           --set volume script="$PLUGIN_DIR/volume.sh" \
+           --subscribe volume volume_change
+
+#######################
+# Center
+#######################
+
+sketchybar --add item date center \
+           --set date update_freq=60 icon= script="$PLUGIN_DIR/date.sh" \
+           --add item time center \
+           --set time update_freq=1 icon= script="$PLUGIN_DIR/time.sh"
+
+#######################
+# Right
+#######################
+
+# Use this command to find the aliases: "sketchybar --query default_menu_items"
+sketchybar --add alias "Doll,Doll_com.tinyspeck.slackmacgap" right \
+           --add alias "Centre de contrôle,WiFi" right
+
+#######################
+# Extras
+#######################
+
+sketchybar --hotload on
+
+# Force all scripts to run the first time (never do this in a script)
+sketchybar --update
