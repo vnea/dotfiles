@@ -87,7 +87,7 @@ alt-shift-i = 'move-node-to-workspace 7'
 alt-shift-o = 'move-node-to-workspace 8'
 alt-shift-p = 'move-node-to-workspace 9'
 
-# Almost "ALT-tab" like
+# Press cmd-tab in real, it has been rebind in Karabiner
 alt-tab = 'workspace-back-and-forth'
 
 # Fullscreen
