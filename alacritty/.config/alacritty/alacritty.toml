@@ -7,7 +7,7 @@ LC_CTYPE = "en_US.UTF-8"
 TERM = "xterm-256color"
 
 [font]
-size = 18
+size = 17
 
 [font.normal]
 family = "MesloLGS NF"
