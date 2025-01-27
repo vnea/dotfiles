@@ -15,6 +15,12 @@
     line-numbers = true
     side-by-side = true
 
+[pager]
+    blame  = delta
+    diff   = delta
+    reflog = delta
+    show   = delta
+
 [help]
     autocorrect = prompt
 
