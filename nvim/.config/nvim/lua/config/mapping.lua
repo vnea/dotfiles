@@ -118,7 +118,7 @@ vim.keymap.set("n", "<C-n>", function()
         git_icons = false,
         resume = true,
         fd_opts =
-        [[--color=never --type f --type l --exclude .git/ --exclude .idea/ --exclude .vscode/ --exclude node_modules/ --exclude .venv/ --hidden]],
+        [[--color=never --type f --type l --exclude .git/ --exclude .idea/ --exclude .vscode/ --exclude node_modules/ --exclude .venv/ --hidden --no-ignore-vcs]],
     })
 end)
 
