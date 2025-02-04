@@ -44,7 +44,7 @@ function goto() {
   dotfiles_folder=~/dotfiles
 
   projects=$(
-    fd . $workspace_folder --type directory --max-depth 2 |
+    fd . $workspace_folder --type directory --max-depth 1 |
     sed -E 's/(.+workspace\/)(.+)\//\2/g' |
     cat - <(echo $workspace_folder) |
     cat - <(echo $dotfiles_folder) |
@@ -58,7 +58,7 @@ function goto() {
   if [ "$selected_project" = "$dotfiles_folder" ]; then
       cd $dotfiles_folder
   elif [ "$selected_project" = "$workspace_folder" ]; then
-     cd $workspace_folder
+      cd $workspace_folder
   else
       cd "$workspace_folder/$selected_project"
   fi
