@@ -66,7 +66,7 @@ export DISABLE_AUTO_TITLE="true"
 # asdf
 ##############################
 if [[ "$(uname -s)" == "Darwin" ]]; then
-  source "$(brew --prefix asdf)/libexec/asdf.sh"
+  source "$(brew --prefix asdf)/etc/bash_completion.d/asdf"
 else
   source /opt/asdf-vm/asdf.sh
 fi
