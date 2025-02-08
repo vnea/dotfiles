@@ -7,7 +7,6 @@ alias gundo="git reset --soft HEAD^"
 alias gdob="git branch -vv | grep ': gone' | cut -d ' ' -f 3 | xargs git branch -D"
 alias gdm="git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d; git remote -v update -p"
 alias gcontributors="git shortlog --summary --numbered --no-merges"
-alias gcy="git branch --show-current | tr -d '\n' | xclip -sel clip"
 alias gcob="git branch -a | sed 's/remotes\/origin\///g; s/[[:space:]]//g; s/\*//g' | sort | uniq | fzf | xargs --no-run-if-empty git checkout"
 alias grho="git reset --hard origin/\$(git rev-parse --abbrev-ref HEAD)"
 alias glg="git log --graph"
@@ -37,6 +36,7 @@ function vnea() {
 }
 
 function zd() {
+  local preview
   preview="git diff $* --color=always -- {-1} | diff-so-fancy"
   git diff "$@" --name-only | fzf -m --ansi --preview-window=right:70% --preview "$preview"
 }
@@ -50,6 +50,7 @@ function gdm() {
 }
 
 function gsquash() {
+  local number_of_commits_to_squash
   number_of_commits_to_squash=${1}
   if [ -z "$1" ]
   then
@@ -63,4 +64,14 @@ function gsquash() {
 function gclean() {
     git branch --merged | egrep -v "(^\*|master|dev|main)" | xargs --no-run-if-empty git branch -d
     git fetch -p && for branch in $(git branch -vv | grep ': gone]' | awk '{print $1}'); do git branch -D $branch; done
+}
+
+function gcy() {
+  local branch
+  branch=$(git branch --show-current | tr -d '\n')
+  if [[ "$OSTYPE" == "darwin"* ]]; then
+    echo -n "$branch" | pbcopy
+  else
+    echo -n "$branch" | xclip -sel clip
+  fi
 }
