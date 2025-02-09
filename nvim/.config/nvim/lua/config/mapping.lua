@@ -104,23 +104,6 @@ vim.keymap.set("n", "go", "<cmd>NvimTreeFindFile<CR>")
 -- ======================
 -- === Navigation
 -- ======================
-vim.keymap.set("n", "<C-n>", function()
-    require("fzf-lua").files({
-        winopts = {
-            height = 0.95,
-            width  = 0.95,
-        },
-        fzf_opts = {
-            ["--layout"] = "reverse-list",
-            ["--color"] = "hl:#ff7f00,hl+:#ff7f00",
-        },
-        previewer = false,
-        git_icons = false,
-        fd_opts =
-        [[--color=never --type f --type l --exclude .git/ --exclude .idea/ --exclude .vscode/ --exclude node_modules/ --exclude .venv/ --hidden --no-ignore-vcs]],
-    })
-end)
-
 vim.keymap.set("n", "☀" --[[ <C-S-l>, check Alacritty conf --]], function()
     require("telescope.builtin").buffers({ only_cwd = true, sort_mru = true })
 end)
