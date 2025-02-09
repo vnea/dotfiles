@@ -8,27 +8,38 @@ return {
 
     -- Autocompletion
     {
-        "hrsh7th/nvim-cmp",
-        event = "InsertEnter",
-        config = function()
-            local cmp = require("cmp")
-
-            cmp.setup({
-                sources = {
-                    { name = "nvim_lsp" },
+        "saghen/blink.cmp",
+        dependencies = "rafamadriz/friendly-snippets",
+        version = "v0.11.0",
+        opts = {
+            -- 'default' for mappings similar to built-in completion
+            -- 'super-tab' for mappings similar to vscode (tab to accept, arrow keys to navigate)
+            -- 'enter' for mappings similar to 'super-tab' but with 'enter' to accept
+            -- See the full "keymap" documentation for information on defining your own keymap.
+            keymap = {
+                preset = "super-tab",
+            },
+            appearance = {
+                nerd_font_variant = "Nerd Font Mono",
+            },
+            sources = {
+                default = {
+                    "lsp",
+                    "path",
+                    "snippets",
+                    "buffer",
                 },
-                mapping = cmp.mapping.preset.insert({
-                    ["<C-Space>"] = cmp.mapping.complete(),
-                    ["<C-u>"] = cmp.mapping.scroll_docs(-4),
-                    ["<C-d>"] = cmp.mapping.scroll_docs(4),
-                }),
-                snippet = {
-                    expand = function(args)
-                        vim.snippet.expand(args.body)
+            },
+            completion = {
+                menu = {
+                    -- Don't show completion menu automatically when searching (https://cmp.saghen.dev/recipes.html#don-t-show-completion-menu-automatically-when-searching)
+                    auto_show = function(ctx)
+                        return ctx.mode ~= "cmdline" or not vim.tbl_contains({ '/', '?' }, vim.fn.getcmdtype())
                     end,
                 },
-            })
-        end
+            },
+        },
+        opts_extend = { "sources.default" },
     },
 
     -- LSP
@@ -37,7 +48,7 @@ return {
         cmd = { "LspInfo", "LspInstall", "LspStart" },
         event = { "BufReadPre", "BufNewFile" },
         dependencies = {
-            { "hrsh7th/cmp-nvim-lsp" },
+            { "saghen/blink.cmp" },
             { "williamboman/mason.nvim" },
             { "williamboman/mason-lspconfig.nvim" },
         },
@@ -49,7 +60,7 @@ return {
             lsp_defaults.capabilities = vim.tbl_deep_extend(
                 "force",
                 lsp_defaults.capabilities,
-                require("cmp_nvim_lsp").default_capabilities()
+                require("blink.cmp").get_lsp_capabilities()
             )
 
             vim.api.nvim_create_autocmd("LspAttach", {
@@ -69,8 +80,7 @@ return {
                     vim.keymap.set("n", "<F2>", function() vim.diagnostic.goto_next() end, opts)
                     vim.keymap.set("n", "<S-F2>", function() vim.diagnostic.goto_prev() end, opts)
                     vim.keymap.set("n", "<Leader><F2>", function() require("trouble").open() end, opts)
-                    vim.keymap.set("n", "<Leader><A-Enter>", function() require("telescope.builtin").spell_suggest() end,
-                        opts)
+                    vim.keymap.set("n", "<Leader><A-Enter>", function() require("telescope.builtin").spell_suggest() end, opts)
                 end,
             })
 
