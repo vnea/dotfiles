@@ -59,6 +59,8 @@ vim.keymap.set("i", "<C-A-Up>", "<Esc>:m .-2<CR>==gi")
 -- Spelling
 vim.keymap.set("n", "z=", function() Snacks.picker.spelling() end)
 
+vim.keymap.set("n", "tc", "<Cmd>tabc<CR>", { desc = "Close tab" })
+
 -- ======================
 -- === Window
 -- ======================
