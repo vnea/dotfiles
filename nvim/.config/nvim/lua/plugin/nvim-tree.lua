@@ -27,6 +27,7 @@ return {
                 enable = false,
             },
             view = {
+                adaptive_size = true,
                 side = "right",
             },
         })
