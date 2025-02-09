@@ -128,17 +128,6 @@ vim.keymap.set("n", "<Leader>F", function()
     })
 end)
 
--- ======================
--- === LSP
--- ======================
-vim.keymap.set("n", "<Leader><F2>", function() require("trouble").open() end)
-vim.keymap.set("n", "<Leader><S-F2>", function() require("telescope.builtin").diagnostics() end)
-vim.keymap.set("n", "gr", function() require("telescope.builtin").lsp_references() end)
-vim.keymap.set("n", "gd", function() require("telescope.builtin").lsp_definitions() end)
-vim.keymap.set("n", "gi", function() require("telescope.builtin").lsp_implementations() end)
-vim.keymap.set("n", "gs", function() require("telescope.builtin").lsp_document_symbols() end)
-vim.keymap.set("n", "<Leader><A-Enter>", function() require("telescope.builtin").spell_suggest() end)
-
 -- =====================
 -- === Refactoring
 -- ======================
