@@ -80,7 +80,6 @@ return {
                     vim.keymap.set("n", "<F2>", function() vim.diagnostic.goto_next() end, opts)
                     vim.keymap.set("n", "<S-F2>", function() vim.diagnostic.goto_prev() end, opts)
                     vim.keymap.set("n", "<Leader><F2>", function() require("trouble").open() end, opts)
-                    vim.keymap.set("n", "<Leader><A-Enter>", function() require("telescope.builtin").spell_suggest() end, opts)
                 end,
             })
 

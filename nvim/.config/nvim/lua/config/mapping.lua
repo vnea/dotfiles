@@ -56,6 +56,9 @@ vim.keymap.set("n", "<C-A-Up>", ":m .-2<CR>==")
 vim.keymap.set("i", "<C-A-Down>", "<Esc>:m .+1<CR>==gi")
 vim.keymap.set("i", "<C-A-Up>", "<Esc>:m .-2<CR>==gi")
 
+-- Spelling
+vim.keymap.set("n", "z=", function() Snacks.picker.spelling() end)
+
 -- ======================
 -- === Window
 -- ======================
