@@ -184,19 +184,6 @@ vim.keymap.set("n", "<Leader><Leader>", "<cmd>Twilight<CR>")
 -- ======================
 -- === Git
 -- ======================
-vim.keymap.set("n", "<Leader>k", function()
-    local lazygit = require("toggleterm.terminal").Terminal:new({
-        cmd = "lazygit",
-        hidden = true,
-        direction = "float",
-        -- Enable full screen: https://github.com/akinsho/toggleterm.nvim/issues/505
-        float_opts = {
-            width = vim.o.columns,
-            height = vim.o.lines,
-        },
-    })
-    lazygit:toggle()
-end)
 vim.keymap.set("n", "<Leader>K", "<cmd>Git<CR>")
 vim.keymap.set("n", "<Leader>al", "<cmd>diffget //2<CR>")
 vim.keymap.set("n", "<Leader>ar", "<cmd>diffget //3<CR>")

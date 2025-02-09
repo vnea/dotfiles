@@ -3,11 +3,17 @@ return {
     priority = 1000,
     lazy = false,
     opts = {
-        -- bigfile = { enabled = true },
+        bigfile = { enabled = true },
         -- dashboard = { enabled = true },
         -- explorer = { enabled = true },
-        -- indent = { enabled = true },
-        -- input = { enabled = true },
+        indent = {
+            enabled = true,
+            animate = {
+                enabled = false,
+            },
+        },
+        input = { enabled = true },
+        lazygit = { enabled = true },
         picker = {
             enabled = true,
             matcher = {
@@ -19,7 +25,7 @@ return {
         -- quickfile = { enabled = true },
         -- scope = { enabled = true },
         -- scroll = { enabled = true },
-        -- statuscolumn = { enabled = true },
+        statuscolumn = { enabled = true },
         -- words = { enabled = true },
     },
     ---@module "snacks"
@@ -61,5 +67,10 @@ return {
         { "<Leader>gs", function() Snacks.picker.git_status() end, desc = "Git Status" },
         -- search
         { "<C-h>", function() Snacks.picker.help() end, desc = "Help Pages" },
+
+        -- ======================
+        -- Module: lazygit
+        -- ======================
+        { "<Leader>k", function() Snacks.lazygit() end, desc = "Lazygit" },
     },
 }
