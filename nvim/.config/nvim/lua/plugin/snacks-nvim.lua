@@ -13,7 +13,7 @@ return {
             },
         },
         input = { enabled = true },
-        lazygit = { enabled = true },
+        -- lazygit = { enabled = true },
         picker = {
             enabled = true,
             matcher = {
@@ -79,10 +79,5 @@ return {
         { "<Leader>gs", function() Snacks.picker.git_status() end, desc = "Git Status" },
         -- search
         { "<C-h>", function() Snacks.picker.help() end, desc = "Help Pages" },
-
-        -- ======================
-        -- Module: lazygit
-        -- ======================
-        { "<Leader>k", function() Snacks.lazygit() end, desc = "Lazygit" },
     },
 }

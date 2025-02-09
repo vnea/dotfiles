@@ -165,7 +165,7 @@ vim.keymap.set("n", "<Leader><Leader>", "<cmd>Twilight<CR>")
 -- ======================
 -- === Git
 -- ======================
-vim.keymap.set("n", "<Leader>K", "<cmd>Neogit<CR>")
+vim.keymap.set("n", "<C-k>", "<cmd>Neogit<CR>")
 vim.keymap.set("n", "<Leader>al", "<cmd>diffget //2<CR>")
 vim.keymap.set("n", "<Leader>ar", "<cmd>diffget //3<CR>")
 vim.keymap.set("n", "<F7>", "]c")
