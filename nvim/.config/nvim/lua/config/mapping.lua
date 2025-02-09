@@ -174,6 +174,7 @@ vim.keymap.set("n", "<Leader>7", "<cmd>AdvancedGitSearch diff_commit_file<CR>")
 vim.keymap.set("n", "<Leader>hf", "<cmd>AdvancedGitSearch diff_commit_file<CR>")
 vim.keymap.set("n", "<Leader>8", "<cmd>AdvancedGitSearch diff_branch_file<CR>")
 vim.keymap.set("n", "<Leader>hb", "<cmd>AdvancedGitSearch diff_branch_file<CR>")
+vim.keymap.set("n", "<Leader>gd", "<cmd>DiffviewOpen<CR>")
 
 -- ======================
 -- === CopilotChat
