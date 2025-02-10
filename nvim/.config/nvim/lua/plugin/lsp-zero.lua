@@ -12,24 +12,7 @@ return {
         dependencies = "rafamadriz/friendly-snippets",
         version = "v0.11.0",
         opts = {
-            -- 'default' for mappings similar to built-in completion
-            -- 'super-tab' for mappings similar to vscode (tab to accept, arrow keys to navigate)
-            -- 'enter' for mappings similar to 'super-tab' but with 'enter' to accept
-            -- See the full "keymap" documentation for information on defining your own keymap.
-            keymap = {
-                preset = "default",
-            },
-            appearance = {
-                nerd_font_variant = "Nerd Font Mono",
-            },
-            sources = {
-                default = {
-                    "lsp",
-                    "path",
-                    "snippets",
-                    "buffer",
-                },
-            },
+            appearance = { nerd_font_variant = "Nerd Font Mono" },
             completion = {
                 menu = {
                     -- Don't show completion menu automatically when searching (https://cmp.saghen.dev/recipes.html#don-t-show-completion-menu-automatically-when-searching)
@@ -38,8 +21,9 @@ return {
                     end,
                 },
             },
+            keymap = { preset = "default" },
+            signature = { enabled = true },
         },
-        opts_extend = { "sources.default" },
     },
 
     -- LSP
