@@ -59,7 +59,10 @@ vim.keymap.set("i", "<C-A-Up>", "<Esc>:m .-2<CR>==gi")
 -- Spelling
 vim.keymap.set("n", "z=", function() Snacks.picker.spelling() end)
 
+-- Tabs
 vim.keymap.set("n", "tc", "<Cmd>tabc<CR>", { desc = "[T]ab [C]lose" })
+vim.keymap.set("n", "tn", "<Cmd>tabnew<CR>", { desc = "[T]ab [N]ew" })
+
 vim.keymap.set("n", "<Leader>dt", function () vim.api.nvim_command(vim.wo.diff and "windo diffoff" or "windo diffthis") end, { desc = "Toggle [D]iff [T]his" })
 
 -- ======================
