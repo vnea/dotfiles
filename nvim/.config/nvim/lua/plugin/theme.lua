@@ -6,13 +6,10 @@ return {
         require("catppuccin").setup({
             custom_highlights = function(colors)
                 return {
-                    DiffAdd = { bg = "#15633b" },
-                    DiffChange = { bg = "#15633b" },
-                    DiffText = { bg = "#199c59" },
-                    DiffDelete = {
-                        bg = "#3F0001",
-                        fg = "#520001",
-                    },
+                    DiffAdd = { bg = "#013601" },
+                    DiffChange = { bg = "#013601" },
+                    DiffText = { bg = "#017d40" },
+                    DiffDelete = { bg = "#3F0001" },
                     Folded = { bg = "#2e2e47" },
                     UfoFoldedEllipsis = {
                         fg = colors.lavender,
