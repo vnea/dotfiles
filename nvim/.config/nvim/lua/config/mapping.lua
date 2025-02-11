@@ -98,6 +98,7 @@ vim.keymap.set({ "n", "v" }, "<Leader>sc", "<cmd>TextCaseOpenTelescope<CR>", { d
 -- === File explorer (nvim-tree)
 -- ======================
 vim.keymap.set("n", "☇" --[[ <A-&> --]], "<cmd>NvimTreeToggle<CR>")
+vim.keymap.set("n", "<Leader>ee", "<cmd>NvimTreeToggle<CR>")
 vim.keymap.set("n", "go", "<cmd>NvimTreeFindFile<CR>")
 
 -- ======================
