@@ -164,11 +164,6 @@ vim.keymap.set({ "n", "i" }, "<A-(>", function() require("dapui").toggle() end)
 vim.keymap.set("n", "<Leader>f", "<cmd>HopWord<CR>")
 
 -- ======================
--- === Twilight
--- ======================
-vim.keymap.set("n", "<Leader><Leader>", "<cmd>Twilight<CR>")
-
--- ======================
 -- === Git
 -- ======================
 vim.keymap.set("n", "<C-k>", "<cmd>Neogit<CR>")
