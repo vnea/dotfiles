@@ -38,7 +38,7 @@ source $ZSH/oh-my-zsh.sh
 ##############################
 export PROMPT="${PROMPT}"$'\n'""
 export EDITOR=nvim
-export PATH="$PATH:$HOME/bin:$HOME/.local/bin:${KREW_ROOT:-$HOME/.krew}/bin"
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH:$HOME/bin:$HOME/.local/bin:${KREW_ROOT:-$HOME/.krew}/bin"
 
 ##############################
 # History
