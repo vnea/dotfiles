@@ -14,7 +14,11 @@ return {
             matcher = {
                 frecency = true,
             },
-            preview = false,
+            formatters = {
+                file = {
+                    truncate = 200,
+                },
+            },
         },
         -- notifier = { enabled = true },
         -- quickfile = { enabled = true },
