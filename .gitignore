@@ -30,3 +30,5 @@ BraveSoftware
 # Karabiner
 karabiner/.config/karabiner/automatic_backups
 
+# Misc
+ignore_tmp/
