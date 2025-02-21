@@ -39,7 +39,6 @@ return {
                 end)
 
                 -- Actions
-                map("n", "<Leader>gb", gitsigns.blame)
                 map("n", "<leader>td", gitsigns.toggle_linehl)
                 map("n", "<leader>hp", gitsigns.preview_hunk)
 
