@@ -12,7 +12,7 @@ return {
             update_on_change = true,
 
         })
-        vim.keymap.set("n", "<Leader>mp", function()
+        vim.keymap.set("n", "<Leader>mP", function()
             if peek.is_open() then
                 peek.close()
             else
