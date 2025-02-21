@@ -1,6 +1,6 @@
 git:
   paging:
     colorArg: always
-    pager: delta --diff-so-fancy
+    pager: delta --diff-so-fancy --paging=never
 quitOnTopLevelReturn: true
 promptToReturnFromSubprocess: false
