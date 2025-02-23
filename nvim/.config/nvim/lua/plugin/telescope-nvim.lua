@@ -3,7 +3,7 @@ return {
     tag = "0.1.8",
     dependencies = {
         { "nvim-lua/plenary.nvim" },
-        { "nvim-telescope/telescope-fzf-native.nvim",     build = "make" },
+        { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
         { "nvim-telescope/telescope-ui-select.nvim" },
         { "nvim-telescope/telescope-dap.nvim" },
         { "aaronhallaert/advanced-git-search.nvim" },
@@ -27,7 +27,7 @@ return {
             },
             extensions = {
                 advanced_git_search = {
-                    -- See Config
+                    diff_plugin = "diffview",
                 },
             },
         })
