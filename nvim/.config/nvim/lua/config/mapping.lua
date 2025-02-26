@@ -69,6 +69,19 @@ vim.keymap.set("n", "tn", "<Cmd>tabnew<CR>", { desc = "[T]ab [N]ew" })
 
 vim.keymap.set("n", "<Leader>dt", function () vim.api.nvim_command(vim.wo.diff and "windo diffoff" or "windo diffthis") end, { desc = "Toggle [D]iff [T]his" })
 
+-- Compare with clipboard
+vim.keymap.set("n", "<Leader>C", function()
+    local ftype = vim.api.nvim_eval("&filetype")
+    vim.cmd("vsplit")
+    vim.cmd("enew")
+    vim.cmd("normal! P")
+    vim.cmd("setlocal buftype=nowrite")
+    vim.cmd("set filetype=" .. ftype)
+    vim.cmd("diffthis")
+    vim.cmd([[execute "normal! \<C-w>h"]])
+    vim.cmd("diffthis")
+end)
+
 -- ======================
 -- === Window
 -- ======================
