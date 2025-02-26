@@ -53,12 +53,12 @@ return {
                 move = {
                     enable = true,
                     set_jumps = true,
-                    goto_next_start = {
-                        ["<C-Down>"] = "@function.outer",
-                    },
-                    goto_previous_start = {
-                        ["<C-Up>"] = "@function.outer",
-                    },
+                    -- goto_next_start = {
+                    --     ["<C-Down>"] = "@function.outer",
+                    -- },
+                    -- goto_previous_start = {
+                    --     ["<C-Up>"] = "@function.outer",
+                    -- },
                 },
                 swap = {
                     enable = true,
