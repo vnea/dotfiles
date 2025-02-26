@@ -20,6 +20,10 @@ function drm {
   docker ps -a | tail -n+2 | awk '{print $2 "|" $NF}' | column -t -s "|" | fzf | awk '{print $2}' | xargs --no-run-if-empty docker rm -f --volumes
 }
 
+function drmi {
+  docker images | tail -n+2 | sort | fzf | awk '{print $3}' | xargs --no-run-if-empty docker rmi --force
+}
+
 function drma() {
   container_ids=$(docker ps -aq)
   if [ -z "$container_ids" ]
