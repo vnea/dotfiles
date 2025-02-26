@@ -15,7 +15,8 @@ vim.opt.termguicolors = true
 vim.opt.spelllang = "fr,en"
 vim.opt.spell = true
 vim.o.switchbuf = "useopen"
+vim.opt.listchars = { lead = "·", trail = "·", tab = "→ " }
 vim.api.nvim_command("set clipboard+=unnamedplus")
 
 -- Source: https://www.reddit.com/r/neovim/comments/1ihpvaf/comment/maz7fmu/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button
-vim.opt.diffopt="closeoff,indent-heuristic,linematch:80,algorithm:histogram"
+vim.opt.diffopt = "closeoff,indent-heuristic,linematch:80,algorithm:histogram"
