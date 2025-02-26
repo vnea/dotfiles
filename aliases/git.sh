@@ -9,6 +9,7 @@ alias gdm="git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d; git r
 alias gcontributors="git shortlog --summary --numbered --no-merges"
 alias gcob="git branch -a | sed 's/remotes\/origin\///g; s/[[:space:]]//g; s/\*//g' | sort | uniq | fzf | xargs --no-run-if-empty git checkout"
 alias grho="git reset --hard origin/\$(git rev-parse --abbrev-ref HEAD)"
+alias gco-="git checkout -"
 alias glg="git log --graph"
 alias gst="git status --short"
 alias gup="git pull --rebase --prune"
