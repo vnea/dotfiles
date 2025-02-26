@@ -10,7 +10,7 @@ return {
                 .. "{_A.REPO}/blob/"
                 .. "{_A.REV}/"
                 .. "{_A.FILE}"
-                .. "?&lines={_A.LSTART}"
+                .. "#L{_A.LSTART}"
                 .. "{_A.LEND > _A.LSTART and ('&lines-count=' .. _A.LEND - _A.LSTART + 1) or ''}"
         end
 
