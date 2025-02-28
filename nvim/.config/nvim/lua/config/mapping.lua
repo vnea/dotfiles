@@ -61,7 +61,7 @@ vim.keymap.set("i", "<C-A-Down>", "<Esc>:m .+1<CR>==gi")
 vim.keymap.set("i", "<C-A-Up>", "<Esc>:m .-2<CR>==gi")
 
 -- Spelling
-vim.keymap.set("n", "z=", function() Snacks.picker.spelling() end)
+vim.keymap.set("n", "<Leader>ss", function() Snacks.picker.spelling() end)
 
 -- Tabs
 vim.keymap.set("n", "tc", "<Cmd>tabc<CR>", { desc = "[T]ab [C]lose" })
