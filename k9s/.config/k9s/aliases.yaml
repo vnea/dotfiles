@@ -1,6 +1,7 @@
 aliases:
   cr: clusterroles
   crb: clusterrolebindings
+  dns: pod kube-system k8s-app=kube-dns
   dp: deployments
   es: externalsecrets.external-secrets.io
   jo: jobs
