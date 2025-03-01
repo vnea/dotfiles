@@ -68,14 +68,16 @@ return {
                         ".terraform",
                     },
                     layout = {
-                        preview = "main",
+                        ---@diagnostic disable-next-line: assign-type-mismatch
+                        preview = false,
                     },
                 })
             end,
             desc = "File Picker",
         },
         { "<Leader>rc", function() Snacks.picker.command_history() end, desc = "Command History" },
-        { "☀", --[[ <C-S-l>, check Alacritty conf ]] function() Snacks.picker.buffers({ layout = { preview = "main" } }) end, desc = "Buffers" },
+        ---@diagnostic disable-next-line: assign-type-mismatch
+        { "☀", --[[ <C-S-l>, check Alacritty conf ]] function() Snacks.picker.buffers({ layout = { preview = false } }) end, desc = "Buffers" },
 
         -- Git
         { "<Leader>b", function() Snacks.picker.git_branches() end, desc = "Git Branches" },
