@@ -71,16 +71,31 @@ vim.keymap.set("n", "<Leader>dt", function () vim.api.nvim_command(vim.wo.diff a
 
 -- Compare with clipboard
 vim.keymap.set("n", "<Leader>C", function()
-    local ftype = vim.api.nvim_eval("&filetype")
-    vim.cmd("vsplit")
-    vim.cmd("enew")
-    vim.cmd("normal! P")
-    vim.cmd("setlocal buftype=nowrite")
-    vim.cmd("set filetype=" .. ftype)
-    vim.cmd("diffthis")
-    vim.cmd([[execute "normal! \<C-w>h"]])
-    vim.cmd("diffthis")
-end)
+    vim.cmd(string.format([[
+      tabnew %%
+      vsplit
+      enew
+      normal! P
+      setlocal buftype=nowrite
+      set filetype=%s
+    ]], vim.bo.filetype))
+end, { desc = "[C]ompare buffer with clipboard" })
+
+vim.keymap.set("x", "<Leader>C", function()
+    vim.cmd(string.format([[
+       execute "normal! \"xy"
+       tabnew
+       vsplit
+       enew
+       normal! P
+       setlocal buftype=nowrite
+       set filetype=%s
+       execute "normal! \<C-w>\<C-w>"
+       enew
+       set filetype=%s
+       normal! "xP
+  ]], vim.bo.filetype, vim.bo.filetype))
+end, { desc = "[C]ompare selection with clipboard" })
 
 -- ======================
 -- === Window
