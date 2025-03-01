@@ -366,5 +366,22 @@ Link: https://karabiner-elements.pqrs.org/
 rm -rf ~/.config/karabiner && stow karabiner
 ----
 
-:sectnums:
+== k9s
+:sectnums!:
 
+Link:
+  - https://github.com/derailed/k9s
+  - https://github.com/derailed/k9s/tree/master/skins (skins)
+
+=== Installation
+
+[source,shell]
+----
+# Linux
+rm -rf ~/.config/k9s && stow k9s
+
+# Mac OS
+rm -rf ~/Library/Application\ Support/k9s && ln -s ~/dotfiles/k9s/.config/k9s ~/Library/Application\ Support/k9s
+----
+
+:sectnums:

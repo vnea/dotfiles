@@ -1,0 +1,10 @@
+aliases:
+  cr: clusterroles
+  crb: clusterrolebindings
+  dp: deployments
+  es: externalsecrets.external-secrets.io
+  jo: jobs
+  np: networkpolicies
+  rb: rolebindings
+  ro: roles
+  sec: v1/secrets
