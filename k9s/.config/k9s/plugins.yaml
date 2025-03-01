@@ -1,0 +1,292 @@
+plugins:
+  # Source: https://github.com/derailed/k9s/blob/master/plugins/blame.yaml
+  blame:
+    shortCut: b
+    confirm: false
+    description: "Blame"
+    scopes:
+      - all
+    command: sh
+    background: false
+    args:
+      - -c
+      - "kubectl-blame $RESOURCE_NAME $NAME -n $NAMESPACE --context $CONTEXT | less"
+
+  # Source:
+  #  - https://github.com/derailed/k9s/blob/master/plugins/debug-container.yaml
+  #  - https://kubernetes.io/docs/tasks/debug/debug-application/debug-running-pod/#ephemeral-container
+  debug:
+    shortCut: Shift-D
+    description: Add debug container
+    dangerous: true
+    scopes:
+      - containers
+    command: bash
+    background: false
+    confirm: true
+    args:
+      - -c
+      - "kubectl --kubeconfig=$KUBECONFIG debug -it --context $CONTEXT -n=$NAMESPACE $POD --target=$NAME --image=busybox:1.35.0 --profile=general"
+
+  # Source: https://github.com/derailed/k9s/blob/master/plugins/dive.yaml
+  dive:
+    shortCut: d
+    confirm: false
+    description: "Dive image"
+    scopes:
+      - containers
+    command: dive
+    background: false
+    args:
+      - $COL-IMAGE
+
+  # Source: https://github.com/derailed/k9s/blob/master/plugins/helm-default-values.yaml
+  helm-default-values:
+    shortCut: Shift-V
+    confirm: false
+    description: Chart Default Values
+    scopes:
+      - helm
+    command: sh
+    background: false
+    args:
+      - -c
+      - >-
+        revision=$(helm history -n $NAMESPACE --kube-context $CONTEXT $COL-NAME | grep deployed | cut -d$'\t' -f1 | tr -d ' \t');
+        kubectl
+        get secrets
+        --context $CONTEXT
+        -n $NAMESPACE
+        sh.helm.release.v1.$COL-NAME.v$revision -o yaml
+        | yq e '.data.release' -
+        | base64 -d
+        | base64 -d
+        | gunzip
+        | jq -r '.chart.values'
+        | yq -P
+        | less -K
+
+  # Source: https://github.com/derailed/k9s/blob/master/plugins/helm-diff.yaml
+  helm-diff-current:
+    shortCut: Shift-Q
+    confirm: false
+    description: Diff with Current Revision
+    scopes:
+      - history
+    command: bash
+    background: false
+    args:
+      - -c
+      - >-
+        RELEASE_NAME=$(echo $NAME | cut -d':' -f1);
+        LATEST_REVISION=$(helm history -n $NAMESPACE --kube-context $CONTEXT $RELEASE_NAME | grep deployed | cut -d$'\t' -f1 | tr -d ' \t');
+        helm diff revision $RELEASE_NAME $LATEST_REVISION $COL-REVISION --kube-context $CONTEXT --namespace $NAMESPACE --color | less -RK
+
+  # Source: https://github.com/derailed/k9s/blob/master/plugins/helm-diff.yaml
+  helm-diff-previous:
+    shortCut: Shift-D
+    confirm: false
+    description: Diff with Previous Revision
+    scopes:
+      - helm
+    command: bash
+    background: false
+    args:
+      - -c
+      - >-
+        LAST_REVISION=$(($COL-REVISION-1));
+        helm diff revision $COL-NAME $COL-REVISION $LAST_REVISION --kube-context $CONTEXT --namespace $NAMESPACE --color | less -RK
+
+  # Source: https://github.com/derailed/k9s/blob/master/plugins/helm-values.yaml
+  helm-values:
+    shortCut: v
+    confirm: false
+    description: Values
+    scopes:
+      - helm
+    command: sh
+    background: false
+    args:
+      - -c
+      - "helm get values $COL-NAME -n $NAMESPACE --kube-context $CONTEXT | less -K"
+
+  # Source: https://github.com/derailed/k9s/blob/master/plugins/log-jq.yaml
+  jq-logs:
+    shortCut: Ctrl-J
+    confirm: false
+    description: "Logs (jq)"
+    scopes:
+      - pods
+    command: kubectl
+    background: false
+    args:
+      - jq
+      - $NAME
+      - $NAMESPACE
+      - $CONTEXT
+
+  # Source: https://github.com/derailed/k9s/blob/master/plugins/resource-recommendations.yaml
+  krr:
+    shortCut: Shift-K
+    description: Get krr
+    scopes:
+      - deployments
+      - daemonsets
+      - statefulsets
+    command: bash
+    background: false
+    confirm: false
+    args:
+      - -c
+      - |
+        LABELS=$(kubectl get $RESOURCE_NAME $NAME -n $NAMESPACE  --context $CONTEXT  --show-labels | awk '{print $NF}' | awk '{if(NR>1)print}')
+        krr simple --cluster $CONTEXT --selector $LABELS 
+        echo "Press 'q' to exit"
+        while : ; do
+        read -n 1 k <&1
+        if [[ $k = q ]] ; then
+        break
+        fi
+        done
+
+  # Source: https://github.com/derailed/k9s/blob/master/plugins/kubectl-get-in-shell.yaml
+  kubectl-get-cmd:
+    shortCut: Shift-B
+    confirm: false
+    description: get into shell
+    scopes:
+      - all
+    command: bash
+    background: false
+    args:
+      - -c
+      - ~/dotfiles/k9s/.config/k9s/scripts/kubectl-get-cmd.sh $NAMESPACE $RESOURCE_NAME $NAME
+
+  # Source: https://k9scli.io/topics/plugins
+  logs:
+    shortCut: Ctrl-L
+    description: Tail logs
+    scopes:
+      # - daemonsets
+      # - deployments
+      # - jobs
+      - pods
+      # - replicasets
+      # - replicationcontrollers
+      # - services
+      # - statefulsets
+    command: kubectl
+    background: false
+    args:
+      - logs
+      - -f
+      - $NAME
+      - -n
+      - $NAMESPACE
+      - --context
+      - $CONTEXT
+
+  # Source: https://github.com/derailed/k9s/blob/master/plugins/external-secrets.yaml
+  refresh-external-secrets:
+    shortCut: Shift-R
+    confirm: true
+    scopes:
+      - externalsecrets
+    description: Refresh the externalsecret
+    command: bash
+    background: false
+    args:
+      - -c
+      - "kubectl annotate externalsecrets.external-secrets.io -n $NAMESPACE $NAME force-sync=$(date +%s) --overwrite"
+
+  # Source https://github.com/derailed/k9s/blob/master/plugins/log-stern.yaml
+  stern:
+    shortCut: Ctrl-Y
+    confirm: false
+    description: "Logs <Stern>"
+    scopes:
+      - pods
+    command: stern
+    background: false
+    args:
+      - --tail
+      - 50
+      - $FILTER
+      - -n
+      - $NAMESPACE
+      - --context
+      - $CONTEXT
+
+  # Source: https://github.com/derailed/k9s/blob/master/plugins/trace-dns.yaml
+  trace-dns:
+    shortCut: Shift-D
+    description: Trace DNS requests
+    scopes:
+      - containers
+      - pods
+      - nodes
+    command: bash
+    confirm: false
+    background: false
+    args:
+      - -c
+      - |
+        IG_VERSION=v0.37.0
+        IG_IMAGE=ghcr.io/inspektor-gadget/ig:$IG_VERSION
+        IG_FIELD=k8s.podName,src,dst,qr,qtype,name,rcode,latency_ns
+        
+        GREEN='\033[0;32m'
+        RED='\033[0;31m'
+        BLUE='\033[0;34m'
+        NC='\033[0m' # No Color
+        
+        # Ensure kubectl version is 1.30 or later
+        KUBECTL_VERSION=$(kubectl version --client | awk '/Client Version:/{print $3}')
+        if [[ "$(echo "$KUBECTL_VERSION" | cut -d. -f2)" -lt 30 ]]; then
+          echo -e "${RED}kubectl version 1.30 or later is required${NC}"
+          sleep 3
+          exit
+        fi
+        
+        clear
+
+        # Handle containers
+        if [[ -n "$POD" ]]; then
+          echo -e "${GREEN}Tracing DNS requests for container ${BLUE}${NAME}${GREEN} in pod ${BLUE}${POD}${GREEN} in namespace ${BLUE}${NAMESPACE}${NC}"
+          IG_NODE=$(kubectl get pod "$POD" -n "$NAMESPACE" -o jsonpath='{.spec.nodeName}')
+          kubectl debug --kubeconfig=$KUBECONFIG  --context=$CONTEXT -q \
+            --profile=sysadmin "node/$IG_NODE" -it --image="$IG_IMAGE" -- \
+            ig run trace_dns:$IG_VERSION -F "k8s.podName==$POD" -F "k8s.containerName=$NAME" \
+            --fields "$IG_FIELD"
+            exit
+        fi
+        
+        # Handle pods
+        if [[ -n "$NAMESPACE" ]]; then
+          echo -e "${GREEN}Tracing DNS requests for pod ${BLUE}${NAME}${GREEN} in namespace ${BLUE}${NAMESPACE}${NC}"
+          IG_NODE=$(kubectl get pod "$NAME" -n "$NAMESPACE" -o jsonpath='{.spec.nodeName}')
+          kubectl debug --kubeconfig=$KUBECONFIG  --context=$CONTEXT -q \
+            --profile=sysadmin  -it --image="$IG_IMAGE" "node/$IG_NODE" -- \
+            ig run trace_dns:$IG_VERSION -F "k8s.podName==$NAME" \
+            --fields "$IG_FIELD"
+            exit
+        fi
+        
+        # Handle nodes
+        echo -e "${GREEN}Tracing DNS requests for node ${BLUE}${NAME}${NC}"
+        kubectl debug --kubeconfig=$KUBECONFIG  --context=$CONTEXT -q \
+          --profile=sysadmin -it --image="$IG_IMAGE" "node/$NAME" -- \
+          ig run trace_dns:$IG_VERSION --fields "$IG_FIELD"
+
+  # Source: https://github.com/derailed/k9s/blob/master/plugins/watch-events.yaml
+  watch-events:
+    shortCut: Shift-E
+    confirm: false
+    description: Get Events
+    scopes:
+    - all
+    command: sh
+    background: false
+    args:
+    - -c
+    - "kubectl events --context $CONTEXT --namespace $NAMESPACE --for $RESOURCE_NAME.$RESOURCE_GROUP/$NAME --watch"

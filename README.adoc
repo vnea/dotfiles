@@ -372,6 +372,7 @@ rm -rf ~/.config/karabiner && stow karabiner
 Link:
   - https://github.com/derailed/k9s
   - https://github.com/derailed/k9s/tree/master/skins (skins)
+  - https://github.com/derailed/k9s/blob/master/plugins (plugins)
 
 === Installation
 
