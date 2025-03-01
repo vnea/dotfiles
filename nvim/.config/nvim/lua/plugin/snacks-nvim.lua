@@ -2,6 +2,7 @@ return {
     "folke/snacks.nvim",
     priority = 1000,
     lazy = false,
+    ---@type snacks.Config
     opts = {
         bigfile = { enabled = true },
         -- dashboard = { enabled = true },
@@ -40,6 +41,7 @@ return {
         -- words = { enabled = true },
     },
     ---@module "snacks"
+    ---@diagnostic disable-next-line: missing-fields
     keys = {
         -- ======================
         -- Module: picker
@@ -66,14 +68,14 @@ return {
                         ".terraform",
                     },
                     layout = {
-                        preview = false,
+                        preview = "main",
                     },
                 })
             end,
             desc = "File Picker",
         },
         { "<Leader>rc", function() Snacks.picker.command_history() end, desc = "Command History" },
-        { "☀", --[[ <C-S-l>, check Alacritty conf ]] function() Snacks.picker.buffers({ layout = { preview = false } }) end, desc = "Buffers" },
+        { "☀", --[[ <C-S-l>, check Alacritty conf ]] function() Snacks.picker.buffers({ layout = { preview = "main" } }) end, desc = "Buffers" },
 
         -- Git
         { "<Leader>b", function() Snacks.picker.git_branches() end, desc = "Git Branches" },

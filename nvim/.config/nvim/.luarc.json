@@ -10,6 +10,10 @@
     ],
     "workspace.checkThirdParty": false,
     "workspace.library": [
-        "$VIMRUNTIME"
-    ]
+        "$VIMRUNTIME",
+        "~/.local/share/nvim/lazy",
+        "${3rd}/luv/library"
+    ],
+    "$schema": "https://raw.githubusercontent.com/LuaLS/vscode-lua/master/setting/schema.json",
+
 }
