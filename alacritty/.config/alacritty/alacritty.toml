@@ -110,6 +110,11 @@ chars = "\u2607" # ☇
 key = "&"
 mods = "Command"
 
+[[keyboard.bindings]]
+chars = "\u2608" # ☈
+key = "é"
+mods = "Command"
+
 #############################
 # Bindings for Mac
 #############################
