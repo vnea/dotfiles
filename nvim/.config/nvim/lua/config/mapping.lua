@@ -3,6 +3,7 @@
 -- ======================
 
 vim.g.mapleader = " "
+vim.g.maplocalleader = " "
 
 -- Escape
 vim.keymap.set({ "i", "v" }, "jk", "<Esc>")
