@@ -15,9 +15,9 @@ plugins:
   # Source:
   #  - https://github.com/derailed/k9s/blob/master/plugins/debug-container.yaml
   #  - https://kubernetes.io/docs/tasks/debug/debug-application/debug-running-pod/#ephemeral-container
-  debug:
+  debug-busybox:
     shortCut: Shift-D
-    description: Add debug container
+    description: Add debug container (busybox)
     dangerous: true
     scopes:
       - containers
@@ -27,6 +27,19 @@ plugins:
     args:
       - -c
       - "kubectl --kubeconfig=$KUBECONFIG debug -it --context $CONTEXT -n=$NAMESPACE $POD --target=$NAME --image=busybox:1.35.0 --profile=general"
+
+  debug-network:
+    shortCut: Shift-V
+    description: Add debug container (network)
+    dangerous: true
+    scopes:
+      - containers
+    command: bash
+    background: false
+    confirm: true
+    args:
+      - -c
+      - "kubectl --kubeconfig=$KUBECONFIG debug -it --context $CONTEXT -n=$NAMESPACE $POD --target=$NAME --image=nicolaka/netshoot --profile=general"
 
   # Source: https://github.com/derailed/k9s/blob/master/plugins/dive.yaml
   dive:
