@@ -132,11 +132,11 @@ vim.keymap.set("n", "☆" --[[ <C-S-A-Down> --]], "<C-W><S-J>")
 vim.keymap.set({ "n", "v" }, "<Leader>sc", "<cmd>TextCaseOpenTelescope<CR>", { desc = "Telescope" })
 
 -- ======================
--- === File explorer (nvim-tree)
+-- === File explorer
 -- ======================
-vim.keymap.set("n", "☇" --[[ <A-&> --]], "<cmd>NvimTreeToggle<CR>")
-vim.keymap.set("n", "<Leader>ee", "<cmd>NvimTreeToggle<CR>")
-vim.keymap.set("n", "go", "<cmd>NvimTreeFindFile<CR>")
+vim.keymap.set("n", "☇" --[[ <A-&> --]], "<cmd>Neotree position=float toggle<cr>")
+vim.keymap.set("n", "<Leader>ee", "<cmd>Neotree position=float toggle<cr>")
+vim.keymap.set("n", "go", "<cmd>Neotree reveal position=float toggle<cr>")
 
 -- ======================
 -- === Navigation
