@@ -39,7 +39,7 @@ plugins:
     confirm: true
     args:
       - -c
-      - "kubectl --kubeconfig=$KUBECONFIG debug -it --context $CONTEXT -n=$NAMESPACE $POD --target=$NAME --image=nicolaka/netshoot --profile=general"
+      - "kubectl --kubeconfig=$KUBECONFIG debug -it --context $CONTEXT -n=$NAMESPACE $POD --target=$NAME --image=nicolaka/netshoot:v0.13 --profile=general"
 
   # Source: https://github.com/derailed/k9s/blob/master/plugins/dive.yaml
   dive:
@@ -198,6 +198,18 @@ plugins:
       - $NAMESPACE
       - --context
       - $CONTEXT
+
+  pod:
+    shortCut: Shift-P
+    description: Add pod (network)
+    scopes:
+      - pods
+    command: bash
+    background: false
+    confirm: true
+    args:
+      - -c
+       - "kubectl --kubeconfig=$KUBECONFIG run debug-network-pod --context $CONTEXT -n=$NAMESPACE -it --image=nicolaka/netshoot:v0.13 --restart=Never -- /bin/sh"
 
   # Source: https://github.com/derailed/k9s/blob/master/plugins/external-secrets.yaml
   refresh-external-secrets:
