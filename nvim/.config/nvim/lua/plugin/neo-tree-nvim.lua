@@ -41,6 +41,18 @@ return {
         end
 
         require("neo-tree").setup({
+            commands = {
+                -- Source: https://github.com/MagicDuck/grug-far.nvim?tab=readme-ov-file#add-neo-tree-integration-to-open-search-limited-to-focused-directory-or-file
+                grug_far_replace = function(state)
+                    local node = state.tree:get_node()
+                    local prefills = {
+                        paths = node.type == "directory" and vim.fn.fnameescape(vim.fn.fnamemodify(node:get_id(), ":p"))
+                            or vim.fn.fnameescape(vim.fn.fnamemodify(node:get_id(), ":h")),
+                    }
+
+                    require("grug-far").open({ prefills = prefills })
+                end,
+            },
             filesystem = {
                 filtered_items = {
                     hide_dotfiles = false,
@@ -58,6 +70,7 @@ return {
                     ["e"] = "rename_basename",
                     ["<C-v>"] = "open_vsplit",
                     ["y"] = copy_path,
+                    ["F"] = "grug_far_replace",
                 },
             },
         })

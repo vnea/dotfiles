@@ -68,7 +68,7 @@ vim.keymap.set("n", "<Leader>ss", function() Snacks.picker.spelling() end)
 vim.keymap.set("n", "tc", "<Cmd>tabc<CR>", { desc = "[T]ab [C]lose" })
 vim.keymap.set("n", "tn", "<Cmd>tabnew<CR>", { desc = "[T]ab [N]ew" })
 
-vim.keymap.set("n", "<Leader>dt", function () vim.api.nvim_command(vim.wo.diff and "windo diffoff" or "windo diffthis") end, { desc = "Toggle [D]iff [T]his" })
+vim.keymap.set("n", "<Leader>dt", function() vim.api.nvim_command(vim.wo.diff and "windo diffoff" or "windo diffthis") end, { desc = "Toggle [D]iff [T]his" })
 
 -- Compare with clipboard
 vim.keymap.set("n", "<Leader>C", function()
@@ -141,35 +141,8 @@ vim.keymap.set("n", "go", "<cmd>Neotree reveal position=float toggle<cr>")
 -- ======================
 -- === Navigation
 -- ======================
-vim.keymap.set("n", "<Leader>F", function()
-    require("fzf-lua").live_grep_glob({
-        winopts     = {
-            fullscreen = true,
-            preview = {
-                layout = "vertical",
-            }
-        },
-        git_icons   = false,
-        file_icons  = false,
-        color_icons = false,
-        resume      = true,
-        rg_opts     = table.concat({
-            "--hidden",
-            "--column",
-            "--line-number",
-            "--no-heading",
-            "--color=always",
-            "--smart-case",
-            "--max-columns=4096",
-            "--glob=!**/.git/*",
-            "--glob=!**/.idea/*",
-            "--glob=!**/node_modules/*",
-            "--glob=!**/.venv/*",
-            "--glob=!**/.vscode/*",
-            "-e"
-        }, " ")
-    })
-end)
+vim.keymap.set("n", "<Leader>F", function() require("grug-far").open() end, { desc = "[F]ind everywhere" })
+vim.keymap.set("v", "<Leader>F", function() require('grug-far').with_visual_selection() end, { desc = "[F]ind visual everywhere" })
 
 -- ======================
 -- === Scretch
