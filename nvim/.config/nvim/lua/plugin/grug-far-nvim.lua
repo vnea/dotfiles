@@ -1,12 +1,21 @@
 return {
     "MagicDuck/grug-far.nvim",
     config = function()
+        -- Options: https://github.com/MagicDuck/grug-far.nvim/blob/main/lua/grug-far/opts.lua
         require("grug-far").setup({
             keymaps = {
                 applyNext = { n = "<enter>" },
             },
             engines = {
                 ripgrep = {
+                    extraArgs = table.concat({
+                        "--hidden",
+                        "--glob=!**/.git/*",
+                        "--glob=!**/.idea/*",
+                        "--glob=!**/node_modules/*",
+                        "--glob=!**/.venv/*",
+                        "--glob=!**/.vscode/*",
+                    }, " "),
                     placeholders = {
                         search = "",
                         replacement = "",
