@@ -68,6 +68,7 @@ return {
                 mappings = {
                     ["<Tab>"] = "open",
                     ["e"] = "rename_basename",
+                    ["c"] = "copy_to_clipboard",
                     ["<C-v>"] = "open_vsplit",
                     ["y"] = copy_path,
                     ["F"] = "grug_far_replace",
