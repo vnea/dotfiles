@@ -2,7 +2,14 @@
 
 function v {
   file_to_open="${1}"
-  TERM=screen-256color nvim "${file_to_open}"
+  export TERM=screen-256color
+
+  if [ -z "${file_to_open}" ]
+  then
+    nvim
+  else
+    nvim "${file_to_open}"
+  fi
 }
 
 function vz {
