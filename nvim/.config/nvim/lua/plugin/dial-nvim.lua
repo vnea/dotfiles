@@ -30,6 +30,9 @@ return {
                 augend.constant.new { elements = { ">", "<" }, word = false },
                 augend.constant.new { elements = { ">=", "<=" }, word = false },
                 augend.constant.new { elements = { "==", "!=" }, word = false },
+
+                -- Others
+                augend.constant.new { elements = { "stable", "test" } },
             },
         }
 
