@@ -1,3 +1,8 @@
+# Performance optimizations (source: https://scottspence.com/posts/speeding-up-my-zsh-shell)
+DISABLE_AUTO_UPDATE="true"
+DISABLE_MAGIC_FUNCTIONS="true"
+DISABLE_COMPFIX="true"
+
 ##############################
 # p10k
 ##############################
@@ -31,6 +36,10 @@ plugins=(
 fpath=(~/dotfiles/zsh/zsh-completions $fpath)
 
 source $ZSH/oh-my-zsh.sh
+
+# Autosuggest settings for performance (source: https://scottspence.com/posts/speeding-up-my-zsh-shell)
+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE="20"
+ZSH_AUTOSUGGEST_USE_ASYNC=1
 
 ##############################
 # General
