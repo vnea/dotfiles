@@ -23,7 +23,6 @@ fi
 export ZSH="$HOME/.oh-my-zsh"
 plugins=(
   colored-man-pages
-  history
   wd
   zsh-syntax-highlighting # Must be the last
 )
