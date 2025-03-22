@@ -84,6 +84,11 @@ fi
 ##############################
 source <(fzf --zsh)
 
+export FZF_DEFAULT_OPTS="--height 100%"
+
+export FZF_CTRL_T_COMMAND="fd"
+export FZF_CTRL_T_OPTS="--preview 'bat --color=always {}'"
+
 ##############################
 # The Fuck
 ##############################
