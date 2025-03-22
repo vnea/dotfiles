@@ -26,7 +26,6 @@ plugins=(
   dirhistory
   history
   wd
-  yarn
   zsh-syntax-highlighting # Must be the last
 )
 
