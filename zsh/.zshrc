@@ -26,11 +26,14 @@ plugins=(
   dirhistory
   git
   history
-  kubectl
   wd
   yarn
   zsh-syntax-highlighting # Must be the last
 )
+
+# Add zsh-completions
+fpath=(~/dotfiles/zsh/zsh-completions $fpath)
+
 source $ZSH/oh-my-zsh.sh
 
 ##############################
