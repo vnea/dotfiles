@@ -15,6 +15,14 @@ alias gdob="git branch -vv | grep ': gone' | cut -d ' ' -f 3 | xargs git branch 
 alias gdm="git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d; git remote -v update -p"
 alias greset_repo="git clean -fxd"
 
+# Commit
+alias gcam="git commit --all --message"
+alias gwip='git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit --no-verify --no-gpg-sign --message "--wip-- [skip ci]"'
+alias gcmsg="git commit --message"
+
+# Diff
+alias gd="git diff"
+
 # Log
 alias glg="git log --graph"
 
