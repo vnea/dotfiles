@@ -24,7 +24,6 @@ export ZSH="$HOME/.oh-my-zsh"
 plugins=(
   colored-man-pages
   dirhistory
-  git
   history
   wd
   yarn
