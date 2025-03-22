@@ -62,11 +62,6 @@ function gsquash() {
   git reset --soft HEAD~"${number_of_commits_to_squash}" && git commit --edit --message "$(git log --format=%B --reverse HEAD..HEAD@\{1\})"
 }
 
-function gclean() {
-    git branch --merged | egrep -v "(^\*|master|dev|main)" | xargs --no-run-if-empty git branch -d
-    git fetch -p && for branch in $(git branch -vv | grep ': gone]' | awk '{print $1}'); do git branch -D $branch; done
-}
-
 function gcy() {
   local branch
   branch=$(git branch --show-current | tr -d '\n')
