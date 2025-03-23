@@ -84,6 +84,7 @@ return {
                     "ansiblels",
                     "basedpyright",
                     "bashls",
+                    "harper_ls",
                     "lua_ls",
                     "terraformls",
                 },
@@ -94,6 +95,20 @@ return {
                     end,
 
                     -- Custom handlers
+                    -- Settings: https://writewithharper.com/docs/integrations/neovim#Optional-Configuration
+                    harper_ls = function()
+                        require("lspconfig").harper_ls.setup({
+                            settings = {
+                                ["harper-ls"] = {
+                                    linters = {
+                                        SentenceCapitalization = false,
+                                        SpellCheck = false
+                                    },
+                                }
+                            }
+                        })
+                    end,
+
                     lua_ls = function()
                         require("lspconfig").lua_ls.setup({
                             settings = {
