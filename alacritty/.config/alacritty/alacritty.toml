@@ -135,7 +135,7 @@ mods = "Command"
 #############################
 [[keyboard.bindings]]
 key = "P"
-mods = "Control"
+mods = "Control|Shift"
 
 [keyboard.bindings.command]
 args = ["-c", "~/dotfiles/alacritty/.config/alacritty/scripts/toggle_theme.sh"]
