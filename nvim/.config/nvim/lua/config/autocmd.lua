@@ -13,3 +13,10 @@ vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
     },
     command = "set filetype=yaml.ansible",
 })
+
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+    pattern = {
+       "*.http",
+    },
+    command = "set filetype=http",
+})
