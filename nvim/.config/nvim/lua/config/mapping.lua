@@ -98,6 +98,9 @@ vim.keymap.set("x", "<Leader>C", function()
   ]], vim.bo.filetype, vim.bo.filetype))
 end, { desc = "[C]ompare selection with clipboard" })
 
+-- Toggle OFF/ON relative line number
+vim.keymap.set("n", "<leader>n", function() vim.cmd("set relativenumber!") end)
+
 -- ======================
 -- === Window
 -- ======================
