@@ -84,10 +84,16 @@ fi
 ##############################
 source <(fzf --zsh)
 
-export FZF_DEFAULT_OPTS="--height 100%"
+export FZF_DEFAULT_OPTS="
+  --height 100%
+  --color=fg:#828282,fg+:#d0d0d0,bg:#0d1116,bg+:#262626
+  --color=hl:#037d29,hl+:#60D701,info:#afaf87,marker:#87ff00
+  --color=prompt:#60D701,spinner:#af5fff,pointer:#60D701,header:#87afaf
+  --color=border:#262626,label:#aeaeae,query:#d9d9d9
+"
 
 export FZF_CTRL_T_COMMAND="fd"
-export FZF_CTRL_T_OPTS="--preview 'bat --color=always {}'"
+export FZF_CTRL_T_OPTS="--preview 'bat --style=numbers --color=always --line-range :100 {}'"
 
 ##############################
 # The Fuck
