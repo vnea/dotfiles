@@ -4,7 +4,7 @@ return {
     build = ":TSUpdate",
     config = function()
         require("nvim-treesitter.configs").setup({
-            ensure_installed = {
+            ensure_installed      = {
                 "bash",
                 "go",
                 "html",
@@ -20,12 +20,14 @@ return {
                 "vimdoc",
                 "yaml",
             },
-            sync_install = false,
-            auto_install = true,
-            highlight = {
+            modules               = {},
+            sync_install          = false,
+            auto_install          = true,
+            highlight             = {
                 enable = true,
                 additional_vim_regex_highlighting = false,
             },
+            ignore_install        = {},
             incremental_selection = {
                 enable = true,
                 keymaps = {
@@ -34,7 +36,10 @@ return {
                     node_decremental = "♠", -- <C-S-w>
                 },
             },
-            textobjects = {
+            indent                = {
+                enable = true
+            },
+            textobjects           = {
                 select = {
                     enable = true,
                     -- Automatically jump forward to textobj, similar to targets.vim
