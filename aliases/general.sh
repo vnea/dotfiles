@@ -15,54 +15,47 @@ alias z="fg"
 alias cd-="cd -"
 
 # For copying commands from the web, source: https://www.30secondsofcode.org/articles/s/bash-alias-dollar-sign
-alias '$'=''
-
-function _open_link() {
-    link=$1
-
-    if [[ "$OSTYPE" == "darwin"* ]]; then
-        open "$link" &>/dev/null
-    elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
-        xdg-open "$link" &>/dev/null
-    fi
-}
-
-function gmail() {
-  _open_link "https://mail.google.com"
-}
-
-function gcal() {
-  _open_link "https://calendar.google.com/calendar/u/1/r"
-}
+alias '$'=""
 
 function def() {
   function_name="$1"
   declare -f "$function_name" | pygmentize
 }
 
+# shellcheck disable=SC2164
 function goto() {
   workspace_folder=~/workspace
   dotfiles_folder=~/dotfiles
+  notes_folder=~/notes
 
   projects=$(
     fd . $workspace_folder --type directory --max-depth 1 |
     sed -E 's/(.+workspace\/)(.+)\//\2/g' |
     cat - <(echo $workspace_folder) |
     cat - <(echo $dotfiles_folder) |
+    cat - <(echo $notes_folder) |
     sort
   )
-  selected_project=$(echo $projects | fzf)
+
+  selected_project=$(echo "$projects" | fzf)
   if [ -z "$selected_project" ]; then
       return
   fi
 
-  if [ "$selected_project" = "$dotfiles_folder" ]; then
-      cd $dotfiles_folder
-  elif [ "$selected_project" = "$workspace_folder" ]; then
-      cd $workspace_folder
-  else
-      cd "$workspace_folder/$selected_project"
-  fi
+  case "$selected_project" in
+      "$workspace_folder")
+          cd "$workspace_folder"
+          ;;
+      "$dotfiles_folder")
+          cd "$dotfiles_folder"
+          ;;
+      "$notes_folder")
+          cd "$notes_folder"
+          ;;
+      *)
+          cd "$workspace_folder/$selected_project"
+          ;;
+  esac
 
-  tmux rename-window "$(basename $(pwd))"
+  tmux rename-window "$(basename "$(pwd)")"
 }
