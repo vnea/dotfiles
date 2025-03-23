@@ -5,8 +5,8 @@
         "lua/?/init.lua"
     ],
     "diagnostics.globals": [
-        "vim",
-        "Snacks"
+        "Snacks",
+        "vim"
     ],
     "workspace.checkThirdParty": false,
     "workspace.library": [
@@ -15,5 +15,4 @@
         "${3rd}/luv/library"
     ],
     "$schema": "https://raw.githubusercontent.com/LuaLS/vscode-lua/master/setting/schema.json",
-
 }
