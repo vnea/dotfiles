@@ -2,7 +2,6 @@
 
 function v {
   file_to_open="${1}"
-  export TERM=screen-256color
 
   if [ -z "${file_to_open}" ]
   then
@@ -21,4 +20,3 @@ function vz {
 
   v "${selected_file}"
 }
-
