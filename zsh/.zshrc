@@ -92,7 +92,7 @@ export FZF_DEFAULT_OPTS="
   --color=border:#262626,label:#aeaeae,query:#d9d9d9
 "
 
-export FZF_CTRL_T_COMMAND="fd"
+export FZF_CTRL_T_COMMAND="fd --hidden --exclude={.git/,node_modules/,.venv/}"
 export FZF_CTRL_T_OPTS="--preview 'bat --style=numbers --color=always --line-range :100 {}'"
 
 ##############################
@@ -114,13 +114,3 @@ eval "$(direnv hook zsh)"
 # export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv
 # export WORKON_HOME=$HOME/python/virtualenvs
 # source /usr/bin/virtualenvwrapper.sh
-
-##############################
-# Chrome
-##############################
-export CHROMIUM_USER_FLAGS=""
-
-# Toggle bg/fg with CTRL+Z, source: https://unix.stackexchange.com/a/179373
-# _zsh_cli_fg() { fg; }
-# zle -N _zsh_cli_fg
-# bindkey '^Z' _zsh_cli_fg
