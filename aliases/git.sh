@@ -5,6 +5,10 @@
 # General
 alias git="LANG=en_US.UTF-8 git"
 
+# Add
+alias ga="git add"
+alias gaa="git add --all"
+
 # Branch
 alias gcob="git branch -a | sed 's/remotes\/origin\///g; s/[[:space:]]//g; s/\*//g' | sort | uniq | fzf | xargs --no-run-if-empty git checkout"
 alias gco="git checkout"
