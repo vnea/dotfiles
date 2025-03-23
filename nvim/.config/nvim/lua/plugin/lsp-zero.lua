@@ -82,9 +82,9 @@ return {
                 automatic_installation = false,
                 ensure_installed = {
                     "ansiblels",
+                    "basedpyright",
                     "bashls",
                     "lua_ls",
-                    "pyright",
                     "terraformls",
                 },
                 handlers = {
