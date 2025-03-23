@@ -53,6 +53,7 @@ return {
                     local opts = { buffer = event.buf }
 
                     vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
+                    vim.keymap.set("n", "<Leader>cd", function() vim.diagnostic.open_float() end, opts)
                     vim.keymap.set("n", "gd", function() Snacks.picker.lsp_definitions() end, opts)
                     vim.keymap.set("n", "gD", function() Snacks.picker.lsp_declarations() end, opts)
                     vim.keymap.set("n", "gi", function() Snacks.picker.lsp_implementations() end, opts)
@@ -76,6 +77,7 @@ return {
                         [vim.diagnostic.severity.INFO] = "»",
                     },
                 },
+                virtual_text = false,
             })
 
             require("mason-lspconfig").setup({

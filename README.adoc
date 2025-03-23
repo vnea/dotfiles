@@ -64,6 +64,8 @@ source .zshrc
 [source,shell]
 ----
 rm -rf ~/.config/nvim && stow nvim
+
+# Then enable undercurl: https://dev.to/anurag_pramanik/how-to-enable-undercurl-in-neovim-terminal-and-tmux-setup-guide-2ld7
 ----
 
 :sectnums:

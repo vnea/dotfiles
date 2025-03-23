@@ -17,6 +17,11 @@ return {
                         bg = "#2e2e47",
                     },
 
+                    SpellBad = { style = { "underline" } },
+                    SpellCap = { style = { "underline" } },
+                    SpellLocal = { style = { "underline" } },
+                    SpellRare = { style = { "underline" } },
+
                     -- Colors come from here: https://plugins.jetbrains.com/plugin/10080-rainbow-brackets
                     BlinkPairsOne = { fg = "#fdd370" },
                     BlinkPairsTwo = { fg = "#c4e993" },
@@ -28,8 +33,20 @@ return {
                     BlinkPairsEight = { fg = "#d17424" },
                     BlinkPairsNine = { fg = "#f9c26c" },
                 }
-            end
+            end,
+            integrations = {
+                native_lsp = {
+                    enabled = true,
+                    underlines = {
+                        errors = { "undercurl" },
+                        hints = { "undercurl" },
+                        warnings = { "undercurl" },
+                        information = { "undercurl" },
+                    },
+                },
+            },
         })
+
         vim.opt.fillchars:append("diff:╱")
         vim.cmd("colorscheme catppuccin-mocha")
     end,
