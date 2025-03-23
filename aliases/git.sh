@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# To check for more aliases: "cat ~/.oh-my-zsh/plugins/git/git.plugin.zsh | grep alias | fzf"
+
 # General
 alias git="LANG=en_US.UTF-8 git"
 
@@ -22,6 +24,9 @@ alias gcmsg="git commit --message"
 
 # Diff
 alias gd="git diff"
+alias gdca="git diff --cached"
+alias gdcw="git diff --cached --word-diff"
+alias gdcw="git diff --cached --word-diff"
 
 # Log
 alias glg="git log --graph"
@@ -44,6 +49,7 @@ alias grbc="git rebase --continue"
 alias grba="git rebase --abort"
 
 # Reset
+alias grhh="git reset --hard"
 alias grho="git reset --hard origin/\$(git rev-parse --abbrev-ref HEAD)"
 alias gundo="git reset --soft HEAD^"
 
