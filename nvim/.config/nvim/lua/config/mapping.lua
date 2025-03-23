@@ -101,6 +101,9 @@ end, { desc = "[C]ompare selection with clipboard" })
 -- Toggle OFF/ON relative line number
 vim.keymap.set("n", "<leader>n", function() vim.cmd("set relativenumber!") end)
 
+-- Toggle OFF/ON wrap
+vim.keymap.set("n", "<leader>w", function() vim.cmd("set wrap!") end)
+
 -- ======================
 -- === Window
 -- ======================
