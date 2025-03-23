@@ -266,7 +266,10 @@ Link: https://github.com/alacritty/alacritty
 
 [source,shell]
 ----
+~/dotfiles/alacritty/.config/alacritty/scripts/toggle_theme.sh
 rm -rf ~/.config/alacritty && stow alacritty
+
+# Restart alacritty
 ----
 
 :sectnums:

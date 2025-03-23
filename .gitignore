@@ -12,6 +12,7 @@ thefuck/.config/thefuck/__pycache__
 
 # Alacritty
 alacritty/.config/alacritty/*.bak
+alacritty/.config/alacritty/themes/theme.toml
 
 # Nvim
 nvim/.config/nvim/scretch
