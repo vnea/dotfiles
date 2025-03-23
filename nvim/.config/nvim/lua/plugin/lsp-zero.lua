@@ -79,6 +79,7 @@ return {
             })
 
             require("mason-lspconfig").setup({
+                automatic_installation = false,
                 ensure_installed = {
                     "ansiblels",
                     "bashls",
@@ -87,8 +88,22 @@ return {
                     "terraformls",
                 },
                 handlers = {
+                    -- Default handler
                     function(server_name)
                         require("lspconfig")[server_name].setup({})
+                    end,
+
+                    -- Custom handlers
+                    lua_ls = function()
+                        require("lspconfig").lua_ls.setup({
+                            settings = {
+                                Lua = {
+                                    hint = {
+                                        enable = true,
+                                    }
+                                }
+                            }
+                        })
                     end,
                 },
             })
