@@ -34,4 +34,3 @@ function drma() {
       docker rm -f $container_ids
   fi
 }
-

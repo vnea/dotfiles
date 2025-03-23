@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+if ! command -v pacman >/dev/null 2>&1
+then
+    return
+fi
+
 alias pc="pacman"
 alias pcu="sudo pacman -Syu"
 alias pcr="sudo pacman -R"

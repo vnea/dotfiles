@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+if ! command -v paru >/dev/null 2>&1
+then
+    return
+fi
+
 alias pru="paru -Sua"
 alias prc="paru --clean"
 alias prr="paru --remove"

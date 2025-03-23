@@ -7,4 +7,3 @@ function cy() {
     xclip -sel clip
   fi
 }
-

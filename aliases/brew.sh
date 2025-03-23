@@ -1,5 +1,9 @@
 #!/usr/bin/env zsh
 
+if [[ ! "$(uname)" == "darwin" ]]; then
+    return
+fi
+
 # Source: https://github.com/thirteen37/fzf-brew/blob/master/fzf-brew.plugin.zsh
 
 if ! (( $+commands[brew] )); then

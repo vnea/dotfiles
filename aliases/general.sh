@@ -66,4 +66,3 @@ function goto() {
 
   tmux rename-window "$(basename $(pwd))"
 }
-
