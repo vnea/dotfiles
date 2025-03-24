@@ -15,6 +15,8 @@ alias gco="git checkout"
 alias gco-="git checkout -"
 alias gcom="git checkout master 2>/dev/null || git checkout main"
 alias gcomup="(git checkout master 2>/dev/null || git checkout main) && git pull"
+alias gcb="git checkout -b"
+alias grm="git checkout -D"
 
 # Clean
 alias gdob="git branch -vv | grep ': gone' | cut -d ' ' -f 3 | xargs git branch -D"
