@@ -81,3 +81,5 @@ function __setup_fzf_brew() {
 }
 
 __setup_fzf_brew
+
+alias bu="brew upgrade"
