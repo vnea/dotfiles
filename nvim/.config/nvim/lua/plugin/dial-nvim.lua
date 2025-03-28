@@ -33,6 +33,8 @@ return {
 
                 -- Others
                 augend.constant.new { elements = { "stable", "test" } },
+                augend.constant.new { elements = { "DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"} },
+                augend.constant.new { elements = { "debug", "info", "warning", "error", "critical"} },
             },
         }
 
