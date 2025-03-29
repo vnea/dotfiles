@@ -1,18 +1,31 @@
-# IntelliJ
-.idea/
+# Alacritty
+alacritty/.config/alacritty/*.bak
+alacritty/.config/alacritty/themes/theme.toml
+
+# Brave
+BraveSoftware
 
 # i3
 i3/.config/i3/build
 
-# tmux
-tmux/.config/tmux/plugins
+# IntelliJ
+.idea/
 
-# thefuck
-thefuck/.config/thefuck/__pycache__
+# k9s
+k9s/.config/k9s/clusters/
+k9s/.config/k9s/*.log
 
-# Alacritty
-alacritty/.config/alacritty/*.bak
-alacritty/.config/alacritty/themes/theme.toml
+# Karabiner
+karabiner/.config/karabiner/automatic_backups
+
+# Lazygit
+lazygit/.config/lazygit/state.yml
+
+# Mac
+.DS_Store
+
+# Misc
+ignore_tmp/
 
 # Nvim
 nvim/.config/nvim/scretch
@@ -20,24 +33,11 @@ nvim/.config/nvim/spell/*.add
 nvim/.config/nvim/spell/*.add.spl
 nvim/.config/nvim/undodir
 
-# k9s
-k9s/.config/k9s/clusters/
-k9s/.config/k9s/*.log
-
-# Lazygit
-lazygit/.config/lazygit/state.yml
-
-# Brave
-BraveSoftware
-
-# Mac
-.DS_Store
-
-# Karabiner
-karabiner/.config/karabiner/automatic_backups
-
-# Misc
-ignore_tmp/
-
 # Raycast
 raycast/scripts/jira.sh
+
+# thefuck
+thefuck/.config/thefuck/__pycache__
+
+# tmux
+tmux/.config/tmux/plugins
