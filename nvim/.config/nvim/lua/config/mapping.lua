@@ -43,7 +43,7 @@ vim.keymap.set({ "n", "v" }, "<Leader>c", "c")
 vim.keymap.set("n", "<C-d>", "<C-d>M")
 vim.keymap.set("n", "<C-u>", "<C-u>M")
 
--- Join lines but let cursor at its original place
+-- Join lines but let the cursor at its original place
 vim.keymap.set("n", "J", "mzJ`z")
 
 -- Go to last opened buffer
@@ -53,8 +53,7 @@ vim.keymap.set("n", "<C-l>", "<Cmd>edit #<CR>")
 vim.keymap.set("n", "<C-s>", "<Cmd>wa<CR>")
 vim.keymap.set("i", "<C-s>", "<Esc><Cmd>wa<CR>")
 
--- Open current window in another tab (to simulate Fullscreen mode)
-vim.keymap.set("n", "<Leader>z", "<Cmd>tabedit %<CR>")
+-- Resize all window to have the same size
 vim.keymap.set("n", "<Leader>=", "<Cmd>wincmd =<CR>")
 
 -- Move lines, source: https://vim.fandom.com/wiki/Moving_lines_up_or_down#Mappings_to_move_lines
