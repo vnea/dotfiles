@@ -38,3 +38,6 @@ karabiner/.config/karabiner/automatic_backups
 
 # Misc
 ignore_tmp/
+
+# Raycast
+raycast/scripts/jira.sh

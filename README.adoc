@@ -391,3 +391,19 @@ rm -rf ~/Library/Application\ Support/k9s && ln -s ~/dotfiles/k9s/.config/k9s ~/
 ----
 
 :sectnums:
+
+== Raycast (Mac only)
+:sectnums!:
+
+Link: https://raycast.com/
+
+=== Installation
+
+Steps to install scripts:
+
+- Open `Raycast`, search for `Extensions`, open it.
+- Click on the `+` button.
+- Click on `Add Script Directory`.
+- Select `~/dotfiles/raycast/scripts/`.
+
+:sectnums:
