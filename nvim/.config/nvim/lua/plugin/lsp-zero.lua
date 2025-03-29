@@ -53,7 +53,15 @@ return {
                     local opts = { buffer = event.buf }
 
                     vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
-                    vim.keymap.set("n", "<Leader>cd", function() vim.diagnostic.open_float() end, opts)
+                    vim.keymap.set("n", "<Leader>cD", function() vim.diagnostic.open_float() end, opts)
+                    vim.keymap.set("n", "<Leader>cd", function()
+                        if not vim.diagnostic.config().virtual_lines then
+                            vim.diagnostic.config({ virtual_lines = { current_line = true } })
+                        else
+                            vim.diagnostic.config({ virtual_lines = false })
+                        end
+                    end, opts)
+
                     vim.keymap.set("n", "gd", function() Snacks.picker.lsp_definitions() end, opts)
                     vim.keymap.set("n", "gD", function() Snacks.picker.lsp_declarations() end, opts)
                     vim.keymap.set("n", "gi", function() Snacks.picker.lsp_implementations() end, opts)
@@ -77,6 +85,7 @@ return {
                         [vim.diagnostic.severity.INFO] = "»",
                     },
                 },
+                virtual_lines = false,
                 virtual_text = false,
             })
 
@@ -104,7 +113,7 @@ return {
                                 ["harper-ls"] = {
                                     linters = {
                                         SentenceCapitalization = false,
-                                        SpellCheck = false
+                                        SpellCheck = false,
                                     },
                                 }
                             }
