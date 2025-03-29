@@ -18,6 +18,9 @@ alias gcomup="(git checkout master 2>/dev/null || git checkout main) && git pull
 alias gcb="git checkout -b"
 alias grm="git checkout -D"
 
+# Cherry pick
+alias gcp="git cherry-pick"
+
 # Clean
 alias gdob="git branch -vv | grep ': gone' | cut -d ' ' -f 3 | xargs git branch -D"
 alias gdm="git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d; git remote -v update -p"
