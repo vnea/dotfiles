@@ -17,6 +17,7 @@ vim.opt.termguicolors = true
 vim.opt.spelllang = "fr,en"
 vim.opt.spell = true
 vim.o.switchbuf = "useopen"
+vim.o.winborder = "rounded"
 
 vim.opt.splitbelow = true
 vim.opt.splitright = true
