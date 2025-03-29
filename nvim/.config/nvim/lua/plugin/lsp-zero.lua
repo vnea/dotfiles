@@ -62,8 +62,8 @@ return {
                     vim.keymap.set({ "n", "v" }, "<Leader>rv", function() vim.lsp.buf.rename() end, opts)
                     vim.keymap.set({ "n", "x" }, "<Leader>l", function() require("conform").format() end, opts)
                     vim.keymap.set("n", "<Leader>ca", function() vim.lsp.buf.code_action() end, opts)
-                    vim.keymap.set("n", "<F2>", function() vim.diagnostic.goto_next() end, opts)
-                    vim.keymap.set("n", "<S-F2>", function() vim.diagnostic.goto_prev() end, opts)
+                    vim.keymap.set("n", "<F2>", function() vim.diagnostic.jump({ count = 1 }) end, opts)
+                    vim.keymap.set("n", "<F1>", function() vim.diagnostic.jump({ count = -1 }) end, opts)
                     vim.keymap.set("n", "<Leader><F2>", function() require("trouble").open() end, opts)
                 end,
             })
