@@ -69,6 +69,7 @@ rm -rf ~/.config/nvim && stow nvim
 pip install neovim
 
 # Then enable undercurl: https://dev.to/anurag_pramanik/how-to-enable-undercurl-in-neovim-terminal-and-tmux-setup-guide-2ld7
+tic -x ~/dotfiles/terminal/xterm-256color.ti
 ----
 
 :sectnums:
