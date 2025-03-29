@@ -5,6 +5,10 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+-- Disable build-in mappings
+vim.api.nvim_del_keymap("n", "<C-W>d") -- Show diagnostics under the cursor
+vim.api.nvim_del_keymap("n", "<C-W><C-D>") -- Show diagnostics under the cursor
+
 -- Escape
 vim.keymap.set({ "i", "v" }, "jk", "<Esc>")
 -- https://vi.stackexchange.com/questions/4919/exit-from-terminal-mode-in-neovim-vim-8#comment57834_4922
