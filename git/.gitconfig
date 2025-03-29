@@ -10,6 +10,7 @@
     whitespace = fix,space-before-tab,-indent-with-non-tab,trailing-space
     editor = nvim
     pager = delta --diff-so-fancy
+    excludesfile = ~/dotfiles/git/.gitignore-global
 
 [delta]
     line-numbers = true
