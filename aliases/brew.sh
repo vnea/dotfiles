@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-if [[ ! "$(uname)" == "darwin" ]]; then
+if [[ ! "$OSTYPE" == "darwin"* ]]; then
     return
 fi
 
@@ -81,5 +81,3 @@ function __setup_fzf_brew() {
 }
 
 __setup_fzf_brew
-
-alias bu="brew upgrade"
