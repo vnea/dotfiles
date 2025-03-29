@@ -208,7 +208,5 @@ vim.keymap.set("n", "<Leader>gb", "<cmd>BlameToggle<CR>")
 -- === CopilotChat
 -- ======================
 vim.keymap.set("n", "<Leader>cp", "<Cmd>CopilotChatToggle<CR>")
-vim.keymap.set("n", "<Leader>cP", function()
-    local actions = require("CopilotChat.actions")
-    require("CopilotChat.integrations.telescope").pick(actions.prompt_actions())
-end)
+vim.keymap.set("n", "<Leader>cP", "<cmd>CopilotChatPrompts<cr>")
+vim.keymap.set("v", "<Leader>cP", ":CopilotChatPrompts<cr>")
