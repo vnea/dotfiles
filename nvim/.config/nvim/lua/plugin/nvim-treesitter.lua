@@ -65,15 +65,6 @@ return {
                     --     ["<C-Up>"] = "@function.outer",
                     -- },
                 },
-                swap = {
-                    enable = true,
-                    swap_previous = {
-                        ["<leader>sl"] = "@parameter.inner",
-                    },
-                    swap_next = {
-                        ["<leader>sr"] = "@parameter.inner",
-                    },
-                },
             },
         })
     end,
