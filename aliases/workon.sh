@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-if ! command -v workon >/dev/null 2>&1
-then
-    return
-fi
+[ -x "$(command -v workon)" ] || return
 
 alias wk="workon"

@@ -1,8 +1,6 @@
 #!/usr/bin/env zsh
 
-if [[ ! "$OSTYPE" == "darwin"* ]]; then
-    return
-fi
+[[ "$OSTYPE" == "darwin"* ]] || return
 
 # Source: https://github.com/thirteen37/fzf-brew/blob/master/fzf-brew.plugin.zsh
 

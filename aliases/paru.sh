@@ -1,9 +1,6 @@
 #!/usr/bin/env bash
 
-if ! command -v paru >/dev/null 2>&1
-then
-    return
-fi
+[ -x "$(command -v paru)" ] || return
 
 alias pru="paru -Sua"
 alias prc="paru --clean"

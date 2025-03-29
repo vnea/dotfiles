@@ -1,9 +1,6 @@
 #!/usr/bin/env bash
 
-if ! command -v nmcli >/dev/null 2>&1
-then
-    return
-fi
+[ -x "$(command -v nmcli)" ] || return
 
 function vu {
     nmcli connection show | rg wireguard | awk '{print $1}' | fzf | xargs --no-run-if-empty nmcli connection up

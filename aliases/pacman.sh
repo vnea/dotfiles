@@ -1,9 +1,6 @@
 #!/usr/bin/env bash
 
-if ! command -v pacman >/dev/null 2>&1
-then
-    return
-fi
+[ -x "$(command -v pacman)" ] || return
 
 alias pc="pacman"
 alias pcu="sudo pacman -Syu"

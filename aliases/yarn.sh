@@ -1,9 +1,6 @@
 #!/usr/bin/env bash
 
-if ! command -v yarn >/dev/null 2>&1
-then
-    return
-fi
+[ -x "$(command -v yarn)" ] || return
 
 alias y="yarn"
 alias yi="yarn install"
