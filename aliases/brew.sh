@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-[[ "$OSTYPE" == "darwin"* ]] || return
+[[ "$(uname)" == "Darwin" ]] || return
 
 # Source: https://github.com/thirteen37/fzf-brew/blob/master/fzf-brew.plugin.zsh
 

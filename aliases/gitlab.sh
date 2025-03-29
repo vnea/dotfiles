@@ -43,9 +43,9 @@ function _cleanup_gitlab()
 function _open_link() {
     link=$1
 
-    if [[ "$OSTYPE" == "darwin"* ]]; then
+    if [[ "$(uname)" == "Darwin" ]]; then
         open "$link" &>/dev/null
-    elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    else
         xdg-open "$link" &>/dev/null
     fi
 }

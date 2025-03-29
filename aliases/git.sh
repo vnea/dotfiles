@@ -69,9 +69,9 @@ alias gcontributors="git shortlog --summary --numbered --no-merges"
 function _open_link() {
     link=$1
 
-    if [[ "$OSTYPE" == "darwin"* ]]; then
+    if [[ "$(uname)" == "Darwin" ]]; then
         open "$link" &>/dev/null
-    elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    else
         xdg-open "$link" &>/dev/null
     fi
 }
@@ -113,7 +113,7 @@ function gsquash() {
 function gcy() {
     local branch
     branch=$(git branch --show-current | tr -d '\n')
-    if [[ "$OSTYPE" == "darwin"* ]]; then
+    if [[ "$(uname)" == "Darwin" ]]; then
         echo -n "$branch" | pbcopy
     else
         echo -n "$branch" | xclip -sel clip

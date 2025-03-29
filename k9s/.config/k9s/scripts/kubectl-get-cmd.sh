@@ -6,7 +6,7 @@ name=$3
 
 kubectl_get_command=$(echo "kubectl get $resource_name $name -n $namespace")
 
-if [[ "$OSTYPE" == "darwin"* ]]; then
+if [[ "$(uname)" == "Darwin" ]]; then
     echo "$kubectl_get_command" | pbcopy
 else
     echo "$kubectl_get_command" | xclip -sel clip
