@@ -17,7 +17,7 @@ return {
             local persistent_undodir_folder = vim.fn.expand("~/dotfiles/nvim/.config/nvim/undodir")
 
             if vim.fn.isdirectory(persistent_undodir_folder) == 0 then
-                vim.fn.mkdir(persistent_undodir_folder, "p", 0700)
+                vim.fn.mkdir(persistent_undodir_folder, "p", "0700")
             end
 
             vim.o.undodir = persistent_undodir_folder
