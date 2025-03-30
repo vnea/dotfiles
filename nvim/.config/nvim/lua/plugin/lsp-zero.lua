@@ -52,8 +52,12 @@ return {
                 callback = function(event)
                     local opts = { buffer = event.buf }
 
-                    vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
-                    vim.keymap.set("n", "<Leader>cD", function() vim.diagnostic.open_float() end, opts)
+                    vim.keymap.set("n", "<Leader>cD", function()
+                        -- Run it twice to focus the floating popup
+                        vim.diagnostic.open_float()
+                        vim.diagnostic.open_float()
+                    end, opts)
+
                     vim.keymap.set("n", "<Leader>cd", function()
                         if not vim.diagnostic.config().virtual_lines then
                             vim.diagnostic.config({ virtual_lines = { current_line = true } })
@@ -62,6 +66,7 @@ return {
                         end
                     end, opts)
 
+                    vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
                     vim.keymap.set("n", "gd", function() Snacks.picker.lsp_definitions() end, opts)
                     vim.keymap.set("n", "gD", function() Snacks.picker.lsp_declarations() end, opts)
                     vim.keymap.set("n", "gi", function() Snacks.picker.lsp_implementations() end, opts)
