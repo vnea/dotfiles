@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# shellcheck source=/dev/null
+source ~/dotfiles/aliases/utils/open.sh
+
 # To check for more aliases: "cat ~/.oh-my-zsh/plugins/git/git.plugin.zsh | grep alias | fzf"
 
 # General
@@ -68,16 +71,6 @@ alias gst="git status --short"
 # Others
 alias lzg="lazygit"
 alias gcontributors="git shortlog --summary --numbered --no-merges"
-
-function _open_link() {
-    link=$1
-
-    if [[ "$(uname)" == "Darwin" ]]; then
-        open "$link" &>/dev/null
-    else
-        xdg-open "$link" &>/dev/null
-    fi
-}
 
 function gist() {
     _open_link "https://gist.github.com/vnea"

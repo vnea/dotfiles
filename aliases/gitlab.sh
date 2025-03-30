@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# shellcheck source=/dev/null
+source ~/dotfiles/aliases/utils/open.sh
+
 function _load_gitlab_project_info() {
   if [ -z "$GITLAB_PROJECT_INFO_ROOT_PATH" ]
   then
@@ -38,16 +41,6 @@ function _cleanup_gitlab()
     unset gitlab_access_token
     unset gitlab_default_branch
     unset gitlab_current_branch
-}
-
-function _open_link() {
-    link=$1
-
-    if [[ "$(uname)" == "Darwin" ]]; then
-        open "$link" &>/dev/null
-    else
-        xdg-open "$link" &>/dev/null
-    fi
 }
 
 function glab() {

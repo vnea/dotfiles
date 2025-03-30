@@ -1,14 +1,7 @@
 #!/usr/bin/env bash
 
-function _open_link() {
-    link=$1
-
-    if [[ "$(uname)" == "Darwin" ]]; then
-        open "$link" &>/dev/null
-    else
-        xdg-open "$link" &>/dev/null
-    fi
-}
+# shellcheck source=/dev/null
+source ~/dotfiles/aliases/utils/open.sh
 
 function j() {
     jira_issue_id="$(git branch --show-current | rg -o '(^\w+-\d+)')"
