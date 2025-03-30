@@ -12,7 +12,5 @@ return {
                 go_out = "<S-Tab>",
             },
         })
-
-        vim.keymap.set("n", "☈" --[[ <A-é> --]], require("mini.files").open)
     end,
 }

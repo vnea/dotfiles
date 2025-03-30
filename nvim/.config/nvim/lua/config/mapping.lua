@@ -149,11 +149,13 @@ end)
 vim.keymap.set({ "n", "v" }, "<Leader>sc", "<cmd>TextCaseOpenTelescope<CR>", { desc = "Telescope" })
 
 -- ======================
--- === File explorer
+-- === File explorers
 -- ======================
 vim.keymap.set("n", "☇" --[[ <A-&> --]], "<cmd>Neotree position=float toggle<cr>")
-vim.keymap.set("n", "<Leader>ee", "<cmd>Neotree position=float toggle<cr>")
 vim.keymap.set("n", "go", "<cmd>Neotree reveal position=float toggle<cr>")
+
+vim.keymap.set("n", "☈" --[[ <A-é> --]], function() MiniFiles.open() end)
+vim.keymap.set("n", "gO", function() MiniFiles.open(vim.api.nvim_buf_get_name(0)) end)
 
 -- ======================
 -- === Navigation
