@@ -11,7 +11,6 @@ source ~/dotfiles/aliases/utils/open.sh
 function _gitlab_check_env_variables() {
     [[ -z $ALIASES_GITLAB_ACCESS_TOKEN ]] && echo 'You must defined the variable "ALIASES_GITLAB_ACCESS_TOKEN".'
     [[ -z $ALIASES_GITLAB_DOMAIN ]] && echo 'You must defined the variable "ALIASES_GITLAB_DOMAIN".'
-    [[ -z $ALIASES_GITLAB_PROJECT_ID ]] && echo 'You must defined the variable "ALIASES_GITLAB_PROJECT_ID".'
     [[ -z $ALIASES_GITLAB_PROJECT_PATH ]] && echo 'You must defined the variable "ALIASES_GITLAB_PROJECT_PATH".'
 }
 
@@ -31,13 +30,13 @@ function _gitlab_get_mr_info_by_source_branch() {
     local source_branch="$1"
 
     http --print b \
-        "https://$ALIASES_GITLAB_DOMAIN/api/v4/projects/$ALIASES_GITLAB_PROJECT_ID/merge_requests" \
+        "https://$ALIASES_GITLAB_DOMAIN/api/v4/projects/$(echo -n "$ALIASES_GITLAB_PROJECT_PATH" | jq -sRr @uri)/merge_requests" \
         source_branch=="$source_branch" \
         private_token=="$ALIASES_GITLAB_ACCESS_TOKEN" \
         | sed 's/\\[nr]//g' \
         | jq ".[].web_url" \
         | sed 's/"//g'
-    }
+}
 
 #########################
 # Public functions
@@ -130,9 +129,9 @@ function mrs() {
     local gitlab_current_branch_search=$(
         git branch -a \
             | grep -v "$(_gitlab_get_current_branch)" \
-            | sed "s/remotes\/origin\///g" \
-            | sed "s/[[:space:]]//g" \
-            | sed "s/*//" \
+            | sed 's/remotes\/origin\///g' \
+            | sed 's/[[:space:]]//g' \
+            | sed 's/*//' \
             | sort \
             | uniq \
             | fzf
