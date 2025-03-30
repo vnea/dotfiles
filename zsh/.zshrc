@@ -37,6 +37,8 @@ fpath=(~/dotfiles/zsh/zsh-completions $fpath)
 
 source $ZSH/oh-my-zsh.sh
 
+[[ -f ~/.zshenv  ]] && source ~/.zshenv
+
 # Autosuggest settings for performance (source: https://scottspence.com/posts/speeding-up-my-zsh-shell)
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE="20"
 ZSH_AUTOSUGGEST_USE_ASYNC=1
