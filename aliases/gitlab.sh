@@ -1,189 +1,150 @@
 #!/usr/bin/env bash
+# shellcheck disable=SC2155
+# SC2155: Declare and assign separately to avoid masking return values.
 
 # shellcheck source=/dev/null
 source ~/dotfiles/aliases/utils/open.sh
 
-function _load_gitlab_project_info() {
-  local gitlab_project_info_file_name=".gitlab-project-info.json"
-  local git_root_directory
-  git_root_directory=$(git rev-parse --show-toplevel)
-
-  local gitlab_project_info_file="${git_root_directory}/$gitlab_project_info_file_name"
-  if [ ! -f "$gitlab_project_info_file" ]; then
-      echo "You must create a file '$gitlab_project_info_file_name' in your Git repository."
-      return 1
-  fi
-
-  gitlab_domain=$(jq -r .domain "${gitlab_project_info_file}")
-  gitlab_project_id=$(jq -r .project_id "${gitlab_project_info_file}")
-  gitlab_project_path=$(jq -r .project_path "${gitlab_project_info_file}")
-  gitlab_project_web_url="https://$gitlab_domain/$gitlab_project_path"
-
-  gitlab_access_token=$(jq -r .access_token "${gitlab_project_info_file}")
-
-  gitlab_default_branch=$(jq -r .default_branch "${gitlab_project_info_file}")
-  gitlab_current_branch=$(git rev-parse --abbrev-ref HEAD)
-
-  return 0
+#########################
+# Private functions
+#########################
+function _gitlab_check_env_variables() {
+    [[ -z $ALIASES_GITLAB_ACCESS_TOKEN ]] && echo 'You must defined the variable "ALIASES_GITLAB_ACCESS_TOKEN".'
+    [[ -z $ALIASES_GITLAB_DOMAIN ]] && echo 'You must defined the variable "ALIASES_GITLAB_DOMAIN".'
+    [[ -z $ALIASES_GITLAB_PROJECT_ID ]] && echo 'You must defined the variable "ALIASES_GITLAB_PROJECT_ID".'
+    [[ -z $ALIASES_GITLAB_PROJECT_PATH ]] && echo 'You must defined the variable "ALIASES_GITLAB_PROJECT_PATH".'
 }
 
-function _cleanup_gitlab()
-{
-    unset gitlab_domain
-    unset gitlab_project_id
-    unset gitlab_project_path
-    unset gitlab_project_web_url
-    unset gitlab_access_token
-    unset gitlab_default_branch
-    unset gitlab_current_branch
+function _gitlab_get_current_branch() {
+    git branch --show-current
 }
 
+function _gitlab_get_project_url() {
+    echo "https://$ALIASES_GITLAB_DOMAIN/$ALIASES_GITLAB_PROJECT_PATH"
+}
+
+function _gitlab_get_default_branch() {
+    git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@'
+}
+
+function _gitlab_get_mr_info_by_source_branch() {
+    local source_branch="$1"
+
+    http --print b \
+        "https://$ALIASES_GITLAB_DOMAIN/api/v4/projects/$ALIASES_GITLAB_PROJECT_ID/merge_requests" \
+        source_branch=="$source_branch" \
+        private_token=="$ALIASES_GITLAB_ACCESS_TOKEN" \
+        | sed 's/\\[nr]//g' \
+        | jq ".[].web_url" \
+        | sed 's/"//g'
+    }
+
+#########################
+# Public functions
+#########################
 function glab() {
-    trap _cleanup_gitlab EXIT
-
-    if ! _load_gitlab_project_info; then
-      return
+    if local check_result=$(_gitlab_check_env_variables) && [[ -n $check_result ]]; then
+        echo "$check_result"; return
     fi
 
-    _open_link "$gitlab_project_web_url"
+    _open_link "$(_gitlab_get_project_url)"
 }
 
 function glabb() {
-    trap _cleanup_gitlab EXIT
-
-    if ! _load_gitlab_project_info; then
-      return
+    if local check_result=$(_gitlab_check_env_variables) && [[ -n $check_result ]]; then
+        echo "$check_result"; return
     fi
 
-    _open_link "$gitlab_project_web_url/-/branches"
+    _open_link "$(_gitlab_get_project_url)/-/branches"
 }
 
 function glabc() {
-    trap _cleanup_gitlab EXIT
-
-    if ! _load_gitlab_project_info; then
-      return
+    if local check_result=$(_gitlab_check_env_variables) && [[ -n $check_result ]]; then
+        echo "$check_result"; return
     fi
 
-    _open_link "$gitlab_project_web_url/-/commits"
+    _open_link "$(_gitlab_get_project_url)/-/commits"
 }
 
 function glabe() {
-    trap _cleanup_gitlab EXIT
-
-    if ! _load_gitlab_project_info; then
-      return
+    if local check_result=$(_gitlab_check_env_variables) && [[ -n $check_result ]]; then
+        echo "$check_result"; return
     fi
 
-    _open_link "$gitlab_project_web_url/-/environments"
+    _open_link "$(_gitlab_get_project_url)/-/environments"
 }
 
 function glabp() {
-    trap _cleanup_gitlab EXIT
-
-    if ! _load_gitlab_project_info; then
-      return
+    if local check_result=$(_gitlab_check_env_variables) && [[ -n $check_result ]]; then
+        echo "$check_result"; return
     fi
 
-    _open_link "$gitlab_project_web_url/-/pipelines"
+    _open_link "$(_gitlab_get_project_url)/-/pipelines"
 }
 
 function mra() {
-    trap _cleanup_gitlab EXIT
-
-    if ! _load_gitlab_project_info; then
-      return
+    if local check_result=$(_gitlab_check_env_variables) && [[ -n $check_result ]]; then
+        echo "$check_result"; return
     fi
 
-    _open_link "$gitlab_project_web_url/-/merge_requests"
+    _open_link "$(_gitlab_get_project_url)/-/merge_requests"
 }
 
 function mrc() {
-    trap _cleanup_gitlab EXIT
-
-    if ! _load_gitlab_project_info; then
-      return
+    if local check_result=$(_gitlab_check_env_variables) && [[ -n $check_result ]]; then
+        echo "$check_result"; return
     fi
 
-    if [[ "$gitlab_current_branch" != "$gitlab_default_branch" ]]
-    then
-        local mr_api_result
-        mr_api_result=$(
-          curl -s "https://$gitlab_domain/api/v4/projects/$gitlab_project_id/merge_requests?source_branch=$gitlab_current_branch&private_token=$gitlab_access_token" \
-          | sed 's/\\[nr]//g' \
-          | jq ".[].web_url" \
-          | sed 's/"//g'
-        )
+    [[ "$(_gitlab_get_current_branch)" == "$(_gitlab_get_default_branch )" ]] && return
 
-        if [ "$mr_api_result" = "" ]
-        then
-            local new_mr_link="$gitlab_project_web_url/-/merge_requests/new?merge_request%5Bsource_branch%5D=$gitlab_current_branch"
-            _open_link "$new_mr_link"
-        else
-           _open_link "$mr_api_result"
-        fi
+    local mr_api_result=$(_gitlab_get_mr_info_by_source_branch "$(_gitlab_get_current_branch)")
+
+    if [[ -z "$mr_api_result" ]]; then
+        _open_link "$(_gitlab_get_project_url)/-/merge_requests/new?merge_request%5Bsource_branch%5D=$(_gitlab_get_current_branch)"
+    else
+        _open_link "$mr_api_result"
     fi
 }
 
 function mrcp() {
-    trap _cleanup_gitlab EXIT
-
-    if ! _load_gitlab_project_info; then
-      return
+    if local check_result=$(_gitlab_check_env_variables) && [[ -n $check_result ]]; then
+        echo "$check_result"; return
     fi
 
-    if [[ "$gitlab_current_branch" != "$gitlab_default_branch" ]]
-    then
-        local mr_api_result
-        mr_api_result=$(
-          curl -s "https://$gitlab_domain/api/v4/projects/$gitlab_project_id/merge_requests?source_branch=$gitlab_current_branch&private_token=$gitlab_access_token" \
-          | sed 's/\\[nr]//g' \
-          | jq ".[].web_url" \
-          | sed 's/"//g'
-        )
+    [[ "$(_gitlab_get_current_branch)" == "$(_gitlab_get_default_branch )" ]] && return
 
-        if [ "$mr_api_result" != "" ]
-        then
-            _open_link "$mr_api_result/pipelines"
-        fi
+    local mr_api_result=$(_gitlab_get_mr_info_by_source_branch "$(_gitlab_get_current_branch)")
+
+    if [[ -z "$mr_api_result" ]]; then
+        echo "There is no opened merge request for the current branch."
+    else
+        _open_link "$mr_api_result/pipelines"
     fi
 }
 
 function mrs() {
-    trap _cleanup_gitlab EXIT
-
-    if ! _load_gitlab_project_info; then
-      return
+    if local check_result=$(_gitlab_check_env_variables) && [[ -n $check_result ]]; then
+        echo "$check_result"; return
     fi
 
-    local gitlab_current_branch_search
-    gitlab_current_branch_search=$(
-      git branch -a \
-      | grep -v "$gitlab_default_branch" \
-      | sed "s/remotes\/origin\///g" \
-      | sed "s/[[:space:]]//g" \
-      | sed "s/*//" \
-      | sort \
-      | uniq
-    )
-    gitlab_current_branch_search=$(echo "${gitlab_current_branch_search}" | fzf)
-
-    if [ "$gitlab_current_branch_search" != "" ]
-    then
-        local mr_api_result
-        mr_api_result=$(
-          curl -s "https://$gitlab_domain/api/v4/projects/$gitlab_project_id/merge_requests?source_branch=$gitlab_current_branch_search&private_token=$gitlab_access_token" \
-          | sed 's/\\[nr]//g' \
-          | jq ".[].web_url" \
-          | sed 's/"//g'
+    local gitlab_current_branch_search=$(
+        git branch -a \
+            | grep -v "$(_gitlab_get_current_branch)" \
+            | sed "s/remotes\/origin\///g" \
+            | sed "s/[[:space:]]//g" \
+            | sed "s/*//" \
+            | sort \
+            | uniq \
+            | fzf
         )
 
-        if [ "$mr_api_result" = "" ]
-        then
-            local new_mr_link="$gitlab_project_web_url/-/merge_requests/new?merge_request%5Bsource_branch%5D=$gitlab_current_branch_search"
-            _open_link "$new_mr_link"
+        [[ -z "$gitlab_current_branch_search" ]] && return
+
+        local mr_api_result=$(_gitlab_get_mr_info_by_source_branch "$gitlab_current_branch_search")
+
+        if [[ -z "$mr_api_result" ]]; then
+            _open_link "$(_gitlab_get_project_url)/-/merge_requests/new?merge_request%5Bsource_branch%5D=$gitlab_current_branch_search"
         else
             _open_link "$mr_api_result"
         fi
-    fi
 }

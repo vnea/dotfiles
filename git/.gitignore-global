@@ -1,5 +1,4 @@
 .envrc
-.gitlab-project-info.json
 .idea/
 .ignore/
 .tool-versions
