@@ -4,16 +4,11 @@
 source ~/dotfiles/aliases/utils/open.sh
 
 function _load_gitlab_project_info() {
-  if [ -z "$GITLAB_PROJECT_INFO_ROOT_PATH" ]
-  then
-      echo "You must define the variable 'GITLAB_PROJECT_INFO_ROOT_PATH' (e.g. with '.envrc')."
-      return 1
-  else
-    current_directory="$GITLAB_PROJECT_INFO_ROOT_PATH"
-  fi
-
   local gitlab_project_info_file_name=".gitlab-project-info.json"
-  local gitlab_project_info_file="${current_directory}/$gitlab_project_info_file_name"
+  local git_root_directory
+  git_root_directory=$(git rev-parse --show-toplevel)
+
+  local gitlab_project_info_file="${git_root_directory}/$gitlab_project_info_file_name"
   if [ ! -f "$gitlab_project_info_file" ]; then
       echo "You must create a file '$gitlab_project_info_file_name' in your Git repository."
       return 1
