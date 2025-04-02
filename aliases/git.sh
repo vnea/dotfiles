@@ -30,7 +30,7 @@ alias gdm="git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d; git r
 alias greset_repo="git clean -fxd"
 
 # Commit
-alias gcam="git commit --all --message"
+alias gcam="git add --all && git commit --message"
 alias gwip='git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit --no-verify --no-gpg-sign --message "--wip-- [skip ci]"'
 alias gcmsg="git commit --message"
 
