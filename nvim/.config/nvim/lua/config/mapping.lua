@@ -34,7 +34,6 @@ vim.keymap.set({ "n", "v" }, "D", '"_D')
 vim.keymap.set({ "n", "v" }, "c", '"_c')
 
 -- Delete/change copying in clipboard
-vim.keymap.set({ "n", "v" }, "<leader>x", "x")
 vim.keymap.set({ "n", "v" }, "<leader>d", "d")
 vim.keymap.set({ "n", "v" }, "<leader>D", "D")
 vim.keymap.set({ "n", "v" }, "<leader>c", "c")

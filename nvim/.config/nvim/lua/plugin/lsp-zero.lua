@@ -77,7 +77,6 @@ return {
                     vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end, opts)
                     vim.keymap.set("n", "<F2>", function() vim.diagnostic.jump({ count = 1 }) end, opts)
                     vim.keymap.set("n", "<F1>", function() vim.diagnostic.jump({ count = -1 }) end, opts)
-                    vim.keymap.set("n", "<leader><F2>", function() require("trouble").open() end, opts)
                 end,
             })
 
