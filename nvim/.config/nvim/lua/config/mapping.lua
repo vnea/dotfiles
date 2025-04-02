@@ -176,18 +176,6 @@ vim.keymap.set("n", "<leader>sd", "<cmd>!rm -f ~/.config/nvim/scretch/*<CR>")
 vim.keymap.set("n", "<leader>it", "<cmd>Telescope find_template type=insert<CR>")
 
 -- ======================
--- === Dap
--- ======================
-vim.keymap.set({ "n", "i" }, "<S-F9>", "<cmd>Telescope dap configurations<CR>")
-vim.keymap.set({ "n", "i" }, "<F9>", function() require("dap").continue() end)
-vim.keymap.set({ "n", "i" }, "<C-F2>", function() require("dap").terminate() end)
-vim.keymap.set({ "n", "i" }, "<C-F8>", function() require("dap").toggle_breakpoint() end)
-vim.keymap.set({ "n", "i" }, "<F8>", function() require("dap").step_over() end)
-vim.keymap.set({ "n", "i" }, "<F7>", function() require("dap").step_into() end)
-vim.keymap.set({ "n", "i" }, "<F6>", function() require("dap").step_out() end)
-vim.keymap.set({ "n", "i" }, "<A-(>", function() require("dapui").toggle() end)
-
--- ======================
 -- === Hop
 -- ======================
 vim.keymap.set("n", "<Leader>f", "<cmd>HopWord<CR>")
