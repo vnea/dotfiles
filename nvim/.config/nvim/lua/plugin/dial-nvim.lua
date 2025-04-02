@@ -4,9 +4,14 @@ return {
         local augend = require("dial.augend")
         require("dial.config").augends:register_group {
             default = {
-                -- Numbers
-                augend.integer.alias.decimal_int,
-                augend.semver.alias.semver,
+                -- Ansible
+                augend.constant.new { elements = { "present", "absent" } },
+
+                -- Bool
+                augend.constant.alias.bool,
+                augend.constant.new { elements = { "True", "False" } },
+                augend.constant.new { elements = { "Yes", "No" } },
+                augend.constant.new { elements = { "yes", "no" } },
 
                 -- Date
                 augend.date.alias["%H:%M"],
@@ -14,12 +19,13 @@ return {
                 augend.constant.new { elements = { "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche" } },
                 augend.constant.new { elements = { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" } },
 
-                -- Bool
-                augend.constant.alias.bool,
-                augend.constant.new { elements = { "present", "absent" } },
-                augend.constant.new { elements = { "True", "False" } },
-                augend.constant.new { elements = { "Yes", "No" } },
-                augend.constant.new { elements = { "yes", "no" } },
+                -- Kubernetes
+                augend.constant.new { elements = { "IfNotPresent", "Always", "Never" } },
+                augend.constant.new { elements = { "ReadWriteOnce", "ReadOnlyMany", "ReadWriteMany", "ReadWriteOncePod" } },
+
+                -- Numbers
+                augend.integer.alias.decimal_int,
+                augend.semver.alias.semver,
 
                 -- Operators
                 augend.constant.new { elements = { "eq", "ne" }, word = true },
@@ -33,8 +39,8 @@ return {
 
                 -- Others
                 augend.constant.new { elements = { "stable", "test" } },
-                augend.constant.new { elements = { "DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"} },
-                augend.constant.new { elements = { "debug", "info", "warning", "error", "critical"} },
+                augend.constant.new { elements = { "DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL" } },
+                augend.constant.new { elements = { "debug", "info", "warning", "error", "critical" } },
             },
         }
 
