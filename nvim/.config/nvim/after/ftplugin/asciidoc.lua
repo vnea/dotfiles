@@ -1,1 +1,1 @@
-vim.keymap.set("n", "<Leader>mP", "<Cmd>AsciiDocPreview<CR>")
+vim.keymap.set("n", "<leader>mP", "<cmd>AsciiDocPreview<cr>")

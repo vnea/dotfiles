@@ -7,7 +7,7 @@ return {
                 insert = "", -- Trick to be able to use <Tab> (auto completion from Copilot) in the prompt chat
             },
             reset = {
-                normal = "<Leader>cc",
+                normal = "<leader>cc",
                 insert = "",
             },
         },

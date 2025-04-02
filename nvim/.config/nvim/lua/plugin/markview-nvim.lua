@@ -7,6 +7,6 @@ return {
                 enable = false,
             },
         })
-        vim.keymap.set("n", "<Leader>mp", "<Cmd>Markview Toggle<CR>")
+        vim.keymap.set("n", "<leader>mp", "<cmd>Markview Toggle<cr>")
     end
 }

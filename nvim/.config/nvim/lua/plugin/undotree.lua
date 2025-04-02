@@ -24,6 +24,6 @@ return {
             vim.o.undofile = true
         end
 
-        vim.keymap.set("n", "<Leader>u", undotree.toggle, { desc = "Toggle [U]ndotree" })
+        vim.keymap.set("n", "<leader>u", undotree.toggle, { desc = "Toggle [U]ndotree" })
     end,
 }

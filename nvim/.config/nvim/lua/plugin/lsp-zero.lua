@@ -52,13 +52,13 @@ return {
                 callback = function(event)
                     local opts = { buffer = event.buf }
 
-                    vim.keymap.set("n", "<Leader>cD", function()
+                    vim.keymap.set("n", "<leader>cD", function()
                         -- Run it twice to focus the floating popup
                         vim.diagnostic.open_float()
                         vim.diagnostic.open_float()
                     end, opts)
 
-                    vim.keymap.set("n", "<Leader>cd", function()
+                    vim.keymap.set("n", "<leader>cd", function()
                         if not vim.diagnostic.config().virtual_lines then
                             vim.diagnostic.config({ virtual_lines = { current_line = true } })
                         else
@@ -72,12 +72,12 @@ return {
                     vim.keymap.set("n", "gi", function() Snacks.picker.lsp_implementations() end, opts)
                     vim.keymap.set("n", "gr", function() Snacks.picker.lsp_references() end, opts)
                     vim.keymap.set("n", "gs", function() Snacks.picker.lsp_symbols() end, opts)
-                    vim.keymap.set({ "n", "v" }, "<Leader>rv", function() vim.lsp.buf.rename() end, opts)
-                    vim.keymap.set({ "n", "x" }, "<Leader>l", function() require("conform").format() end, opts)
-                    vim.keymap.set("n", "<Leader>ca", function() vim.lsp.buf.code_action() end, opts)
+                    vim.keymap.set({ "n", "v" }, "<leader>rv", function() vim.lsp.buf.rename() end, opts)
+                    vim.keymap.set({ "n", "x" }, "<leader>l", function() require("conform").format() end, opts)
+                    vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end, opts)
                     vim.keymap.set("n", "<F2>", function() vim.diagnostic.jump({ count = 1 }) end, opts)
                     vim.keymap.set("n", "<F1>", function() vim.diagnostic.jump({ count = -1 }) end, opts)
-                    vim.keymap.set("n", "<Leader><F2>", function() require("trouble").open() end, opts)
+                    vim.keymap.set("n", "<leader><F2>", function() require("trouble").open() end, opts)
                 end,
             })
 
