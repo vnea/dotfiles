@@ -8,6 +8,7 @@ return {
         { "nvim-telescope/telescope-dap.nvim" },
         { "aaronhallaert/advanced-git-search.nvim" },
     },
+    event = "VeryLazy",
     config = function()
         local telescope = require("telescope")
 

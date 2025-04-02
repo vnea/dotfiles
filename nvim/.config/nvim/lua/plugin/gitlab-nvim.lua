@@ -7,6 +7,7 @@ return {
         "stevearc/dressing.nvim",
         "nvim-tree/nvim-web-devicons",
     },
+    event = "VeryLazy",
     tag = "v3.3.11",
     build = function() require("gitlab.server").build(true) end,
     config = function()

@@ -5,5 +5,6 @@ return {
         "sindrets/diffview.nvim",
         "ibhagwan/fzf-lua",
     },
-    config = true
+    cmd = "Neogit",
+    config = true,
 }

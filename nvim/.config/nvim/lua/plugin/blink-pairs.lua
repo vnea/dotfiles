@@ -3,6 +3,7 @@ return {
     version = '*', -- (recommended) only required with prebuilt binaries
 
     dependencies = "saghen/blink.download",
+    event = "BufEnter",
 
     --- @module 'blink.pairs'
     --- @type blink.pairs.Config

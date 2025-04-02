@@ -1,5 +1,6 @@
 return {
     "MagicDuck/grug-far.nvim",
+    event = "VeryLazy",
     config = function()
         -- Options: https://github.com/MagicDuck/grug-far.nvim/blob/main/lua/grug-far/opts.lua
         require("grug-far").setup({
@@ -27,5 +28,5 @@ return {
             },
             windowCreationCommand = "tab split",
         })
-    end
+    end,
 }

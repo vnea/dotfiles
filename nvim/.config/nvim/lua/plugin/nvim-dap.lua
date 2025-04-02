@@ -9,6 +9,7 @@ return {
         { 'mfussenegger/nvim-dap-python' },
         { "leoluz/nvim-dap-go" },
     },
+    event = "VeryLazy",
     config = function()
         require("dapui").setup()
         require("dap-python").setup("uv")

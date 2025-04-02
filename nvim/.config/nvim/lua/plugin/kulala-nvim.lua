@@ -3,6 +3,7 @@ return {
     opts = {
         global_keymaps = true,
     },
+    ft = { "http" }
 }
 
 --[[ Examples

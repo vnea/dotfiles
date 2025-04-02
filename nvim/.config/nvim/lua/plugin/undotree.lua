@@ -1,6 +1,7 @@
 return {
     "jiaoshijie/undotree",
     dependencies = "nvim-lua/plenary.nvim",
+    event = "VeryLazy",
     config = function()
         local undotree = require("undotree")
         undotree.setup({

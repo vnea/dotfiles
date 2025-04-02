@@ -7,6 +7,7 @@ return {
         "MunifTanjim/nui.nvim",
         -- {"3rd/image.nvim", opts = {}}, -- Optional image support in preview window: See `# Preview Mode` for more information
     },
+    event = "VeryLazy",
     config = function()
         vim.g.loaded_netrw = 1
         vim.g.loaded_netrwPlugin = 1

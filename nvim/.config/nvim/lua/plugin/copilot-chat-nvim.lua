@@ -1,5 +1,6 @@
 return {
     "CopilotC-Nvim/CopilotChat.nvim",
+    cmd = { "CopilotChatToggle", "CopilotChatPrompts" },
     build = "make tiktoken",
     opts = {
         mappings = {

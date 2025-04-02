@@ -11,6 +11,7 @@ return {
         "saghen/blink.cmp",
         dependencies = "rafamadriz/friendly-snippets",
         version = "v1.0.0",
+        event = "InsertEnter",
         opts = {
             appearance = { nerd_font_variant = "Nerd Font Mono" },
             completion = {
