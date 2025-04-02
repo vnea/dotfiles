@@ -103,6 +103,7 @@ return {
                     "harper_ls",
                     "lua_ls",
                     "terraformls",
+                    "vtsls",
                 },
                 handlers = {
                     -- Default handler
