@@ -106,6 +106,9 @@ vim.keymap.set("n", "<leader>n", function() vim.cmd("set relativenumber!") end)
 -- Toggle OFF/ON wrap
 vim.keymap.set("n", "<leader>w", function() vim.cmd("set wrap!") end)
 
+-- Toggle OFF/ON suggestion
+vim.keymap.set("n", "<leader>SS", function() vim.cmd("set spell!") end)
+
 -- ======================
 -- === Window
 -- ======================
