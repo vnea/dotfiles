@@ -278,20 +278,6 @@ rm -rf ~/.config/alacritty && stow alacritty
 
 :sectnums:
 
-== Flameshot
-:sectnums!:
-
-Link: https://flameshot.org/
-
-=== Installation
-
-[source,shell]
-----
-rm -rf ~/.config/flameshot && stow flameshot
-----
-
-:sectnums:
-
 == Systemd services & timers
 :sectnums!:
 
