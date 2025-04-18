@@ -118,3 +118,13 @@ function gcy() {
         echo -n "$branch" | xclip -sel clip
     fi
 }
+
+function gcyss() {
+    local branch
+    branch=$(git rev-parse --short HEAD | tr -d '\n')
+    if [[ "$(uname)" == "Darwin" ]]; then
+        echo -n "$branch" | pbcopy
+    else
+        echo -n "$branch" | xclip -sel clip
+    fi
+}
