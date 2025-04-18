@@ -6,6 +6,7 @@ return {
                 python = {
                     "isort",
                     "black",
+                    "ruff",
                     "flake8",
                 },
             },
