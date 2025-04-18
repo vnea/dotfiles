@@ -39,6 +39,7 @@ return {
                 augend.constant.new { elements = { "==", "!=" }, word = false },
 
                 -- Others
+                augend.constant.new { elements = { "primary", "secondary" }, word = false },
                 augend.constant.new { elements = { "stable", "test" } },
                 augend.constant.new { elements = { "DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL" } },
                 augend.constant.new { elements = { "debug", "info", "warning", "error", "critical" } },
