@@ -40,7 +40,7 @@ return {
                 end)
 
                 -- Actions
-                map("n", "<leader>td", gitsigns.toggle_linehl)
+                map("n", "<leader>hh", gitsigns.toggle_linehl)
                 map("n", "<leader>hp", gitsigns.preview_hunk)
 
                 map("n", "<leader>hs", gitsigns.stage_hunk)
