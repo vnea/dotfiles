@@ -64,8 +64,8 @@ alias grbc="git rebase --continue"
 alias grba="git rebase --abort"
 
 # Reset
-alias grhh="git reset --hard"
-alias grho="git reset --hard origin/\$(git rev-parse --abbrev-ref HEAD)"
+alias grhh="git add --all && git reset --hard"
+alias grho="git add --all && git reset --hard origin/\$(git rev-parse --abbrev-ref HEAD)"
 alias gundo="git reset --soft HEAD^"
 
 # Status
