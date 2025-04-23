@@ -17,6 +17,6 @@ return {
         vim.keymap.set("n", "<leader>tr", require("neotest").run.run)
         vim.keymap.set("n", "<leader>td", function() require("neotest").run.run({ strategy = "dap" }) end)
         vim.keymap.set("n", "<leader>tf", function() require("neotest").run.run(vim.fn.expand("%")) end)
-        vim.keymap.set("n", "<leader>ts", require("neotest").summary.open)
+        vim.keymap.set("n", "<leader>ts", require("neotest").summary.toggle)
     end,
 }
