@@ -87,6 +87,7 @@ fi
 source <(fzf --zsh)
 
 export FZF_DEFAULT_OPTS="
+  --multi
   --height 100%
   --color=fg:#828282,fg+:#d0d0d0,bg:#0d1116,bg+:#262626
   --color=hl:#037d29,hl+:#60D701,info:#afaf87,marker:#87ff00
