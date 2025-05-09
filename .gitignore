@@ -35,6 +35,7 @@ nvim/.config/nvim/undodir
 
 # Raycast
 raycast/scripts/jira.sh
+raycast/scripts/get-ansible-vault-secret.sh
 
 # thefuck
 thefuck/.config/thefuck/__pycache__
