@@ -45,9 +45,7 @@ alias gdcw="git diff --cached --word-diff"
 
 # Log
 alias glg="git log --graph"
-
-# Log
-alias glg="git log --graph"
+alias glc='git log --pretty=format:"%s" | fzf --reverse | pbcopy'
 
 # Pull
 alias gup="git pull --rebase --prune"
