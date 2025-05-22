@@ -19,7 +19,7 @@ alias gco-="git checkout -"
 alias gcom="git checkout master 2>/dev/null || git checkout main"
 alias gcomup="(git checkout master 2>/dev/null || git checkout main) && git pull"
 alias gcb="git checkout -b"
-alias grm="git checkout -D"
+alias grm="git branch -D"
 
 # Cherry pick
 alias gcp="git cherry-pick"
