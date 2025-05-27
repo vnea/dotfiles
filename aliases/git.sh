@@ -43,6 +43,9 @@ alias gdca="git diff --cached"
 alias gdcw="git diff --cached --word-diff"
 alias gdcw="git diff --cached --word-diff"
 
+# Fetch
+alias gf="git fetch"
+
 # Log
 alias glg="git log --graph"
 alias glc='git log --pretty=format:"%s" | fzf --reverse | pbcopy'
