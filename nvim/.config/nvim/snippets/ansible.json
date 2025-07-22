@@ -1,0 +1,10 @@
+{
+  "debug": {
+    "prefix": "debug",
+    "body": [
+      "- name: Debug",
+      "  debug:",
+      "    msg: \"{{ $1 }}\""
+    ]
+  }
+}
