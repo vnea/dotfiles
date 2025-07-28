@@ -63,6 +63,7 @@ alias grb='git rebase'
 alias grbm="git rebase master 2>/dev/null || git rebase main"
 alias grbc="git rebase --continue"
 alias grba="git rebase --abort"
+alias grbi="git rebase --interactive"
 
 # Reset
 alias grhh="git add --all && git reset --hard"
