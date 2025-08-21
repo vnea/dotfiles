@@ -23,7 +23,7 @@ git clone https://github.com/vnea/dotfiles.git ~/dotfiles
 
 :sectnums:
 
-== Bash aliases
+== Bash aliases (Linux & Mac)
 :sectnums!:
 
 === Installation
@@ -52,7 +52,7 @@ source .zshrc
 
 :sectnums:
 
-== Neovim
+== Neovim (Linux & Mac)
 :sectnums!:
 
 === Prerequisite(s)
@@ -74,7 +74,7 @@ tic -x ~/dotfiles/terminal/xterm-256color.ti
 
 :sectnums:
 
-== tmux
+== tmux (Linux & Mac)
 :sectnums!:
 
 === Prerequisite(s)
@@ -96,7 +96,7 @@ tmux
 
 :sectnums:
 
-== Git
+== Git (Linux & Mac)
 :sectnums!:
 
 === Prerequisite(s)
@@ -129,7 +129,7 @@ EOT
 
 :sectnums:
 
-== i3
+== i3  (Linux)
 :sectnums!:
 
 === Prerequisite(s)
@@ -162,7 +162,7 @@ sudo gpasswd -a $USER video
 
 :sectnums:
 
-== rofi
+== rofi  (Linux)
 :sectnums!:
 
 === Prerequisite(s)
@@ -179,7 +179,7 @@ rm -rf ~/.config/rofi/config.rasi && stow rofi
 
 :sectnums:
 
-== thefuck
+== thefuck (Linux & Mac)
 :sectnums!:
 
 === Installation
@@ -191,7 +191,7 @@ rm -rf ~/.config/thefuck && stow thefuck
 
 :sectnums:
 
-== GTK
+== GTK (Linux)
 :sectnums!:
 
 === Installation
@@ -203,7 +203,7 @@ rm -rf ~/.config/gtk-3.0 && stow gtk
 
 :sectnums:
 
-== Dunst [[dunst]]
+== Dunst (Linux) [[dunst]]
 :sectnums!:
 
 === Installation
@@ -215,7 +215,7 @@ rm -rf ~/.config/dunst && stow dunst
 
 :sectnums:
 
-== Zsh + Oh My Zsh + Powerlevel10k
+== Zsh + Oh My Zsh + Powerlevel10k (Linux & Mac)
 :sectnums!:
 
 === Prerequisite(s)
@@ -236,7 +236,7 @@ rm -f ~/.zshrc && stow zsh
 
 :sectnums:
 
-== Betterlockscreen [[betterlockscreen]]
+== Betterlockscreen  (Linux) [[betterlockscreen]]
 :sectnums!:
 
 Link: https://github.com/betterlockscreen/betterlockscreen
@@ -261,7 +261,7 @@ systemctl enable betterlockscreen@$USER
 
 :sectnums:
 
-== Alacritty
+== Alacritty (Linux & Mac)
 :sectnums!:
 
 Link: https://github.com/alacritty/alacritty
@@ -278,7 +278,7 @@ rm -rf ~/.config/alacritty && stow alacritty
 
 :sectnums:
 
-== Flameshot
+== Flameshot (Linux & Mac)
 :sectnums!:
 
 Link: https://flameshot.org/
@@ -292,7 +292,7 @@ rm -rf ~/.config/flameshot/flameshot.ini && cp ~/dotfiles/flameshot/.config/flam
 
 :sectnums:
 
-== Systemd services & timers
+== Systemd services & timers (Linux)
 :sectnums!:
 
 === Notify low battery
@@ -312,7 +312,7 @@ systemctl --user start notify-low-battery.timer
 
 :sectnums:
 
-== mise-en-place
+== mise-en-place (Linux & Mac)
 :sectnums!:
 
 Link: https://mise.jdx.dev/
@@ -326,7 +326,7 @@ rm -rf ~/.config/mise && stow mise
 
 :sectnums:
 
-== Lazydocker
+== Lazydocker (Linux & Mac)
 :sectnums!:
 
 Link: https://github.com/jesseduffield/lazydocker
@@ -344,7 +344,7 @@ rm ~/Library/Application\ Support/lazydocker/config.yml && ln -s ~/dotfiles/lazy
 
 :sectnums:
 
-== Lazygit
+== Lazygit (Linux & Mac)
 :sectnums!:
 
 Link: https://github.com/jesseduffield/lazygit
@@ -362,7 +362,7 @@ rm ~/Library/Application\ Support/lazygit/config.yml && ln -s ~/dotfiles/lazygit
 
 :sectnums:
 
-== Aerospace (Mac only)
+== Aerospace (Mac)
 :sectnums!:
 
 Link: https://github.com/nikitabobko/AeroSpace
@@ -376,7 +376,7 @@ rm -rf ~/.config/aerospace && stow aerospace
 
 :sectnums:
 
-== Karabiner (Mac only)
+== Karabiner (Mac)
 :sectnums!:
 
 Link: https://karabiner-elements.pqrs.org/
@@ -390,7 +390,7 @@ rm -rf ~/.config/karabiner && stow karabiner
 
 :sectnums:
 
-== k9s
+== k9s (Linux & Mac)
 :sectnums!:
 
 Link:
@@ -411,7 +411,7 @@ rm -rf ~/Library/Application\ Support/k9s && ln -s ~/dotfiles/k9s/.config/k9s ~/
 
 :sectnums:
 
-== Raycast (Mac only)
+== Raycast (Mac)
 :sectnums!:
 
 Link: https://raycast.com/
