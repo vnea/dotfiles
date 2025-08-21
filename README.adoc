@@ -290,6 +290,8 @@ Link: https://flameshot.org/
 rm -rf ~/.config/flameshot/flameshot.ini && cp ~/dotfiles/flameshot/.config/flameshot/flameshot.ini ~/.config/flameshot
 ----
 
+:sectnums:
+
 == Systemd services & timers
 :sectnums!:
 
@@ -311,7 +313,6 @@ systemctl --user start notify-low-battery.timer
 :sectnums:
 
 == mise-en-place
-
 :sectnums!:
 
 Link: https://mise.jdx.dev/
@@ -322,6 +323,26 @@ Link: https://mise.jdx.dev/
 ----
 rm -rf ~/.config/mise && stow mise
 ----
+
+:sectnums:
+
+== Lazydocker
+:sectnums!:
+
+Link: https://github.com/jesseduffield/lazydocker
+
+=== Installation
+
+[source,shell]
+----
+# Linux
+rm -rf ~/.config/lazydocker && stow lazydocker
+
+# Mac OS
+rm ~/Library/Application\ Support/lazydocker/config.yml && ln -s ~/dotfiles/lazydocker/.config/lazydocker/config.yml ~/Library/Application\ Support/lazydocker/config.yml
+----
+
+:sectnums:
 
 == Lazygit
 :sectnums!:
@@ -341,7 +362,7 @@ rm ~/Library/Application\ Support/lazygit/config.yml && ln -s ~/dotfiles/lazygit
 
 :sectnums:
 
-== Aerospace
+== Aerospace (Mac only)
 :sectnums!:
 
 Link: https://github.com/nikitabobko/AeroSpace
@@ -355,7 +376,7 @@ rm -rf ~/.config/aerospace && stow aerospace
 
 :sectnums:
 
-== Karabiner
+== Karabiner (Mac only)
 :sectnums!:
 
 Link: https://karabiner-elements.pqrs.org/
@@ -366,6 +387,8 @@ Link: https://karabiner-elements.pqrs.org/
 ----
 rm -rf ~/.config/karabiner && stow karabiner
 ----
+
+:sectnums:
 
 == k9s
 :sectnums!:
