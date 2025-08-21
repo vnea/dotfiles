@@ -5,7 +5,7 @@
 # shellcheck source=/dev/null
 source ~/dotfiles/aliases/utils/open.sh
 
-alias glabpv="/opt/homebrew/bin/glab ci view"
+alias gci="/opt/homebrew/bin/glab ci view"
 
 #########################
 # Private functions
