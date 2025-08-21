@@ -48,7 +48,7 @@ ZSH_AUTOSUGGEST_USE_ASYNC=1
 ##############################
 export PROMPT="${PROMPT}"$'\n'""
 export EDITOR=nvim
-export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH:$HOME/bin:$HOME/.local/bin:${KREW_ROOT:-$HOME/.krew}/bin"
+export PATH="$PATH:$HOME/bin:$HOME/.local/bin:${KREW_ROOT:-$HOME/.krew}/bin"
 
 ##############################
 # History
@@ -73,15 +73,6 @@ for f in $(find ~/dotfiles/aliases -maxdepth 1 -name "*.sh"); do source $f; done
 export DISABLE_AUTO_TITLE="true"
 
 ##############################
-# asdf
-##############################
-if [[ "$(uname -s)" == "Darwin" ]]; then
-  source "$(brew --prefix asdf)/etc/bash_completion.d/asdf"
-else
-  source /opt/asdf-vm/asdf.sh
-fi
-
-##############################
 # FZF
 ##############################
 source <(fzf --zsh)
@@ -104,11 +95,9 @@ export FZF_CTRL_T_OPTS="--preview 'bat --style=numbers --color=always --line-ran
 eval $(thefuck --alias)
 
 ##############################
-# direnv
+# Mise
 ##############################
-# To disable direnv logs
-export DIRENV_LOG_FORMAT=
-eval "$(direnv hook zsh)"
+eval "$($(brew --prefix)/bin/mise activate zsh)"
 
 ##############################
 # Virtualenvwrapper (workon)
