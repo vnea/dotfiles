@@ -14,7 +14,7 @@ vim.opt.cursorline = true
 vim.opt.scrolloff = 8
 vim.opt.termguicolors = true
 vim.opt.spelllang = "fr,en"
-vim.opt.spell = true
+vim.opt.spell = false
 vim.o.switchbuf = "useopen"
 vim.o.winborder = "rounded"
 
