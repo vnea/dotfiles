@@ -24,6 +24,10 @@ return {
                 augend.constant.new { elements = { "IfNotPresent", "Always", "Never" } },
                 augend.constant.new { elements = { "ReadWriteOnce", "ReadOnlyMany", "ReadWriteMany", "ReadWriteOncePod" } },
 
+                -- Network Security Rule
+                augend.constant.new { elements = { "Inbound", "Outbound"} },
+                augend.constant.new { elements = { "Allow", "Deny"} },
+
                 -- Numbers
                 augend.integer.alias.decimal_int,
                 augend.semver.alias.semver,
