@@ -11,6 +11,7 @@
     editor = nvim
     pager = delta --diff-so-fancy
     excludesfile = ~/dotfiles/git/.gitignore-global
+    attributesfile = ~/dotfiles/git/.gitattributes-global
 
 [delta]
     line-numbers = true
@@ -68,6 +69,10 @@
 [merge "ansible-vault"]
     name = ansible-vault merge driver
     driver = /usr/local/bin/ansible-vault-merge -- %O %A %B %P
+
+[merge "mergiraf"]
+    name = mergiraf
+    driver = mergiraf merge --git %O %A %B -s %S -x %X -y %Y -p %P -l %L
 
 [push]
     default = simple
