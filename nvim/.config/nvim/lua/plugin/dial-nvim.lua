@@ -22,6 +22,7 @@ return {
 
                 -- Kubernetes
                 augend.constant.new { elements = { "IfNotPresent", "Always", "Never" } },
+                augend.constant.new { elements = { "Exact", "ImplementationSpecific", "Prefix" } },
                 augend.constant.new { elements = { "ReadWriteOnce", "ReadOnlyMany", "ReadWriteMany", "ReadWriteOncePod" } },
 
                 -- Network Security Rule
