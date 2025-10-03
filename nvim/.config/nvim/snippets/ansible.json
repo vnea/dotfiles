@@ -1,10 +1,32 @@
 {
-  "debug": {
+  "create a debug task": {
     "prefix": "debug",
     "body": [
       "- name: Debug",
       "  debug:",
-      "    msg: \"{{ $1 }}\""
+      "    msg: \"$1\"",
+      "  tags:",
+      "    - toto"
+    ]
+  },
+  "create a fail task to stop": {
+    "prefix": "fail",
+    "body": [
+      "- name: Fail",
+      "  fail:",
+      "    msg: \"${1:stop}\"",
+      "  tags:",
+      "    - toto"
+    ]
+  },
+  "create a debug template task": {
+    "prefix": "debugtmp",
+    "body": [
+      "- name: Debug template",
+      "  debug:",
+      "    msg: \"{{ lookup('template', '${1:values.yml.j2'}) }}\"",
+      "  tags:",
+      "    - toto"
     ]
   }
 }
