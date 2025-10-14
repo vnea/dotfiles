@@ -8,6 +8,9 @@ return {
                 -- Ansible
                 augend.constant.new { elements = { "present", "absent" } },
 
+                -- Azure
+                augend.constant.new { elements = { "Contributor", "Reader" } },
+
                 -- Bool
                 augend.constant.alias.bool,
                 augend.constant.new { elements = { "True", "False" } },
