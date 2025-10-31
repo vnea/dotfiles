@@ -47,7 +47,7 @@ alias gdcw="git diff --cached --word-diff"
 alias gf="git fetch"
 
 # Log
-alias glg="git log --graph"
+alias glg="git log --graph --date=format-local:'%a %d/%m/%Y' --pretty=format:'%C(red)%h%Creset -%C(auto)%d%Creset %C(white)%s%Creset %C(green)(%ad, %cr)%Creset %C(bold blue)<%an>%Creset'"
 alias glc='git log --pretty=format:"%s" | fzf --reverse | pbcopy'
 
 # Pull
