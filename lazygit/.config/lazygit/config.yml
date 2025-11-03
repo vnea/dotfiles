@@ -1,10 +1,8 @@
 git:
-  paging:
-    colorArg: always
-    pager: delta --diff-so-fancy --paging=never
-
+  pagers:
+    - colorArg: always
+      pager: delta --diff-so-fancy --paging=never
 gui:
   useHunkModeInStagingView: false
-
 quitOnTopLevelReturn: true
 promptToReturnFromSubprocess: false
