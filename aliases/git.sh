@@ -14,6 +14,7 @@ alias gaa="git add --all"
 
 # Branch
 alias gcob="git branch -a | sed 's/remotes\/origin\///g; s/[[:space:]]//g; s/\*//g' | sort | uniq | fzf | xargs --no-run-if-empty git checkout"
+alias gbd="git branch -a | sed 's/remotes\/origin\///g; s/[[:space:]]//g; s/\*//g' | sort | uniq | fzf | xargs --no-run-if-empty git branch -D"
 alias gco="git checkout"
 alias gco-="git checkout -"
 alias gcom="git checkout master 2>/dev/null || git checkout main"
