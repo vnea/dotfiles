@@ -68,7 +68,7 @@ outer.right =      0
 
 # Workspaces
 alt-comma = 'exec-and-forget pgrep -l "Brave Browser" && aerospace workspace 1 || open -a "/Applications/Brave Browser.app"'
-alt-period = 'exec-and-forget pgrep -l alacritty && aerospace workspace 2 || open -a /Applications/Alacritty.app'
+alt-period = 'exec-and-forget pgrep -l kitty && aerospace workspace 2 || open -a /Applications/kitty.app'
 alt-slash = 'exec-and-forget pgrep -l idea && aerospace workspace 3 || open -a "/Users/victornea/Applications/IntelliJ IDEA Community Edition.app/Contents/MacOS/idea"'
 alt-k = 'exec-and-forget pgrep -l Slack && aerospace workspace 4 || open -a /Applications/Slack.app'
 alt-l = 'exec-and-forget open -R ~/Desktop'
@@ -134,7 +134,7 @@ if.app-id = 'com.brave.Browser'
 run = 'move-node-to-workspace 1'
 
 [[on-window-detected]]
-if.app-id = 'org.alacritty'
+if.app-id = 'net.kovidgoyal.kitty'
 run = 'move-node-to-workspace 2'
 
 [[on-window-detected]]

@@ -278,6 +278,22 @@ rm -rf ~/.config/alacritty && stow alacritty
 
 :sectnums:
 
+== Kitty (Linux & Mac)
+:sectnums!:
+
+Link: https://github.com/kovidgoyal/kitty
+
+=== Installation
+
+[source,shell]
+----
+rm -rf ~/.config/kitty && stow kitty
+
+# Restart kitty
+----
+
+:sectnums:
+
 == Flameshot (Linux & Mac)
 :sectnums!:
 
