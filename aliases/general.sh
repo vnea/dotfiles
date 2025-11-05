@@ -13,6 +13,7 @@ alias df="duf"
 alias du="dust"
 alias z="fg"
 alias cd-="cd -"
+alias cat="mcat"
 
 # For copying commands from the web, source: https://www.30secondsofcode.org/articles/s/bash-alias-dollar-sign
 alias '$'=""
@@ -31,9 +32,9 @@ function goto() {
   projects=$(
     fd . $workspace_folder --type directory --max-depth 1 |
     sed -E 's/(.+workspace\/)(.+)\//\2/g' |
-    cat - <(echo $workspace_folder) |
-    cat - <(echo $dotfiles_folder) |
-    cat - <(echo $notes_folder) |
+    \cat - <(echo $workspace_folder) |
+    \cat - <(echo $dotfiles_folder) |
+    \cat - <(echo $notes_folder) |
     sort
   )
 
