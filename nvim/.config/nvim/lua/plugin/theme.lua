@@ -38,10 +38,10 @@ return {
                 native_lsp = {
                     enabled = true,
                     underlines = {
-                        errors = { "undercurl" },
-                        hints = { "undercurl" },
-                        warnings = { "undercurl" },
-                        information = { "undercurl" },
+                        errors = {},
+                        hints = {},
+                        warnings = {},
+                        information = {},
                     },
                 },
             },
