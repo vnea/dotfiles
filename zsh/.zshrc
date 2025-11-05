@@ -3,6 +3,10 @@ DISABLE_AUTO_UPDATE="true"
 DISABLE_MAGIC_FUNCTIONS="true"
 DISABLE_COMPFIX="true"
 
+export LANG=en_US.UTF-8
+export LC_CTYPE=en_US.UTF-8
+export TERM=xterm-256color
+
 ##############################
 # p10k
 ##############################
