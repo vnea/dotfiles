@@ -26,6 +26,9 @@ return {
                     },
                 },
             },
+            folding = {
+                enabled = false,
+            },
             windowCreationCommand = "tab split",
         })
     end,
