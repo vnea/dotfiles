@@ -69,9 +69,19 @@ return {
 
                     vim.keymap.set("n", "<leader>cd", function()
                         if not vim.diagnostic.config().virtual_lines then
-                            vim.diagnostic.config({ virtual_lines = { current_line = true } })
+                            vim.diagnostic.config({
+                                virtual_lines = {
+                                    current_line = true,
+                                },
+                                underline = {
+                                    current_line = true,
+                                },
+                            })
                         else
-                            vim.diagnostic.config({ virtual_lines = false })
+                            vim.diagnostic.config({
+                                virtual_lines = false,
+                                underline = false,
+                            })
                         end
                     end, opts)
 
@@ -100,6 +110,7 @@ return {
                 },
                 virtual_lines = false,
                 virtual_text = false,
+                underline = false,
             })
 
             require("mason-lspconfig").setup({
