@@ -5,7 +5,6 @@ return {
         require("lualine").setup({
             options = {
                 disabled_filetypes = {
-                    "NeogitStatus",
                     "NvimTree",
                 },
                 globalstatus = true,

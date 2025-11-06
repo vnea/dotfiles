@@ -185,7 +185,6 @@ vim.keymap.set("n", "<leader>f", "<cmd>HopWord<cr>")
 -- ======================
 -- === Git
 -- ======================
-vim.keymap.set("n", "<C-k>", "<cmd>Neogit<cr>")
 vim.keymap.set("n", "<leader>al", "<cmd>diffget //2<cr>")
 vim.keymap.set("n", "<leader>ar", "<cmd>diffget //3<cr>")
 vim.keymap.set("n", "<F7>", "]c")
