@@ -79,6 +79,7 @@ export DISABLE_AUTO_TITLE="true"
 # Bindings
 ##############################
 bindkey "^O" edit-command-line
+bindkey -s "^F" "goto\n"
 
 ##############################
 # FZF
