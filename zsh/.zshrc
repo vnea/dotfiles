@@ -76,6 +76,11 @@ for f in $(find ~/dotfiles/aliases -maxdepth 1 -name "*.sh"); do source $f; done
 export DISABLE_AUTO_TITLE="true"
 
 ##############################
+# Bindings
+##############################
+bindkey "^O" edit-command-line
+
+##############################
 # FZF
 ##############################
 source <(fzf --zsh)
