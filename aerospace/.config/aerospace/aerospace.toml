@@ -105,6 +105,7 @@ esc = 'mode main'
 r = ['reload-config', 'mode main']
 t = ['layout tiles horizontal', 'mode main']
 q = ['layout accordion horizontal', 'mode main']
+period = 'exec-and-forget kitten quick-access-terminal'
 
 # Focus
 left = ['focus left', 'mode main']
