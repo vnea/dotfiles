@@ -28,6 +28,7 @@ function goto() {
   workspace_folder=~/workspace
   dotfiles_folder=~/dotfiles
   notes_folder=~/notes
+  downloads_folder=~/Downloads
 
   projects=$(
     fd . $workspace_folder --type directory --max-depth 1 |
@@ -35,6 +36,7 @@ function goto() {
     \cat - <(echo $workspace_folder) |
     \cat - <(echo $dotfiles_folder) |
     \cat - <(echo $notes_folder) |
+    \cat - <(echo $downloads_folder) |
     sort
   )
 
@@ -52,6 +54,9 @@ function goto() {
           ;;
       "$notes_folder")
           cd "$notes_folder"
+          ;;
+      "$downloads_folder")
+          cd "$downloads_folder"
           ;;
       *)
           cd "$workspace_folder/$selected_project"
