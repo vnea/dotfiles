@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 alias kc="kubectx"
-alias ks="k9s"
+alias ks='k9s -n "$(kubectl config view --minify --output 'jsonpath={..namespace}')"'
 
 alias k=kubectl
 alias kg="kubectl get"
