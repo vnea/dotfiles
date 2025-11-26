@@ -99,6 +99,11 @@ export FZF_CTRL_T_COMMAND="fd --hidden --exclude={.git/,node_modules/,.venv/}"
 export FZF_CTRL_T_OPTS="--preview 'bat --style=numbers --color=always --line-range :100 {}'"
 
 ##############################
+# Helm
+##############################
+source <(helm completion zsh)
+
+##############################
 # The Fuck
 ##############################
 eval $(thefuck --alias)
