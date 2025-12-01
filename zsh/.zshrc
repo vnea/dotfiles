@@ -109,6 +109,12 @@ eval $(thefuck --alias)
 eval "$($(brew --prefix)/bin/mise activate zsh)"
 
 ##############################
+# NPM & Yarn
+##############################
+export YARN_IGNORE_SCRIPTS=true
+export NPM_CONFIG_IGNORE_SCRIPTS=true
+
+##############################
 # Virtualenvwrapper (workon)
 ##############################
 # export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
