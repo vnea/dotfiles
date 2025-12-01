@@ -12,12 +12,13 @@ return {
         -- Add or skip cursor above/below the main cursor.
         set({ "n", "x" }, "<C-up>", function() mc.lineAddCursor(-1) end)
         set({ "n", "x" }, "<C-down>", function() mc.lineAddCursor(1) end)
-        set({ "n", "x" }, "<leader><up>", function() mc.lineSkipCursor(-1) end)
-        set({ "n", "x" }, "<leader><down>", function() mc.lineSkipCursor(1) end)
+        -- set({ "n", "x" }, "<leader><up>", function() mc.lineSkipCursor(-1) end)
+        -- set({ "n", "x" }, "<leader><down>", function() mc.lineSkipCursor(1) end)
 
         -- Add or skip adding a new cursor by matching word/selection
-        set({ "n", "x" }, "☁" --[[ <Cmd-j> ]], function() mc.matchAddCursor(1) end)
-        -- set({ "n", "x" }, "<leader>s", function() mc.matchSkipCursor(1) end)
+        set({ "n", "x" }, "☁" --[[ <Cmd-j> ]], function() mc.matchAddCursor(1) end) -- Does not work on Kitty
+        set({ "n", "x" }, "<leader>j", function() mc.matchAddCursor(1) end)
+        set({ "n", "x" }, "<leader>k", function() mc.matchSkipCursor(1) end)
         -- set({ "n", "x" }, "<leader>N", function() mc.matchAddCursor(-1) end)
         -- set({ "n", "x" }, "<leader>S", function() mc.matchSkipCursor(-1) end)
 
@@ -35,7 +36,8 @@ return {
         -- set("n", "mW", mc.operator)
 
         -- Add all matches in the document
-        set({ "n", "x" }, "☂" --[[ <Cmd-S-j> ]], mc.matchAllAddCursors)
+        set({ "n", "x" }, "☂" --[[ <Cmd-S-j> ]], mc.matchAllAddCursors) -- Does not work on Kitty
+        set({ "n", "x" }, "<leader>J", mc.matchAllAddCursors)
 
         -- You can also add cursors with any motion you prefer:
         -- set("n", "<right>", function()
