@@ -26,5 +26,13 @@ return {
         end
 
         vim.keymap.set("n", "<leader>u", undotree.toggle, { desc = "Toggle [U]ndotree" })
+
+        vim.keymap.set("n", "<leader>cu", function()
+            local confirm = vim.fn.confirm("Clear all undo history?", "&Yes\n&No", 2)
+            if confirm == 1 then
+                vim.cmd("!rm -rf ~/dotfiles/nvim/.config/nvim/undodir/*")
+                print("Undo history cleared")
+            end
+        end, { desc = "Clear undo directory" })
     end,
 }
