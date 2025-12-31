@@ -3,3 +3,5 @@
 .ignore/
 .tool-versions
 mise.toml
+
+.terraform-*/
