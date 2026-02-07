@@ -89,8 +89,8 @@ function kns() {
   fi
 }
 
-# Source: https://github.com/ahmetb/kubectx/issues/313
-function kns-update-cache() {
+# kns-update-cachen, source: https://github.com/ahmetb/kubectx/issues/313
+function knu() {
   mkdir -p "$HOME/.local/share/kubectx-cache"
   kubectl get ns -o json | jq -r '.items[].metadata.name' > "$HOME/.local/share/kubectx-cache/$(kubectx -c)"
 }
