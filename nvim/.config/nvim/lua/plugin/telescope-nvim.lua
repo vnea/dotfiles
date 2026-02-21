@@ -6,7 +6,6 @@ return {
         { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
         { "nvim-telescope/telescope-ui-select.nvim" },
         { "nvim-telescope/telescope-dap.nvim" },
-        { "aaronhallaert/advanced-git-search.nvim" },
     },
     event = "VeryLazy",
     config = function()
@@ -36,8 +35,6 @@ return {
         telescope.load_extension("fzf")
         telescope.load_extension("ui-select")
         telescope.load_extension("dap")
-        telescope.load_extension("advanced_git_search")
-        telescope.load_extension("find_template")
         telescope.load_extension("textcase")
     end,
 }

@@ -205,8 +205,6 @@ vim.keymap.set("n", "<leader>al", "<cmd>diffget //2<cr>")
 vim.keymap.set("n", "<leader>ar", "<cmd>diffget //3<cr>")
 vim.keymap.set("n", "<F7>", "]c")
 vim.keymap.set("n", "<S-F7>", "[c")
-vim.keymap.set("n", "<leader>hf", "<cmd>AdvancedGitSearch diff_commit_file<cr>")
-vim.keymap.set("n", "<leader>hb", "<cmd>AdvancedGitSearch diff_branch_file<cr>")
 vim.keymap.set("n", "<leader>gd", "<cmd>CodeDiff<cr>")
 vim.keymap.set("n", "<leader>gb", "<cmd>BlameToggle<cr>")
 
