@@ -34,6 +34,7 @@ alias greset_repo="git clean -fxd"
 alias gc="git clone"
 
 # Commit
+alias gca="git commit --amend"
 alias gcam="git add --all && git commit --message"
 alias gwip='git add -A; git rm $(git ls-files --deleted) 2> /dev/null; git commit --no-verify --no-gpg-sign --message "--wip-- [skip ci]"'
 alias gcmsg="git commit --message"
