@@ -10,7 +10,7 @@ return {
     {
         "saghen/blink.cmp",
         dependencies = "rafamadriz/friendly-snippets",
-        version = "v1.1.1",
+        version = "v1.9.1",
         opts = {
             appearance = { nerd_font_variant = "Nerd Font Mono" },
             completion = {
