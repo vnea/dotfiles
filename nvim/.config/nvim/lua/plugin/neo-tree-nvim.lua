@@ -41,13 +41,43 @@ return {
             end)
         end
 
+        -- Inspired from: https://github.com/nvim-neo-tree/neo-tree.nvim/wiki/Recipes#diff-files
+        local diff_two_files = function(state, toto)
+            local DIFF_ACTION = "diff"
+
+            local current_node = state.tree:get_node()
+
+            if first_selected_node and current_node.id ~= first_selected_node.id then
+                vim.cmd("CodeDiff file " .. first_selected_node.id .. " " .. current_node.id)
+
+                first_selected_node = nil
+                state.clipboard = {}
+
+                return
+            end
+
+            local current_node_clipboard = state.clipboard[current_node.id]
+            local current_node_is_marked = current_node_clipboard and current_node_clipboard.action == DIFF_ACTION
+
+            if current_node_is_marked then
+                state.clipboard[current_node.id] = nil
+                first_selected_node = nil
+            else
+                state.clipboard[current_node.id] = { action = DIFF_ACTION, node = current_node }
+                first_selected_node = state.clipboard[current_node.id].node
+            end
+
+            require("neo-tree.ui.renderer").redraw(state)
+        end
+
         require("neo-tree").setup({
             commands = {
                 -- Source: https://github.com/MagicDuck/grug-far.nvim?tab=readme-ov-file#add-neo-tree-integration-to-open-search-limited-to-focused-directory-or-file
                 grug_far_replace = function(state)
                     local node = state.tree:get_node()
                     local prefills = {
-                        paths = node.type == "directory" and vim.fn.fnameescape(vim.fn.fnamemodify(node:get_id(), ":p"))
+                        paths = node.type == "directory" and
+                            vim.fn.fnameescape(vim.fn.fnamemodify(node:get_id(), ":p"))
                             or vim.fn.fnameescape(vim.fn.fnamemodify(node:get_id(), ":h")),
                     }
 
@@ -73,6 +103,7 @@ return {
                     ["<C-v>"] = "open_vsplit",
                     ["y"] = copy_path,
                     ["F"] = "grug_far_replace",
+                    ["D"] = diff_two_files,
                 },
             },
         })
