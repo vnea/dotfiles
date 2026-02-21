@@ -70,7 +70,23 @@ vim.keymap.set("n", "<leader>ss", function() Snacks.picker.spelling() end)
 vim.keymap.set("n", "tc", "<cmd>tabc<cr>", { desc = "[T]ab [C]lose" })
 vim.keymap.set("n", "tn", "<cmd>tabnew<cr>", { desc = "[T]ab [N]ew" })
 
-vim.keymap.set("n", "<leader>dt", function() vim.api.nvim_command(vim.wo.diff and "windo diffoff" or "windo diffthis") end, { desc = "Toggle [D]iff [T]his" })
+vim.keymap.set(
+    "n",
+    "<leader>dt",
+    function()
+        local windows = vim.api.nvim_tabpage_list_wins(0)
+
+        if #windows ~= 2 then
+            return
+        end
+
+        local file1_path = vim.api.nvim_buf_get_name(vim.api.nvim_win_get_buf(windows[1]))
+        local file2_path = vim.api.nvim_buf_get_name(vim.api.nvim_win_get_buf(windows[2]))
+
+        vim.cmd("CodeDiff file " .. file1_path .. " " .. file2_path)
+    end,
+    { desc = "Toggle [D]iff [T]his" }
+)
 
 -- Compare with clipboard
 vim.keymap.set("n", "<leader>C", function()
