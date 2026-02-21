@@ -86,6 +86,6 @@ return {
         { "<leader>gs", function() Snacks.picker.git_status() end, desc = "Git Status" },
 
         -- Search
-        { "<C-h>", function() Snacks.picker.help() end, desc = "Help Pages" },
+        { "<leader>H", function() Snacks.picker.help() end, desc = "Help Pages" },
     },
 }
