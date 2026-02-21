@@ -6,7 +6,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Disable build-in mappings
-vim.api.nvim_del_keymap("n", "<C-W>d") -- Show diagnostics under the cursor
+vim.api.nvim_del_keymap("n", "<C-W>d")     -- Show diagnostics under the cursor
 vim.api.nvim_del_keymap("n", "<C-W><C-D>") -- Show diagnostics under the cursor
 
 -- Escape
@@ -214,3 +214,13 @@ vim.keymap.set("n", "<leader>gb", "<cmd>BlameToggle<cr>")
 vim.keymap.set("n", "<leader>cp", "<cmd>CopilotChatToggle<cr>")
 vim.keymap.set("n", "<leader>cP", "<cmd>CopilotChatPrompts<cr>")
 vim.keymap.set("v", "<leader>cP", ":CopilotChatPrompts<cr>")
+
+-- ======================
+-- === Markdown
+-- ======================
+vim.keymap.set("n", "<leader>tt", function()
+    local line = vim.api.nvim_get_current_line()
+    local replacements = { ["[ ]"] = "[x]", ["[x]"] = "[ ]" }
+    line = line:gsub("%[.%]", replacements)
+    vim.api.nvim_set_current_line(line)
+end, { desc = "Toggle Markdown checkbox" })

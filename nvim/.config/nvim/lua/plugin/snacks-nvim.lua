@@ -55,27 +55,31 @@ return {
         {
             "<C-n>",
             function()
-                Snacks.picker.files({
-                    finder = "files",
-                    format = "file",
-                    show_empty = true,
-                    hidden = true,
-                    ignored = true,
-                    follow = false,
-                    supports_live = true,
-                    exclude = {
-                        ".git/",
-                        ".idea/",
-                        ".vscode/",
-                        "node_modules/",
-                        ".venv",
-                        ".terraform",
-                    },
-                    layout = {
-                        ---@diagnostic disable-next-line: assign-type-mismatch
-                        preview = false,
-                    },
-                })
+                if string.find(vim.fn.getcwd(), "Obsidian Vault") ~= nil then
+                    vim.cmd("ObsidianQuickSwitch")
+                else
+                    Snacks.picker.files({
+                        finder = "files",
+                        format = "file",
+                        show_empty = true,
+                        hidden = true,
+                        ignored = true,
+                        follow = false,
+                        supports_live = true,
+                        exclude = {
+                            ".git/",
+                            ".idea/",
+                            ".vscode/",
+                            "node_modules/",
+                            ".venv",
+                            ".terraform",
+                        },
+                        layout = {
+                            ---@diagnostic disable-next-line: assign-type-mismatch
+                            preview = false,
+                        },
+                    })
+                end
             end,
             desc = "File Picker",
         },

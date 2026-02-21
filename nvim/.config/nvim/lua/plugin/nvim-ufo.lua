@@ -28,6 +28,12 @@ return {
 
         ufo.setup({
             open_fold_hl_timeout = 0,
+            provider_selector = function(bufnr, filetype, buftype)
+                if filetype == "markdown" then
+                    return { "treesitter", "indent" }
+                end
+                return { "lsp", "indent" }
+            end
         })
     end,
 }
