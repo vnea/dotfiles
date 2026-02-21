@@ -7,6 +7,10 @@ return {
         bigfile = { enabled = true },
         dashboard = { enabled = true },
         -- explorer = { enabled = true },
+        image = {
+            enabled = true,
+            force = false,
+        },
         indent = { enabled = false },
         input = { enabled = true },
         -- lazygit = { enabled = true },
