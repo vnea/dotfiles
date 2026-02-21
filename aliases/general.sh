@@ -26,42 +26,31 @@ function def() {
 # shellcheck disable=SC2164
 function goto() {
   workspace_folder=~/workspace
-  dotfiles_folder=~/dotfiles
-  notes_folder=~/notes
-  downloads_folder=~/Downloads
 
-  projects=$(
+  custom_folders=(
+    "$HOME/Documents/Obsidian Vault"
+    "$HOME/dotfiles"
+    "$HOME/Downloads"
+  )
+
+  folder_bookmarks=$(
     fd . $workspace_folder --type directory --max-depth 1 |
     sed -E 's/(.+workspace\/)(.+)\//\2/g' |
-    \cat - <(echo $workspace_folder) |
-    \cat - <(echo $dotfiles_folder) |
-    \cat - <(echo $notes_folder) |
-    \cat - <(echo $downloads_folder) |
+    \cat - <(echo "$workspace_folder") |
+    \cat - <(printf '%s\n' "${custom_folders[@]}") |
     sort
   )
 
-  selected_project=$(echo "$projects" | fzf)
-  if [ -z "$selected_project" ]; then
+  selected_folder_bookmark=$(echo "$folder_bookmarks" | fzf)
+  if [ -z "$selected_folder_bookmark" ]; then
       return
   fi
 
-  case "$selected_project" in
-      "$workspace_folder")
-          cd "$workspace_folder"
-          ;;
-      "$dotfiles_folder")
-          cd "$dotfiles_folder"
-          ;;
-      "$notes_folder")
-          cd "$notes_folder"
-          ;;
-      "$downloads_folder")
-          cd "$downloads_folder"
-          ;;
-      *)
-          cd "$workspace_folder/$selected_project"
-          ;;
-  esac
+  if [[ "$selected_folder_bookmark" == /* ]]; then
+    cd "$selected_folder_bookmark"
+  else
+    cd "$workspace_folder/$selected_folder_bookmark"
+  fi
 
   tmux rename-window "$(basename "$(pwd)")"
 }
