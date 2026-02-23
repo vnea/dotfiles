@@ -74,7 +74,7 @@ alt-k = 'exec-and-forget pgrep -l Slack && aerospace workspace 4 || open -a /App
 alt-l = 'exec-and-forget open -R ~/Desktop'
 alt-semicolon = "exec-and-forget pgrep -l Obsidian && aerospace workspace 6 || open -a /Applications/Obsidian.app"
 alt-i = 'exec-and-forget pgrep -l com.microsoft.teams2 && aerospace workspace 7 || open -a "/Applications/Microsoft Teams.app"'
-alt-o = 'exec-and-forget pgrep -l pgAdmin && aerospace workspace 8 || open -a "/Applications/pgAdmin\ 4.app"'
+alt-o = 'exec-and-forget pgrep -l pgAdmin && aerospace workspace 8 || open -a "/Applications/pgAdmin 4.app"'
 alt-p = 'exec-and-forget pgrep -l "Microsoft Outlook" && aerospace workspace 9 || open -a "/Applications/Microsoft Outlook.app"'
 
 alt-shift-comma = 'move-node-to-workspace 1'
