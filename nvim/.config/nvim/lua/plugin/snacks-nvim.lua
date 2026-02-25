@@ -9,7 +9,6 @@ return {
         -- explorer = { enabled = true },
         image = {
             enabled = true,
-            force = false,
         },
         indent = { enabled = false },
         input = { enabled = true },
@@ -28,19 +27,7 @@ return {
         -- notifier = { enabled = true },
         -- quickfile = { enabled = true },
         -- scope = { enabled = true },
-        scroll = {
-            enabled = true,
-            animate = {
-                duration = { step = 15, total = 100 },
-                easing = "linear",
-            },
-            -- faster animation when repeating scroll after delay
-            animate_repeat = {
-                delay = 100, -- delay in ms before using the repeat animation
-                duration = { step = 5, total = 50 },
-                easing = "linear",
-            },
-        },
+        -- scroll = { enabled = true },
         statuscolumn = { enabled = true },
         -- words = { enabled = true },
     },
