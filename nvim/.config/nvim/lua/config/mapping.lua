@@ -194,11 +194,6 @@ vim.keymap.set("n", "<leader>sd", "<cmd>!rm -f ~/.config/nvim/scretch/*<cr>")
 vim.keymap.set("n", "<leader>it", "<cmd>Telescope find_template type=insert<cr>")
 
 -- ======================
--- === Hop
--- ======================
-vim.keymap.set("n", "<leader>f", "<cmd>HopWord<cr>")
-
--- ======================
 -- === Git
 -- ======================
 vim.keymap.set("n", "<leader>al", "<cmd>diffget //2<cr>")
