@@ -77,8 +77,9 @@ alias gundo="git reset --soft HEAD^"
 alias gst="git status --short"
 
 # Others
-alias lzg="lazygit"
 alias gcontributors="git shortlog --summary --numbered --no-merges"
+alias lzg="lazygit"
+alias gg="git grep --textconv"
 
 function gist() {
     _open_link "https://gist.github.com/vnea"
