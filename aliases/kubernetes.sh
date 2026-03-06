@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-alias kc="kubectx"
 alias ks='k9s -n "$(kubectl config view --minify --output 'jsonpath={..namespace}')"'
 
 alias k=kubectl
@@ -86,6 +85,15 @@ function kgetall() {
 function kns() {
   if namespace=$(< "$HOME/.local/share/kubectx-cache/$(kubectx -c)" fzf); then
       kubectl config set-context --current --namespace="$namespace";
+      env=$(kubectl config current-context | sed "s/marketplace-//" | awk -F "-" '{ print $1 }')
+      tmux rename-window "$env | $namespace"
+  fi
+}
+
+function kc() {
+  if kubectx; then
+      env=$(kubectl config current-context | sed "s/marketplace-//" | awk -F "-" '{ print $1 }')
+      tmux rename-window "$env"
   fi
 }
 
