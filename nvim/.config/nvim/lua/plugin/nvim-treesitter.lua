@@ -1,64 +1,43 @@
 return {
     "nvim-treesitter/nvim-treesitter",
-    dependencies = { "nvim-treesitter/nvim-treesitter-textobjects" },
-    branch = "master",
+    lazy = false,
     build = ":TSUpdate",
     config = function()
-        require("nvim-treesitter.configs").setup({
-            ensure_installed = {
-                "bash",
-                "go",
-                "html",
-                "javascript",
-                "json",
-                "lua",
-                "markdown",
-                "python",
-                "query",
-                "terraform",
-                "typescript",
-                "vim",
-                "vimdoc",
-                "yaml",
-            },
-            modules          = {},
-            sync_install     = false,
-            auto_install     = true,
-            highlight        = {
-                enable = true,
-                additional_vim_regex_highlighting = false,
-            },
-            ignore_install   = {},
-            indent           = {
-                enable = true
-            },
-            textobjects      = {
-                select = {
-                    enable = true,
-                    -- Automatically jump forward to textobj, similar to targets.vim
-                    lookahead = true,
-                    keymaps = {
-                        ["af"] = "@function.outer",
-                        ["if"] = "@function.inner",
-                        ["ac"] = "@class.outer",
-                        ["ic"] = "@class.inner",
-                        ["aa"] = "@parameter.outer",
-                        ["ia"] = "@parameter.inner",
-                        ["as"] = "@assignment.outer",
-                        ["is"] = "@assignment.inner",
-                    },
-                },
-                move = {
-                    enable = true,
-                    set_jumps = true,
-                    goto_next_start = {
-                        ["<leader><down>"] = "@function.outer",
-                    },
-                    goto_previous_start = {
-                        ["<leader><up>"] = "@function.outer",
-                    },
-                },
-            },
+        local languages = {
+            "bash",
+            "css",
+            "csv",
+            "gitattributes",
+            "gitignore",
+            "go",
+            "hcl",
+            "html",
+            "java",
+            "javascript",
+            "jinja",
+            "json",
+            "json5",
+            "kitty",
+            "lua",
+            "markdown",
+            "mermaid",
+            "python",
+            "query",
+            "terraform",
+            "toml",
+            "typescript",
+            "vim",
+            "vimdoc",
+            "xml",
+            "yaml",
+            "zsh",
+        }
+
+        require("nvim-treesitter").install(languages)
+
+        vim.api.nvim_create_autocmd("FileType", {
+            pattern = languages,
+            callback = function() vim.treesitter.start() end,
         })
     end,
 }
