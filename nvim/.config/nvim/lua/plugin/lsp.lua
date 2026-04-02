@@ -12,17 +12,6 @@ return {
         dependencies = "rafamadriz/friendly-snippets",
         version = "1.*",
         opts = {
-            appearance = { nerd_font_variant = "Nerd Font Mono" },
-            completion = {
-                menu = {
-                    -- Don't show completion menu automatically when searching (https://cmp.saghen.dev/recipes.html#don-t-show-completion-menu-automatically-when-searching)
-                    auto_show = function(ctx)
-                        return ctx.mode ~= "cmdline" or not vim.tbl_contains({ '/', '?' }, vim.fn.getcmdtype())
-                    end,
-                },
-            },
-            keymap = { preset = "default" },
-            signature = { enabled = true },
             sources = {
                 providers = {
                     path = {
@@ -33,6 +22,7 @@ return {
                 },
             },
         },
+        opts_extend = { "sources.default" }
     },
 
     -- LSP
