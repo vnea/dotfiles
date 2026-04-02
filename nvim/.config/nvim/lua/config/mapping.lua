@@ -173,7 +173,7 @@ vim.keymap.set("n", "☇" --[[ <A-&> --]], "<cmd>Neotree position=float toggle<c
 vim.keymap.set("n", "go", "<cmd>Neotree reveal position=float toggle<cr>")
 
 vim.keymap.set("n", "☈" --[[ <A-é> --]], function() MiniFiles.open() end)
-vim.keymap.set("n", "gO", function() MiniFiles.open(vim.api.nvim_buf_get_name(0)) end)
+vim.keymap.set("n", "<leader>go", function() MiniFiles.open(vim.api.nvim_buf_get_name(0)) end)
 
 -- ======================
 -- === Navigation
