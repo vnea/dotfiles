@@ -1,6 +1,6 @@
 return {
     "nvim-telescope/telescope.nvim",
-    tag = "0.1.8",
+    version = '*',
     dependencies = {
         { "nvim-lua/plenary.nvim" },
         { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
@@ -17,17 +17,6 @@ return {
                     i = {
                         ["<esc>"] = require("telescope.actions").close
                     },
-                },
-                file_ignore_patterns = {
-                    "^.git/",
-                    "^.idea/",
-                    "$node_modules/",
-                    "$.venv/",
-                },
-            },
-            extensions = {
-                advanced_git_search = {
-                    diff_plugin = "diffview",
                 },
             },
         })
