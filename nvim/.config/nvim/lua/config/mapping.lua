@@ -154,14 +154,6 @@ vim.keymap.set("n", "★" --[[ <C-S-A-up> --]], "<C-W><S-k>")
 vim.keymap.set("n", "☆" --[[ <C-S-A-down> --]], "<C-W><S-J>")
 
 -- ======================
--- === LSP
--- ======================
--- Source: https://medium.com/@vishakhpro2002/neovim-v10-setup-with-inlayhints-838a503b17dc (check "InlayHints" section)
-vim.keymap.set("n", "<leader>ih", function()
-    vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled({ 0 }), { 0 })
-end)
-
--- ======================
 -- === Text case
 -- ======================
 vim.keymap.set({ "n", "v" }, "<leader>sc", "<cmd>TextCaseOpenTelescope<cr>", { desc = "Telescope" })
