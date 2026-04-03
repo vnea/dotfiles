@@ -36,8 +36,16 @@ return {
         require("nvim-treesitter").install(languages)
 
         vim.api.nvim_create_autocmd("FileType", {
-            pattern = languages,
-            callback = function() vim.treesitter.start() end,
+            callback = function(args)
+                local buf, filetype = args.buf, args.match
+
+                local language = vim.treesitter.language.get_lang(filetype)
+                if not language then return end
+
+                if not vim.treesitter.language.add(language) then return end
+
+                vim.treesitter.start(buf, language)
+            end
         })
     end,
 }
