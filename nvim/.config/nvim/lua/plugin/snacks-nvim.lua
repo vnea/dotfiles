@@ -92,7 +92,31 @@ return {
             end,
             desc = "File Picker",
         },
-        { "<leader>rc", function() Snacks.picker.command_history() end, desc = "Command History" },
+        {
+            "<leader>rc",
+            function()
+                Snacks.picker.command_history({
+                    layout = {
+                        preview = false,
+                        layout = {
+                            box = "horizontal",
+                            width = 0.8,
+                            min_width = 120,
+                            height = 0.8,
+                            {
+                                box = "vertical",
+                                border = true,
+                                title = "{title} {live} {flags}",
+                                { win = "input", height = 1,     border = "bottom" },
+                                { win = "list",  border = "none" },
+                            },
+                            { win = "preview", title = "{preview}", border = true, width = 0.5 },
+                        },
+                    }
+                })
+            end,
+            desc = "Command History"
+        },
         ---@diagnostic disable-next-line: assign-type-mismatch
         { "☀", --[[ <C-S-l>, check Alacritty conf ]] function() Snacks.picker.buffers({ layout = { preview = false } }) end, desc = "Buffers" },
 
