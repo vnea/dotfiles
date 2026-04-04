@@ -23,6 +23,25 @@ return {
                     truncate = 200,
                 },
             },
+            layout = {
+                preview = "main",
+                layout = {
+                    box = "vertical",
+                    backdrop = false,
+                    width = 0,
+                    height = 0.3,
+                    position = "top",
+                    border = "top",
+                    title = " {title} {live} {flags}",
+                    title_pos = "center",
+                    { win = "input", height = 1, border = "bottom" },
+                    {
+                        box = "horizontal",
+                        { win = "list",    border = "none" },
+                        { win = "preview", title = "{preview}", width = 0.6, border = "left" },
+                    },
+                },
+            },
         },
         -- notifier = { enabled = true },
         -- quickfile = { enabled = true },
@@ -60,10 +79,6 @@ return {
                             "node_modules/",
                             ".venv",
                             ".terraform",
-                        },
-                        layout = {
-                            ---@diagnostic disable-next-line: assign-type-mismatch
-                            preview = false,
                         },
                     })
                 end
