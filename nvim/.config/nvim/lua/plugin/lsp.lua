@@ -74,6 +74,7 @@ return {
         dependencies = {
             "mason-org/mason.nvim",
             "neovim/nvim-lspconfig",
+            "b0o/schemastore.nvim",
         },
         config = function()
             require("mason-lspconfig").setup({
@@ -82,6 +83,7 @@ return {
                     "basedpyright",
                     "bashls",
                     "harper_ls",
+                    "jsonls",
                     "lua_ls",
                     "terraformls",
                     "vtsls",
@@ -98,6 +100,15 @@ return {
                         },
                     }
                 }
+            })
+
+            vim.lsp.config("jsonls", {
+                settings = {
+                    json = {
+                        schemas = require("schemastore").json.schemas(),
+                        validate = { enable = true },
+                    },
+                },
             })
 
             vim.lsp.config("lua_ls", {
