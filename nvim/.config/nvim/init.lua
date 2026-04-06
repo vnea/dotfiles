@@ -1,6 +1,7 @@
 -- Must be first because we define leader mapping here and Lazy needs it to be defined first
 require("config.mapping")
 
+require("config.ui2")
 require("config.autocmd")
 require("config.command")
 require("config.lazy")
