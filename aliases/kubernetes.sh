@@ -6,35 +6,48 @@ alias k=kubectl
 alias kg="kubectl get"
 alias kd="kubectl describe"
 
-# Pod management.
+# Pod
 alias kgp="kubectl get pods"
 alias kdp="kubectl describe pods"
 
-# Service management.
+# Service
 alias kgs="kubectl get svc"
 alias kds="kubectl describe svc"
 
-# Ingress management
+# HTTPRoute
+alias kgh="kubectl get httproute"
+
+# Ingress
 alias kgi="kubectl get ingress"
 alias kdi="kubectl describe ingress"
 
-# Namespace management
+# Namespace
 alias kgns="kubectl get namespaces"
 alias kdns="kubectl describe namespace"
+function kny() {
+    local namespace
+    namespace=$(kubectl config view --minify --output 'jsonpath={..namespace}' | tr -d '\n')
 
-# ConfigMap management
+    if [[ "$(uname)" == "Darwin" ]]; then
+        echo -n "$namespace" | pbcopy
+    else
+        echo -n "$namespace" | xclip -sel clip
+    fi
+}
+
+# ConfigMap
 alias kgcm="kubectl get configmaps"
 alias kdcm="kubectl describe configmap"
 
-# Secret management
+# Secret
 alias kgsec="kubectl get secret"
 alias kdsec="kubectl describe secret"
 
-# ExternalSecret management
+# ExternalSecret
 alias kges="kubectl get externalsecrets"
 alias kdes="kubectl describe externalsecrets"
 
-# Deployment management.
+# Deployment
 alias kgd="kubectl get deployment"
 alias kdd="kubectl describe deployment"
 
@@ -48,26 +61,26 @@ alias kl="kubectl logs"
 # File copy
 alias kcp="kubectl cp"
 
-# Node Management
+# Node
 alias kgno="kubectl get nodes"
 alias kdno="kubectl describe node"
 
-# PVC management.
+# PVC
 alias kgpvc="kubectl get pvc"
 alias kdpvc="kubectl describe pvc"
 
-# Service account management.
+# Service Account
 alias kdsa="kubectl describe sa"
 
-# DaemonSet management.
+# DaemonSet
 alias kgds="kubectl get daemonset"
 alias kdds="kubectl describe daemonset"
 
-# CronJob management.
+# CronJob
 alias kgcj="kubectl get cronjob"
 alias kdcj="kubectl describe cronjob"
 
-# Job management.
+# Job
 alias kgj="kubectl get job"
 alias kej="kubectl edit job"
 alias kdj="kubectl describe job"
