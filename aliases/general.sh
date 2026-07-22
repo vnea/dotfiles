@@ -52,5 +52,5 @@ function goto() {
     cd "$workspace_folder/$selected_folder_bookmark"
   fi
 
-  tmux rename-window "$(basename "$(pwd)")"
+  tmux rename-window "$(basename "$PWD")"
 }

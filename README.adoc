@@ -442,3 +442,15 @@ Steps to install scripts:
 - Select `~/dotfiles/raycast/scripts/`.
 
 :sectnums:
+
+== Worktrunk
+:sectnums!:
+
+Link: https://worktrunk.dev
+
+=== Installation
+
+[source,shell]
+----
+rm -rf ~/.config/worktrunk && stow worktrunk
+----

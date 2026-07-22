@@ -1,8 +1,20 @@
+# Global
 .envrc
-.idea/
 .ignore/
-.tool-versions
+.ignore
+
+# Claude
+.claude/settings.local.json
+
+# IntelliJ
+.idea/
+
+# Mise
 mise.toml
 
+# Terraform
 .terraform-*/
-.claude/settings.local.json
+
+# Worktrunk
+.config/wt.toml
+.worktreeinclude

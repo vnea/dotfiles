@@ -121,3 +121,5 @@ export NPM_CONFIG_IGNORE_SCRIPTS=true
 # export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv
 # export WORKON_HOME=$HOME/python/virtualenvs
 # source /usr/bin/virtualenvwrapper.sh
+
+if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi

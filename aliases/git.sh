@@ -13,21 +13,93 @@ alias ga="git add"
 alias gaa="git add --all"
 
 # Branch
-alias gcob="git branch -a | sed 's/remotes\/origin\///g; s/[[:space:]]//g; s/\*//g' | sort | uniq | fzf | xargs --no-run-if-empty git checkout"
-alias gbd="git branch -a | sed 's/remotes\/origin\///g; s/[[:space:]]//g; s/\*//g' | sort | uniq | fzf | xargs --no-run-if-empty git branch -D"
-alias gco="git checkout"
-alias gco-="git checkout -"
-alias gcom="git checkout master 2>/dev/null || git checkout main"
-alias gcomup="(git checkout master 2>/dev/null || git checkout main) && git pull"
-alias gcb="git checkout -b"
-alias grm="git branch -D"
+
+if command -v wt &> /dev/null; then
+  function gcob() {
+    local branch
+    branch=$(git branch -a | sed 's/remotes\/origin\///g; s/[[:space:]]//g; s/\*//g; s/^+//g' | sort | uniq | fzf) || return
+
+    if [ -n "$branch" ]; then
+      wt switch "$branch"
+      tmux rename-window "$(basename "$PWD")"
+    fi
+  }
+
+  function gbd() {
+    local branch
+    branch=$(git branch -a | sed 's/remotes\/origin\///g; s/[[:space:]]//g; s/\*//g; s/^+//g' | sort | uniq | fzf) || return
+
+    if [ -n "$branch" ]; then
+      wt remove "$branch"
+      tmux rename-window "$(basename "$PWD")"
+    fi
+  }
+
+  function gco() {
+    local branch
+    branch=$1
+
+    wt switch $1
+    tmux rename-window "$(basename "$PWD")"
+  }
+
+  alias gco-='wt switch - && tmux rename-window "$(basename "$PWD")"'
+
+  function gcom() {
+    wt switch master 2>/dev/null || wt switch main
+    tmux rename-window "$(basename "$PWD")"
+  }
+
+  function gcomup() {
+    wt switch master 2>/dev/null || wt switch main
+    git pull
+    tmux rename-window "$(basename "$PWD")"
+  }
+
+  function gcb() {
+    local branch
+    branch=$1
+
+    wt switch --create $1
+    tmux rename-window "$(basename "$PWD")"
+  }
+
+  function grm() {
+    local branch
+    branch=$1
+
+    wt remove $1
+    tmux rename-window "$(basename "$PWD")"
+  }
+
+  function gclean() {
+    local branches_raw
+    branches_raw=$(wt list --format=json | jq -r '.[] | select(.main_state == "integrated" or .main_state == "empty") | .branch')
+    if [[ -z "$branches_raw" ]]; then
+      echo "No merged worktrees to clean"
+    else
+      local -a branches
+      branches=("${(@f)branches_raw}")
+      wt remove -y "${branches[@]}"
+    fi
+    git remote -v update -p
+  }
+else
+  alias gcob="git branch -a | sed 's/remotes\/origin\///g; s/[[:space:]]//g; s/\*//g' | sort | uniq | fzf | xargs --no-run-if-empty git checkout"
+  alias gbd="git branch -a | sed 's/remotes\/origin\///g; s/[[:space:]]//g; s/\*//g' | sort | uniq | fzf | xargs --no-run-if-empty git branch -D"
+  alias gco="wt switch"
+  alias gco-="git checkout -"
+  alias gcom="git checkout master 2>/dev/null || git checkout main"
+  alias gcomup="(git checkout master 2>/dev/null || git checkout main) && git pull"
+  alias gcb="git checkout -b"
+  alias grm="git branch -D"
+  alias gclean="git branch --merged | grep -v '\*\|main\|master\|develop' | xargs -n 1 git branch -d; git remote -v update -p"
+fi
 
 # Cherry pick
 alias gcp="git cherry-pick"
 
 # Clean
-alias gdob="git branch -vv | grep ': gone' | cut -d ' ' -f 3 | xargs git branch -D"
-alias gdm="git branch --merged | grep -v '\\*' | xargs -n 1 git branch -d; git remote -v update -p"
 alias greset_repo="git clean -fxd"
 
 # Clone
