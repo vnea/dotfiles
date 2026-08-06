@@ -1,7 +1,7 @@
 git:
-  pagers:
+  diffRenderers:
     - colorArg: always
-      pager: delta --diff-so-fancy --paging=never
+      command: delta --diff-so-fancy --paging=never
 gui:
   useHunkModeInStagingView: false
 quitOnTopLevelReturn: true
