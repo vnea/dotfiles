@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 alias ks='k9s -n "$(kubectl config view --minify --output 'jsonpath={..namespace}')"'
+alias kres="kubectl get pods --field-selector=status.phase=Running --all-namespaces -o custom-columns='NAMESPACE:.metadata.namespace,NAME:.metadata.name,CPU_REQUEST:.spec.containers[*].resources.requests.cpu' --sort-by='.spec.containers[*].resources.requests.cpu'"
 
 alias k=kubectl
 alias kg="kubectl get"
