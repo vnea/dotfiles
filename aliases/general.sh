@@ -54,3 +54,11 @@ function goto() {
 
   tmux rename-window "$(basename "$PWD")"
 }
+
+function pwy() {
+    if [[ "$(uname)" == "Darwin" ]]; then
+        echo "$PWD" | pbcopy
+    else
+        echo "$PWD" | xclip -sel clip
+    fi
+}
