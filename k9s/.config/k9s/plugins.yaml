@@ -110,6 +110,22 @@ plugins:
         LAST_REVISION=$(($COL-REVISION-1));
         helm diff revision $COL-NAME $COL-REVISION $LAST_REVISION --kube-context $CONTEXT --namespace $NAMESPACE --color | less -RK
 
+  # Source: https://github.com/derailed/k9s/blob/master/plugins/helm-manifest.yaml
+  helm-manifest:
+    shortCut: Shift-M
+    confirm: false
+    description: Manifest
+    scopes:
+      - history
+    command: bash
+    background: false
+    args:
+      - -c
+      - >-
+        RELEASE_NAME=$(echo $NAME | cut -d':' -f1);
+        REVISION=$(echo $NAME | cut -d':' -f2);
+        helm get manifest $RELEASE_NAME --revision $REVISION --kube-context $CONTEXT --namespace $NAMESPACE | less -K
+
   # Source: https://github.com/derailed/k9s/blob/master/plugins/helm-values.yaml
   helm-values:
     shortCut: v
