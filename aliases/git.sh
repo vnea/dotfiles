@@ -74,7 +74,7 @@ if command -v wt &> /dev/null; then
 
   function gclean() {
     local branches_raw
-    branches_raw=$(wt list --format=json | jq -r '.[] | select(.main_state == "integrated" or .main_state == "empty") | .branch')
+    branches_raw=$(wt list --format=json | jq -r '.items[] | select(.default_branch.integration != null) | .branch')
     if [[ -z "$branches_raw" ]]; then
       echo "No merged worktrees to clean"
     else
