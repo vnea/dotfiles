@@ -454,3 +454,15 @@ Link: https://worktrunk.dev
 ----
 rm -rf ~/.config/worktrunk && stow worktrunk
 ----
+
+== Hammerspoon
+:sectnums!:
+
+Link: https://www.hammerspoon.org/
+
+=== Installation
+
+[source,shell]
+----
+rm -rf ~/.hammerspoon/init.lua && stow hammerspoon
+----
