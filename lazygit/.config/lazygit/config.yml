@@ -3,6 +3,6 @@ git:
     - colorArg: always
       command: delta --diff-so-fancy --paging=never
 gui:
-  useHunkModeInStagingView: false
+  useHunkModeInDiffView: false
 quitOnTopLevelReturn: true
 promptToReturnFromSubprocess: false
